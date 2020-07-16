@@ -1,17 +1,0 @@
-//Outpost_ERLevel15Quest_RESET#CLASS 0#AL Outpost_ERLevel15Quest_RESET {$QuestName="Outpost_ERLevel15Quest"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Outpost_ERLevel15Quest
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

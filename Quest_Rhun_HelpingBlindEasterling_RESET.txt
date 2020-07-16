@@ -1,17 +1,0 @@
-//Rhun_HelpingBlindEasterling_RESET#CLASS 0#AL Rhun_HelpingBlindEasterling_RESET {$QuestName="Rhun_HelpingBlindEasterling"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rhun_HelpingBlindEasterling
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

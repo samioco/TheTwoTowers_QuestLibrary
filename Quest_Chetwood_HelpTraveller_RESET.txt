@@ -1,17 +1,0 @@
-//Chetwood_HelpTraveller_RESET#CLASS 0#AL Chetwood_HelpTraveller_RESET {$QuestName="Chetwood_HelpTraveller"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Chetwood_HelpTraveller
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

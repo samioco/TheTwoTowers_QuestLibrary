@@ -1,47 +1,0 @@
-//Belfalas_HelpingSharlonn_RESET#CLASS 0#AL Belfalas_HelpingSharlonn_RESET {$QuestName="Belfalas_HelpingSharlonn"
-$Settings=%concat($QuestName,"|Settings")
-//----------------------------------------------------------------------------------------------------
-//Quest Name: Belfalas_HelpingSharlonn
-//----------------------------------------------------------------------------------------------------
-//Description:
-//Help Sharlonn by killing the snack in her workroom. 
-//There's a hidden sword there, and her key can be used to turn the workroom into a lockup.
-
-//Requirements:
-//Recommended level 13+
-//Reward: A short steel sword, A small wooden key
-//----------------------------------------------------------------------------------------------------
-//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
-//----------------------------------------------------------------------------------------------------
-//A short steel sword                steel sword    sword     1H   55   50   75   2000      105.0
-//----------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-#AL Belfalas_HelpingSharlonn {
-#EXE {%concat($QuestName,"_RESET")}
-QuestInit $QuestName "ssskey" "offer help"
-MoveMe_To_Arda
-} $QuestName
-
-#AL Belfalas_HelpingSharlonn_Check {QuesterCheck $QuestName 13 100} $QuestName
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-#TR {Sharlonn says*: I don't need your help now.} {QuestAbort} $Settings
-#TR {Sharlonn tries to give you the key, but you aren't able to hold it.} {#WAIT 2000;rw;offer help} $Settings
-#TR {Sharlonn hands you a small key you haven't noticed before and tells} {#WALK ssslin;search box} $Settings
-#TR {You'd never dare to place your hand near that snake!} {ws;kill snake} $Settings
-#TR {You need a free hand to wield} {#IF (%roomid()="ssslin") {do unlock door,drop key;ws}} $Settings
-#TR {You attack} {profatk} $Settings
-#TR {bleeding to death} {kill} $Settings
-#TR {Snake has died.} {ss;do skin corpse,attach pelt to string,put pelt in pack,drop pelt;search box} $Settings
-#TR {You discover a short sword among the algae!} {get steel sword;GearSwap "A short steel sword";do get small wooden key,unlock door,drop small wooden key,get pelt;#WAIT 3000;#WALK ssskey;ss;rw;do get small wooden key from keyring,get small wooden key from cloak,get small wooden key from pack,give small wooden key to sharlonn} $Settings
-#TR {The box holds nothing but algae.} {#WALK ssskey;do get small wooden key from keyring,get small wooden key from pack,drop all key;QuestAbort} $Settings
-#TR {You do not have a key.} {do drop small wooden key from cloak,drop small wooden key from pack;QuestAbort} $Settings
-#TR {You do not have a small wooden key.} {do drop small wooden key from cloak,drop small wooden key from pack;QuestAbort} $Settings
-#TR {The door is locked.} {#IF (%mud.hp<80) {ActionAdd "#WALK ssslin;kill snake";s;#WAIT 1000;HealMe}} $Settings
-ClassOff $QuestName
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

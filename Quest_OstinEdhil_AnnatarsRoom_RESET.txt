@@ -1,17 +1,0 @@
-//OstinEdhil_AnnatarsRoom_RESET#CLASS 0#AL OstinEdhil_AnnatarsRoom_RESET {$QuestName="OstinEdhil_AnnatarsRoom"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: OstinEdhil_AnnatarsRoom
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

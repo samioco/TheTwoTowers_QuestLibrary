@@ -1,17 +1,0 @@
-//CU_HelpingHuntedElf_RESET#CLASS 0#AL CU_HelpingHuntedElf_RESET {$QuestName="CU_HelpingHuntedElf"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: CU_HelpingHuntedElf
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

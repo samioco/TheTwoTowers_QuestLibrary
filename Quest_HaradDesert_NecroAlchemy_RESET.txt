@@ -1,17 +1,0 @@
-//HaradDesert_NecroAlchemy_RESET#CLASS 0#AL HaradDesert_NecroAlchemy_RESET {$QuestName="HaradDesert_NecroAlchemy"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: HaradDesert_NecroAlchemy
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

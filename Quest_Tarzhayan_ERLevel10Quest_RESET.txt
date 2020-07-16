@@ -1,17 +1,0 @@
-//Tarzhayan_ERLevel10Quest_RESET#CLASS 0#AL Tarzhayan_ERLevel10Quest_RESET {$QuestName="Tarzhayan_ERLevel10Quest"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Tarzhayan_ERLevel10Quest
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

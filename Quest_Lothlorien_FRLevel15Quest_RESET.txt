@@ -1,37 +1,0 @@
-//Lothlorien_FRLevel15Quest_RESET#CLASS 0#AL Lothlorien_FRLevel15Quest_RESET {$QuestName="Lothlorien_FRLevel15Quest"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Lothlorien_FRLevel15Quest
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Lothlorien_FRLevel15Quest {
-QuestInit $QuestName "CGBase" "look amulet"
-} $QuestName
-
-#AL Lothlorien_FRLevel15QuesterCheck {QuesterCheck $QuestName 14 14} $QuestName
-
-
-#TR {realise that it is a small silver amulet in the shape of a fox-head.} {#WALK gala;request appointment} $Settings
-#TR {this mission, take this letter down to Argwai, my storeroom manager} {#WAIT 2000;#WALK argwai;give letter to argwai} $Settings
-#TR {Argwai places your pack on the counter, then walks away.} {put cloak in pack;do get cloak from backpack,wear cloak,get all from backpack into pack,get backpack into pack} $Settings
-
-#TR {You wear a thin, extremely fine glowing cloak.} {do get pen from pack,get paper from pack;#WALK loth;#WALK khamul_warroom;do copy map,get plans} $Settings
-#TR {you finish, however, the nazgul Khamul catches you, and attacks!} {do get plans,drop pen;#WALK loth;#WALK gala;request appointment} $Settings
-#TR {evacuation.  Look into the mirror, friend...  and you will see what} {do stand dais,look water} $Settings
-#TR {Your knees turn into water, and you stumble off of the dais!} {rest} $Settings
-#TR {The guard says*: Wait here, Galadriel will be with you shortly.} {rest} $Settings
-#TR {whisper good luck, just before the waters catch your little boat...} {ringon;ws} $Settings
-#TR {is gone, though, you realise that the One Ring has slipped out of his} {ringon;ss;get ring;#WALK FR15_End;rest} $Settings
-#TR {search:  one part of your mind screams out, 'Take off the ring!'  But} {remove ring} $Settings
-#TR {But what choice do you have?} {do get black-bladed dagger,get @wep;ringon;ws;kill grishnakh} $Settings
-#TR {Grishnakh has died.} {ringoff;ss;gall} $Settings
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//OstinEdhil_DesertedRoom_RESET#CLASS 0#AL OstinEdhil_DesertedRoom_RESET {$QuestName="OstinEdhil_DesertedRoom"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: OstinEdhil_DesertedRoom
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

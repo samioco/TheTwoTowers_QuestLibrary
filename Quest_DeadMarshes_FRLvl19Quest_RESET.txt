@@ -1,22 +1,0 @@
-//DeadMarshes_FRLvl19Quest_RESET#CLASS 0#AL DeadMarshes_FRLvl19Quest_RESET {$QuestName="DeadMarshes_FRLvl19Quest"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: DeadMarshes_FRLvl19Quest
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-//tame gollum
-//ringoff
-//look gollum
-#AL DeadMarshes_FRLvl19Quest {QuestInit $QuestName "Gollum" "look gollum"} $QuestName
-
-#TR {Gollum points you toward the %1.} {#EXE {%1}} $Settings
-#TR {You have completed the quest of the Dead Marshes!} {#WALK dmeast} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

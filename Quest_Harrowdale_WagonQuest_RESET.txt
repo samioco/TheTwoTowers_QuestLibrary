@@ -1,17 +1,0 @@
-//Harrowdale_WagonQuest_RESET#CLASS 0#AL Harrowdale_WagonQuest_RESET {$QuestName="Harrowdale_WagonQuest"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Harrowdale_WagonQuest
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0
