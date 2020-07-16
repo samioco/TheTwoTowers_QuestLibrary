@@ -1,32 +1,0 @@
-//Erebor_OpeningThrainsTomb_RESET#CLASS 0#AL Erebor_OpeningThrainsTomb_RESET {$QuestName="Erebor_OpeningThrainsTomb"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Erebor_OpeningThrainsTomb
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Erebor_OpeningThrainsTomb {
-QuestInit "Erebor_OpeningThrainsTomb" "ThrainGate" "do feel gate,touch gate,smell gate"
-ActionNext
-} $QuestName
-
-#TR {repeating the same words, over and over again... Through an order a house} {order a house to unlock} $Settings
-#TR {sealed doorway must be thrown open} {wish this sealed doorway to be thrown open} $Settings
-#TR {repeating the same words, over and over again... Through a decree this} {decree this gate to open} $Settings
-#TR {repeating the same words, over and over again... Through a wish this door} {wish this door to open} $Settings
-#TR {repeating the same words, over and over again... Through a wish a door} {wish a door to open wide} $Settings
-#TR {repeating the same words, over and over again... Through a wish a locked} {wish a locked door to unlock} $Settings
-#TR {repeating the same words, over and over again... Through a wish a doorway} {wish a doorway to open} $Settings
-#TR {sealed doorway shall open...  Slowly the voice fades, until it is gone.} {wish this sealed doorway to open} $Settings
-
-#TR {An empty tomb} {QuestOff Erebor_OpeningThrainsTomb} $Settings
-ThrainStop
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

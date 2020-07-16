@@ -1,18 +1,0 @@
-//Tavorus_WashingtheOliphaunt_RESET#CLASS 0#AL Tavorus_WashingtheOliphaunt_RESET {$QuestName="Tavorus_WashingtheOliphaunt"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Tavorus_WashingtheOliphaunt
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

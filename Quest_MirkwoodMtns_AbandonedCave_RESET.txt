@@ -1,17 +1,0 @@
-//MirkwoodMtns_AbandonedCave_RESET#CLASS 0#AL MirkwoodMtns_AbandonedCave_RESET {$QuestName="MirkwoodMtns_AbandonedCave"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MirkwoodMtns_AbandonedCave
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,38 +1,0 @@
-//Lendin_RunawayPets_RESET#CLASS 0#AL Lendin_RunawayPets_RESET {$QuestName="Lendin_RunawayPets"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Lendin_RunawayPets
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Lendin_RunawayPets {
-QuestInit $QuestName RunawayPets" offer help"
-MoveMe_To_Arda
-} $QuestName
-
-
-#PATH Lendin_RunawayPets_Path {.e2s5ej2es6nw5n12sws16nwn17sws23nw3n26sws27nsw9sw2s3ne7n3w6se11sw2s19n2sw18sws18nsw17swswne14n6s2w6n13sw4sws2ws2wsw2ses3nese2ne2se3ne3se4ne4se4ne4se5nw2en5se6nen6se5nwne2ne7s14n10sw2nw} $QuestName
-
-#TR {{"AHere, take this leash.  When you find any of|You have already offered your help; that was"}} {
-trigger A red fox todo do catch fox,trigger off
-.e2s5ej2es6nw5n12sws16nwn17sws23nw3n26sws27nsw9sw2s3ne7n3w6se11sw2s19n2sw18sws18nsw17swswne14n6s2w6n13sw4sws2ws2wsw2ses3nese2ne2se3ne3se4ne4se4ne4se5nw2en5se6nen6se5nwne2ne7s14n10sw2nw
-trigger A white dog todo do catch dog,trigger off
-.e2s5ej2es6nw5n12sws16nwn17sws23nw3n26sws27nsw9sw2s3ne7n3w6se11sw2s19n2sw18sws18nsw17swswne14n6s2w6n13sw4sws2ws2wsw2ses3nese2ne2se3ne3se4ne4se4ne4se5nw2en5se6nen6se5nwne2ne7s14n10sw2nw
-trigger A small black bear todo do catch bear,trigger off
-.e2s5ej2es6nw5n12sws16nwn17sws23nw3n26sws27nsw9sw2s3ne7n3w6se11sw2s19n2sw18sws18nsw17swswne14n6s2w6n13sw4sws2ws2wsw2ses3nese2ne2se3ne3se4ne4se4ne4se5nw2en5se6nen6se5nwne2ne7s14n10sw2nw
-trigger A brown dog todo do catch dog,trigger off
-.e2s5ej2es6nw5n12sws16nwn17sws23nw3n26sws27nsw9sw2s3ne7n3w6se11sw2s19n2sw18sws18nsw17swswne14n6s2w6n13sw4sws2ws2wsw2ses3nese2ne2se3ne3se4ne4se4ne4se5nw2en5se6nen6se5nwne2ne7s14n10sw2nw
-} $Settings
-
-//#TR {A red fox} {catch fox} $Settings
-//#TR {A white dog} {catch dog} $Settings
-//#TR {A small black bear} {catch bear} $Settings
-//#TR {A brown dog} {catch dog} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

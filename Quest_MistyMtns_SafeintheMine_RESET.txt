@@ -1,47 +1,0 @@
-//MistyMtns_SafeintheMine_RESET#CLASS 0#AL MistyMtns_SafeintheMine_RESET {$QuestName="MistyMtns_SafeintheMine"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MistyMtns_SafeintheMine
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-//Reward: 180g
-//slavemaster whip 14g + orcs with picks 15g+14g pick x5 (145g)
-//Total: 339g
-
-#AL MistyMtns_SafeInTheMine {
-QuestInit $QuestName "SilverMine_Top" "do search corpse,get note,read note,drop note"
-MoveMe_To_NorthArda
-} $QuestName
-
-#AL MistyMtns_SafeInTheMine_Check {QuesterCheck $QuestName 15 25} $QuestName
-
-#AL MistyMtns_SafeInTheMine_End {} $QuestName
-
-#TR {Why pull the rope any further?  The elevator is already here.} {e} $Settings
-#TR {The elevator is currently below you, so stepping forward would mean} {pull rope} $Settings
-#TR {The basket is currently higher up the shaft.  Stepping south would} {pull rope} $Settings
-#TR {The basket reaches the bottom of the shaft and you step out} {#WALK silvermine_slavemaster;ws;kill slavemaster} $Settings
-#TR {bleeding to death} {kill} $Settings
-#TR {Slavemaster has died.} {ss;get key from corpse;#WALK silvermine_safe;insert key into center hole} $Settings
-
-//quest success, kill rest of area, and loot all, and leave
-#TR {There is a lot of gold inside!  You quickly scoop the gold up.} {} $Settings
-
-#TR {You run %1.} {
-$action="";#UNT "Alarm_Rest"
-#IF (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}}
-SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000;rest on
-#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
-} $Settings
-
-//if basket not at bottom, trigger basket arrival to leave south
-#TR {The basket is already at this level.} {s} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

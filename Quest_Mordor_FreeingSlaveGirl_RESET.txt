@@ -1,17 +1,0 @@
-//Mordor_FreeingSlaveGirl_RESET#CLASS 0#AL Mordor_FreeingSlaveGirl_RESET {$QuestName="Mordor_FreeingSlaveGirl"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mordor_FreeingSlaveGirl
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

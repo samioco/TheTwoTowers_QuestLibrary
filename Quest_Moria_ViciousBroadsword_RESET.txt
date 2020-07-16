@@ -1,17 +1,0 @@
-//Moria_ViciousBroadsword_RESET#CLASS 0#AL Moria_ViciousBroadsword_RESET {$QuestName="Moria_ViciousBroadsword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Moria_ViciousBroadsword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

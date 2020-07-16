@@ -1,33 +1,0 @@
-//Staddle_AleDelivery_RESET#CLASS 0#AL Staddle_AleDelivery_RESET {$QuestName="Staddle_AleDelivery"
-$Settings=%concat($QuestName,|Settings)
-//----------------------------------------------------------------------------------------------------
-//Quest Name: Staddle_AleDelivery
-//----------------------------------------------------------------------------------------------------
-//Description: Help Radamal deliver beer.
-//Requirements:
-//Recommended level 1+
-//Reward: 30-40g
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-#AL Staddle_AleDelivery {
-QuestInit "Staddle_AleDelivery" "radamal" "request employment"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Staddle_AleDelivery_Check {QuesterCheck $QuestName 1 100} $QuestName
-
-//----------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------
-#TR {Radamal tells you to deliver the beer} {get ale} $Settings
-#TR {Radamal tells you to deliver the beer to Gangee in Michel Delving.} {#WAIT 1000;#WALK mdbar;deliver ale to gangee} $Settings
-#TR {Radamal tells you to deliver the beer to Bubba's Leaping Stallion} {#WAIT 1000;#WALK combar;deliver ale to bubba} $Settings
-#TR {Radamal tells you to deliver the beer to Butterbur's Prancing Pony} {#WAIT 1000;#WALK Breebar;deliver ale to butterbur} $Settings
-#TR {Radamal tells you to deliver the beer to Bando's Green Dragon} {#WAIT 1000;#WALK hobbar;deliver ale to bando} $Settings
-#TR {Radamal tells you to deliver the beer to Bongo's beer tent} {#WAIT 1000;#WALK buckbar;deliver ale to bongo} $Settings
-#TR {Radamal tells you to deliver the beer to Lobo's Mended Fence Tavern} {#WAIT 1000;#WALK lobo;deliver ale to lobo} $Settings
-#TR {Radamal looks at you and says: Hmm... it looks like we don't have} {QuestAbort} $Settings
-#TR {*tells you to give this note to Radamal to receive your payment.} {#WAIT 1000;#WALK radamal;give note to radamal} $Settings
-#TR {Radamal is busy at the moment.} {QuestAbort} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

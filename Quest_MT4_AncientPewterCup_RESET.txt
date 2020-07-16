@@ -1,17 +1,0 @@
-//MT4_AncientPewterCup_RESET#CLASS 0#AL MT4_AncientPewterCup_RESET {$QuestName="MT4_AncientPewterCup"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT4_AncientPewterCup
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

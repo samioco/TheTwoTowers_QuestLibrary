@@ -1,17 +1,0 @@
-//Mirkwood_ElvenShortSword_RESET#CLASS 0#AL Mirkwood_ElvenShortSword_RESET {$QuestName="Mirkwood_ElvenShortSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mirkwood_ElvenShortSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

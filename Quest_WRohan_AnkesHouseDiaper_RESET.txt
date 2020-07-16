@@ -1,56 +1,0 @@
-//WRohan_AnkesHouseDiaper_RESET#CLASS 0#AL WRohan_AnkesHouseDiaper_RESET {$QuestName="WRohan_AnkesHouseDiaper"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: WRohan_AnkesHouseDiaper
-//Description: 
-//------------------------------------------------------------
-
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//a beautiful earring :   Worth 51 gold.
-//a diaper basket :   Worth 45 gold.
-//an old broom : You get 1 gold.
-//Reward: Max 85g
-//----------------------------------------------------------------------------------------------------
-//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
-//----------------------------------------------------------------------------------------------------
-//A diaper basket                         diaper basket       4    20   20   70   0         31.6
-//----------------------------------------------------------------------------------------------------
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL WRohan_AnkesHouseDiaper {
-QuestInit $QuestName "Anke_Shed" "do get broom,wield broom;#WALK anke;ask anke about baby""
-ActionAdd "#ALA Alarm_anke +10 {QuestAbort};ActionNext"
-MoveMe_To_WestArda
-} $QuestName
-
-
-#AL WRohan_AnkesHouseDiaper_Check {QuesterCheck $QuestName 1 100} $QuestName
-
-#TR {So will you watch Sophie?} {#UNT Alarm_anke;yes} $Settings
-#TR {Anke walks out of the room.} {wield broom;sweep floor} $Settings
-#TR {You sweep the floor.} {
-#SW (%roomid() = "anke") {#WALK anke_bedroom;sweep floor 
-} (%roomid() = "anke_bedroom") {sweep under bed
-} (%roomid() = "anke_nursery") {do drop broom,drop earring,wear earring;#WALK anke_shed;get basket;#WALK anke_nursery;do drop basket,get all from diaper basket into dirty basket,get basket 2,get earring into basket,get broom into basket;#WALK anke_shed;drop basket;#WALK anke_nursery;lift baby
-}
-} $Settings
-
-#TR {You sweep under the bed. Together with the dust, you also find an earring!} {get earring;#WALK anke_nursery;sweep floor} $Settings
-
-#TR {You can start changing the diaper now.} {unpin diaper} $Settings
-#TR {Next thing to do would be to dispose of it, before you smell it.} {dispose diaper} $Settings
-#TR {You can now anoint Sophie, before replacing the diaper.} {anoint sophie} $Settings
-#TR {You can place a fresh diaper on Sophie now.} {place diaper on sophie} $Settings
-#TR {You can lay her back in her crib now.} {lay sophie in crib} $Settings
-
-#TR {You carefully put Sophie back in her crib.} {
-ActionAdd "#WALK anke_shed;do put broom in basket,put earring in basket,get basket;ActionNext"
-do get earring into pack,get broom into pack,get earring,get broom
-out
-} $Settings
-
-//----------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

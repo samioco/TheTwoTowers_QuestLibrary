@@ -1,17 +1,0 @@
-//Rohan_RohanHelmet_RESET#CLASS 0#AL Rohan_RohanHelmet_RESET {$QuestName="Rohan_RohanHelmet"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rohan_RohanHelmet
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

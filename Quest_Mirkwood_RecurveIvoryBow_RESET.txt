@@ -1,23 +1,0 @@
-//Mirkwood_RecurveIvoryBow_RESET#CLASS 0#AL Mirkwood_RecurveIvoryBow_RESET {$QuestName="Mirkwood_RecurveIvoryBow"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mirkwood_RecurveIvoryBow
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Mirkwood_RecurveIvoryBow {
-QuestInit $QuestName "Recurve_Plank" "yank plank"
-MoveMe_To_Arda
-} $QuestName
-
-#TR {From Thranduil's domain I walked a few paces south} {#ECHO ribow3, thran,12s,w,push branches} $Settings
-#TR {From Thranduil's domain I walked a few leagues north} {#ECHO ribow4, thran do ne,5e,ne,16n,2e,squeeze through fissure} $Settings
-#TR {A few leagues from this house, past the southern plains} {#ECHO ribow2, dgsp-do w,3n,3e,part bough} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

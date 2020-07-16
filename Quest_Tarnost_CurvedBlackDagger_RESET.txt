@@ -1,17 +1,0 @@
-//Tarnost_CurvedBlackDagger_RESET#CLASS 0#AL Tarnost_CurvedBlackDagger_RESET {$QuestName="Tarnost_CurvedBlackDagger"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Tarnost_CurvedBlackDagger
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

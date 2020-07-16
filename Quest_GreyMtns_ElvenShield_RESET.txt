@@ -1,39 +1,0 @@
-//GreyMtns_ElvenShield_RESET#CLASS 0#AL GreyMtns_ElvenShield_RESET {$QuestName="GreyMtns_ElvenShield"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: GreyMtns_ElvenShield
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL GreyMtns_ElvenShield {
-#VAR GrinderGreyMtns_ElvenShield {"eshield_chief"} {} VAR
-GrinderQueue_Sell
-QuestInit $QuestName "elvenshield" "Grinder GrinderGreyMtns_ElvenShield"
-MoveMe_to_NorthArda
-} $QuestName
-
-#AL GreyMtns_ElvenShield_Check {QuesterCheck $QuestName 15 100} $QuestName
-
-#TR eshield_chiefRoomShort {^A Troll Council Room} {GrinderResetRoom;#T+ eshield_councilmembers;#T+ eshield_chief} $Settings
-#TR eshield_councilmembers {^ A Troll councilmember ~[(%d)~]} {#T- eshield_councilmembers;#IF (!@MobList) {#LOOP %1,2 {#ADDI MobList %concat("councilmember ",%i)};#ADDI MobList "councilmember"} {#VAR MobList {"councilmember 3|councilmember 2|councilmember|chief"} {} VAR};#ECHO Room_mobs: @MobList} $Settings
-#TR eshield_chief {^ A Troll Chief} {#T- eshield_chief;#ADDI MobList "chief";#ECHO Room_mobs: @MobList} $Settings
-
-#TR {Chief has died.} {
-ss
-get key from corpse of chief
-#WALK eshield;do unlock chest with crudely made key,drop key,open chest;get shield from chest;GearSwap "An elven shield"
-#LOOP %numitems(@MobList) {#WALK eshield_chief;GetAllNoHands
-#WALK elvenshield;s
-#SW ((@Gear_Pack) && (@Gear_Wagon)) {ptow
-} ((@Gear_Pack) && (@Gear_Panniers)) {ptop
-} ((@Gear_Pack) && (@Gear_Saddlebags)) {ptob}
-}
-} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

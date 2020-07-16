@@ -1,39 +1,0 @@
-//AstLower_CatchZombie_RESET#CLASS 0#AL AstLower_CatchZombie_RESET {$QuestName="AstLower_CatchZombie"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: AstLower_CatchZombie
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-#AL AstLower_CatchZombie {
-#VAR AstLower_CatchZombie_Status {} {} VAR
-#PATH AstLower_CatchZombie_Path {%concat("n2ej2ejnj2nhjnjnhnhwhwhwhwhn7h13n2j2ljljl2jljljljljl7ensk2swk14wkh19w2s2ws2wh3n2hn8h2nhnh16nhns5jelnwhn4w2se3sljewk8wkh9w2swk2wh4nses7e3wn6w3n11ejej9ne9n4se2s11e10sw2kh2wnews3j11eje2l9e2w2n8ej4n2e14n15ese2s2ejk5wsws2w2s2w2s2w3s2w2s2w2s2w2s2wkwkw3k3wk9w2h4jel29el2e3s12ej3e12n2e6ne2n2es2w2s2w2sw15s2esw5s4es2k2le2ls3k3sk2w2k3l3s2w3skse5w2nwhn6hw11k13s7lsl6es2w2sklskskl2sk2el3s3nh5wsk2wsn2ej2ejnj2nhjnjnhnhwhwhwhwhn7hwh2wh2w6hw3hj24n2e11n3jejej16ne2n16e5sws2w2s2w2s2w3s2w2s2w2s2w2s2wkwkw3k3wk11whn")} VAR
-QuestInit $QuestName "AsturIn" "AstLower_CatchZombie_Search"
-#VAR AstLower_CatchZombie_Status {"ask necromancer about help"} {} VAR
-AstLower_CatchZombie_Search
-} $QuestName
-
-#AL AstLower_CatchZombie_Check {QuesterCheck $QuestName 5 100} $QuestName
-
-#AL AstLower_CatchZombie_Search {
-#WALK AsturIn;#T+ Walker
-#SLOW AstLower_CatchZombie_Path
-#PAUSE
-} $QuestName
-
-#TR {^ An upset necromancer} {#IF (@AstLower_CatchZombie_Status="do ask necromancer about help,ask necromancer about slave,yes") {StopWalk;@AstLower_CatchZombie_Status}} $Settings
-#TR {Yes, I could really use help in finding the slave that escaped from} {
-#WALK AsturIn
-#VAR AstLower_CatchZombie_Status {"bind slave"} {} VAR
-} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

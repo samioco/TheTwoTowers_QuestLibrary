@@ -1,18 +1,0 @@
-//EastForest_SpikedHook_RESET#CLASS 0#AL EastForest_SpikedHook_RESET {$QuestName="EastForest_SpikedHook"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: EastForest_SpikedHook
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

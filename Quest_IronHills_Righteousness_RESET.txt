@@ -1,17 +1,0 @@
-//IronHills_Righteousness_RESET#CLASS 0#AL IronHills_Righteousness_RESET {$QuestName="IronHills_Righteousness"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: IronHills_Righteousness
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,18 +1,0 @@
-//HaradDesert_HurricaneSpell_RESET#CLASS 0#AL HaradDesert_HurricaneSpell_RESET {$QuestName="HaradDesert_HurricaneSpell"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: HaradDesert_HurricaneSpell
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

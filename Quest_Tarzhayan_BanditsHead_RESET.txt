@@ -1,18 +1,0 @@
-//Tarzhayan_BanditsHead_RESET#CLASS 0#AL Tarzhayan_BanditsHead_RESET {$QuestName="Tarzhayan_BanditsHead"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Tarzhayan_BanditsHead
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

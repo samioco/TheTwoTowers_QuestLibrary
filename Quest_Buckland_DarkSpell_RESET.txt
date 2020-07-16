@@ -1,17 +1,0 @@
-//Buckland_DarkSpell_RESET#CLASS 0#AL Buckland_DarkSpell_RESET {$QuestName="Buckland_DarkSpell"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Buckland_DarkSpell
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

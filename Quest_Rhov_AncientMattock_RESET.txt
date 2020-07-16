@@ -1,17 +1,0 @@
-//Rhov_AncientMattock_RESET#CLASS 0#AL Rhov_AncientMattock_RESET {$QuestName="Rhov_AncientMattock"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rhov_AncientMattock
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

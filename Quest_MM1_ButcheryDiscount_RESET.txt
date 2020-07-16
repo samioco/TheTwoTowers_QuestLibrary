@@ -1,17 +1,0 @@
-//MM1_ButcheryDiscount_RESET#CLASS 0#AL MM1_ButcheryDiscount_RESET {$QuestName="MM1_ButcheryDiscount"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MM1_ButcheryDiscount
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

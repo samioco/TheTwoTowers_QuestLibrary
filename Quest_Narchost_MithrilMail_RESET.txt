@@ -1,17 +1,0 @@
-//Narchost_MithrilMail_RESET#CLASS 0#AL Narchost_MithrilMail_RESET {$QuestName="Narchost_MithrilMail"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Narchost_MithrilMail
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,25 +1,0 @@
-//Kadar_LargeRoot_RESET#CLASS 0#AL Kadar_LargeRoot_RESET {$QuestName="Kadar_LargeRoot"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Kadar_LargeRoot
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Kadar_LargeRoot {
-QuestInit $QuestName "kadar_gourd" "get gourd;n;give gourd to soldier"
-MoveMe_To_Arda
-} $QuestName
-
-#AL Kadar_LargeRoot_Check {QuesterCheck $QuestName 5 1000} $QuestName
-
-#TR {Wounded soldier gives you a small note.} {#WALK KadH;give note to sandra} $Settings
-#TR {Sandra gives you a large root.} {do sell root,put root in pack} $Settings
-#TR {You do not have a gourd.} {#IF (%roomid()="Kadar_Soldier") {QuestAbort}} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

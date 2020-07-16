@@ -1,17 +1,0 @@
-//Pelennor_DeadlyDarkSpear_RESET#CLASS 0#AL Pelennor_DeadlyDarkSpear_RESET {$QuestName="Pelennor_DeadlyDarkSpear"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Pelennor_DeadlyDarkSpear
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

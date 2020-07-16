@@ -1,17 +1,0 @@
-//Mirkwood_BrassNeckband_RESET#CLASS 0#AL Mirkwood_BrassNeckband_RESET {$QuestName="Mirkwood_BrassNeckband"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mirkwood_BrassNeckband
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

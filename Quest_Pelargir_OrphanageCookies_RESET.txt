@@ -1,57 +1,0 @@
-//Pelargir_OrphanageCookies_RESET#CLASS 0#AL Pelargir_OrphanageCookies_RESET {$QuestName="Pelargir_OrphanageCookies"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Pelargir_OrphanageCookies
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL Pelargir_OrphanageCookies {
-#VAR QuestName {"Pelargir_OrphanageCookies"} {} VAR
-#VAR Pelargir_Orphans {"marlach|adanor|meregon|lili|emma"} {} VAR
-#VAR Pelargir_Orphans_i {0} {} $QuestName
-#VAR Pelargir_OrphanageCookies_FaveOrphan {} {} VAR
-#IF (%ismember(%0,@Pelargir_Orphans)) {
-  #VAR Pelargir_OrphanageCookies_FaveOrphan {%0} {} VAR
-}
-#IF (@Pelargir_OrphanageCookies_FaveOrphan) {#5 {#ADDI Pelargir_Orphans @Pelargir_OrphanageCookies_FaveOrphan}}
-ActionAdd "QuestOn Pelargir_OrphanageCookies;offer help"
-ActionAdd "#WALK maell;sss;ActionNext"
-MoveMe_To_Arda
-} $QuestName
-
-#AL Pelargir_OrphanageCookies_Check {QuesterCheck $QuestName 5 100} $QuestName
-
-
-#TR {Seraphine leaves %1.} {#MO %1} $Settings
-#TR {Maell gives you a small basket.} {#WALK Seraphine;give basket to seraphine} $Settings
-#TR {Maell says*: Sorry, but someone was kind enough to offer} {QuestAbort} $Settings
-#TR {Seraphine peeks inside the basket.} {SysMsg Orphan List: @Pelargir_Orphans} $Settings
-
-#TR {Seraphine gives you a small basket.} {
-#VAR Pelargir_Orphans_i {1} {} VAR
-do get cookie from basket,give cookie to %item(@Pelargir_Orphans,@orphan_i)
-} $Settings
-
-#TR {You give %1 a * cookie.} {
-#ADD Pelargir_Orphans_i 1
-#IF (@Pelargir_Orphans_i>%numitems(@Pelargir_Orphans)) {#VAR Pelargir_Orphans_i {1} {} VAR}
-#ALA "cookies" {+3} {do get cookie from basket,give cookie to %item(Pelargir_Orphans,@Pelargir_Orphans_i)}
-} $Settings
-
-#TR {The children seem to be too busy discussing now.} {
-#UNT cookies
-#ALA "cookies" {+3} {do get cookie from basket,give cookie to %item(@Pelargir_Orphans,@Pelargir_Orphans_i)}
-} $Settings
-
-#TR {You do not have a cookie.} {#UNT cookies} $Settings
-#TR {Seraphine says*: Hmm, someone brought me Maell's cookies} {QuestAbort} $Settings
-#TR {Seraphine leaves east.} {drop basket;QuestAbort} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

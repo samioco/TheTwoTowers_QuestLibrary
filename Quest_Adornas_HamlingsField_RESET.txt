@@ -1,59 +1,0 @@
-//Adornas_HamlingsField_RESET#CLASS 0#AL Adornas_HamlingsField_RESET {$QuestName="Adornas_HamlingsField"
-$Settings=%concat($QuestName,"|Settings")
-
-//----------------------------------------------------------------------------------------------------
-//Quest Name: Adornas_HamlingsField
-//----------------------------------------------------------------------------------------------------
-//Description: Find a pick in the quarry and return it to a miner.
-//Returning to one-eyed miner (wandering mob) gets quest point and 65g
-//Returning to quarry guard gets 60g and no quest point, but guard's position is static and easier.
-
-//Requirements:
-//Recommended level 1 - 5 (Maximum)
-//Reward: 25g
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-#AL Adornas_HamlingsField {
-ActionAdd "#WALK hamling;do drop hoe,drop bucket,drop bag;ActionNext"
-QuestInit $QuestName "hamling" "offer help"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Adornas_HamlingsField_Check {QuesterCheck $QuestName 1 6} $QuestName
-
-#AL Adornas_HamlingsField_HoeField {#LOOP 1,4 {#WALK %concat("hamling_field",%i);hoe row};#WALK hamling;drop hoe;check in with hamling} $QuestName
-
-#AL Adornas_HamlingsField_PlantSeeds {#WALK hamling;do drop bucket,get bag of grain;#LOOP 1,4 {#WALK %concat("hamling_field",%i);plant seeds}} $QuestName
-#AL Adornas_HamlingsField_WaterSeeds {#WALK hamling;do drop bag of grain,get bucket;#LOOP 1,4 {#WALK %concat("hamling_field",%i);water seeds}} $QuestName
-
-#AL Adornas_HamlingsField_Plant_And_Water_Seeds {
-ActionAdd "#WALK hamling_creek;draw water from creek"
-ActionAdd "#WALK hamling;do drop bag of grain,get bucket;ActionNext"
-ActionAdd "Adornas_HamlingsField_PlantSeeds;ActionNext"
-ActionNext
-} $QuestName
-
-//----------------------------------------------------------------------------------------------------
-#TR {Hamling says: I've already been offered help.} {QuestAbort} $Settings
-#TR {Surely someone of your adventuring stature could find something better to do!} {QuestAbort} $Settings
-
-#TR {Hamling gives you a small, dull copper key.} {#WALK hamling_shed;do unlock shed with key,drop all key,open shed,get hoe from shed,get hoe,drop hoe 2,wield hoe} $Settings
-#TR {Hamling says*: You have already offered help!  Now go hoe a field while I} {#WALK hamling_shed;do unlock shed with key,drop all key,open shed,get hoe from shed,get hoe,drop hoe 2,wield hoe} $Settings
-#TR {You do not have any keys.} {QuestAbort} $Settings
-//#TR {An old dilapidated shed unlocks with a click.}
-#TR {You wield a worn hoe.} {Adornas_HamlingsField_HoeField} $Settings
-#TR {Hamling says*: Go hoe a field while I look for the seeds!} {do drop hoe,drop bucket,drop bag;QuestAbort} $Settings
-
-//#TR {grow!  Come back and report to me when you get done planting.} {#WAIT 2000;#WALK hamling_creek;draw water from creek} $Settings
-#TR {Hamling gives you a worn wooden bucket.} {drop bucket} $Settings
-//#TR {Hamling drops a worn wooden bucket.} {do drop bag,get bucket} $Settings
-#TR {Hamling drops a bag of grain.} {drop bucket;Adornas_HamlingsField_Plant_And_Water_Seeds} $Settings
-#TR {Hamling gives you a bag of grain.} {drop bucket;Adornas_HamlingsField_Plant_And_Water_Seeds} $Settings
-
-#TR {{"You fill the bucket.|But it is already full..."}} {ActionAdd "#WALK hamling;do drop bucket,drop bag;report to hamling";Adornas_HamlingsField_WaterSeeds;ActionNext} $Settings
-
-#TR {Hamling says*: You still need to plant and water the seeds!} {#WAIT 1000;Adornas_HamlingsField_Plant_And_Water_Seeds} $Settings
-
-//----------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

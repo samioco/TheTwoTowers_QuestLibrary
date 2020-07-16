@@ -1,17 +1,0 @@
-//MT7_RobbingtheVault_RESET#CLASS 0#AL MT7_RobbingtheVault_RESET {$QuestName="MT7_RobbingtheVault"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT7_RobbingtheVault
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

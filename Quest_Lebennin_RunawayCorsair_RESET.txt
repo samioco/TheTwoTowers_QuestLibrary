@@ -1,28 +1,0 @@
-//Lebennin_RunawayCorsair_RESET#CLASS 0#AL Lebennin_RunawayCorsair_RESET {$QuestName="Lebennin_RunawayCorsair"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Lebennin_RunawayCorsair
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//A small green medallion
-//Membership of Lord Aragorn's Army
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL Lebennin_RunawayCorsair {
-QuestInit $QuestName "Lebennin_Rangers" "do ask halladar about corsairs,read parchment"
-MoveMe_To_Arda
-} $QuestName
-
-#AL Lebennin_RunawayCorsair_Check {#IF (%ismember(@MyTrueAlign,@Alignments_Moral)) {QuesterCheck $QuestName 5 1000}} $QuestName
-
-#TR {The ranger hands you a piece of parchment with a map of the area sketched} {#WALK lebennin_corsair;l pirate} $Settings
-#TR {You are face to face with one of the Corsairs of Umbar.} {#WALK lebennin_rangers;report location} $Settings
-#TR {Halladar is nowhere to be found.} {QuestAbort} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

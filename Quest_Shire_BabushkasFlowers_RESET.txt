@@ -1,33 +1,0 @@
-//Shire_BabushkasFlowers_RESET#CLASS 0#AL Shire_BabushkasFlowers_RESET {$QuestName="Shire_BabushkasFlowers"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Shire_BabushkasFlowers
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended leve:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Shire_BabushkasFlowers {
-QuestInit "Shire_BabushkasFlowers" "Babushka" "sss;offer help"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Shire_BabushkasFlowers_Check {
-QuesterCheck "Shire_BabushkasFlowers" 1 1000
-} $QuestName
-
-#TR {You have already offered to help Babushka.} {#WALK babushka_barn;search hay} $Settings
-#TR {Babushka says*: Ah, yes, I could certainly use some help with the chores} {#WALK babushka_barn;search hay} $Settings
-
-#TR {As you search through the pile, you feel something and pull it out.} {wear gloves} $Settings
-#TR {You wear old torn gloves} {get bucket} $Settings
-#TR {You pull the bucket from the dark shadows.} {scoop water into bucket} $Settings
-#TR {You fill the bucket.} {#WALK babushka_roses;pull weeds} $Settings
-#TR {As you pull out the very last weed it somehow slashes the gloves.} {water flowers} $Settings
-#TR {you go around gathering the flowers into a beautiful bouquet.} {#WALK babushka;give flowers to babushka} $Settings
-#TR {You do not have a flowers.} {QuestAbort} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

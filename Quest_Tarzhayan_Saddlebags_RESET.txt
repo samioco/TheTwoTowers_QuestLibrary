@@ -1,31 +1,0 @@
-//Tarzhayan_Saddlebags_RESET#CLASS 0#AL Tarzhayan_Saddlebags_RESET {$QuestName="Tarzhayan_Saddlebags"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Tarzhayan_Saddlebags
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Tarzhayan_Saddlebags {
-QuestInit "Tarzhayan_Saddlebags" "TarBags" "ws;pull fabric from pile"
-MoveMe_To_FH
-} $QuestName
-
-#AL Tarzhayan_Saddlebags_Check {QuesterCheck $QuestName 10 1000} $QuestName
-
-#TR {There is no roll of fabric in the pile to pull.} {QuestAbort} $Settings
-#TR {You do not have a fabric.} {QuestAbort} $Settings
-#TR {You do not have a paper.} {QuestAbort} $Settings
-
-//#TR {You are too busy with the battle to worry about pulling anything!} {} $Settings
-#TR {bleeding to death} {kill} $Settings
-#TR {Hoodlum has died.} {sss;pull fabric from pile} $Settings
-#TR {You dig through the pile and pull out a shiny bolt of silk cLoth!} {get bolt;#WALK TarzBazaar;give fabric to merchant} $Settings
-#TR {Merchant gives you a small piece of paper.} {#WALK TarzStable;give paper to stableboy} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Umbar_ProfessionalWeapon_RESET#CLASS 0#AL Umbar_ProfessionalWeapon_RESET {$QuestName="Umbar_ProfessionalWeapon"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Umbar_ProfessionalWeapon
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

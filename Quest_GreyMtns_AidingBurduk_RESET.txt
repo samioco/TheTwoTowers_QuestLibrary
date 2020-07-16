@@ -1,40 +1,0 @@
-//GreyMtns_AidingBurduk_RESET#CLASS 0#AL GreyMtns_AidingBurduk_RESET {$QuestName="GreyMtns_AidingBurduk"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: GreyMtns_AidingBurduk
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level: 6
-//Reward: 
-//a blackened spear :   Worth 17 gold.
-//a steel dagger inlaid with onyx :   Worth 28 gold.
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL GreyMtns_AidingBurduk {
-QuestInit $QuestName "Burduk" "aid burduk"
-MoveMe_To_FH
-} $QuestName
-
-#AL GreyMtns_AidingBurduk_Check {QuesterCheck $QuestName 6 100} $QuestName
-
-
-#TR {whispers, "You MUST find them soon!  My life depends on it!  HURRY!"} {
-#WALK BurdukVoices
-ws
-listen to voices
-} $Settings
-
-#TR {bleeding to death} {kill} $Settings
-
-#TR {Burduk says in Westron: I am in your debt, please take whatever you} {
-sss
-GetAll 3
-} $Settings
-
-#TR {Burduk tells you: Eh, I knew you were not going to help after all.} {QuestAbort} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

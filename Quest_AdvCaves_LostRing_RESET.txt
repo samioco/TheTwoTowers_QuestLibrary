@@ -1,43 +1,0 @@
-//AdvCaves_LostRing_RESET#CLASS 0#AL AdvCaves_LostRing_RESET {$QuestName="AdvCaves_LostRing"
-$Settings=%concat($QuestName,"|Settings")
-
-//----------------------------------------------------------------------------------------------------
-//Quest Name: Adv.Caves_LostRing
-//----------------------------------------------------------------------------------------------------
-//Description:
-//Find a wizard in the adventurer's caves (newbie area), and help him with his
-//problem. Kill the orc and clear out the wizard's home.
-
-//Requirements:
-//Recommended level 1 - 5 (Maximum)
-//Reward: A ratty mining pack (50g)
-//----------------------------------------------------------------------------------------------------
-//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
-//----------------------------------------------------------------------------------------------------
-//A ratty mining pack                     ratty pack          -1   0    0    20   55        -2.4
-//----------------------------------------------------------------------------------------------------
-
-#AL AdvCaves_LostRing {
-QuestInit $QuestName "advcave_lostring" "light crystal"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL AdvCaves_LostRing_Check {
-QuesterCheck $QuestName 2 5
-} $QuestName
-
-#TR {@Messages_Sight_On} {#IF (%roomid=advlostring) {sw;do search barrel,search under table,fix tackle}} $Settings
-#TR {{"to make the device operational.|The tackle is fixed already."}} {climb down} $Settings
-#TR {intensive bit of climbing you spot a ledge, and swing onto it.} {ws;search shadows} $Settings
-#TR {You're too tired to search now.} {#WAIT 1000;rest} $Settings
-#TR {bleeding to death} {kill} $Settings
-#TR {Sneaky thief has died.} {ss;get all from corpse} $Settings
-#TR {a copper ring with a faded crest : Ok.} {climb up} $Settings
-#TR {You grab the rope and climb up the mineshaft.} {get @wep;#WALK advcave_lostring;give ring to dwarf} $Settings
-#TR {You need a free hand for that.} {drop ring;climb up;drop @wep;climb down;do get ring from corpse,get ring;climb up} $Settings
-#TR {Tori says*: Ahh...  That's me father's ring alright.  Here, take this} {GearSwap "A ratty mining pack"} $Settings
-#TR {You search the shadows, but find nothing.} {QuestAbort} $Settings
-
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

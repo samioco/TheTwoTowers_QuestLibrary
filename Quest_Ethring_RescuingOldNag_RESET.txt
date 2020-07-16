@@ -1,17 +1,0 @@
-//Ethring_RescuingOldNag_RESET#CLASS 0#AL Ethring_RescuingOldNag_RESET {$QuestName="Ethring_RescuingOldNag"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Ethring_RescuingOldNag
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

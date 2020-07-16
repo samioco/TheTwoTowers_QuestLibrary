@@ -1,29 +1,0 @@
-//WRohan_WhiteStallion_RESET#CLASS 0#AL WRohan_WhiteStallion_RESET {$QuestName="WRohan_WhiteStallion"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: WRohan_WhiteStallion
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended leve:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL WRohan_WhiteStallion {
-QuestInit $QuestName "WhiteStallion_Dress" "get dress;#WALK WhiteStallion_Barn;give dress to laina"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL WRohan_WhiteStallion_Check {#IF (@MyCharisma>=50) {QuesterCheck $QuestName 1 100}} $QuestName
-
-//#TR {There is no dress here to get.} {QuestAbort}
-#TR {I do not see laina here.} {QuestAbort} $Settings
-#TR {You do not have a dress.} {QuestAbort} $Settings
-#TR {Svend gives you a wooden whistle.} {#WALK whitestallion;whistle at stallion} $Settings
-#TR {You don't have a whistle on you.} {QuestAbort} $Settings
-#TR {horse would follow you just about everywhere if you lead it.} {lead @MyNamePossessive stallion} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

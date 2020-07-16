@@ -1,17 +1,0 @@
-//Havens_ShipBuilding_RESET#CLASS 0#AL Havens_ShipBuilding_RESET {$QuestName="Havens_ShipBuilding"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Havens_ShipBuilding
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

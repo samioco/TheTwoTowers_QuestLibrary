@@ -1,17 +1,0 @@
-//DharanSar_SmashingtheChest_RESET#CLASS 0#AL DharanSar_SmashingtheChest_RESET {$QuestName="DharanSar_SmashingtheChest"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: DharanSar_SmashingtheChest
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,30 +1,0 @@
-//Baraddur_OrcDoctorsVial_RESET#CLASS 0#AL Baraddur_OrcDoctorsVial_RESET {$QuestName="Baraddur_OrcDoctorsVial"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Baraddur_OrcDoctorsVial
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Baraddur_OrcDoctorsVial {
-QuestInit "Baraddur_OrcDoctorsVial" "RedH" "agree"
-MoveMe_To_Mordor
-} $QuestName
-
-#AL Baraddur_OrcDoctorsVial_Check {QuesterCheck $QuestName 1 1000} $QuestName
-
-#TR {Orc says*: Too late, me already getting task done.} {QuestAbort} $Settings
-
-#TR {it on the table before you.  He points at it and smiles madly at you.} {do get vial,open vial} $Settings
-#TR {You open a small glass vial.} {#WALK OrcVialGas;trap gas} $Settings
-#TR {to breathe it at all.  Success!} {#WALK RedH;give glass vial to doctor} $Settings
-#TR {noxious gas and fall to the ground, choking.} {#WAIT 1000;trap gas} $Settings
-#TR {You regain consciousness.} {#WAIT 1000;trap gas} $Settings
-#TR {The lunatic places yet another vial on the table, smiling and waving for} {get vial} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

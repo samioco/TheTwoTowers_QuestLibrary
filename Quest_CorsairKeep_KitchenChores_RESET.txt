@@ -1,32 +1,0 @@
-//CorsairKeep_KitchenChores_RESET#CLASS 0#AL CorsairKeep_KitchenChores_RESET {$QuestName="CorsairKeep_KitchenChores"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: CorsairKeep_KitchenChores
-//Description: 
-//------------------------------------------------------------
-//Description:
-//Help the kitchen chef.
-
-//Requirements:
-//Must be able to enter Corsair Keep: Evil race, Evil Alignment
-//Reward: an empty, carved wooden pipe
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL CorsairKeep_KitchenChores {
-QuestInit $QuestName "CorKit" "do ask chef about help,offer help"
-MoveMe_To_Arda
-} $QuestName
-
-#AL CorsairKeep_KitchenChores_Check {
-#IF (%ismember(@MyPublicAlign,@Alignments_Evil) && (%ismember(@MyPublicRace,@Races_Immoral))) {QuesterCheck $QuestName 5 100}
-} $QuestName
-
-#TR {Chef says in some strange tongue: lamtuhiyya' azunn mawiskan} {slice meat} $Settings
-#TR {Finally done slicing the meat, you drop the cleaver and step back.} {dice vegetables} $Settings
-#TR {Tears well up in your eyes as you dice some onions.  You put down the cleaver.} {cut herbs} $Settings
-#TR {Chef says in some strange tongue: Well, akhbarsharqi. bar cail bar} {QuestAbort} $Settings
-//#TR {Chef gives you %d gold coins, which you quickly pocket.} {questend}  CorsairKeep_KitchenChores|Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

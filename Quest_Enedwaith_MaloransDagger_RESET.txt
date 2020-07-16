@@ -1,14 +1,0 @@
-//Enedwaith_MaloransDagger_RESET#CLASS 0#AL Enedwaith_MaloransDagger_RESET {$QuestName="Enedwaith_MaloransDagger"
-$Settings=%concat($QuestName,"|Settings")
-
-
-//----------------------------------------------------------------------------------------------------
-//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
-//----------------------------------------------------------------------------------------------------
-//A deadly dagger                    deadly dagger  dagger    1H   56   58   40   850       114.0
-//----------------------------------------------------------------------------------------------------
-
-#AL Enedwaith_MaloransDagger {
-QuestInit "Enedwaith_MaloransDagger" "maloran_scout" "ws;kill scout"
-MoveMe_To_WestArda
-} $QuestName} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Calembel_KillingtheThieves_RESET#CLASS 0#AL Calembel_KillingtheThieves_RESET {$QuestName="Calembel_KillingtheThieves"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Calembel_KillingtheThieves
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

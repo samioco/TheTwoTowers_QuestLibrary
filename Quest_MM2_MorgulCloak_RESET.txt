@@ -1,60 +1,0 @@
-//MM2_MorgulCloak_RESET#CLASS 0#AL MM2_MorgulCloak_RESET {$QuestName="MM2_MorgulCloak"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MM2_MorgulCloak
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//--------------------------------------------------------------------------------------------------------------
-//Gear                               ID                       DR   Def  Abs  Wgt  Dura Capa Score   Notes
-//--------------------------------------------------------------------------------------------------------------
-//A charred Morgul guard cloak       Morgul cloak             -1   0    0    25   0    150  125.0   body
-//--------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL MM2_MorgulCloak {
-$room=%roomnum()
-#VAR MM2_MorgulCloak_CampAttempts {0} {} VAR
-#IF (@Mounted) {dismount}
-QuestInit $QuestName $room "camp"
-MoveMe_To_Arda
-} $QuestName
-
-#AL MM2_MorgulCloak_Check {#IF (%ismember(@MyTrueAlign,"demonic|shadowspawn of mordor")) {#ADDKEY QuesterCheck 1 MM2_MorgulCloak}} $QuestName
-
-#TR {You cannot do that while mounted!} {dismount;camp} $Settings 
-#TR {You can't seem to get a fire to start.} {#WAIT 500;camp} $Settings 
-
-#TR {You {"build|manifest"} a * fire} {pull brand from fire} $Settings
-#TR {You fail to make the fire any bigger.} {pull brand from fire} $Settings
-
-#TR {You burn yourself in your haste to grab the brand} {
-#ADD MM2_MorgulCloak_CampAttempts 1
-#IF ((@MM2_MorgulCloak_CampAttempts<=10) && (%mud.hp>=100) AND (%mud.ep>=100)) {
-  #WAIT 200;pull brand from fire
-} {
-  drop brand
-  QuestAbort
-}
-} $Settings
-
-//Need camp success texts, and camp failures
-#TR {You pull a brand from the fire.} {#WALK MMLamp;do push clothing aside,search box} $Settings
-
-#TR {You search through the box but find nothing.} {drop brand;QuestAbort} $Settings
-#TR {You search through the box and discover a vial of oil!} {4fill lamp} $Settings
-
-#TR {Fear overwhelms you as you approach the wreckage.  You can not} {drop all brand;QuestAbort} $Settings
-
-#TR {Slave gives you a crystal vial.} {#WALK MMScav;give vial to orc} $Settings
-#TR {I do not see orc here.} {#WALK MMShop;do sell vial,drop vial,drop brand;QuestAbort} $Settings
-
-#TR {A scavenger orc drops a bottle of oil on the ground and leaves} {get bottle;#WALK mmcloak;do burn guard,drop torch,drop brand} $Settings
-#TR {burn whom?} {do drop brand,drop bottle;QuestAbort} $Settings
-
-#TR {and begins to scream with panic.  He tosses his cloak on the ground and} {do drop brand,get cloak,wear cloak,tag cloak} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

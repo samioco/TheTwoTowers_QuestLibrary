@@ -1,9 +1,0 @@
-//Eriador_KillingMalbrun_RESET#CLASS 0#AL Eriador_KillingMalbrun_RESET {$QuestName="Eriador_KillingMalbrun"
-$Settings=%concat($QuestName,"|Settings")
-
-#AL Eriador_KillingMalbrun {
-QuestInit $QuestName "Malbrun" "ws;kill mabrun"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Eriador_KillingMalbrun_Check {QuesterCheck $QuestName 12 100} $QuestName} Tools_QuestList#CLASS 0

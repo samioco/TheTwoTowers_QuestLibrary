@@ -1,17 +1,0 @@
-//Rohan_CarvedWarHorn_RESET#CLASS 0#AL Rohan_CarvedWarHorn_RESET {$QuestName="Rohan_CarvedWarHorn"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rohan_CarvedWarHorn
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

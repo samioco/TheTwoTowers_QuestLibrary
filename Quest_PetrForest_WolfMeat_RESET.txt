@@ -1,17 +1,0 @@
-//PetrForest_WolfMeat_RESET#CLASS 0#AL PetrForest_WolfMeat_RESET {$QuestName="PetrForest_WolfMeat"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: PetrForest_WolfMeat
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

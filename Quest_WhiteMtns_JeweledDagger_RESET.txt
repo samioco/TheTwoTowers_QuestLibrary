@@ -1,17 +1,0 @@
-//WhiteMtns_JeweledDagger_RESET#CLASS 0#AL WhiteMtns_JeweledDagger_RESET {$QuestName="WhiteMtns_JeweledDagger"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: WhiteMtns_JeweledDagger
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,18 +1,0 @@
-//EastForest_BabyMonkey_RESET#CLASS 0#AL EastForest_BabyMonkey_RESET {$QuestName="EastForest_BabyMonkey"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: EastForest_BabyMonkey
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Lothlorien_ShapehideSpell_RESET#CLASS 0#AL Lothlorien_ShapehideSpell_RESET {$QuestName="Lothlorien_ShapehideSpell"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Lothlorien_ShapehideSpell
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

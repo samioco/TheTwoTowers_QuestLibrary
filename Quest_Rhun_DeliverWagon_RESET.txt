@@ -1,17 +1,0 @@
-//Rhun_DeliverWagon_RESET#CLASS 0#AL Rhun_DeliverWagon_RESET {$QuestName="Rhun_DeliverWagon"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rhun_DeliverWagon
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

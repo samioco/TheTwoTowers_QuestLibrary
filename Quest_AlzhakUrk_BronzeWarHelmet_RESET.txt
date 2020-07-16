@@ -1,17 +1,0 @@
-//AlzhakUrk_BronzeWarHelmet_RESET#CLASS 0#AL AlzhakUrk_BronzeWarHelmet_RESET {$QuestName="AlzhakUrk_BronzeWarHelmet"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: AlzhakUrk_BronzeWarHelmet
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

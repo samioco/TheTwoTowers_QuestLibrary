@@ -1,17 +1,0 @@
-//Erebor_GreatTwohandedAxe_RESET#CLASS 0#AL Erebor_GreatTwohandedAxe_RESET {$QuestName="Erebor_GreatTwohandedAxe"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Erebor_GreatTwohandedAxe
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

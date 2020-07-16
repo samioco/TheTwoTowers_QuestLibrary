@@ -1,26 +1,0 @@
-//Rhov_GhostMusician_RESET#CLASS 0#AL Rhov_GhostMusician_RESET {$QuestName="Rhov_GhostMusician"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rhov_GhostMusician
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Rhov_GhostMusician {
-QuestOn Rhov_GhostMusician 
-#SW (%roomid="jbr") {ss;request necklace} (%roomid="ghost") {present necklace}
-} $QuestName
-
-#TR {Thayr has died.} {#SW (@MyProf=archer) {sal} {ss};GetAllNoHands;#WALK JBR;ptow;request necklace} $Settings
-
-#TR {Slave gives you a beautiful necklace of bear teeth.} {#WALK ghost;present necklace} $Settings
-#TR {Rybik says*: This is the one!  My mother's necklace!} {place necklace on table} $Settings
-//#TR {Rybik says*: Please place the necklace on the table} {place necklace on table} $Settings
-#TR {take the quilt off the wall.  As you do so, you notice a small niche} {do look niche,get key,unlock chest,open chest,get all from chest} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

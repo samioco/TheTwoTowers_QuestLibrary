@@ -1,17 +1,0 @@
-//Mirkwood_EnchantedStaff_RESET#CLASS 0#AL Mirkwood_EnchantedStaff_RESET {$QuestName="Mirkwood_EnchantedStaff"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mirkwood_EnchantedStaff
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,40 +1,0 @@
-//AstLower_Apparatus_RESET#CLASS 0#AL AstLower_Apparatus_RESET {$QuestName="AstLower_Apparatus"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: AstLower_Apparatus
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level: 4+?
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL AstLower_Apparatus {
-QuestInit $QuestName "AsturVial" "get vial"
-MoveMe_To_FH
-} $QuestName
-
-#AL AstLower_Apparatus_Check {QuesterCheck $QuestName 5 100} $QuestName
-
-#TR {Ok.} {
-#SW (%lower(%roomid())=%lower("AsturVial")) {
-  #WALK AsturFlask;do push table,get flask
-} (%lower(%roomid())=%lower("AsturFlask")) {
-  #WALK AsturLab;read paper}
-} $Settings
-
-#TR {There is no {"vial|flask"} here to get.} {QuestAbort} $Settings
-#TR {You place the beaker on the stand.} {do pour flask into apparatus,pour vial into beaker,twist knob} $Settings
-#TR {We seem to be running short on vials - someone keeps breaking them all.} {do affix tube,kindle fire,place beaker} $Settings
-#TR {You place the beaker on the stand.} {do pour flask into apparatus,pour vial into beaker,twist knob} $Settings
-#TR {vacuum by sucking on the hose and removing some air out of it!} {suck on hose} $Settings
-#TR {The beaker is too close to the fire.  You must turn it quickly!} {turn beaker} $Settings
-//#TR {} {rattle tubes} $Settings
-#TR {The apparatus begins to sputter as it nears the end of its cycle.} {ws} $Settings
-#TR {bleeding to death} {kill} $Settings
-#TR {Slave has died.} {sss;get all from corpse} $Settings
-#TR {The apparatus is spent!  Leave it be.} {QuestAbort} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

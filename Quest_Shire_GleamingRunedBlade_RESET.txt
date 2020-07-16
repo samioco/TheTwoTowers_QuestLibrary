@@ -1,17 +1,0 @@
-//Shire_GleamingRunedBlade_RESET#CLASS 0#AL Shire_GleamingRunedBlade_RESET {$QuestName="Shire_GleamingRunedBlade"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Shire_GleamingRunedBlade
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Mordor_TwohandedOrcSword_RESET#CLASS 0#AL Mordor_TwohandedOrcSword_RESET {$QuestName="Mordor_TwohandedOrcSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mordor_TwohandedOrcSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

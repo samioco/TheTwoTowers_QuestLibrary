@@ -1,17 +1,0 @@
-//Fangorn_SilverleafsDraught_RESET#CLASS 0#AL Fangorn_SilverleafsDraught_RESET {$QuestName="Fangorn_SilverleafsDraught"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Fangorn_SilverleafsDraught
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

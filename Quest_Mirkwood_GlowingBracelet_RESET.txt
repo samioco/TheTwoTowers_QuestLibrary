@@ -1,24 +1,0 @@
-//Mirkwood_GlowingBracelet_RESET#CLASS 0#AL Mirkwood_GlowingBracelet_RESET {$QuestName="Mirkwood_GlowingBracelet"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mirkwood_GlowingBracelet
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: glowing silver bracelet: 9g
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Mirkwood_GlowingBracelet {
-QuestInit $QuestName "Privy_Bracelet" "search filth"
-MoveMe_To_Rhos
-} $QuestName
-
-#AL Mirkwood_GlowingBracelet_Check {QuesterCheck $QuestName 5 100} $QuestName
-
-#TR {While poking through the noisome waste you find a bracelet!  It shines with} {do get bracelet into pack,get bracelet;#WALK thranshop;do sell all from pack,sell all} $Settings
-#TR {Whatever was once here is gone now.} {QuestAbort} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

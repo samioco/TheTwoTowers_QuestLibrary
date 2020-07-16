@@ -1,17 +1,0 @@
-//Gundabad_PearlCarapace_RESET#CLASS 0#AL Gundabad_PearlCarapace_RESET {$QuestName="Gundabad_PearlCarapace"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Gundabad_PearlCarapace
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

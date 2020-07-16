@@ -1,45 +1,0 @@
-//TheWild_SindarinSword_RESET#CLASS 0#AL TheWild_SindarinSword_RESET {$QuestName="TheWild_SindarinSword"
-$Settings=%concat($QuestName,|Settings)
-//----------------------------------------------------------------------------------------------------
-//Quest Name: TheWild_SindarinSword
-//----------------------------------------------------------------------------------------------------
-//Description: Defeat some trolls and take their treasure
-//Requirements:
-//Recommended level 1+
-//----------------------------------------------------------------------------------------------------
-//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
-//----------------------------------------------------------------------------------------------------
-//A sindarin sword                   sindarin swor  sword     1H   25   25   80   1350      50.0
-//----------------------------------------------------------------------------------------------------
-
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-#AL TheWild_SindarinSword {
-QuestInit $QuestName "Riv_Troll_Cave" "do get torch,wield torch,light torch;ws;s;kill troll"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL TheWild_SindarinSword_Check {QuesterCheck $QuestName 1 25} $QuestName
-
-//----------------------------------------------------------------------------------------------------
-#TR {Kill what?  You can't see a thing!} {do drop all torch,light crystal;kill troll} $Settings
-#TR {You don't see crystal to light.} {n;do extinguish torch,drop torch;QuestAbort} $Settings
-#TR {You search the hay; all you get out of the effort is a sneeze.} {n;do extinguish torch,drop torch,extinguish crystal;QuestAbort} $Settings
-#TR {Wait a minute, you're still busy!} {#WAIT 2000;kill troll} $Settings
-#TR {bleeding to death} {kill} $Settings
-#TR {Angry troll has died.} {get all from corpse;kill troll} $Settings
-#TR {You don't see that here.} {#WAIT 2000;ss;drop torch;search hay} $Settings
-#TR {You are too busy to do that now!} {#WAIT 2000;search hay} $Settings
-#TR {Ah yes, you overlooked it once before, but there is a sword hidden} {sss;get sword;GearSwap "A sindarin sword";n;do extinguish torch,drop torch,extinguish crystal;#WALK rivshop;do sell all from pack,sell all} $Settings
-
-#TR {You run %1.} {
-$action="";#UNT "Alarm_Rest"
-#SW (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}}
-SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000
-rest on
-#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
-} $Settings
-
-//----------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

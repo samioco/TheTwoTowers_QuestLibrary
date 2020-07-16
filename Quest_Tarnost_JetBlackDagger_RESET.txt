@@ -1,17 +1,0 @@
-//Tarnost_JetBlackDagger_RESET#CLASS 0#AL Tarnost_JetBlackDagger_RESET {$QuestName="Tarnost_JetBlackDagger"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Tarnost_JetBlackDagger
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

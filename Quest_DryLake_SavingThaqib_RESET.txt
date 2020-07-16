@@ -1,17 +1,0 @@
-//DryLake_SavingThaqib_RESET#CLASS 0#AL DryLake_SavingThaqib_RESET {$QuestName="DryLake_SavingThaqib"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: DryLake_SavingThaqib
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

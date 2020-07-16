@@ -1,17 +1,0 @@
-//Ithilien_IntimidatingSword_RESET#CLASS 0#AL Ithilien_IntimidatingSword_RESET {$QuestName="Ithilien_IntimidatingSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Ithilien_IntimidatingSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

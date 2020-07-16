@@ -1,17 +1,0 @@
-//Harondor_ElegantSpear_RESET#CLASS 0#AL Harondor_ElegantSpear_RESET {$QuestName="Harondor_ElegantSpear"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Harondor_ElegantSpear
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

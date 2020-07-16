@@ -1,17 +1,0 @@
-//Pelargir_FreeingNaigord_RESET#CLASS 0#AL Pelargir_FreeingNaigord_RESET {$QuestName="Pelargir_FreeingNaigord"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Pelargir_FreeingNaigord
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

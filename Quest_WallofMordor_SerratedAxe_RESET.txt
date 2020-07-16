@@ -1,38 +1,0 @@
-//WallofMordor_SerratedAxe_RESET#CLASS 0#AL WallofMordor_SerratedAxe_RESET {$QuestName="WallofMordor_SerratedAxe"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: WallofMordor_SerratedAxe
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL WallofMordor_SerratedAxe {WallofMordor_SerratedAxe_Init} $QuestName
-
-#AL WallofMordor_SerratedAxe_Check {QuesterCheck $QuestName 15 100} $QuestName
-
-#AL WallofMordor_SerratedAxe_INIT {
-ActionAdd "WallofMordor_SerratedAxe_EXE"
-WallofMordor_SerratedAxe_ClimbingGear
-} $QuestName
-
-#AL WallofMordor_SerratedAxe_EXE {
-#VAR QuestName {"WallofMordor_SerratedAxe"} {} VAR
-ActionAdd "QuestOn WallofMordor_SerratedAxe;approach ranger"
-ActionAdd "ringon;ws;ActionNext"
-ActionAdd "sss;#WALK serratedaxe_ranger;ActionNext"
-ActionAdd "HealMe"
-} $QuestName
-
-#TR {The ranger's strength is failing and it appears he will soon be} {call guards;ringoff;ss;climb down;.sw;report to commander} $Settings
-#TR {The commander grins as he hears of your latest actions.} {do get axe,wield axe;.esw;ss;do request belt,get belt,get belt into pack,wear belt,store axe} $Settings
-#TR {Commander says*: Does it look like I need your help right now?} {QuestAbort} $Settings
-#TR {Commander gives you a serrated battle axe.} {GearSwap "A serrated battle axe"} $Settings
-#TR {~[ You have completed a quest:*~]} {QuestOff WallofMordor_SerratedAxe_ClimbingGear;QuestComplete WallofMordor_SerratedAxe} $Settings
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

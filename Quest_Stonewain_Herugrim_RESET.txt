@@ -1,17 +1,0 @@
-//Stonewain_Herugrim_RESET#CLASS 0#AL Stonewain_Herugrim_RESET {$QuestName="Stonewain_Herugrim"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Stonewain_Herugrim
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

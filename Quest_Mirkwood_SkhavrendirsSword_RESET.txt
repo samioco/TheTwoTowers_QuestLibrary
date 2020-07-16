@@ -1,27 +1,0 @@
-//Mirkwood_SkhavrendirsSword_RESET#CLASS 0#AL Mirkwood_SkhavrendirsSword_RESET {$QuestName="Mirkwood_SkhavrendirsSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mirkwood_SkhavrendirsSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//----------------------------------------------------------------------------------------------------
-//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
-//----------------------------------------------------------------------------------------------------
-//A shiny, black longsword           shiny sword    sword     1H   80   70   120  1000      150.0
-//----------------------------------------------------------------------------------------------------
-
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-#AL Mirkwood_SkhavrendirsSword {
-QuestInit "Mirkwood_SkhavrendirsSword" "Skhavrendir_House" "do lift stone,get key,unlock door"
-MoveMe_To_Arda
-} $QuestName
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//MistyMtns_ExoticOrcishBrew_RESET#CLASS 0#AL MistyMtns_ExoticOrcishBrew_RESET {$QuestName="MistyMtns_ExoticOrcishBrew"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MistyMtns_ExoticOrcishBrew
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

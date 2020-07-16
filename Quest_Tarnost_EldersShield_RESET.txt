@@ -1,26 +1,0 @@
-//Tarnost_EldersShield_RESET#CLASS 0#AL Tarnost_EldersShield_RESET {$QuestName="Tarnost_EldersShield"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Tarnost_EldersShield
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL Tarnost_EldersShield_Loot {
-#SW (%pos(%lower("Tarnost_Elder"),$CurRoom)) {
-  drop all from corpse
-  GearSwap "the elder's shield"
-  PackIn
-  get gold  
-  #WALK TarnostSquare
-}
-PtoCont
-} $QuestName
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

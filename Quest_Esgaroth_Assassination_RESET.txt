@@ -1,17 +1,0 @@
-//Esgaroth_Assassination_RESET#CLASS 0#AL Esgaroth_Assassination_RESET {$QuestName="Esgaroth_Assassination"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Esgaroth_Assassination
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

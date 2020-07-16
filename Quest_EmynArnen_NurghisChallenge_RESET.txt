@@ -1,17 +1,0 @@
-//EmynArnen_NurghisChallenge_RESET#CLASS 0#AL EmynArnen_NurghisChallenge_RESET {$QuestName="EmynArnen_NurghisChallenge"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: EmynArnen_NurghisChallenge
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

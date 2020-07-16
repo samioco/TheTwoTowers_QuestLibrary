@@ -1,18 +1,0 @@
-//Azmaroth_DarkRobeSpell_RESET#CLASS 0#AL Azmaroth_DarkRobeSpell_RESET {$QuestName="Azmaroth_DarkRobeSpell"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Azmaroth_DarkRobeSpell
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

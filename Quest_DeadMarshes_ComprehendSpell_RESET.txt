@@ -1,17 +1,0 @@
-//DeadMarshes_ComprehendSpell_RESET#CLASS 0#AL DeadMarshes_ComprehendSpell_RESET {$QuestName="DeadMarshes_ComprehendSpell"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: DeadMarshes_ComprehendSpell
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//NH_CorsairsShirt_RESET#CLASS 0#AL NH_CorsairsShirt_RESET {$QuestName="NH_CorsairsShirt"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: NH_CorsairsShirt
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

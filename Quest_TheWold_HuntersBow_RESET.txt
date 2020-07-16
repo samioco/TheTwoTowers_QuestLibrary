@@ -1,17 +1,0 @@
-//TheWold_HuntersBow_RESET#CLASS 0#AL TheWold_HuntersBow_RESET {$QuestName="TheWold_HuntersBow"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: TheWold_HuntersBow
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

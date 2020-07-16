@@ -1,20 +1,0 @@
-//Ettenmoors_RansackedHut_RESET#CLASS 0#AL Ettenmoors_RansackedHut_RESET {$QuestName="Ettenmoors_RansackedHut"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Ettenmoors_RansackedHut
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL Ettenmoors_RansackedHut_Loot {
-#LOOP $numMobs {GetAllNoHands}
-#WALK RansackedHut
-PtoCont
-} $QuestName
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,47 +1,0 @@
-//Mirkwood_GoldenAmulet_RESET#CLASS 0#AL Mirkwood_GoldenAmulet_RESET {$QuestName="Mirkwood_GoldenAmulet"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mirkwood_GoldenAmulet
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: hammer: 31g, amulet 32g
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-//
-#AL Mirkwood_GoldenAmulet {
-QuestInit "Mirkwood_GoldenAmulet" "BloodCampGuard" "do position boxes,climb boxes,grab hammer,climb down,get hammer,wield hammer"
-MoveMe_To_NorthArda
-} $QuestName
-
-#AL Mirkwood_GoldenAmulet_Check {QuesterCheck $QuestName 14 100} $QuestName
-
-#TR {You grab the hammer but fumble it; it falls to the ground.} {2enter;pull out boards with hammer} $Settings
-#TR {You use the hammer and pull out five boards with nails from the lid.} {get boards;out;hammer boards to ladder} $Settings
-#TR {You grasp the hammer with a firm grip and nail the boards to the ladder.} {climb ladder;kill magpie} $Settings
-
-#TR {bleeding to death} {kill} $Settings
-#TR {{"Scared magpie has died.|You don't see that here."}} {
-ss;drop hammer
-balance on branch
-feel through hole
-} $Settings
-
-#TR {You feel through the hole bumping into a round, metal-like object.} {
-do get amulet,wear amulet,get amulet into pack;roof;do get hammer into pack,get hammer
-#WALK BloodCabin
-do shake shelf,get bow into pack,get bow,sling bow
-#WALK Thran
-} $Settings
-
-#TR {You wear a golden amulet.} {tag amulet} $Settings
-
-#TR {There are not any boards left on the remains of the chest lid.} {} $Settings
-#TR {There is no hammer here to get.} {QuestAbort} $Settings
-#TR {You need a hammer as well as boards!} {QuestAbort} $Settings
-#TR {The firewood has already been moved to the side.} {QuestAbort} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

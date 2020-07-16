@@ -1,17 +1,0 @@
-//MT5_SparklingGems_RESET#CLASS 0#AL MT5_SparklingGems_RESET {$QuestName="MT5_SparklingGems"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT5_SparklingGems
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

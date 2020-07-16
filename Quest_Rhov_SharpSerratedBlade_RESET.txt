@@ -1,17 +1,0 @@
-//Rhov_SharpSerratedBlade_RESET#CLASS 0#AL Rhov_SharpSerratedBlade_RESET {$QuestName="Rhov_SharpSerratedBlade"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rhov_SharpSerratedBlade
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

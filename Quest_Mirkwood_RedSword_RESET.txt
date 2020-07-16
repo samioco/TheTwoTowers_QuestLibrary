@@ -1,17 +1,0 @@
-//Mirkwood_RedSword_RESET#CLASS 0#AL Mirkwood_RedSword_RESET {$QuestName="Mirkwood_RedSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mirkwood_RedSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

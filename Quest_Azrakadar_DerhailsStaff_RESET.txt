@@ -1,18 +1,0 @@
-//Azrakadar_DerhailsStaff_RESET#CLASS 0#AL Azrakadar_DerhailsStaff_RESET {$QuestName="Azrakadar_DerhailsStaff"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Azrakadar_DerhailsStaff
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

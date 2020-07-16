@@ -1,23 +1,0 @@
-//Edoras_Leggings_RESET#CLASS 0#AL Edoras_Leggings_RESET {$QuestName="Edoras_Leggings"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Edoras_Leggings
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Edoras_Leggings {
-ActionAdd "#WALK EdoSP;ActionNext"
-ActionAdd "#WALK EdoSpike;do bash chest,pick chest,open chest,get spike from chest;ActionNext"
-QuestInit $QuestName "EdorasStool" "#WALK EdorasStool;get stool;#WALK EdoLegs;do drop stool,climb stool,dust cupboard,climb down,get iron key,unlock cupboard,drop iron key,open cupboard,get all from cupboard,wear leggings;ActionNext"
-MoveMe_To_Arda
-} $QuestName
-#AL Edoras_Leggings_Check {QuesterCheck $QuestName 5 100} $QuestName
-
-#TR {A large pine cupboard unlocks with a click.} {do drop iron key,open cupboard,get all from cupboard;GearSwap "a pair of leggings";get leggings} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

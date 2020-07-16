@@ -1,38 +1,0 @@
-//AstLower_MeetingSauron_RESET#CLASS 0#AL AstLower_MeetingSauron_RESET {$QuestName="AstLower_MeetingSauron"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: AstLower_MeetingSauron
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//Autoloading item: A blood-covered necklace
-//Title: You are shrouded in an envelope of pure evil.
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL AstLower_MeetingSauron {
-QuestInit $QuestName "MeetingSauronScroll" "get scroll"
-MoveMe_To_FH
-} $QuestName
-
-#AL AstLower_MeetingSauron_Check {QuesterCheck $QuestName 10 100} $QuestName
-
-#TR {The scroll starts to fall.  You quickly reach out and catch it in} {
-light crystal
-#WALK Xardein
-give scroll to priest
-} $Settings
-
-#TR {Because you cannot see, you are too frightened to go there!} {QuestAbort} $Settings
-#TR {Xardein gives you a crusty, dried ear (covered in blood oil).} {n;offer ear} $Settings
-#TR {The nothingness around you slowly gains shape and so do you!} {#TE MeetingSauronShrine} $Settings
-
-#TR {Xardein crushes the scroll in his grip as he stares menacingly.} {QuestAbort} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-
-} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Havens_LostRing_RESET#CLASS 0#AL Havens_LostRing_RESET {$QuestName="Havens_LostRing"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Havens_LostRing
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

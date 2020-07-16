@@ -1,17 +1,0 @@
-//WallofMordor_SlimyEyeball_RESET#CLASS 0#AL WallofMordor_SlimyEyeball_RESET {$QuestName="WallofMordor_SlimyEyeball"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: WallofMordor_SlimyEyeball
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

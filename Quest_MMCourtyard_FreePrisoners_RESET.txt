@@ -1,17 +1,0 @@
-//MMCourtyard_FreePrisoners_RESET#CLASS 0#AL MMCourtyard_FreePrisoners_RESET {$QuestName="MMCourtyard_FreePrisoners"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MMCourtyard_FreePrisoners
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

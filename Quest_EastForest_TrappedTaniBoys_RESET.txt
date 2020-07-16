@@ -1,18 +1,0 @@
-//EastForest_TrappedTaniBoys_RESET#CLASS 0#AL EastForest_TrappedTaniBoys_RESET {$QuestName="EastForest_TrappedTaniBoys"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: EastForest_TrappedTaniBoys
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

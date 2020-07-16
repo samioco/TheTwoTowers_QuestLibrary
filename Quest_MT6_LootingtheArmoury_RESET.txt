@@ -1,17 +1,0 @@
-//MT6_LootingtheArmoury_RESET#CLASS 0#AL MT6_LootingtheArmoury_RESET {$QuestName="MT6_LootingtheArmoury"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT6_LootingtheArmoury
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

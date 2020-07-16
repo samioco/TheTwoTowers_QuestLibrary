@@ -1,30 +1,0 @@
-//Pelargir_CrocodilehideBoots_RESET#CLASS 0#AL Pelargir_CrocodilehideBoots_RESET {$QuestName="Pelargir_CrocodilehideBoots"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Pelargir_CrocodilehideBoots
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL CrocPapers {do l papers,move papers,l papers,get leg,attach short rope to leg} $QuestName
-#AL CrocLeg {do get leg,attach short rope to leg} $QuestName
-#AL Croc1 {do get leg,wrap loop around crocodile} $QuestName
-#AL Croc2 {jump on crocodile} $QuestName
-#AL Croc3 {tie crocodile} $QuestName
-#AL Croc4 {do get sword,draw sword,wield sword,strike crocodile} $QuestName
-#AL Croc5 {do wield knife,skin corpse,slice corpse} $QuestName
-
-#TR {that they covered one of the broken table legs!  What a glorious} {#CW high,yellow;do get leg,attach short rope to leg} $Settings
-#TR {Screaming in pain, you loosen your grip on your table leg and it} {do get leg,wrap loop around crocodile} $Settings
-#TR {You quickly wrap the loop around the crocodile's mouth, making} {jump on crocodile} $Settings
-#TR {You skillfully jump on the crocodile's back, while still managing} {tie crocodile} $Settings
-#TR {table leg with the rope loop falls to the ground.} {get leg;wrap loop around crocodile} $Settings
-#TR {quickly tie the beast's mouth tight with a piece of rope.  You then} {do get sword,draw sword,wield sword,strike crocodile} $Settings
-#TR {Crocodile has died.} {do store sword,sheath sword,wield knife,skin corpse,slice corpse} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

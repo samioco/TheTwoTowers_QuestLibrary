@@ -1,17 +1,0 @@
-//MT6_HousesofHealing_RESET#CLASS 0#AL MT6_HousesofHealing_RESET {$QuestName="MT6_HousesofHealing"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT6_HousesofHealing
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

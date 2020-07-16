@@ -1,17 +1,0 @@
-//Gondor_OrcsSteak_RESET#CLASS 0#AL Gondor_OrcsSteak_RESET {$QuestName="Gondor_OrcsSteak"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Gondor_OrcsSteak
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

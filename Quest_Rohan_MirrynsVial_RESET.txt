@@ -1,27 +1,0 @@
-//Rohan_MirrynsVial_RESET#CLASS 0#AL Rohan_MirrynsVial_RESET {$QuestName="Rohan_MirrynsVial"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rohan_MirrynsVial
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Rohan_MirrynsVial {
-QuestInit $QuestName "ESVial_LivingRoom" "do rummage through leaves,get bandage"
-MoveMe_To_Arda
-} $QuestName
-
-//Success find bandage trigger {e;2give bandage to woman,2drop bandage}
-
-#TR {After some time of travel, you arrive at a large battlefield.} {#TE 54576;ws;kill orc} $Settings
-#TR {You travel with Mirryn south and west to the mountains} {#TE 1788} $Settings
-#TR {Big ugly orc is bleeding to death and needs to be bandaged!} {k} $Settings
-#TR {Big ugly orc has died.} {ss;do get pack from corpse,get letter from pack,put pack in pack 2,get all from corpse into pack,get all from corpse;trail;enter;e;give letter to woman} $Settings
-#TR {Mirryn gives you A small green vial} {do tag vial,put vial in cloak,put vial in pack;QuestOff Rohan_MirrynsVial} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

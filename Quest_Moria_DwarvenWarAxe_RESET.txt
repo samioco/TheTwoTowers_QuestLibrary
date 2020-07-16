@@ -1,17 +1,0 @@
-//Moria_DwarvenWarAxe_RESET#CLASS 0#AL Moria_DwarvenWarAxe_RESET {$QuestName="Moria_DwarvenWarAxe"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Moria_DwarvenWarAxe
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

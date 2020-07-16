@@ -1,29 +1,0 @@
-//HaradDesert_ArchaicSword_RESET#CLASS 0#AL HaradDesert_ArchaicSword_RESET {$QuestName="HaradDesert_ArchaicSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: HaradDesert_ArchaicSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL HaradDesert_ArchaicSword {
-GrinderQueue_Sell
-QuestInit $QuestName "ArchaicSword" "#WALK archaic_ledge"
-MoveMe_To_Arda
-} $QuestName
-
-#AL HaradDesert_ArchaicSword_Check {QuesterCheck $QuestName 15 100} $QuestName
-
-#TR {A group of rugged men leaps out and charges towards you!} {} $Settings
-#TR {The bandits smirk and say, 'Where do you think you're going?'} {} $Settings
-#TR {Bandit has died.} {} $Settings
-#TR {Reaching the top, you pull yourself up onto} {ws;cave;kill nivlac} $Settings
-#TR {Nivlac * you} {#IF (%mud.ep>%mud.hp) {profatk}} $Settings
-#TR {bleeding to death} {kill} $Settings
-#TR {Nivlac has died.} {drop all from corpse;sss;do rummage through loot,unlock chest with prisom,open chest,get all from chest;GearSwap "An archaic longsword";do get all into pack,get all} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

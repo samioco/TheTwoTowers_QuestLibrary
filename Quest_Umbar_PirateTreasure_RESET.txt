@@ -1,32 +1,0 @@
-//Umbar_PirateTreasure_RESET#CLASS 0#AL Umbar_PirateTreasure_RESET {$QuestName="Umbar_PirateTreasure"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Umbar_PirateTreasure
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-//initial entry, umbarcliff_opening
-#TR {stepping carefully, you manage to climb down the cliffs} {do squeeze behind rock,toos stone into pond,cave;packout;ss;goldon;aimon;ws;out} $Settings
-
-//entry fail
-#TR {stumble over your feet in the cliff and fall back} {} $Settings
-
-#TR {Group of pirates has died.} {goldoff;aimoff;piein;jin} $Settings
-
-
-//ss;e;do search crates,get crowbar
-//w;do move rock,climb down hole
-//do get crowbar from pack,wield crowbar,dig sand,pry open chest,put crowbar in packout
-//climb hole
-//extinguish crystal
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

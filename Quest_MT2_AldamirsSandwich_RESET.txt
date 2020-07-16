@@ -1,17 +1,0 @@
-//MT2_AldamirsSandwich_RESET#CLASS 0#AL MT2_AldamirsSandwich_RESET {$QuestName="MT2_AldamirsSandwich"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT2_AldamirsSandwich
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

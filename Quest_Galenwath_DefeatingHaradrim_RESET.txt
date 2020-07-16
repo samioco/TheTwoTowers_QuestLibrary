@@ -1,17 +1,0 @@
-//Galenwath_DefeatingHaradrim_RESET#CLASS 0#AL Galenwath_DefeatingHaradrim_RESET {$QuestName="Galenwath_DefeatingHaradrim"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Galenwath_DefeatingHaradrim
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

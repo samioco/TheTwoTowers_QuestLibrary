@@ -1,17 +1,0 @@
-//Erebor_CoinofFate_RESET#CLASS 0#AL Erebor_CoinofFate_RESET {$QuestName="Erebor_CoinofFate"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Erebor_CoinofFate
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

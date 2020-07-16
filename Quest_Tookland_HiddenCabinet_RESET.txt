@@ -1,28 +1,0 @@
-//Tookland_HiddenCabinet_RESET#CLASS 0#AL Tookland_HiddenCabinet_RESET {$QuestName="Tookland_HiddenCabinet"
-$Settings=%concat($QuestName,|Settings)
-
-//----------------------------------------------------------------------------------------------------
-//Quest Name: Tookland_HiddenCabinet
-//----------------------------------------------------------------------------------------------------
-//Description: Defeat some trolls and take their treasure
-//Requirements:
-//Recommended level 10+
-//Reward: 3x gem @ 12g each, 72g, clubs: 2g each
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-
-#AL Tookland_HiddenCabinet {
-QuestInit $QuestName "Took_BNB" "move panel"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Tookland_HiddenCabinet_Check {QuesterCheck $QuestName 4 4} $QuestName
-
-//----------------------------------------------------------------------------------------------------
-#TR {into the hole that the panel used to cover and find a key!  You begin to} {get key;#WALK took_memorial_hidden;do take brass key,3unlock cabinet,drop all key,open cabinet,take sword from cabinet;#WALK took_bnb} $Settings
-#TR {There is a small hole behind it, but it is empty, so you replace the} {drop all key;QuestAbort} $Settings
-#TR {The Guardian says, I'm very sorry, but I have been instructed to keep} {drop all key;QuestAbort} $Settings
-#TR {You have not rented a room.} {QuestAbort} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,18 +1,0 @@
-//Azrakadar_IceSpike_RESET#CLASS 0#AL Azrakadar_IceSpike_RESET {$QuestName="Azrakadar_IceSpike"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Azrakadar_IceSpike
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

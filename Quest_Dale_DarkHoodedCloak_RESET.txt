@@ -1,17 +1,0 @@
-//Dale_DarkHoodedCloak_RESET#CLASS 0#AL Dale_DarkHoodedCloak_RESET {$QuestName="Dale_DarkHoodedCloak"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Dale_DarkHoodedCloak
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

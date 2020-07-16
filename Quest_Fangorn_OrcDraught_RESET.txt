@@ -1,17 +1,0 @@
-//Fangorn_OrcDraught_RESET#CLASS 0#AL Fangorn_OrcDraught_RESET {$QuestName="Fangorn_OrcDraught"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Fangorn_OrcDraught
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

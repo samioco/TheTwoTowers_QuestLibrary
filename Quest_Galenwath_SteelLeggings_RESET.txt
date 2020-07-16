@@ -1,18 +1,0 @@
-//Galenwath_SteelLeggings_RESET#CLASS 0#AL Galenwath_SteelLeggings_RESET {$QuestName="Galenwath_SteelLeggings"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Galenwath_SteelLeggings
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Rhun_DwarfPrisoner_RESET#CLASS 0#AL Rhun_DwarfPrisoner_RESET {$QuestName="Rhun_DwarfPrisoner"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rhun_DwarfPrisoner
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

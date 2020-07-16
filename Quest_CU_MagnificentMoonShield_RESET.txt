@@ -1,17 +1,0 @@
-//CU_MagnificentMoonShield_RESET#CLASS 0#AL CU_MagnificentMoonShield_RESET {$QuestName="CU_MagnificentMoonShield"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: CU_MagnificentMoonShield
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,22 +1,0 @@
-//Combe_RunecoveredIronAxe_RESET#CLASS 0#AL Combe_RunecoveredIronAxe_RESET {$QuestName="Combe_RuneCoveredIronAxe"
-$Settings=%concat($QuestName,"|Settings")
-//------------------------------------------------------------
-//Quest Name: 
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended leve:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Combe_RuneCoveredIronAxe {
-QuestInit $QuestName "Bywater_Garden" "listen to conversation"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Combe_RuneCoveredIronAxe_Check {QuesterCheck $QuestName 1 100} $QuestName
-
-#TR {Lotho says*: Remember, inform Ferny!} {#WALK ferny;inform ferny} $Settings
-
-#TR {Fery glares at you and says no more.} {QuestAbort} $Settings} Tools_QuestList#CLASS 0

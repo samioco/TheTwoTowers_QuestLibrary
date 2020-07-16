@@ -1,42 +1,0 @@
-//Telshar_VialofRejuvenation_RESET#CLASS 0#AL Telshar_VialofRejuvenation_RESET {$QuestName="Telshar_VialofRejuvenation"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Telshar_VialofRejuvenation
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Telshar_VialofRejuvenation {Telshar_VialofRejuvenation_Init} $QuestName
-#AL Telshar_VialofRejuvenation_Check {QuesterCheck $QuestName 15 100} $QuestName
-
-#AL Telshar_VialofRejuvenation_INIT {
-#IF (@GrinderQueue_i) {ActionAdd "GrinderUnload_VOR";ActionAdd "MoveMe_to_Arda"}
-ActionAdd "#WALK TelSP;2extinguish crystal;mm;ActionNext"
-ActionAdd "Telshar_VialofRejuvenation_EXE"
-ActionAdd "Telshar_StarShapedMedallion"
-#IF (@GrinderQueue_i) {ActionAdd "#IF (%mud.hp<200) {HealMe} {ActionNext}"}
-MoveMe_to_FH
-} $QuestName
-
-#AL Telshar_VialofRejuvenation_EXE {#VAR QuestName {"Telshar_VialofRejuvenation"} {} VAR;QuestOn Telshar_VialofRejuvenation;do put medallion in pack,wear medallion;#WALK telcrypt;ActionAdd "ws;#WALK telbat;kill bat";lift lid} $QuestName
-
-#TR {As you open the lid of the sarcophagus, a terrifying wraith suddenly} {ws;kill wraith} $Settings
-
-#TR {You open the lid of the sarcophagus and make a startling discovery!} {ActionNext} $Settings
-#TR {The lid on the sarcophagus has already been lifted!} {ActionNext} $Settings
-
-#TR {bleeding to death} {kill} $Settings
-#TR {You don't see that here.} {#IF (%roomid=telbat) {#WALK vor;grab earring}} $Settings
-
-#TR {Vampire bat has died.} {#IF (@MyProf=archer) {sv};ss;get medallion;wear medallion;ws;#WALK vor;grab earring} $Settings
-#TR {With a final scream of despair} {#IF (@MyProf=archer) {sal} {ss};do get vial,tag vial,get medallion,wear medallion;#WALK telchamber;do get medallion from pack,insert medallion into symbol;#WALK TelSP} $Settings
-
-#TR {There is no earring left to grab here.} {ActionDelete "GrinderUnload_VOR";QuestAbort} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

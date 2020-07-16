@@ -1,17 +1,0 @@
-//Moria_PrisonersShackles_RESET#CLASS 0#AL Moria_PrisonersShackles_RESET {$QuestName="Moria_PrisonersShackles"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Moria_PrisonersShackles
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

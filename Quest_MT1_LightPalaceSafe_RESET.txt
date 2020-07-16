@@ -1,49 +1,0 @@
-//MT1_LightPalaceSafe_RESET#CLASS 0#AL MT1_LightPalaceSafe_RESET {$QuestName="MT1_LightPalaceSafe"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT1_LightPalaceSafe
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL MT1_LightPalaceSafe {
-#IF ((@Gear_LampwrightsKey) && (@Gear_LampwrightsRing)) {
-ActionAdd "#WALK Lampwrights_Treasure"
-} {
-QuestInit $QuestName "Lampwrights_Towel" "get towel"
-ActionAdd "HealMe"
-}
-MoveMe_To_MT
-} $QuestName
-
-#AL MT1_LightPalaceSafe_Check {QuesterCheck $QuestName 5 100} $QuestName
-
-#TR {You take up one of the towels.} {
-#WALK Lampwrights_SmallCellar;get bottle
-#WALK Lampwrights;wet towel} $Settings
-
-#TR {You wet the towel and set it on the ground.} {
-get towel
-#IF (%mud.hp>200) {#WALK Lampwrights_TowerCorner}
-} $Settings
-
-#TR {You get near the top of the stairs, but are forced back down} {QuestAbort} $Settings
-#TR {You wrap the towel around you and dash through the flames unscathed.} {5move timber} $Settings
-#TR {The fire rages, and part of the roof collapses.  You are completely cut off!} {jump through window} $Settings
-#TR {and destroys the tower of the guild!} {do drop towel,drink wine,drop bottle,rest} $Settings
-#TR {Apprentice removes a Lampwright's Guild membership ring.} {do get membership ring,wear membership ring,get small iron key;hands} $Settings
-
-#TR {You are holding a small iron key ~(in hands~)} {
-#IF (%lower(%roomid())=%lower("Lampwrights_RooftopGarden")) {#WALK Lampwrights_Treasure}
-} $Settings
-
-#TR {A tiny room} {
-do put small iron key in cloak,put small iron key in keyring,put small iron key in pack,drop small iron key
-do get bag,get all from bag,put bag in pack,drop bag,get lamp into pack,get lamp,get bag
-} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

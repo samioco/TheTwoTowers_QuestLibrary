@@ -1,17 +1,0 @@
-//EmynArnen_VariagGoldCache_RESET#CLASS 0#AL EmynArnen_VariagGoldCache_RESET {$QuestName="EmynArnen_VariagGoldCache"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: EmynArnen_VariagGoldCache
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

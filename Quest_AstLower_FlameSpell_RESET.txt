@@ -1,30 +1,0 @@
-//AstLower_FlameSpell_RESET#CLASS 0#AL AstLower_FlameSpell_RESET {$QuestName="AstLower_FlameSpell"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: AstLower_FlameSpell
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-//Level 3 NOT OK, 5?
-
-#AL AstLower_FlameSpell {
-QuestInit $QuestName "AsturFlames" "do ask necromancer about help,offer help"
-MoveMe_To_FH
-} $QuestName
-
-#AL AstLower_FlameSpell_Check {QuesterCheck $QuestName 5 100} $QuestName
-
-#TR {Distinguished professor says*: Yes, I think you might be able to} {ws} $Settings
-#TR {Distinguished professor leaves %1.} {%1} $Settings
-#TR {Distinguished professor says*: Look!  There it is, the mutant!} {kill beast} $Settings
-#TR {Crazed beast is bleeding} {kill} $Settings
-#TR {revealing his massacred innards} {} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

@@ -1,46 +1,0 @@
-//HaradDesert_PrincessTorture_RESET#CLASS 0#AL HaradDesert_PrincessTorture_RESET {$QuestName="HaradDesert_PrincessTorture"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: HaradDesert_PrincessTorture
-//Description: 
-//------------------------------------------------------------
-//Requirements: //True Intelligence >= 95
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL HaradDesert_PrincessTorture {
-QuestInit $QuestName "motaz" "offer help"
-#IF (%mud.ep<150) {ActionAdd "HealMe"}
-MoveMe_To_Arda
-} $QuestName
-
-#AL HaradDesert_PrincessTorture_Check {QuesterCheck $QuestName 15 100} $QuestName
-
-
-#AL HaradDesert_PrincessTorture_Check {} $QuestName
-
-#VAR HaradDesert_PrincessTorture_Torture {"hit|slap|smack|kick|punch"} {} VAR
-#VAR HaradDesert_PrincessTorture_TribeName {} {} VAR
-
-#AL HaradDesert_PrincessTorture_Torture {#VAR HaradDesert_PrincessTorture_Torture {"hit|slap|smack|kick|punch"} {} VAR;#UNT Alarm_torture;#EXE {%item(@HaradDesert_PrincessTorture_Torture,%random(%numitems(@HaradDesert_PrincessTorture_Torture))) princess;do shape princess,ask princess about tribe}} $QuestName
-
-#TR {Motaz says*: Somebody has already given me the information} {QuestAbort} $Settings
-#TR {Motaz says*: I am not going to entrust anybody to help me} {QuestAbort} $Settings
-#TR {Motaz notices you, a traitor, entering his tent and attacks!} {QuestAbort} $Settings
-#TR {You run} {ActionAdd "#WALK oasis;ws;#WALK motaz;kill motaz";HealMe} $Settings
-#TR {Motaz says*: Well thank you adventurer.  I appreciate your} {#WALK princess;rest on;torture princess} $Settings
-#TR {Motaz says*: Did you not get the tribe's name yet?!  Just} {#WALK princess;rest on;torture princess} $Settings
-#TR {You can 'hit', 'slap', 'smack', 'kick', or 'punch' the princess!} {HaradDesert_PrincessTorture_Torture} $Settings
-#TR {Princess says*: I will never declare what tribe I am from, you} {#ALA "Alarm_torture" {+3} {HaradDesert_PrincessTorture_Torture} $Settings} $Settings
-#TR {You cannot torture the princess again so fast, she would die!} {#WAIT 1000;HaradDesert_PrincessTorture_Torture} $Settings
-#TR {Princess whispers to you*: My tribe's name is %1.  Please do not} {#UNT Alarm_torture;#VAR HaradDesert_PrincessTorture_TribeName {%lower(%1)} {} VAR;#ECHO Tribe Name: @HaradDesert_PrincessTorture_TribeName;#WALK motaz;report} $Settings
-#TR {the princess belongs to?  Well, what tribe is it?} {say @HaradDesert_PrincessTorture_TribeName} $Settings
-#TR {has died.} {QuestAbort} $Settings
-#TR {Motaz gives you a cobalt ring.} {do tag ring,put cobalt ring in cloak,put cobalt ring in pack} $Settings
-#TR {Motaz says*: You have already been rewarded for your help!} {QuestAbort} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

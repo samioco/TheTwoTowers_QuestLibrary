@@ -1,17 +1,0 @@
-//Umbar_TupansVial_RESET#CLASS 0#AL Umbar_TupansVial_RESET {$QuestName="Umbar_TupansVial"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Umbar_TupansVial
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

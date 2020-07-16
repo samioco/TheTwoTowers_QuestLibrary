@@ -1,13 +1,0 @@
-//Belegost_BlessedClay_RESET#CLASS 0#AL Belegost_BlessedClay_RESET {$QuestName="Belegost_BlessedClay"
-$Settings=%concat($QuestName,"|Settings")
-
-#AL Belegost_BlessedClay {
-QuestInit $QuestName "blessedclay" "get clay"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Belegost_BlessedClay_Check {QuesterCheck $QuestName 1 1000} $QuestName
-
-#TR {A small lump of clay ~(in hands~).} {.e2se4s3e3s;temple;move tapestry;request blessing} $Settings
-#TR {He hands you back the clay with a smile.} {#WALK belshop;sell all clay;drop all clay;questend} $Settings
-#TR {The priest says: I just did a blessing a little bit ago, I'm much too} {drop clay:QuestAbort} $Settings} Tools_QuestList#CLASS 0

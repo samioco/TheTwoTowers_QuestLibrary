@@ -1,17 +1,0 @@
-//Mirkwood_DwarvenAxeBelt_RESET#CLASS 0#AL Mirkwood_DwarvenAxeBelt_RESET {$QuestName="Mirkwood_DwarvenAxeBelt"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Mirkwood_DwarvenAxeBelt
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

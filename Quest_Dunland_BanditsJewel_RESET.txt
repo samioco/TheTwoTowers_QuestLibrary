@@ -1,17 +1,0 @@
-//Dunland_BanditsJewel_RESET#CLASS 0#AL Dunland_BanditsJewel_RESET {$QuestName="Dunland_BanditsJewel"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Dunland_BanditsJewel
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

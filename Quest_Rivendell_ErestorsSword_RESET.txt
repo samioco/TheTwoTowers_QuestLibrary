@@ -1,17 +1,0 @@
-//Rivendell_ErestorsSword_RESET#CLASS 0#AL Rivendell_ErestorsSword_RESET {$QuestName="Rivendell_ErestorsSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rivendell_ErestorsSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

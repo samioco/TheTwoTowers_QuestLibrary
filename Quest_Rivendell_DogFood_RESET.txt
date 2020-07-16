@@ -1,40 +1,0 @@
-//Rivendell_DogFood_RESET#CLASS 0#AL Rivendell_DogFood_RESET {$QuestName="Rivendell_DogFood"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rivendell_DogFood
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended leve:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------
-//Quest Name: Rivendell_DogFood
-//----------------------------------------------------------------------------------------------------
-//Description: Help dog keeper feed the dogs
-
-//Requirements:
-//Recommended level 1 to 5
-//Reward: 5g
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-
-#AL Rivendell_DogFood {
-QuestInit $QuestName "Riv_DogKeeper" "do ask galdan about food,offer help"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Rivendell_DogFood_Check {QuesterCheck $QuestName 1 5} $QuestName
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-#TR {Galdan says*: {"Thank you.  Just go to the kitchen and ask the|Yes, you have already offered your help.  Just"}} {#WALK riv_kitchen;ask cook about dog meal} $Settings
-#TR {Cook says*: Dog meal you say...  Yes, I have some} {get bowl;#WALK riv_dogkeeper;do give meat to galdan,drop all bowl} $Settings
-#TR {just given the meal to someone else he sent.} {drop all bowl;QuestAbort} $Settings
-#TR {You do not have a meat.} {QuestAbort} $Settings
-#TR {Galdan says*: I'm sorry but someone has already helped me.}  {drop all bowl;QuestAbort} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

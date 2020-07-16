@@ -1,17 +1,0 @@
-//MT6_OpalsforGemDealer_RESET#CLASS 0#AL MT6_OpalsforGemDealer_RESET {$QuestName="MT6_OpalsforGemDealer"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT6_OpalsforGemDealer
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//DeadMarshes_BoneSword_RESET#CLASS 0#AL DeadMarshes_BoneSword_RESET {$QuestName="DeadMarshes_BoneSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: DeadMarshes_BoneSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

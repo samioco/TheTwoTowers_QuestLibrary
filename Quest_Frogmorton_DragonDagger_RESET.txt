@@ -1,17 +1,0 @@
-//Frogmorton_DragonDagger_RESET#CLASS 0#AL Frogmorton_DragonDagger_RESET {$QuestName="Frogmorton_DragonDagger"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Frogmorton_DragonDagger
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

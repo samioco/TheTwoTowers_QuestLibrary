@@ -1,17 +1,0 @@
-//Moria_ManyTailedWhip_RESET#CLASS 0#AL Moria_ManyTailedWhip_RESET {$QuestName="Moria_ManyTailedWhip"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Moria_ManyTailedWhip
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

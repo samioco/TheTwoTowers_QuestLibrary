@@ -1,26 +1,0 @@
-//Rhov_LeatherBridle_RESET#CLASS 0#AL Rhov_LeatherBridle_RESET {$QuestName="Rhov_LeatherBridle"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rhov_LeatherBridle
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Rhov_LeatherBridle {
-QuestInit $QuestName "BridleShepherd" "convince shepherd"
-MoveMe_To_Arda
-} $QuestName
-
-#AL Rhov_LeatherBridle_Check {
-#IF (%ismember(%lower(@MyPublicAlign),@Alignments_Moral)) {
-  QuesterCheck $QuestName 5 100
-}
-} $QuestName
-
-#TR {The shepherd looks at you and seems to find you lacking.} {QuestAbort} $Settings
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

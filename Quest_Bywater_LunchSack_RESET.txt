@@ -1,36 +1,0 @@
-//Bywater_LunchSack_RESET#CLASS 0#AL Bywater_LunchSack_RESET {$QuestName="Bywater_LunchSack"
-$Settings=%concat($QuestName,"|Settings")
-
-//------------------------------------------------------------
-//Quest Name: Bywater_IvyBushTavern
-//------------------------------------------------------------
-//Description: Help a cook find her recipe
-
-//Requirements:
-//Recommended level 1 - 5
-//Reward: A brown cLoth lunch sack (weapon: put more stuff in it to make it heavier) or container
-
-//------------------------------------------------------------
-//Settings
-//------------------------------------------------------------
-#AL Bywater_LunchSack {
-QuestInit $QuestName "Bywater_Pantry" "get jam;#WALK Bywater_Cook;do get knife,spread jam on bread,drop jam,get sandwich"
-} $QuestName
-
-#AL Bywater_LunchSack_Check {QuesterCheck $QuestName 1 100} $QuestName
-
-//------------------------------------------------------------
-//Settings
-//------------------------------------------------------------
-#TR {a mess of yourself, you close the sandwich and discard the jar.} {e;give sandwich to grella} $Settings
-#TR {I do not see grella here.} {#SW (%roomnum=60237) {w;give sandwich to grella} (%roomnum=60236) {w;give sandwich to grella} {do drop jam,drop sandwich;#WALK hobshop;do sell all from pack,sell all;QuestAbort}} $Settings
-#TR {Grella leaves east.} {do slide logs,get paper} $Settings
-#TR {drop the paper onto the floor.} {get paper;#WALK bywater_cook;do give recipe to cook} $Settings
-#TR {Dorabella removes a brown cLoth lunch sack.} {do put knife in pack,get sack,put sack in pack;#WALK hobshop;do sell all from pack,sell all,put jam in trash,put jar in trash,put sandwich in trash} $Settings
-
-#TR {But you're missing something!} {drop sandwich;QuestAbort} $Settings
-#TR {{"There is no sandwich here to get|Dorabella says:  Thank you, but I have what I need|You do not have a recipe|The knife has already been taken|I do not see cook here"}.} {do drop paper,drop jam,drop sandwich;#WALK hobshop;do sell all from pack,sell all;QuestAbort} $Settings
-
-//------------------------------------------------------------
-//Settings
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

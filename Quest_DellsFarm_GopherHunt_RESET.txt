@@ -1,17 +1,0 @@
-//DellsFarm_GopherHunt_RESET#CLASS 0#AL DellsFarm_GopherHunt_RESET {$QuestName="DellsFarm_GopherHunt"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: DellsFarm_GopherHunt
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

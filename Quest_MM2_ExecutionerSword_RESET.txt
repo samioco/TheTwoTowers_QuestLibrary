@@ -1,17 +1,0 @@
-//MM2_ExecutionerSword_RESET#CLASS 0#AL MM2_ExecutionerSword_RESET {$QuestName="MM2_ExecutionerSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MM2_ExecutionerSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

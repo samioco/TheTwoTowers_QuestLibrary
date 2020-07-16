@@ -1,17 +1,0 @@
-//CU_DoubleBladedStaff_RESET#CLASS 0#AL CU_DoubleBladedStaff_RESET {$QuestName="CU_DoubleBladedStaff"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: CU_DoubleBladedStaff
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

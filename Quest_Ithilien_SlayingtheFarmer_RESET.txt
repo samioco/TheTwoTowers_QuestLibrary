@@ -1,37 +1,0 @@
-//Ithilien_SlayingtheFarmer_RESET#CLASS 0#AL Ithilien_SlayingtheFarmer_RESET {$QuestName="Ithilien_SlayingtheFarmer"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Ithilien_SlayingtheFarmer
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Ithilien_SlayingtheFarmer {
-QuestInit $QuestName "EnormousScythe_Farmer" "Grinder Ithilien_SlayingtheFarmer"
-#IF (@Party) {ActionAdd "#WALK brambles_out;dismount;#WAIT 2000;ActionNext"}
-ActionAdd "HealMe"
-MoveMe_To_Arda
-} $QuestName
-
-#AL Ithilien_SlayingtheFarmer_Check {QuesterCheck $QuestName 15 100} $QuestName
-
-#AL Ithilien_SlayingtheFarm_Loot {
-#SW (%pos(%lower("EnormousScythe_Farmer"),%lower(@CurRoom))) {
-  sss
-  GetAll 1
-  #WALK Brambles
-  PtoCont
-  #WALK SerratedScimitar
-}
-} $QuestName
-
-#TR EnormousScythe_FarmerRoomShort {^Inside a log cabin} {GrinderResetRoom;#T+ EnormousScythe_Farmer} $Settings
-#TR EnormousScythe_Farmer {^ A panic-stricken farmer} {#T- EnormousScythe_Farmer;#VAR MobList {"farmer"} {} VAR;#ECHO Room_mobs: @MobList} $Settings
-#TR {Cruel haradrim removes a serrated scimitar.} {do put serrated scimitar in wagon,put serrated scimitar in pack;ws;al} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

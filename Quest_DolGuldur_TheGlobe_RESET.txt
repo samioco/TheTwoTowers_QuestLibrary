@@ -1,17 +1,0 @@
-//DolGuldur_TheGlobe_RESET#CLASS 0#AL DolGuldur_TheGlobe_RESET {$QuestName="DolGuldur_TheGlobe"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: DolGuldur_TheGlobe
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

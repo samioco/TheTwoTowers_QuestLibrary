@@ -1,17 +1,0 @@
-//DruwaithIaur_KillingHermit_RESET#CLASS 0#AL DruwaithIaur_KillingHermit_RESET {$QuestName="DruwaithIaur_KillingHermit"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: DruwaithIaur_KillingHermit
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

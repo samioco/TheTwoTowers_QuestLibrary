@@ -1,17 +1,0 @@
-//Ithilien_GanthogsSword_RESET#CLASS 0#AL Ithilien_GanthogsSword_RESET {$QuestName="Ithilien_GanthogsSword"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Ithilien_GanthogsSword
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

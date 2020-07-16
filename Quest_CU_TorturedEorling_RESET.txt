@@ -1,17 +1,0 @@
-//CU_TorturedEorling_RESET#CLASS 0#AL CU_TorturedEorling_RESET {$QuestName="CU_TorturedEorling"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: CU_TorturedEorling
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

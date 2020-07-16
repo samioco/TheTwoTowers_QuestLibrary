@@ -1,25 +1,0 @@
-//Eriador_GorsClaymore_RESET#CLASS 0#AL Eriador_GorsClaymore_RESET {$QuestName="Eriador_GorsClaymore"
-$Settings=%concat($QuestName,"|Settings")
-
-
-//----------------------------------------------------------------------------------------------------
-//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
-//----------------------------------------------------------------------------------------------------
-//A huge claymore                    two-handed sw  sword     2H   58   72   300  2600      130.0
-//----------------------------------------------------------------------------------------------------
-
-//gorcamp_entrance
-//A guard post(n and out)
-// An orc guard [2]
-
-//gorcamp_entrance
-//Orc camp(bonfire, tent and s)
-// A menacing orc [2]
- 
-//gorcamp_gor
-//A large tent(out)
-// Gor the evil
-
-//gorcamp_firepit
-//A fire pit(out and w)
-// Helga the cook} Tools_QuestList#CLASS 0

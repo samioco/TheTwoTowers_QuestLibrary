@@ -1,17 +1,0 @@
-//Belegost_TheSoapstone_RESET#CLASS 0#AL Belegost_TheSoapstone_RESET {$QuestName="Belegost_TheSoapstone"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Belegost_TheSoapstone
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Moria_DeadlyMorningstar_RESET#CLASS 0#AL Moria_DeadlyMorningstar_RESET {$QuestName="Moria_DeadlyMorningstar"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Moria_DeadlyMorningstar
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

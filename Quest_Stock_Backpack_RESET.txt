@@ -1,44 +1,0 @@
-//Stock_Backpack_RESET#CLASS 0#AL Stock_Backpack_RESET {$QuestName="Stock_Backpack"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Stock_Backpack
-//Description: Help a beggar.
-//Requirements:
-//Recommended level 1+
-//Reward: A leather backpack (stats unknown)
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-#AL Stock_Backpack {
-QuestInit $QuestName "Stock_Beggar" "give 1 gold to beggar"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Stock_Backpack_Check {QuesterCheck $QuestName 3 5} $QuestName
-
-//----------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------
-#TR {Beggar says: Thank you very much!  You know, I wasn't always like this.} {e;s;untangle string} $Settings
-#TR {With great care, you untangle part of the string.} {get string;n;w;give string to beggar} $Settings
-#TR {You give Beggar some string.} {#WAIT 2000;e;ws;kill wobbly drunk} $Settings
-#TR {You don't see that here.} {#SW (%roomnum=16104) {n;kill wobbly drunk} (%roomnum=59569) {nw;kill wobbly drunk} (%roomnum=59570) {e;kill wobbly drunk} (%roomnum=59571) {n;kill wobbly drunk} (%roomnum=59572) {w;kill wobbly drunk}} $Settings
-#TR {{"Drunk|Wobbly drunk|Guard"} is bleeding} {kill} $Settings
-#TR {Wobbly drunk is bleeding} {kill wobbly drunk} $Settings
-#TR {Wobbly drunk has died.} {ss;get rags from corpse;#WALK stock_beggar;give rags to beggar} $Settings
-#TR {You give Beggar a set of tattered leather rags.} {#WAIT 2000;#WALK stock_guard;ws;kill guard} $Settings
-#TR {Wait a minute, you're still busy!} {#WAIT 2000;#IF (%roomid=stock_guard) {kill guard} {kill wobbly drunk}} $Settings
-#TR {Guard has died.} {ss;#WALK stock_booth;order juice;#WALK stock_maid;give juice to maid} $Settings
-#TR {Maid runs out to find a bathroom.} {get needle} $Settings
-#TR {You pull the needle from the unfinished hat.} {#WALK stock_beggar;give needle to beggar} $Settings
-#TR {There is no needle here to get.} {QuestAbort} $Settings
-#TR {Beggar gives you a leather backpack.} {wear backpack} $Settings
-#TR {You wear a leather backpack.} {tag backpack;#WALK stock_guard;do get all from corpse into pack,get all into pack,get all,drop all corpse;#WALK hobshop;do sell all from pack,sell all} $Settings
-#TR {You are already wearing something on your back.} {put backpack in pack 2;#WALK stock_guard;do get all from corpse into pack,get all into pack,get all;#WALK hobshop;sall} $Settings
-#TR {Maid says*: I am STILL thirsty!} {#WALK stock_booth;order juice;#WALK stock_maid;give juice to maid} $Settings
-#TR {Maid slaps your hand away from the needle.} {#WALK stock_booth;order juice;#WALK stock_maid;give juice to maid} $Settings
-#TR {I do not see maid here.} {drop all juice;get needle} $Settings
-#TR {{"You cannot seem to untangle any more string.|There is no needle here to take."}} {QuestAbort} $Settings
-#TR {You do not have a {"string|rags|juice|needle"}} {#WALK stock_guard;do wear all from corpse,get all from corpse,get all into pack,get all;QuestAbort} $Settings
-
-//----------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

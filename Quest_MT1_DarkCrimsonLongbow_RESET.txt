@@ -1,17 +1,0 @@
-//MT1_DarkCrimsonLongbow_RESET#CLASS 0#AL MT1_DarkCrimsonLongbow_RESET {$QuestName="MT1_DarkCrimsonLongbow"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT1_DarkCrimsonLongbow
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

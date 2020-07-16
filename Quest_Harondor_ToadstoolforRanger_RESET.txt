@@ -1,17 +1,0 @@
-//Harondor_ToadstoolforRanger_RESET#CLASS 0#AL Harondor_ToadstoolforRanger_RESET {$QuestName="Harondor_ToadstoolforRanger"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Harondor_ToadstoolforRanger
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

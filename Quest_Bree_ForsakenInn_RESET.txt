@@ -1,39 +1,0 @@
-//Bree_ForsakenInn_RESET#CLASS 0#AL Bree_ForsakenInn_RESET {$QuestName="Bree_ForsakenInn"
-$Settings=%concat($QuestName,"|Settings")
-//----------------------------------------------------------------------------------------------------
-//Quest Name: Bree_ForsakenInn
-//----------------------------------------------------------------------------------------------------
-//Description:
-//Help a local take revenge on a group of ruffians
-
-//Requirements:
-//Recommended level 5+
-//Reward: 30g, 2 guards @ 25g each: 80g total
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-#AL Bree_ForsakenInn {
-QuestInit $QuestName "BreeLocal" "offer help"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Bree_ForsakenInn_Check {QuesterCheck $QuestName 5 14} $QuestName
-
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------
-#TR {{"Local says*: Go to the Inn located to the SOUTheast.  There should be a|Local says: You have already offered to help!"}} {#WALK forlout;ws;kill guard} $Settings
-#TR {bleeding to death} {kill} $Settings
-#TR {Guard has died.} {do wear all from corpse,get gold from corpse;#SW (%roomid()=forlout) {ss;do get key from corpse,unlock east door,drop key;e;ws;kill guard} (%roomid()=forlin) {ss;do search armoire,get pitchfork,get all from corpse into pack,get all from corpse;w;do get all from corpse into pack,get all from corpse}} $Settings
-#TR {You find a pitchfork hidden in the armoire and pull it out.} {do get all from corpse into pack,get all from corpse;w;do get all from corpse into pack,get all from corpse;w;do get all from corpse into pack,get all from corpse,drop all key;#WALK Breelocal;give pitchfork to local} $Settings
-#TR {{"Local says: Well, thanks for taking care of those ruffians.  Check with me|pitchfork to the boy, who runs off with it, disappearing down the street."}} {#WALK Breeshop;do sell all from pack,sell all} $Settings
-#TR {Wait a minute, you're still busy!} {#WAIT 2000;kill guard} $Settings
-#TR {You run %1.} {$action="";#SW (%1=SOUTh) {$action=north} (%1=north) {$action=SOUTh} (%1=east) {$action=west} (%1=west) {$action=east} (%1=up) {$action=down} (%1=down) {$action=up} (%1=northwest) {$action=SOUTheast} (%1=northeast) {$action=SOUThwest} (%1=SOUThwest) {$action=northeast} (%1=SOUTheast) {$action=northwest};SysMsg Waiting 100s, then try again, moving: $action;#WAIT 2000;rest on;#UNT Alarm_rest;#ALA Alarm_rest {+100} {#EXE {$action}} $Settings} $Settings
-#TR {You fail to find anything of interest in the armoire.} {QuestAbort} $Settings
-#TR {Local says*: I'm sorry, someone else is helping me.} {QuestAbort} $Settings
-#TR {Local says*: Someone has already helped me, try coming back later.} {QuestAbort} $Settings
-#TR {You don't see that here.} {#WALK Breeshop;do sell all from pack,sell all from string,sell all;QuestAbort} $Settings
-
-//----------------------------------------------------------------------------------------------------
-//Settings
-//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//EastForest_BoatMaterials_RESET#CLASS 0#AL EastForest_BoatMaterials_RESET {$QuestName="EastForest_BoatMaterials"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: EastForest_BoatMaterials
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

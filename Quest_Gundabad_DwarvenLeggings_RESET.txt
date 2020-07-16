@@ -1,17 +1,0 @@
-//Gundabad_DwarvenLeggings_RESET#CLASS 0#AL Gundabad_DwarvenLeggings_RESET {$QuestName="Gundabad_DwarvenLeggings"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Gundabad_DwarvenLeggings
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Lothlorien_JeweledBow_RESET#CLASS 0#AL Lothlorien_JeweledBow_RESET {$QuestName="Lothlorien_JeweledBow"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Lothlorien_JeweledBow
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

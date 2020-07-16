@@ -1,17 +1,0 @@
-//Harondor_AgrimarsHead_RESET#CLASS 0#AL Harondor_AgrimarsHead_RESET {$QuestName="Harondor_AgrimarsHead"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Harondor_AgrimarsHead
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

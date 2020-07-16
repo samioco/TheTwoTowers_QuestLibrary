@@ -1,17 +1,0 @@
-//Rhov_OldDwarvenGoldMine_RESET#CLASS 0#AL Rhov_OldDwarvenGoldMine_RESET {$QuestName="Rhov_OldDwarvenGoldMine"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rhov_OldDwarvenGoldMine
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

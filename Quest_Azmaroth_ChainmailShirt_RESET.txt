@@ -1,18 +1,0 @@
-//Azmaroth_ChainmailShirt_RESET#CLASS 0#AL Azmaroth_ChainmailShirt_RESET {$QuestName="Azmaroth_ChainmailShirt"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Azmaroth_ChainmailShirt
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

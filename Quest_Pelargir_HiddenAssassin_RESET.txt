@@ -1,17 +1,0 @@
-//Pelargir_HiddenAssassin_RESET#CLASS 0#AL Pelargir_HiddenAssassin_RESET {$QuestName="Pelargir_HiddenAssassin"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Pelargir_HiddenAssassin
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

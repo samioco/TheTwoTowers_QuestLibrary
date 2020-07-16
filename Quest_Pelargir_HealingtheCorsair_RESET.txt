@@ -1,54 +1,0 @@
-//Pelargir_HealingtheCorsair_RESET#CLASS 0#AL Pelargir_HealingtheCorsair_RESET {$QuestName="Pelargir_HealingtheCorsair"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Pelargir_HealingtheCorsair
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL healcorsair {QuestOn Pelargir_HealingtheCorsair;do lay corsair in bed,unbutton shirt,inspect injuries,inspect head,inspect leg,inspect ribs;do take cloths,dip cloth in bowl,clean head,drop cloths;do get scissors,cut hair,drop scissors;do get leaves,place firesticks on head,get piece of bandage,wrap head in bandage;do pull knife,apply pressure above wound} $QuestName
-#AL healcorstop {QuestOff Pelargir_HealingtheCorsair} $QuestName
-#AL healcor1 {do lay corsair in bed,unbutton shirt,inspect injuries,inspect head,inspect leg,inspect ribs} $QuestName
-#AL healcor2 {do take cloths,dip cloth in bowl,clean head,drop cloths;do get scissors,cut hair,drop scissors;do get leaves,place firesticks on head,get piece of bandage,wrap head in bandage} $QuestName
-#AL healcor3 {do pull knife,apply pressure above wound} $QuestName
-#AL healcor4 {do drop knife,get cloths,dip cloth in bowl,clean leg,drop cloths;do get needle,get thread,suture leg,drop needle,drop thread} $QuestName
-#AL healcor5 {do get poultice,rub poultice into ribs,get long bandage,wrap chest in bandage,button shirt} $QuestName
-#AL healcor6 {do wake corsair,get mint potion,give potion to corsair,drop potion,get cloth,dip cloth in bowl,wipe forehead,drop cloth} $QuestName
-#AL healcor7 {do get stockings,get stockings from pack,give stockings to corsair,get velvet cloak,get velvet cloak from pack,give cloak to corsair,get lady's boots,give lady's boots to corsair,get satin dress,get satin dress from pack,give dress to corsair,get elegant hat,get elegant hat from pack,give hat to corsair} $QuestName
-#AL healcorwipe {do get cloth,dip cloth in bowl,wipe forehead,drop cloth} $QuestName
-
-
-#TR {You notice the bleeding stopped, so you release pressure from} {do drop knife,get cloths,dip cloth in bowl,clean leg,drop cloths;do get needle,get thread,suture leg,drop needle,drop thread;do get poultice,rub poultice into ribs,get long bandage,wrap chest in bandage,button shirt;do inspect head,inspect leg,inspect ribs} $Settings
-#TR {The corsair mumbles in her fever: The Dead, the Dead, watch out!} {do wake corsair,get mint potion,give potion to corsair,drop potion,get cloth,dip cloth in bowl,wipe forehead,drop cloth} $Settings
-#TR {Corsair says*: Is there a boat maker workshop in this city?} {say yes} $Settings
-#TR {Corsair says*: Do you like fishing?} {say yes} $Settings
-#TR {Beads of sweat appear on the corsair's forehead.} {do get cloth,dip cloth in bowl,wipe forehead,drop cloth} $Settings
-#TR {Corsair says*: Hey, I could use a snack; do you have anything} {do get apple,give apple to corsair,drop apple} $Settings
-#TR {Corsair says*: I could use some water, if you have any.} {do get bottle of water,give bottle to corsair,drop bottle of water} $Settings
-#TR {Corsair says*: I'd like to drink some water.} {do get bottle of water,give bottle to corsair,drop bottle of water} $Settings
-#TR {Corsair says*: Hmm, I'm thirsty...  Could you bring me} {do get bottle of water,give bottle to corsair,drop bottle of water} $Settings
-#TR {Corsair says*: I'm a bit thirsty.} {do get bottle of water,give bottle to corsair,drop bottle of water} $Settings
-#TR {Corsair says*: Are the Dead completely gone?} {say yes} $Settings
-#TR {Corsair says*: I have lost my cutlass in the heat of battle.} {say no} $Settings
-#TR {A shiver runs through the corsair's body.} {do wake corsair,get mint potion,give potion to corsair,drop potion,get cloth,dip cloth in bowl,wipe forehead,drop cloth} $Settings
-#TR {Corsair says*: Could you bring me some food?  I'm hungry.} {do get apple,give apple to corsair,drop apple} $Settings
-#TR {Corsair says*: I have not eaten in some time; I'm starting to} {do get apple,give apple to corsair,drop apple} $Settings
-#TR {Corsair says*: Do you know if any Corsairs survived the} {say no} $Settings
-#TR {Corsair says*: Are there a lot of defenders in the city now?} {say yes} $Settings
-#TR {Corsair says*: I feel hungry...} {do get apple,give apple to corsair,drop apple} $Settings
-#TR {Corsair says*: All right, I think I'm fine now; all my wounds} {ask corsair about service} $Settings
-#TR {Corsair says*: So, as I said I'm almost ready to leave.  I} {ask corsair about service} $Settings
-#TR {Corsair finishes: Once you bring me these, I will share a secret with you.} {do get stockings,get stockings from pack,give stockings to corsair,get velvet cloak,get velvet cloak from pack,give cloak to corsair,get lady's boots,give lady's boots to corsair,get satin dress,get satin dress from pack,give dress to corsair,get elegant hat,get elegant hat from pack,give hat to corsair} $Settings
-#TR {to suffer from a fever.} {do wake corsair,get mint potion,give potion to corsair,drop potion,get cloth,dip cloth in bowl,wipe forehead,drop cloth} $Settings
-#TR {suffering from a mild fever.} {do wake corsair,get mint potion,give potion to corsair,drop potion,get cloth,dip cloth in bowl,wipe forehead,drop cloth} $Settings
-#TR {Corsair says*: I feel much better now and I think I am ready} {ask corsair about service} $Settings
-#TR {Corsair has died.} {QuestOff Pelargir_HealingtheCorsair} $Settings
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

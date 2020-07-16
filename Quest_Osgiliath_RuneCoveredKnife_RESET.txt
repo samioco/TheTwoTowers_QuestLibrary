@@ -1,17 +1,0 @@
-//Osgiliath_RuneCoveredKnife_RESET#CLASS 0#AL Osgiliath_RuneCoveredKnife_RESET {$QuestName="Osgiliath_RuneCoveredKnife"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Osgiliath_RuneCoveredKnife
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

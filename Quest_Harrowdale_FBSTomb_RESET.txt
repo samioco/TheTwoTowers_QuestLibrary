@@ -1,17 +1,0 @@
-//Harrowdale_FBSTomb_RESET#CLASS 0#AL Harrowdale_FBSTomb_RESET {$QuestName="Harrowdale_FBSTomb"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Harrowdale_FBSTomb
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Harrowdale_RumcasesHammer_RESET#CLASS 0#AL Harrowdale_RumcasesHammer_RESET {$QuestName="Harrowdale_RumcasesHammer"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Harrowdale_RumcasesHammer
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

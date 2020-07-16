@@ -1,17 +1,0 @@
-//Pelargir_OrphanageString_RESET#CLASS 0#AL Pelargir_OrphanageString_RESET {$QuestName="Pelargir_OrphanageString"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Pelargir_OrphanageString
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//IronHills_ErrandforKrom_RESET#CLASS 0#AL IronHills_ErrandforKrom_RESET {$QuestName="IronHills_ErrandforKrom"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: IronHills_ErrandforKrom
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

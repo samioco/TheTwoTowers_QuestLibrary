@@ -1,39 +1,0 @@
-//Bywater_Bricks_RESET#CLASS 0#AL Bywater_Bricks_RESET {$QuestName="Bywater_Bricks"
-$Settings=%concat($QuestName,"|Settings")
-
-//------------------------------------------------------------
-//Quest Name: Bywater_Bricks
-//------------------------------------------------------------
-//Description: Help the foreman make some bricks
-
-//Requirements:
-//Recommended level 1 - 5
-//Reward: 25g for each set of bricks
-//------------------------------------------------------------
-//Settings
-//------------------------------------------------------------
-#AL Bywater_Bricks {
-QuestInit $QuestName "Bywater_Quarry" "ask foreman about job"
-MoveMe_To_WestArda
-} $QuestName
-
-#AL Bywater_Bricks_Check {QuesterCheck $QuestName 1 5} $QuestName
-
-//------------------------------------------------------------
-//Settings
-//------------------------------------------------------------
-#TR {The foreman tosses a shovel at your feet and says: Get to work!} {ss;do get shovel,wield shovel;out;d;dig} $Settings
-#TR {Foreman says*: You're already working for me!} {ss;do get shovel,wield shovel;out;d;dig} $Settings
-#TR {{"You dig in the ground... and find a small stone!|You dig in the ground... and find an old animal bone!"}} {do drop small stone,drop bone,dig} $Settings
-#TR {You dig in the ground... and find nothing!} {#SW (%roomnum()="Quarry1") {w;dig} (%roomnum()="Quarry2") {w;dig} (%roomnum()="Quarry3") {#WALK hobshop;sall;QuestAbort}} $Settings
-#TR {You are too tired to dig.} {rest on;SysMsg Resting for 300s, then try again.;#UNT "Alarm_Rest";#ALA "Alarm_Rest" {+300} {dig} $Settings} $Settings
-#TR {You dig in the ground... and find a large rock!} {get large rock;#WALK Bywater_Mill;do get rock from pack,place rock into hopper,get sandbag;#WALK Bywater_Foundry;do pour sand into vats,get clay,mold clay,get molds,bake molds,get bricks;#WALK Bywater_Quarry;give bricks to foreman} $Settings
-
-#TR {The foreman gives you %d gold.} {#WALK Quarry1;dig} $Settings
-#TR {You do not have a bricks.} {#WALK hobshop;sall;QuestAbort} $Settings
-#TR {Foreman says*: Sorry, I have too many employees right now.} {#WALK hobshop;sall;QuestAbort} $Settings
-#TR {Too heavy.} {#IF (%roomid=Bywater_Quarry) {QuestAbort}} $Settings
-#TR {You'll need a shovel to do that.} {QuestAbort} $Settings
-//------------------------------------------------------------
-//Settings
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,18 +1,0 @@
-//Tavorus_SmallSpear_RESET#CLASS 0#AL Tavorus_SmallSpear_RESET {$QuestName="Tavorus_SmallSpear"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Tavorus_SmallSpear
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

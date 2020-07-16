@@ -1,17 +1,0 @@
-//Pelargir_CalimmacsRing_RESET#CLASS 0#AL Pelargir_CalimmacsRing_RESET {$QuestName="Pelargir_CalimmacsRing"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Pelargir_CalimmacsRing
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

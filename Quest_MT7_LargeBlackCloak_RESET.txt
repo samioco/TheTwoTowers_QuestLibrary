@@ -1,17 +1,0 @@
-//MT7_LargeBlackCloak_RESET#CLASS 0#AL MT7_LargeBlackCloak_RESET {$QuestName="MT7_LargeBlackCloak"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MT7_LargeBlackCloak
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//CorsairKeep_RescuingSehlin_RESET#CLASS 0#AL CorsairKeep_RescuingSehlin_RESET {$QuestName="CorsairKeep_RescuingSehlin"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: CorsairKeep_RescuingSehlin
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

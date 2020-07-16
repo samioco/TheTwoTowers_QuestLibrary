@@ -1,17 +1,0 @@
-//Eriador_BlossomPouch_RESET#CLASS 0#AL Eriador_BlossomPouch_RESET {$QuestName="Eriador_BlossomPouch"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Eriador_BlossomPouch
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

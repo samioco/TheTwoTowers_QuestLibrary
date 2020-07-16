@@ -1,17 +1,0 @@
-//MM2_MithrilNecklace_RESET#CLASS 0#AL MM2_MithrilNecklace_RESET {$QuestName="MM2_MithrilNecklace"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MM2_MithrilNecklace
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//DellsFarm_FlowersforAlita_RESET#CLASS 0#AL DellsFarm_FlowersforAlita_RESET {$QuestName="DellsFarm_FlowersforAlita"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: DellsFarm_FlowersforAlita
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

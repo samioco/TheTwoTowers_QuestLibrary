@@ -1,17 +1,0 @@
-//MistyMtns_GiantEagle_RESET#CLASS 0#AL MistyMtns_GiantEagle_RESET {$QuestName="MistyMtns_GiantEagle"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MistyMtns_GiantEagle
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//Harrowdale_Tilionshine_RESET#CLASS 0#AL Harrowdale_Tilionshine_RESET {$QuestName="Harrowdale_Tilionshine"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Harrowdale_Tilionshine
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,42 +1,0 @@
-//Umbar_BronzeGreaves_RESET#CLASS 0#AL Umbar_BronzeGreaves_RESET {$QuestName="Umbar_BronzeGreaves"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Umbar_BronzeGreaves
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-#AL Umbar_BronzeGreaves {
-#VAR Umbar_BronzeGreaves {"BronzeGreaves_Lookout|BronzeGreaves_Warrior"} {} VAR
-#VAR Umbar_BronzeGreaves_Settings {"BronzeGreaves_lookout_short|BronzeGreaves_warrior_short|BronzeGreaves_lookout|BronzeGreaves_warrior"} {} VAR
-GrinderQueue_Sell
-QuestInit $QuestName "BronzeGreaves" "Grinder Umbar_BronzeGreaves"
-MoveMe_To_Arda
-} $QuestName
-
-#AL Umbar_BronzeGreaves_Check {QuesterCheck $QuestName 15 100} $QuestName
-
-#AL Umbar_BronzeGreaves_Loot {
-#SW (%pos(%lower("BronzeGreavesWarrior"),$CurRoom)) {
-  sss
-  drop all from corpse
-  GearSwap "a fine set of bronze greaves"
-  wear bronze greaves from ground
-}
-GetAllNoHands
-#WALK BronzeGreaves
-PtoCont
-} $QuestName
-
-#TR BronzeGreaves_LookoutRoomShort {A rather large, damp cave} {GrinderResetRoom;#T+ BronzeGreaves_Lookout} $Settings
-#TR BronzeGreaves_WarriorRoomShort {An alcove within the cave} {GrinderResetRoom;#T+ BronzeGreaves_Warrior} $Settings
-#TR BronzeGreaves_Lookout { A numenorean Lookout} {#T- BronzeGreaves_Lookout;#VAR MobList {"Lookout"} {} VAR;#ECHO Room_mobs: @MobList} $Settings
-#TR BronzeGreaves_Warrior { A crazy numenorean warrior} {#T- BronzeGreaves_Warrior;#VAR MobList {"warrior"} {} VAR;#ECHO Room_mobs: @MobList} $Settings
-#TR {Numenorean warrior has died.} {ss;drop all from corpse;GearSwap "A fine set of bronze greaves";wear bronze greaves from ground;packin;#IF (@Gear_Wagon) {#WALK BronzeGreaves;ptow}} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,17 +1,0 @@
-//MistyMtns_HugePigCanine_RESET#CLASS 0#AL MistyMtns_HugePigCanine_RESET {$QuestName="MistyMtns_HugePigCanine"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: MistyMtns_HugePigCanine
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

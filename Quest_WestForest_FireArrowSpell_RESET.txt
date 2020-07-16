@@ -1,18 +1,0 @@
-//WestForest_FireArrowSpell_RESET#CLASS 0#AL WestForest_FireArrowSpell_RESET {$QuestName="WestForest_FireArrowSpell"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: WestForest_FireArrowSpell
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

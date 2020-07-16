@@ -1,17 +1,0 @@
-//Rhosgobel_WildflowerSpell_RESET#CLASS 0#AL Rhosgobel_WildflowerSpell_RESET {$QuestName="Rhosgobel_WildflowerSpell"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Rhosgobel_WildflowerSpell
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

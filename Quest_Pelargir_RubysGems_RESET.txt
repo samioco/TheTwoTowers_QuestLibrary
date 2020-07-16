@@ -1,17 +1,0 @@
-//Pelargir_RubysGems_RESET#CLASS 0#AL Pelargir_RubysGems_RESET {$QuestName="Pelargir_RubysGems"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Pelargir_RubysGems
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

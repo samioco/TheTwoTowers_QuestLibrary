@@ -1,18 +1,0 @@
-//FarHarad_HaradrimPack_RESET#CLASS 0#AL FarHarad_HaradrimPack_RESET {$QuestName="FarHarad_HaradrimPack"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: FarHarad_HaradrimPack
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

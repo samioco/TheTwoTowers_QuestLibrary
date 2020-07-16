@@ -1,17 +1,0 @@
-//Kadar_FirstAlchemyRecipe_RESET#CLASS 0#AL Kadar_FirstAlchemyRecipe_RESET {$QuestName="Kadar_FirstAlchemyRecipe"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Kadar_FirstAlchemyRecipe
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

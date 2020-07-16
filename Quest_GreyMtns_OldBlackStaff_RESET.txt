@@ -1,46 +1,0 @@
-//GreyMtns_OldBlackStaff_RESET#CLASS 0#AL GreyMtns_OldBlackStaff_RESET {$QuestName="GreyMtns_OldBlackStaff"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: GreyMtns_OldBlackStaff
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-//Level 5 required
-//Reward: staff: old black staff:
-
-#AL GreyMtns_OldBlackStaff {
-QuestInit $QuestName "OldBlackStaff" "ws;kill snake"
-MoveMe_To_FH
-} $QuestName
-
-#AL GreyMtns_OldBlackStaff_Check {QuesterCheck $QuestName 6 25} $QuestName
-
-#TR {Kill what?  You can't see a thing!} {light crystal;ws;kill snake} $Settings
-#TR {You don't see crystal to light.} {QuestAbort} $Settings
-
-#TR {bleeding to death} {kill} $Settings
-#TR {snake has died.} {pelt;do attach pelt to string,put pelt in pack,drop pelt;ws;kill snake} $Settings
-#TR {You don't see that here.} {#IF (%roomid=oldblackstaff) {sss;search rubble}} $Settings
-
-#TR {You search through the pile of rubble and find an old staff!} {WepSwap "an old black staff";gall;2extinguish crystal} $Settings
-
-#TR {You run %1.} {
-$action="";#UNT "Alarm_Rest"
-#SW (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}}
-SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000
-rest on
-#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
-} $Settings
-
-#TR {You search through the pile of rubble but fail to find anything.} {QuestAbort} $Settings
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

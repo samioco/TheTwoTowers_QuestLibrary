@@ -1,47 +1,0 @@
-//AstUpper_KitchenDuty_RESET#CLASS 0#AL AstUpper_KitchenDuty_RESET {$QuestName="AstUpper_MissingBook"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: AstUpper_MissingBook
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Requires knife, 
-//Minimum level for EP to fill pan with water:
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-#AL AstUpper_KitchenDuty {
-#PATH AstUpper_KitchenDuty_Path {%concat("ws2enw5snewn3w2nw5nen3e2ne2n2sw4sws2enw2n3ese5sw2s2e5w3n;.(#T- Walker;#SUS walker;#UNT walker;QuestAbort")} VAR
-QuestInit $QuestName "AsturChef" "offer help"
-MoveMe_To_FH
-} $QuestName
-
-#AL AstUpper_KitchenDuty_Check {QuesterCheck $QuestName 2 100} $QuestName
-
-#TR {Ichirenen gives you an old meat cleaver.} {do get cleaver,drop cleaver 2
-#WALK AsturIn;out
-#T+ Walker;#SLOW AstUpper_KitchenDuty_Path;#PAUSE
-} $Settings
-
-#TR {^ A half-starved black rabbit} {#T- Walker;#SUSPEND walker;#UNT walker;do wield cleaver,kill rabbit} $Settings
-
-#TR {bleeding to death} {kill} $Settings
-#TR {Black rabbit has died.} {get corpse;#WALK astur_chef;do drop corpse,skin corpse,drop pelt,wield cleaver,chop corpse,get meat} $Settings
-#TR {amount of meat from such a small animal.} {do get meat,give meat to chef} $Settings
-#TR {First I want you to find a pan and fill it with water.  Show it to} {drop cleaver;e;do examine cupboards,get pan,fill pan,get pan} $Settings
-#TR {The pan now has a nice amount of water in it, and when you judge there} {get pan;w;do show pan to chef} $Settings
-#TR {Ichirenen says*: Now place the pan on the stove and go grab} {place pan on stove;w;rummage through shelves} $Settings
-#TR {Hallelujah!  After all that rummaging, your hands finally chance upon} {get salt;e;add salt to water}  AstUpper_KitchenDuty|Settings
-#TR {Ichirenen gives you a plate of partly-cooked meat.} {toss meat into pan}  AstUpper_KitchenDuty|Settings
-#TR {{"Feel free to check on it while we wait, and tell me when it is ready.|You peer into the pan and see that the stew is not yet ready."}} {#ALA +10 {check on stew}}  AstUpper_KitchenDuty|Settings
-#TR {You peer into the pan, and to your delight, the stew is ready!} {#ECHO Stew done!} $Settings
-#TR {Now, if you would be so kind, ladle the stew into this serving dish } {do get dish,ladle stew} $Settings
-#TR {Ichirenen gives you a mysterious glass vial.} {do put vial in pack,put vial in cloak,drop vial;questend}  AstUpper_KitchenDuty|Settings
-#TR {{"You must skin the corpse before chopping meat from it.|have the energy to lug a pan full of water about!  You turn off the taps"}} {QuestAbort} $Settings
-
-//------------------------------------------------------------
-//------------------------------------------------------------
-} Tools_QuestList#CLASS 0

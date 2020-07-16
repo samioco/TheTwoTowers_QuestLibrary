@@ -1,17 +1,0 @@
-//Kadar_ShimmeringCloak_RESET#CLASS 0#AL Kadar_ShimmeringCloak_RESET {$QuestName="Kadar_ShimmeringCloak"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Kadar_ShimmeringCloak
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

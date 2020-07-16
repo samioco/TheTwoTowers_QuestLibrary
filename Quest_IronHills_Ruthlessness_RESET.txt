@@ -1,17 +1,0 @@
-//IronHills_Ruthlessness_RESET#CLASS 0#AL IronHills_Ruthlessness_RESET {$QuestName="IronHills_Ruthlessness"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: IronHills_Ruthlessness
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0

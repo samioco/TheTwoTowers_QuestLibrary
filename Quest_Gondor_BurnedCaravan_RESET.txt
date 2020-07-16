@@ -1,17 +1,0 @@
-//Gondor_BurnedCaravan_RESET#CLASS 0#AL Gondor_BurnedCaravan_RESET {$QuestName="Gondor_BurnedCaravan"
-$Settings=%concat($QuestName,|Settings)
-//------------------------------------------------------------
-//Quest Name: Gondor_BurnedCaravan
-//Description: 
-//------------------------------------------------------------
-//Requirements: 
-//Recommended level:  
-//Reward: 
-//------------------------------------------------------------
-//Settings:
-//------------------------------------------------------------
-
-
-
-//------------------------------------------------------------
-//------------------------------------------------------------} Tools_QuestList#CLASS 0
