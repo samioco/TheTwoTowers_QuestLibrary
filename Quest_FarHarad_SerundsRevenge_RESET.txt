@@ -1,0 +1,18 @@
+//FarHarad_SerundsRevenge_RESET#CLASS 0#AL FarHarad_SerundsRevenge_RESET {$QuestName="FarHarad_SerundsRevenge"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: FarHarad_SerundsRevenge
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

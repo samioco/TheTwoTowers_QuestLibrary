@@ -1,0 +1,17 @@
+//AdvCaves_MendedBow_RESET#CLASS 0#AL AdvCaves_MendedBow_RESET {$QuestName="AdvCaves_MendedBow"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AdvCaves_MendedBow
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Mordor_RazorsharpCleaver_RESET#CLASS 0#AL Mordor_RazorsharpCleaver_RESET {$QuestName="Mordor_RazorsharpCleaver"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mordor_RazorsharpCleaver
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

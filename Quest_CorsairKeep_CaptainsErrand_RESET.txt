@@ -1,0 +1,35 @@
+//CorsairKeep_CaptainsErrand_RESET#CLASS 0#AL CorsairKeep_CaptainsErrand_RESET {$QuestName="CorsairKeep_CaptainsErrand"
+$Settings=%concat($QuestName,"|Settings")
+//----------------------------------------------------------------------------------------------------
+//Quest Name: CorsairKeep_CaptainsErrand
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Run an errand for the captain
+
+//Requirements:
+//Must be able to enter Corsair Keep: Evil race, Evil Alignment
+//Reward: an empty, carved wooden pipe
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL CorsairKeep_CaptainsErrand {
+#EXE {%concat($QuestName,"_RESET")}
+QuestInit $QuestName "corsairkeep_captain" "offer help"
+MoveMe_To_Arda
+} $QuestName
+
+#AL CorsairKeep_CaptainsErrand_Check {#IF ((%ismember(@MyPublicAlign,@Alignments_Evil)) AND (%ismember(@MyPublicRace,@Races_Immoral))) {QuesterCheck $QuestName 5 100}
+} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {Corsair captain gives you a sealed note.} {#WALK corsairkeep_advisor;give note to man} $Settings
+#TR {Advisor gives you a set of rolled up naval charts.} {#WALK corsairkeep_captain;give charts to captain} $Settings
+#TR {Corsair captain says: I do not need help.} {QuestAbort}  CorsairKeep_CaptainsErrand|Settings
+#TR {Corsair captain gives you an empty, carved wooden pipe.} {put pipe in pack} $Settings
+ClassOff $QuestName
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

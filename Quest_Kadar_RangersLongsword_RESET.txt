@@ -1,0 +1,17 @@
+//Kadar_RangersLongsword_RESET#CLASS 0#AL Kadar_RangersLongsword_RESET {$QuestName="Kadar_RangersLongsword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Kadar_RangersLongsword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

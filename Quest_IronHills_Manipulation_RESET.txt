@@ -1,0 +1,17 @@
+//IronHills_Manipulation_RESET#CLASS 0#AL IronHills_Manipulation_RESET {$QuestName="IronHills_Manipulation"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: IronHills_Manipulation
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

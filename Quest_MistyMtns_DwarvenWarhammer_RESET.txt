@@ -1,0 +1,17 @@
+//MistyMtns_DwarvenWarhammer_RESET#CLASS 0#AL MistyMtns_DwarvenWarhammer_RESET {$QuestName="MistyMtns_DwarvenWarhammer"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_DwarvenWarhammer
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

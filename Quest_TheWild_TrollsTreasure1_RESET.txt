@@ -1,0 +1,54 @@
+//TheWild_TrollsTreasure1_RESET#CLASS 0#AL TheWild_TrollsTreasure1_RESET {$QuestName="TheWild_TrollsTreasure1"
+$Settings=%concat($QuestName,|Settings)
+//----------------------------------------------------------------------------------------------------
+//Quest Name: TheWild_TrollsTreasure1
+//----------------------------------------------------------------------------------------------------
+//Description: Defeat some trolls and take their treasure
+//Requirements:
+//Recommended level 10+
+//Reward: 100g, 3x gem @ 12g each, 72g, clubs: 2g each
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL TheWild_TrollsTreasure1 {
+QuestInit $QuestName "Trolls_Treasure1_Guard" "ws;kill troll"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL TheWild_TrollsTreasure1_Check {QuesterCheck $QuestName 10 25} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+#TR {The troll bares his teeth at you} {ws;kill troll} $Settings
+#TR {Kill what?  You can't see a thing!} {light crystal;kill troll} $Settings
+#TR {You don't see crystal to light.} {drop torch;QuestAbort} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+
+#TR {Troll has died.} {
+get gold from corpse;#WAIT 2000
+#SW (%roomid=trolls_treasure1_guard) {
+  s;kill troll
+} (%roomid=trolls_treasure1_board) {
+  ActionAdd "2extinguish crystal;ActionNext"
+  ActionAdd "ss;#WALK trolls_treasure1_guard;do get gold from corpse,get gold,get all from corpse into pack,get all from corpse;get all club into pack,get all club;#WALK trolls_treasure1_board;do get gold from corpse,get gold,get all from corpse into pack,get all from corpse;get all club into pack,get all club;ActionNext"
+  ss;do search bed,get board;n;nw;do pry boulder with board,drop board
+}
+} $Settings
+  
+#TR {You don't see that here.} {#WAIT 2000;#SW (%roomid=trolls_treasure1_guard) {s;ws;kill troll} (%roomid=trolls_treasure1_board) {ss;do search bed,get board;n;nw;do pry boulder with board,drop board}} $Settings
+//#TR {You find a long wooden board.} {n;nw;do pry boulder with board,drop board} $Settings
+
+#TR {Wait a minute, you're still busy!} {#WAIT 2000;kill troll} $Settings
+#TR {It comes tumbling loose and reveals a pile of gold.} {TheWild_TrollsTreasure1_End} $Settings
+#TR {With what board?} {TheWild_TrollsTreasure1_End} $Settings
+
+#TR {You run %1.} {
+$action="";#UNT "Alarm_Rest"
+#SW (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}}
+SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000
+rest on
+#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
+} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

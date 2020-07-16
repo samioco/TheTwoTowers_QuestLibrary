@@ -1,0 +1,22 @@
+//Dale_LongBlackArrow_RESET#CLASS 0#AL Dale_LongBlackArrow_RESET {$QuestName="Dale_LongBlackArrow"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Dale_LongBlackArrow
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL Dale_LongBlackArrow {QuestInit $QuestName DaleKing "say %lower(@MyName)"} $QuestName
+
+#TR {^King Brand of Dale, and you are...who?} {say @MyName} $QuestName
+#TR {^King Brand says:  What is it that brings you to our city in this time of} {say orcs}Dale_LongBlackArrow
+#TR {^The great army of Dale leaves %1.} {%1} $Settings
+#TR {^away, and the dark armies cheer with the joy of death and destruction!} {do get arrow from corpse,get arrow from corpse 2;QuestOff Dale_LongBlackArrow} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

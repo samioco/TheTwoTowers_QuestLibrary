@@ -1,0 +1,17 @@
+//Rhov_BrytansStaff_RESET#CLASS 0#AL Rhov_BrytansStaff_RESET {$QuestName="Rhov_BrytansStaff"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_BrytansStaff
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

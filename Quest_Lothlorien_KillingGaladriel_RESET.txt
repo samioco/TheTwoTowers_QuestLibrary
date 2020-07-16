@@ -1,0 +1,55 @@
+//Lothlorien_KillingGaladriel_RESET#CLASS 0#AL Lothlorien_KillingGaladriel_RESET {$QuestName="Lothlorien_KillingGaladriel"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Lothlorien_KillingGaladriel
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Lothlorien_KillingGaladriel {
+QuestOn Lothlorien_KillingGaladriel
+} $QuestName
+
+#AL Gala_Positioning_Enable {QuestOn Lothlorien_KillingGaladriel;#LOOP 25 {#T+ GalaPos_%i}} $QuestName
+#AL Gala_Positioning_Disable {#LOOP 25 {#T- GalaPos_%i}} $QuestName
+
+#TR {Galadriel thrusts her hand out at you, and you go flying out of the tree!} {Gala_Positioning_Enable} $Settings
+
+#TR GalaPos_1 {The lawn~(*~)} {Gala_Positioning_Disable;do s,3w,2s,3w;TE cgtree;#WALK Gala} $Settings
+#TR GalaPos_2 {Among the Lilacs~(*~)} {Gala_Positioning_Disable;TE lilacs;#WALK Gala} $Settings
+#TR GalaPos_3 {Fountain~(*~)} {Gala_Positioning_Disable;TE CaraFountain;#WALK Gala} $Settings
+#TR GalaPos_4 {Fountain center~(*~)} {Gala_Positioning_Disable;TE CaraFountainCenter;#WALK Gala} $Settings
+#TR GalaPos_5 {The companion's pavilion~(*~)} {Gala_Positioning_Disable;.2sw;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_6 {Companion's pavilion~(*~)} {Gala_Positioning_Disable;.3sw;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_7 {A narrow path~(*~)} {Gala_Positioning_Disable;.n2w;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_8 {A meeting-place of roads~(*~)} {Gala_Positioning_Disable;TE Caras;#WALK Gala} $Settings
+
+#TR GalaPos_9 {The end of the path~(*~)} {Gala_Positioning_Disable;.e3s;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_10 {Along the path before the stables~(*~)} {Gala_Positioning_Disable;.2e3s;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_11 {Below the healing room~(*~)} {Gala_Positioning_Disable;.3e3s;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_12 {Beginnings of a path~(*~)} {Gala_Positioning_Disable;.4e3s;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_13 {Crossroads~(*~)} {Gala_Positioning_Disable;.5e3s;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_14 {A busy street~(*~)} {Gala_Positioning_Disable;.n5e3s;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_15 {A quiet street~(*~)} {Gala_Positioning_Disable;.2n5e3s;TE CGBase;#WALK Gala} $Settings
+
+#TR GalaPos_16 {Eastern main street, under bakery~(*~)} {Gala_Positioning_Disable;w;TE Caras;#WALK Gala} $Settings
+#TR GalaPos_17 {A large bakery~(*~)} {Gala_Positioning_Disable;TE CaraBakery;#WALK Gala} $Settings
+#TR GalaPos_18 {A quiet forest~(*~)} {Gala_Positioning_Disable;2w;TE Caras;#WALK Gala} $Settings
+#TR GalaPos_19 {In a small flet~(*~)} {Gala_Positioning_Disable;TE CaraTrain;#WALK Gala} $Settings
+#TR GalaPos_20 {Before a large tavern~(*~)} {Gala_Positioning_Disable;3w;TE Caras;#WALK Gala} $Settings
+#TR GalaPos_21 {The common room at the Silver Arrow~(*~)} {Gala_Positioning_Disable;TE CaraBar;#WALK Gala} $Settings
+#TR GalaPos_22 {Inside Caras Galadhon~(*~)} {Gala_Positioning_Disable;ne;TE Caras;#WALK Gala} $Settings
+#TR GalaPos_23 {A bustling shopping street~(*~)} {Gala_Positioning_Disable;e;TE Caras;#WALK Gala} $Settings
+
+#TR GalaPos_24 {Before a large flet~(*~)} {Gala_Positioning_Disable;.2ws5e3s;TE CGBase;#WALK Gala} $Settings
+#TR GalaPos_25 {Under an Elven Flet~(*~)} {Gala_Positioning_Disable;do 2w,e;.2ws5e3s;TE CGBase;#WALK Gala} $Settings
+
+Gala_Positioning_Disable
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

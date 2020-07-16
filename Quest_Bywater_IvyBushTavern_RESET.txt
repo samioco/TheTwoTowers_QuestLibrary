@@ -1,0 +1,46 @@
+//Bywater_IvyBushTavern_RESET#CLASS 0#AL Bywater_IvyBushTavern_RESET {$QuestName="Bywater_IvyBushTavern"
+$Settings=%concat($QuestName,"|Settings")
+
+//------------------------------------------------------------
+//Quest Name: Bywater_IvyBushTavern
+//------------------------------------------------------------
+//Description: Help Frimaro fight some bad guys
+
+//Requirements:
+//Recommended level 1 - 5
+//Reward: A rusty Westernesse sword
+//------------------------------------------------------------
+//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
+//------------------------------------------------------------
+//A rusty westernesse sword          westernesse s  sword     1H   17   23   73   888       40.0
+//------------------------------------------------------------
+//------------------------------------------------------------
+//Settings
+//------------------------------------------------------------
+#AL Bywater_IvyBushTavern {
+QuestInit $QuestName "IvyBush" "tear rules"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Bywater_IvyBushTavern_Check {QuesterCheck $QuestName 1 5} $QuestName
+
+
+//------------------------------------------------------------
+//Settings
+//------------------------------------------------------------
+#TR {strike a blow against Sharkey this way!} {QuestAbort} $Settings
+#TR {Odd, you don't see any rules here right now.} {QuestAbort} $Settings
+#TR {the town for your transgression, you stop yourself.} {QuestAbort} $Settings
+#TR {You decide against doing anything foolish.} {QuestAbort} $Settings
+#TR {You don't want to risk your life again, so you decide not to do it.} {QuestAbort} $Settings
+
+#TR {Frimaro gives you a rusty Westernesse sword.} {wield sword} $Settings
+#TR {Storeroom} {sheath sword} $Settings
+#TR {{"You hear Frimaro shout: Find a way out of here quickly,|You know you don't have much time left to escape."}} {do push crate,lift trapdoor;d;n;search junk} $Settings
+#TR {finishing the search.  Perhaps you should try again?} {search junk} $Settings
+#TR {You search carefully and find a spiked wooden shield.} {do get shield,wear shield,get shield into pack;climb up ladder} $Settings
+#TR {After pushing away leaves, you find yourself in front of the tavern.} {GearSwap "A rusty westernesse sword"} $Settings
+
+//------------------------------------------------------------
+//Settings
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

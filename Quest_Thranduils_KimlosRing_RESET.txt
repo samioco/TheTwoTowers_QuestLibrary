@@ -1,0 +1,17 @@
+//Thranduils_KimlosRing_RESET#CLASS 0#AL Thranduils_KimlosRing_RESET {$QuestName="Thranduils_KimlosRing"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Thranduils_KimlosRing
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

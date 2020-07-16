@@ -1,0 +1,17 @@
+//OstinEdhil_AncientSkeleton_RESET#CLASS 0#AL OstinEdhil_AncientSkeleton_RESET {$QuestName="OstinEdhil_AncientSkeleton"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: OstinEdhil_AncientSkeleton
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

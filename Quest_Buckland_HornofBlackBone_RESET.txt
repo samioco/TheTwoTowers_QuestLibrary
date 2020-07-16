@@ -1,0 +1,35 @@
+//Buckland_HornofBlackBone_RESET#CLASS 0#AL Buckland_HornofBlackBone_RESET {$QuestName="Buckland_HornofBlackBone"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Buckland_HornofBlackBone
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Recover a fisherman's lost key
+
+//Requirements:
+//Recommended level 1 - 5
+//Reward: A horn of black bone (worthless)
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Buckland_HornofBlackBone {
+QuestInit $QuestName "Buckland_Park" "get crumbs"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Buckland_HornofBlackBone_Check {QuesterCheck $QuestName 1 5} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+
+#TR {You can't go picking crumbs off the floor when your hands are full.} {ss;#ECHO FREE UP HANDS!;SysMsg FREE UP HANDS!} $Settings
+#TR {Ok.} {#IF (%roomid()=buckpark) {#WALK buckpond;drop crumbs}} $Settings
+#TR {on the bread crumbs.  A small object falls from the bird's wing} {get key;#WALK bucklandfisherman;give key to fisherman} $Settings
+#TR {Fisherman gives you a horn of black bone.} {do put horn in pack,drop horn} $Settings
+#TR {The Fisherman says: You are too late.  Someone returned my lost item.} {QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

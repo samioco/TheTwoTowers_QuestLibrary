@@ -1,0 +1,17 @@
+//MirkwoodMtns_DuraksGold_RESET#CLASS 0#AL MirkwoodMtns_DuraksGold_RESET {$QuestName="MirkwoodMtns_DuraksGold"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MirkwoodMtns_DuraksGold
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

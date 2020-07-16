@@ -1,0 +1,17 @@
+//Baraddur_MilentijesPack_RESET#CLASS 0#AL Baraddur_MilentijesPack_RESET {$QuestName="Baraddur_MilentijesPack"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Baraddur_MilentijesPack
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Gondor_SawtoothedSword_RESET#CLASS 0#AL Gondor_SawtoothedSword_RESET {$QuestName="Gondor_SawtoothedSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Gondor_SawtoothedSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

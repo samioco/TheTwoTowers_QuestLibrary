@@ -1,0 +1,17 @@
+//NH_CorsairTraitors_RESET#CLASS 0#AL NH_CorsairTraitors_RESET {$QuestName="NH_CorsairTraitors"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: NH_CorsairTraitors
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

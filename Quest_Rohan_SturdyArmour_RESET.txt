@@ -1,0 +1,17 @@
+//Rohan_SturdyArmour_RESET#CLASS 0#AL Rohan_SturdyArmour_RESET {$QuestName="Rohan_SturdyArmour"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rohan_SturdyArmour
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

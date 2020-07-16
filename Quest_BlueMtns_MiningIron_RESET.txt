@@ -1,0 +1,17 @@
+//BlueMtns_MiningIron_RESET#CLASS 0#AL BlueMtns_MiningIron_RESET {$QuestName="BlueMtns_MiningIron"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: BlueMtns_MiningIron
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Umbar_MassiveLongSpear_RESET#CLASS 0#AL Umbar_MassiveLongSpear_RESET {$QuestName="Umbar_MassiveLongSpear"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Umbar_MassiveLongSpear
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Gundabad_OrcishLiquor_RESET#CLASS 0#AL Gundabad_OrcishLiquor_RESET {$QuestName="Gundabad_OrcishLiquor"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Gundabad_OrcishLiquor
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

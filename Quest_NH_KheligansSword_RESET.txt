@@ -1,0 +1,17 @@
+//NH_KheligansSword_RESET#CLASS 0#AL NH_KheligansSword_RESET {$QuestName="NH_KheligansSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: NH_KheligansSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

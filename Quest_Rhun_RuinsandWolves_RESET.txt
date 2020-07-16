@@ -1,0 +1,17 @@
+//Rhun_RuinsandWolves_RESET#CLASS 0#AL Rhun_RuinsandWolves_RESET {$QuestName="Rhun_RuinsandWolves"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhun_RuinsandWolves
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

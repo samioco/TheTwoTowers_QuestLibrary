@@ -1,0 +1,18 @@
+//Pelennor_DealingwithDarran_RESET#CLASS 0#AL Pelennor_DealingwithDarran_RESET {$QuestName="Pelennor_DealingwithDarran"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelennor_DealingwithDarran
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//MT7_DispatchingthePigeon_RESET#CLASS 0#AL MT7_DispatchingthePigeon_RESET {$QuestName="MT7_DispatchingthePigeon"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT7_DispatchingthePigeon
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,52 @@
+//BlueMtns_SmithsForge_RESET#CLASS 0#AL BlueMtns_SmithsForge_RESET {$QuestName="BlueMtns_SmithsForge"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: BlueMtns_SmithsForge
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Help an unorganized weaponsmith find items to assemble a sword
+//sword blank, handle, cross-guard
+
+//Requirements:
+//Recommended level 1+
+//Reward: A well-balanced sword
+//----------------------------------------------------------------------------------------------------
+//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A well-balanced sword              well-balanced  sword     1H   40   53   52   780       93.0
+//----------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL BlueMtns_SmithsForge {
+QuestInit $QuestName "bluemtn_stock" "ws;lift shelf"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL BlueMtns_SmithsForge_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {The dog snarls at you fiercely.} {ws;kill dog} $Settings
+#TR {Black dog has died.} {ss;lift shelf} $Settings
+#TR {{"The shelf has already fallen to the floor!|a skilled professional to assemble it, however."}} {ss;get rag;s;s;drop rag;n;n;get handle;#WALK bluemtn_smith;drop handle;#WALK bluemtn_assembly;drop rag;#WALK bluemtn_furnace;ws;dig through coal} $Settings
+#TR {You are too busy to worry about that!} {#IF (%roomid=bluemtn_furnace) {kill rat}} $Settings
+#TR {Vile rat has died.} {ss;dig through coal} $Settings
+#TR {There is nothing there but dust!} {ss;get cross-guard;sw;do drop cross-guard,get rag,dust blanks} $Settings
+#TR {{"    You dust off the blades and find a finished blade that could be|They have already been dusted!"}} {do drop rag,get blade;n;drop blade;s;get cross-guard;n;do get cross-guard,give cross-guard to smith,drop cross-guard;do get blade,give blade to smith,drop blade} $Settings
+#TR {You would need a rag for that!} {do drop rag,drop blade,drop cross-guard,drop handle;QuestAbort} $Settings
+#TR {You do not have a {"blade|cross-guard|handle"}.} {QuestAbort} $Settings
+#TR {Sheavener drops a partly finished sword.} {n;get handle;s;do get handle from pack,get handle,give handle to smith,drop handle,get sword,give sword to smith} $Settings
+#TR {Sheavener drops a well-balanced short sword.} {get sword;GearSwap "A well-balanced short sword";#WALK belshop;do sell all from pack,sell all} $Settings
+#TR {You are too tired to do that.} {#IF (%roomid=bluemtn_furnace) {rest on;#UNT Alarm_rest_30s;#ALA Alarm_rest_30s {+30} {dig through coal}}} $Settings
+#TR {You run SOUThwest.} {rest on;SysMsg Resting 30s, then try again.;#UNT Alarm_rest_30s;#ALA Alarm_rest_30s {+30} {ne} $Settings} $Settings
+#TR {You run SOUTh.} {rest on;SysMsg Resting 30s, then try again.;#UNT Alarm_rest_30s;#ALA Alarm_rest_30s {+30} {n} $Settings} $Settings
+#TR {You do not have enough energy to do that.} {#WAIT 1000;rest on;#UNT Alarm_rest_30s;#ALA Alarm_rest_30s {+30} {#SW (%roomid=bluemtn_assembly) {do get rag,dust blanks}} $Settings} $Settings
+#TR {Your hands are full!} {do drop cross-guard,drop blade,drop handle;QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

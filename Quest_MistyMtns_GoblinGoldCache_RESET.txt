@@ -1,0 +1,91 @@
+//MistyMtns_GoblinGoldCache_RESET#CLASS 0#AL MistyMtns_GoblinGoldCache_RESET {$QuestName="MistyMtns_GoblinGoldCache"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: MistyMtns_GoblinGoldCache
+//----------------------------------------------------------------------------------------------------
+//Description: Free a captured traveller.
+
+//Requirements:
+//Recommended level 12+
+//Reward: 25g
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL MistyMtns_GoblinGoldCache {
+ActionAdd "#WALK RivSP;ActionNext"
+QuestInit $QuestName "ShimRingPack" "search rags"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL MistyMtns_GoblinGoldCache_Check {QuesterCheck $QuestName 12 25} $QuestName
+
+#AL MistyMtns_GoblinGoldCache_Switch {
+//$success param = Boolean. True for success (move next). False for fail (try again)
+$success=%0
+#WAIT 1000
+#SW (%lower(%roomid())=%lower("ShimRingPack")) {
+  #IF (!$success) {search rags} {#WALK ShimRing_Helmet;MistyMtns_GoblinGoldCache_Switch}
+} (%lower(%roomid())=%lower("ShimRingHelmet")) {
+  #IF (!$success) {search shelves} {#WALK ShimRing_Crevice;MistyMtns_GoblinGoldCache_Switch}
+} (%lower(%roomid())=%lower("ShimRingCrevice")) {
+  #IF (!$success) {search small crevice} {#WALK GoblinGoldCache;MistyMtns_GoblinGoldCache_Switch}
+} (%lower(%roomid())=%lower("GoblinGoldCache")) {
+  #IF (!$success) {free traveller} {#WALK GoblinGoldCache_HiddenRoom;MistyMtns_GoblinGoldCache_Switch}
+} (%lower(%roomid())=%lower("GoblinGoldCacheHiddenRoom")) {
+  #IF (!$success) {search skull}
+}
+} $QuestName
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+#TR {You are too busy to do that now!} {MistyMtns_GoblinGoldCache_Switch "False"} $Settings
+
+//pack success
+#TR {You search through the rags and find a traveller's knapsack!} {
+GearSwap "A traveller's knapsack"
+MistyMtns_GoblinGoldCache_Switch "True"
+} $Settings
+
+//#TR {You wear a traveller's knapsack.} {tag knapsack} $Settings
+
+#TR {You are already wearing something on your back.} {put knapsack in pack 2} $Settings
+//pack fail
+
+
+//pack not in, needs ActionNext
+#TR {There is nothing worth taking in this pile.} {MistyMtns_GoblinGoldCache_Switch "True"} $Settings
+
+//helmet success
+#TR {You find a tarnished helmet on the highest shelf!} {
+GearSwap "A tarnished helmet"
+MistyMtns_GoblinGoldCache_Switch "True"
+} $Settings
+
+//#TR {You wear a tarnished helmet.} {} $QuestName||Settings
+//#TR {You are already wearing something on your head.} {do put tarnished helmet in pack,drop tarnished helmet} $Settings
+
+//helmet fail, not in, needs ActionNext
+#TR {There is nothing here.} {
+MistyMtns_GoblinGoldCache_Switch "True"
+} $Settings
+
+//find gold success
+#TR {You find %d gold pieces hidden in this crevice!} {
+MistyMtns_GoblinGoldCache_Switch "True"
+} $Settings
+
+//find gold fail: needs ActionNext
+#TR {You find nothing in this crevice.} {
+MistyMtns_GoblinGoldCache_Switch "True"
+} $Settings
+
+#TR {The goblins hid my gold in a skull in the room east of here.  As a token} {
+MistyMtns_GoblinGoldCache_Switch "True"
+} $Settings
+
+#TR {Free whom?} {QuestAbort} $Settings
+#TR {You search through the skulls, but you find nothing of value.} {QuestAbort} $Settings
+#TR {Someone else has already taken the traveller's gold.} {QuestAbort} $Settings
+#TR {There is no one here to free.} {QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,33 @@
+//Buckland_LoversRing_RESET#CLASS 0#AL Buckland_LoversRing_RESET {$QuestName="Buckland_LoversRing"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Buckland_LoversRing
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Find a ring and return it to a bereaving lover.
+
+//Requirements:
+//Recommended level 1 - 5
+//Reward: 45 gold
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Buckland_LoversRing {
+QuestInit $QuestName "Buckland_Storage_Shed" "do rip bag,get ring"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Buckland_LoversRing_Check {QuesterCheck $QuestName 1 5} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {As you rip open the bag, a cloud of manure and a shiny silver ring fly out!} {.wjn;give ring to hobbit} $Settings
+//#TR {The hobbit hands you some coins as he grips your hand in a firm} {} $Settings
+#TR {{"The bag is already ripped open, showing nothing but manure.|You do not have a ring."}} {QuestAbort} $Settings
+#TR {Hobbit says*: Oh that must not be mine, it was already returned.} {QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

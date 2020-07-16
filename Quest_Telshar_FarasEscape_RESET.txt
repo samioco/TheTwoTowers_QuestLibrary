@@ -1,0 +1,18 @@
+//Telshar_FarasEscape_RESET#CLASS 0#AL Telshar_FarasEscape_RESET {$QuestName="Telshar_FarasEscape"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Telshar_FarasEscape
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

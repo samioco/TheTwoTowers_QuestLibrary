@@ -1,0 +1,17 @@
+//Stonewain_Guthwine_RESET#CLASS 0#AL Stonewain_Guthwine_RESET {$QuestName="Stonewain_Guthwine"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Stonewain_Guthwine
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

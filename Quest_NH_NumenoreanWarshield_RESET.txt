@@ -1,0 +1,17 @@
+//NH_NumenoreanWarshield_RESET#CLASS 0#AL NH_NumenoreanWarshield_RESET {$QuestName="NH_NumenoreanWarshield"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: NH_NumenoreanWarshield
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

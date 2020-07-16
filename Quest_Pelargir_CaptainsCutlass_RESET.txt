@@ -1,0 +1,17 @@
+//Pelargir_CaptainsCutlass_RESET#CLASS 0#AL Pelargir_CaptainsCutlass_RESET {$QuestName="Pelargir_CaptainsCutlass"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_CaptainsCutlass
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

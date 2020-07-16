@@ -1,0 +1,17 @@
+//Druwaur_ScaringDerhir_RESET#CLASS 0#AL Druwaur_ScaringDerhir_RESET {$QuestName="Druwaur_ScaringDerhir"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Druwaur_ScaringDerhir
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

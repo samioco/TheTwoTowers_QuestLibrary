@@ -1,0 +1,17 @@
+//Ethring_SavingThomas_RESET#CLASS 0#AL Ethring_SavingThomas_RESET {$QuestName="Ethring_SavingThomas"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Ethring_SavingThomas
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

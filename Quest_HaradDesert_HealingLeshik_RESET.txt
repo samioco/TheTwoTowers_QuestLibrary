@@ -1,0 +1,25 @@
+//HaradDesert_HealingLeshik_RESET#CLASS 0#AL HaradDesert_HealingLeshik_RESET {$QuestName="HaradDesert_HealingLeshik"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: HaradDesert_HealingLeshik
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL HaradDesert_HealingLeshik {
+QuestInit $QuestName "waylaid_caravan" "ws;do search pile,kill scorpion"
+MoveMe_To_Arda
+} $QuestName
+
+#TR {Nasty scorpion has died.} {rummage through sack 2} $Settings
+#TR {Rummaging through the cloth and rags, you find a pouch filled with a} {kill scorpion} $Settings
+
+//#TR {You don't see that here.} {#IF (%roomid()=waylaid_caravan) {ss;do get pouch,rummage through sack 2,get mug,put powder in mug;gg waylaid;fill mug;gg waylaidchief;look chief}} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

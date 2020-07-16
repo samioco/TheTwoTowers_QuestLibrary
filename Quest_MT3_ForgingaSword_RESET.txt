@@ -1,0 +1,17 @@
+//MT3_ForgingaSword_RESET#CLASS 0#AL MT3_ForgingaSword_RESET {$QuestName="MT3_ForgingaSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT3_ForgingaSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

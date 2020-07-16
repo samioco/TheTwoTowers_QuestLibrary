@@ -1,0 +1,34 @@
+//Moria_StrangeMoss_RESET#CLASS 0#AL Moria_StrangeMoss_RESET {$QuestName="Moria_StrangeMoss"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Moria_StrangeMoss
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Moria_StrangeMoss {
+QuestInit "Moria_StrangeMoss" "Moss" "#T+ Moss_BatBlock;ws;#WALK MoriaMoss"
+MoveMe_To_Moria
+} $QuestName
+
+#AL Moria_StrangeMoss_Check {QuesterCheck $QuestName 10 100} $QuestName
+
+#TR {bleeding to death} {kill} $Settings
+#TR {Bat has died.} {#T+ Moss_BatBlock;deeper} $Settings
+
+#TR Moss_BatBlock {A large bat swoops down and blocks you from going there.} {#T- Moss_BatBlock;trigger Bat todo do deeper,kill bat;kill bat} $Settings
+
+#TR {Wait a minute, you're still busy!} {kill bat} $Settings
+
+#TR {A humid cavern} {trigger off;ss;search moss} $Settings
+
+#TR {You are too busy to do that now!} {#IF (%lower(%roomid())=%lower("MoriaMoss")) {#WAIT 1000;search moss}} $Settings
+#TR {You search through the moss and find a suitable patch.} {do get moss,tag moss,put moss in cloak,put moss in pack} $Settings
+#TR {There don't seem to be any suitable patches of moss.} {QuestAbort} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

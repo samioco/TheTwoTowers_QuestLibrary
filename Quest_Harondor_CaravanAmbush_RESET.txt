@@ -1,0 +1,145 @@
+//Harondor_CaravanAmbush_RESET#CLASS 0#AL Harondor_CaravanAmbush_RESET {$QuestName="Harondor_CaravanAmbush"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harondor_CaravanAmbush
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Harondor_CaravanAmbush {
+Harondor_CaravanAmbush_EXE
+MoveMe_To_Arda
+} $QuestName
+
+#AL Harondor_CaravanAmbush_Check {QuesterCheck $QuestName 19 100} $QuestName
+
+#AL Harondor_CaravanAmbush_ResetVars {
+StopWalk
+#UNT Alarm_CaravanWalk
+#T- NKADRoomShort
+#T- MorgRoomShort
+#T- HaradRoad
+#T- SouthRoad
+#T- HaradrimCamp
+#VAR CaravanPath_i {0} {} VAR
+#T- CaravanPath_Add
+
+#VAR Harondor_CaravanAmbush_Path {} {} VAR
+#LOOP 1,30 {#ADDI Harondor_CaravanAmbush_Path %concat("HaradRoad",%i)}
+#ADDI Harondor_CaravanAmbush_Path "Morg"
+#LOOP 1,12 {#ADDI Harondor_CaravanAmbush_Path %concat("SouthRoad",%i)}
+#ADDI Harondor_CaravanAmbush_Path "HarCamp"
+
+} $QuestName
+
+#AL Harondor_CaravanAmbush_Calculate_Room {
+$room=""
+#SW ((%lower(@LastSP)=%lower("NKAD")) && (%class(TravelTo))) {$room=%concat("HaradRoad",@CaravanPath_i)}
+#TE $room
+#ECHO Found caravan at: %roomid()
+} $QuestName
+
+#AL Harondor_CaravanAmbush_EXE {
+Harondor_CaravanAmbush_ResetVars
+ActionAdd "ActionClear;ActionNext"
+ActionAdd "Harondor_CaravanAmbush_ResetVars;QuestOff Harondor_CaravanAmbush;trigger off;BotOff Grinder;ActionNext"
+ActionAdd "#T+ CaravanPath_Add;trigger A haradrim caravan todo do stop,trigger off;travelto osgiliath quickly"
+ActionAdd "#T+ NKADRoomShort;#WALK NKAD;glance;mm;wimpy;ws;ActionNext"
+#VAR CaravanPath_i {0} {} VAR
+#VAR Caravan_LastSP {"NKAD"} {} VAR
+QuestOn Harondor_CaravanAmbush
+} $QuestName
+
+#AL Harondor_CaravanAmbush_SouthRoadWalk {
+#T+ SouthRoad;#T+ HaradrimCamp
+$nextroomnum=0
+$nextroom=""
+#MATH $nextroomnum (@CaravanPath_i + 1)
+#IF ($nextroomnum>12) {$nextroom="HarCamp"
+} {$nextroom=%concat("SouthRoad",$nextroomnum)}
+#ECHO Next room: $nextroom
+#WALK $nextroom
+} $QuestName
+
+#TR HaradRoad {^The Harad Road} {
+#ADD CaravanPath_i 1;#ECHO CaravanPath_i: @CaravanPath_i
+PlayerDetectOn
+} $Settings
+
+#TR NKADRoomShort {^The north gate of Kadar} {
+Harondor_CaravanAmbush_ResetVars
+#T+ HaradRoad;#T+ MorgRoomShort
+#ECHO CaravanPath_i: @CaravanPath_i
+} $Settings
+
+#TR MorgRoomShort {^A bridge over the Morgulduin} {
+Harondor_CaravanAmbush_ResetVars
+#T+ SouthRoad;#T+ HaradrimCamp
+#ECHO CaravanPath_i: @CaravanPath_i
+#ALA Alarm_CaravanWalk {+.1} {Harondor_CaravanAmbush_SouthRoadWalk} $Settings
+} $Settings
+
+#TR SouthRoad {^The Southward Road} {
+#ADD CaravanPath_i 1;#ECHO CaravanPath_i: @CaravanPath_i
+PlayerDetectOn
+#ALA Alarm_CaravanWalk {+.1} {Harondor_CaravanAmbush_SouthRoadWalk} $Settings
+} $Settings
+
+#TR HaradrimCamp {^A haradrim camp} {
+Harondor_CaravanAmbush_ResetVars
+#STOP;StopWalk;QuestAbort
+ActionClear;QuestAbort
+} $Settings
+
+#AL Harondor_CaravanAmbush_Attack {
+Harondor_CaravanAmbush_ResetVars
+#IF (@MyProf="rider") {mm} {dismount}
+ActionAdd %concat("#IF (!@PlayerDetected) {#ECHO Initiating Caravan!;ringon;#WAIT 500;ambush caravan} {#ECHO Player detected: Aborting;QuestAbort;travelto resume quickly}")
+ActionNext
+} $QuestName
+
+#TR {triggered!  doing: do stop} {
+Harondor_CaravanAmbush_Calculate_Room
+Harondor_CaravanAmbush_Attack
+} $Settings
+
+#TR {The caravan heads off %1.} {#EXE {%1;Harondor_CaravanAmbush_Attack}} $Settings
+
+#TR {As the caravan is ambushed, some guards jump out and prepare to defend it!} {
+SysMsg Caravan location: %roomname(), @Caravan
+#IF ((!@Party) OR (@PartyLeader=@MyName)) {
+  StopWalk;#UNT Alarm_caravan_walk;#T- caravan_path_short;#T- morg_short;#T+ NotThere;#T- GrinderHasDied;#T- GrinderWimpy;#VAR GrinderRooms {@Caravan} {} VAR
+  BotOn Grinder;#VAR Caravan {%roomnum()} {} VAR
+  #VAR MobList {"archer|guard 2|guard"} {} VAR
+  #VAR iMob {0} {} VAR
+  #VAR CurMob {%item(@MobList,@iMob)} {} VAR
+  GrinderNextMob
+}
+#SW (@MyProf="archer") {#WAIT 3000;kill archer
+} (@MyProf="rider") {
+  #SW (@Party) {trigger Y todo do warcry,trample archer,shape all,kill guard
+  } {trigger Y todo do trample archer,shape all,kill guard}
+} {trigger Y todo do shape all,kill guard}
+} $QuestName
+
+#TR {deserted.  Perhaps some of the contents could be salvaged.} {#IF (@trigger) {trigger off};ringoff;BotOff Grinder;ActionDelete GrinderNextMob;ActionDelete GrinderCurMob;#IF (@MyProf=archer) {sv};#IF ((!@Party) OR (@PartyLeader=@MyName)) {#3 {GetAllNoHands};#FORALL (@Gear_PartyWagons) {get all from caravan into %i};get all from caravan into @MyWagon;inventory caravan}} $QuestName
+
+#TR {The arrow throbs in your body.} {do yank arrow,drop all arrow} $Settings
+#TR {Thwack!  An arrow lodges itself deeply in your body.} {do yank arrow,drop all arrow} $Settings
+#TR {You lack the endurance to yell a rallying cry properly.} {#IF ((@MyProf=rider) AND (%class(Harondor_CaravanAmbush|Settings))) {trigger Y todo do kill guard,shape all}} $QuestName
+
+#TR {^You run %1.} {trigger off
+ActionAdd "trigger A haradrim caravan todo do stop,trigger off;#T+ CaravanPath_Add;travelto resume"
+ActionAdd "#WALK @Caravan;GetAllNoHands;#IF (@MyProf=archer) {sv};ActionNext"
+HealMe
+} $Settings
+
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

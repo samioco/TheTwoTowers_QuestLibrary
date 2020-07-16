@@ -1,0 +1,17 @@
+//MichelDelving_DiamondDagger_RESET#CLASS 0#AL MichelDelving_DiamondDagger_RESET {$QuestName="MichelDelving_DiamondDagger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MichelDelving_DiamondDagger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

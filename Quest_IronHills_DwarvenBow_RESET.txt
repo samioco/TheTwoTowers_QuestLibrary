@@ -1,0 +1,17 @@
+//IronHills_DwarvenBow_RESET#CLASS 0#AL IronHills_DwarvenBow_RESET {$QuestName="IronHills_DwarvenBow"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: IronHills_DwarvenBow
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,85 @@
+//NH_DarkSteelHelmet_RESET#CLASS 0#AL NH_DarkSteelHelmet_RESET {$QuestName="NH_DarkSteelHelmet"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: NH_DarkSteelHelmet
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL NH_DarkSteelHelmet {
+#IF (@Party) {ActionAdd "party say harness;#WAIT 3000;ActionNext"}
+#IF (@Gear_Wagon) {ActionAdd "#WALK dsh;harwag;ptow;ActionNext"}
+#VAR DSH_Stone {1} {0} VAR
+#VAR GrinderDSH {"dsh_guard|dsh_variags|dsh_path|dsh_orc|dsh_path"} {} VAR
+QuestInit $QuestName "DSH" "Grinder GrinderDSH"
+MoveMe_To_Arda
+} $QuestName
+
+#AL NH_DarkSteelHelmet_Check {QuesterCheck $QuestName 19 25} $QuestName
+
+#AL DSH_SearchStones {
+#IF (@Mounted) {dismount}
+#VAR dsh_stone {1} {} VAR
+#T+ dsh_find_nothing
+#T+ dsh_found_orc
+search behind stone @DSH_Stone
+} $QuestName
+
+#AL NH_DarkSteelHelmet_Loot {
+$CurRoom=%lower(@CurRoom)
+$numMobs=%numitems(@MobList)
+#SW (%pos(%lower("DSHStones"),$CurRoom))) {
+  #IF (@Mounted) {dismount}
+  sss
+  do tag helmet in corpse,drop all from corpse
+  GearSwap "a dark steel helmet"
+  #IF ($MyProf="rider") {mm}
+}
+#IF ($CurRoom!="dshpath") {
+  #LOOP $numMobs {
+    #WALK $CurRoom
+    GetAllNoHands
+    #WAIT 500
+    #WALK DSH
+    PtoCont
+  }
+}
+#IF (%roomname($CurRoom)="A campfire at the center of the caravan") {
+  ActionDelete "HealMe"
+  ActionDelete "GrinderNextMob"
+  ActionAdd "GrinderNextMob"
+  ActionAdd "#WALK DSHStones;DSH_SearchStones"
+  ActionAdd "HealMe"
+  
+} 
+} $QuestName
+
+//DSH
+#TR dsh_guardRoomShort {^Entrance to a small camp} {GrinderResetRoom;#T+ dsh_young_guard} $Settings
+#TR dsh_young_guard {^ A young guard} {#T- dsh_young_guard;#VAR MobList {"guard"} {} VAR;#ECHO Room_mobs: @MobList} $Settings
+#TR dsh_variagsRoomShort {^A campfire at the center of the caravan} {GrinderResetRoom;#T+ dsh_short_variag;#T+ dsh_tall_variag;#T+ dsh_you_Attack_tall_variag} $Settings
+#TR dsh_short_variag {^ A short variag} {#T- dsh_short_variag;#ADDI MobList "short variag";#ECHO Room_mobs: @MobList} $Settings
+#TR dsh_tall_variag {^ A tall variag} {#T- dsh_tall_variag;#T+ dsh_you_Attack_tall_variag;#ADDI MobList "tall variag";#ECHO Room_mobs: @MobList} $Settings
+
+#TR dsh_orcRoomShort {^A circle of stones} {GrinderResetRoom;#T+ dsh_orc} $Settings
+#TR dsh_orc {^ An orc fugitive} {#T- dsh_orc;#VAR MobList {"orc"} {} VAR;#ECHO Room_mobs: @MobList} $Settings
+
+#TR dsh_pathRoomShort {^A rocky path} {GrinderResetRoom;#T+ dsh_strong_variag} $Settings
+#TR dsh_strong_variag {^ A strong variag} {#T- dsh_strong_variag;#VAR MobList {"variag"} {} VAR;#ECHO Room_mobs: @MobList} $Settings
+
+#TR dsh_you_Attack_tall_variag {You attack Tall variag.} {#IF (%roomid="dsh_variags") {#T- dsh_you_Attack_tall_variag;$action="";#SW (@MyProf=archer) {$action="kill tall variag";#WAIT 2000} (@MyProf=rider) {$action="trigger Y todo do ";#IF (@Party) {$action=%concat($action,"warcry,")};$action=%concat($action,"kill short variag,shape all")} {$action="trigger Y todo do kill short variag,shape all"};#EXE {$action}}} $QuestName
+#TR {({"Tall variag|Short variag"}) has died.} {#IF (%roomid="dsh_variags") {#IF (@trigger) {trigger off};$mob=%lower(%1);#IF (($mob!=@CurMob) AND (@iMob<%numitems(@MobList))) {#WAIT 200;ActionDelete GrinderNextMob}}} $QuestName
+
+#TR {You cannot do that while mounted!} {dismount;DSH_search_stones} $Settings
+
+#TR dsh_find_nothing {^You find nothing behind the stone.} {#ADD dsh_stone 1;#IF (@dsh_stone>8) {#T- dsh_find_nothing} {search behind stone @dsh_stone}} $Settings
+#TR dsh_found_orc {^You find an orc hiding behind the stone!} {#T- dsh_find_nothing;#IF (@MyProf=rider) {mm};ActionNext} $Settings
+
+#TR {Orc fugitive has died.} {drop all from corpse;sss;GearSwap "A dark steel helmet"} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

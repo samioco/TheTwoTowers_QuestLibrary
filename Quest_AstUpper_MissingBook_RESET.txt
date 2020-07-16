@@ -1,0 +1,32 @@
+//AstUpper_MissingBook_RESET#CLASS 0#AL AstUpper_MissingBook_RESET {$QuestName="AstUpper_MissingBook"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AstUpper_MissingBook
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 10g
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL AstUpper_MissingBook {
+#VAR AstUpper_MissingBook_Path {%concat(".2se2ne2sne3nw2ewsw2ew3swesw;.(out)e;.(out)sw;.(out)e;.(out)2nw2e2ne2se2nene2wn2e2wse2sen2snen2snen2sn3w2sw;.(out)e;.(out)s2n2")} {} VAR
+#PATH AstUpper_MissingBook_Path {@AstUpper_MissingBook_Path} VAR
+QuestInit $QuestName "AsturBook" "do search corner,get book"
+MoveMe_To_FH
+} $QuestName
+
+#AL AstUpper_MissingBook_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+#TR {You search and find a book in the dark corner!} {trigger A disgruntled teacher todo give book to neran;AstUpper_MissingBook_Path;drop book;trigger off;QuestAbort} $Settings
+
+//#TR {^ A disgruntled teacher} {#T- Walker;#SUSPEND walker;#UNT walker;give book to neran} $Settings
+#TR {You search but fail to find anything of interest."} {QuestAbort} $Settings
+#TR {There is no book here to get.} {QuestAbort} $Settings
+#TR {The teacher gives you some coins, tucks the book away, and goes back to working.} {questend} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Rhun_TreasureintheWell_RESET#CLASS 0#AL Rhun_TreasureintheWell_RESET {$QuestName="Rhun_TreasureintheWell"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhun_TreasureintheWell
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

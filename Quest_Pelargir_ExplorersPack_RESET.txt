@@ -1,0 +1,17 @@
+//Pelargir_ExplorersPack_RESET#CLASS 0#AL Pelargir_ExplorersPack_RESET {$QuestName="Pelargir_ExplorersPack"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_ExplorersPack
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

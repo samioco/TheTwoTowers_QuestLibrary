@@ -1,0 +1,26 @@
+//Shire_CorbosSatchel_RESET#CLASS 0#AL Shire_CorbosSatchel_RESET {$QuestName="Shire_CorbosSatchel"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Shire_CorbosSatchel
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended leve:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Shire_CorbosSatchel {
+ActionAdd "QuestComplete Shire_CorbosSatchel"
+QuestInit "Shire_CorbosSatchel" "corbo_cabinet" "do open cabinet,get bowl from cabinet;#WALK corbo;do search shelves,get bowl,give bowl to corbo,drop all bowl"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Shire_CorbosSatchel_Check {QuesterCheck $QuestName 1 1000} $QuestName
+
+#TR {You do not have a bowl.} {QuestAbort} $Settings
+#TR {I do not see corbo here.} {drop all bowl;QuestAbort} $Settings
+#TR {As he is diggin in his pocket, you notice something fall out onto} {get satchel} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

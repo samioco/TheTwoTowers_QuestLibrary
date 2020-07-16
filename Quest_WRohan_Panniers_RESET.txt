@@ -1,0 +1,36 @@
+//WRohan_Panniers_RESET#CLASS 0#AL WRohan_Panniers_RESET {$QuestName="WRohan_Panniers"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WRohan_Panniers
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL WRohan_Panniers {
+#IF (@Mounted) {#WALK AdSP;hh;lead}
+QuestInit $QuestName "Panniers_Well" "search well"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL WRohan_Panniers_Check {MyProfileVars;#IF (@MyRiding>=40) {QuesterCheck $QuestName 2 100}} $QuestName
+//------------------------------------------------------------
+
+#TR {You fail to find anything special in the well.} {QuestAbort} $Settings
+#TR {Upon closer inspection of the well, you see a rope tied to the} {pull rope} $Settings
+
+#TR {rope from the bucket.} {get bucket;#WALK panniers_stall;fill bucket with oats} $Settings
+#TR {There are no oats left here.} {QuestAbort} $Settings
+#TR {You scoop the bucket into the oats, filling it.} {#WALK panniers_blackstallion;latch gate} $Settings
+//#TR {{"You unlatch the gate.|The gate is already unlatched.}} {#WALK panniers_blackstallion;latch gate}
+
+#TR {{"You latch the gate.|The gate is already latched."}} {#IF (%roomid="panniers_blackstallion") {#IF (%mud.ep>=60) {tame horse} {rest;#ALA "Alarm_rest" {+60} {latch gate}}}} $Settings
+#TR {The horse gets spooked and backs away from you.} {QuestAbort} $Settings
+#TR {You successfully tame the black stallion.} {lead black stallion;#WALK panniers_stall;tie horse} $Settings
+#TR {You lead the horse into the stall and tie it to the rope hanging} {#WALK panniers_tackstall} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

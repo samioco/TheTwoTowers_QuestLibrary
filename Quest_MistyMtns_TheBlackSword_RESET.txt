@@ -1,0 +1,17 @@
+//MistyMtns_TheBlackSword_RESET#CLASS 0#AL MistyMtns_TheBlackSword_RESET {$QuestName="MistyMtns_TheBlackSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_TheBlackSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

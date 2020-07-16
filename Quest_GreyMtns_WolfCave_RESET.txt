@@ -1,0 +1,87 @@
+//GreyMtns_WolfCave_RESET#CLASS 0#AL GreyMtns_WolfCave_RESET {$QuestName="GreyMtns_WolfCave"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GreyMtns_WolfCave
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+//Level 2 Uruk NOT OK
+//Reward: belt loop and sellable stuff hammer 26g, loop 6g, small shield 27g
+//Total: 59g
+
+
+#AL GreyMtns_WolfCave {
+ActionAdd "#WALK TurSP;2extinguish crystal;QuestComplete GreyMtns_WolfCave"
+#IF (%ismember(@MyWep_Type,"flail|hammer|mace|axe")) {ActionAdd "do wear loop from pack,wear loop;ActionNext"}
+ActionAdd "GreyMtns_WolfCave_GetPelts"
+ActionAdd "sss;#WALK WolfCaveLoop;do pry hand,drop hammer,drop all from corpse,drop all from loop on ground,get loop into pack,get loop,wear all from ground,get all into pack,get all;ActionNext"
+QuestInit $QuestName "WolfCave" "ws;#T+ WolfCaveCorpse;#WALK WolfCaveLoop"
+MoveMe_To_FH
+} $QuestName
+
+#AL GreyMtns_WolfCave_Check {QuesterCheck $QuestName 10 100} $QuestName
+
+#AL GreyMtns_WolfCave_GetPelts {
+ActionAdd "#WALK TurShop;SellAll;ActionNext"
+ActionAdd "#WALK WolfCaveWolves;sss;PeltAll 3;ActionNext"
+ActionNext
+} $QuestName
+
+#TR {Kill what?  You can't see a thing!} {
+#WALK WolfCaveLoop
+light crystal
+} $Settings
+
+#TR {You don't see crystal to light.} {QuestAbort} $Settings
+
+#TR {{@Messages_Crystal_Light}} {
+ws
+#WALK WolfCaveWolves
+kill wolf
+} $Settings
+
+#TR {wolf growls and blocks your way!} {
+ws
+kill wolf
+} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+
+#TR {wolf has died.} {
+Pelt
+#T+ WolfCaveCorpse
+#WALK WolfCaveLoop
+} $Settings
+
+#TR WolfCaveCorpse {A decayed uruk corpse} {
+#T- WolfCaveCorpse
+sss
+do pry hand,drop all from corpse,drop all from loop on ground
+do wear loop from ground
+GetAllFromGround
+ActionNext
+} $Settings
+
+#TR {You run %1.} {
+$action="";#UNT "Alarm_Rest"
+#SW (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}}
+SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000
+rest on
+#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
+} $Settings
+
+#TR {You wear a belt with a leather loop} {tag loop} $Settings
+
+//    These are the remains of an uruk-hai.  The flesh has been picked at 
+//by the animals in these caves, but its face is definitely that of an orc.
+//One of the legs is missing, and the corpse still has a weapon gripped in 
+//its hand.  Perhaps the hand could be pried open.
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

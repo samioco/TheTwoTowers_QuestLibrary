@@ -1,0 +1,17 @@
+//Gondor_SapphireSword_RESET#CLASS 0#AL Gondor_SapphireSword_RESET {$QuestName="Gondor_SapphireSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Gondor_SapphireSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

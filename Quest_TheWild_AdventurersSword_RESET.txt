@@ -1,0 +1,38 @@
+//TheWild_AdventurersSword_RESET#CLASS 0#AL TheWild_AdventurersSword_RESET {$QuestName="TheWild_AdventurersSword"
+$Settings=%concat($QuestName,|Settings)
+//----------------------------------------------------------------------------------------------------
+//Quest Name: TheWild_AdventurersSword
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Requirements:
+//Recommended level 1+
+//Reward: An adventurer's sword  (40g)
+//----------------------------------------------------------------------------------------------------
+//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//An adventurer's sword              adventurer's   sword     1H   15   25   50   750       40.0
+//----------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL TheWild_AdventurersSword {
+ActionAdd "#WALK adventurers_sword;ss;#3 {do get pelt,attach pelt to string,put pelt in pack};2extinguish crystal;gns;sall;ActionNext"
+QuestInit $QuestName "Adventurers_Sword" "ws;kill guard"
+} $QuestName
+
+#AL TheWild_AdventurersSword_Check {QuesterCheck $QuestName 10 25} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+#TR {Kill what?  You can't see a thing!} {s;s;light crystal;n;n} $Settings
+#TR {You don't see crystal to light.} {QuestAbort} $Settings
+#TR {bleeding to death} {kill} $Settings
+#TR {%1 has died.} {do skin corpse,attach pelt to string,drop pelt;#WAIT 2000;kill wolf} $Settings
+#TR {You don't see that here.} {#WAIT 2000;sss;#LOOP 1,3 {do skin corpse %i,get pelt,attach pelt to string,drop pelt};#WAIT 2000;do move skeleton,get sword} $Settings
+//#TR {^Wait a minute, you're still busy!} {} $Settings
+#TR {You move the skeleton and find a sword.} {GearSwap "An adventurer's sword";get all pelt} $Settings
+#TR {You move the skeleton but find nothing.} {TheWild_AdventurersSword_End;QuestAbort} $Settings
+#TR {^You run %1.} {s;$action="#WALK adventurers_sword;kill wolf";SysMsg Waiting 200s, then try again, moving: $action;#WAIT 2000;extinguish crystal;rest on;#UNT Alarm_rest;#ALA Alarm_rest {+200} {#EXE {$action}} $Settings} $Settings
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

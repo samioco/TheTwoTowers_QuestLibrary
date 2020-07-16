@@ -1,0 +1,17 @@
+//Framsburg_BeautifulSword_RESET#CLASS 0#AL Framsburg_BeautifulSword_RESET {$QuestName="Framsburg_BeautifulSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Framsburg_BeautifulSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

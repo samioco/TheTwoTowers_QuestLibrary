@@ -1,0 +1,17 @@
+//Umbar_BeastCompanion_RESET#CLASS 0#AL Umbar_BeastCompanion_RESET {$QuestName="Umbar_BeastCompanion"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Umbar_BeastCompanion
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,56 @@
+//AdvCaves_DwarfWizard_RESET#CLASS 0#AL AdvCaves_DwarfWizard_RESET {$QuestName="AdvCaves_DwarfWizard"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Adv.Caves_DwarfWizard
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Help a dwarf locate his lost ring. This requires finding the mining shaft
+//where the thief has escaped to. Kill the thief, and retrieve the ring.
+//Climbing the shaft requires EP. Be careful!
+
+//Requirements:
+//Recommended level 2 - 5 (Maximum)
+//Reward: A ratty mining pack
+//----------------------------------------------------------------------------------------------------
+//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A sling for a staff                     staff sling         -1   0    0    20   0         -2.4
+//----------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL AdvCaves_DwarfWizard {
+QuestInit $QuestName "advwiz" "ask wizard about problem"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL AdvCaves_DwarfWizard_Check {QuesterCheck $QuestName 2 5} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {{"Dogur says*: Stop jabbering and help me find that orc!|Dogur says*: Stop jabbering and help me find that orc!"}} {squeeze through crack} $Settings
+
+#TR {You don't see that here.} {#IF (%roomid=huurk) {s;squeeze through crack}} $Settings
+
+#TR {You're too exhausted to do that.} {#IF (%roomnum=74341) {rest on;#UNT "Alarm_rest";#ALA "Alarm_rest" {+300} {squeeze through crack} $Settings} {QuestAbort}} $Settings
+
+#TR {You slide into the wall and pass into another room!} {pull cLoth} $Settings
+
+#TR {You run SOUTh.} {rest on;#UNT Alarm_rest_30s;#ALA Alarm_rest_30s {+30} {n} $Settings} $Settings
+
+#TR {{"the feel of the grimy loincLoth"|"The loincLoth has already been pulled off."}} {n;ws;kill orc} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+
+#TR {Huurk has died.} {ss;do get sling from corpse into pack,get sling from corpse;s;squeeze through crack} $Settings
+
+#TR {Dogur says*: Hey, thanks for killing that orc!  You're alright!} {#WALK belshop;sell all} $Settings
+
+#TR {Dogur says*: Hooray, I've been avenged!} {QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

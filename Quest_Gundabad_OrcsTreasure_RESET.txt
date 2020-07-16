@@ -1,0 +1,17 @@
+//Gundabad_OrcsTreasure_RESET#CLASS 0#AL Gundabad_OrcsTreasure_RESET {$QuestName="Gundabad_OrcsTreasure"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Gundabad_OrcsTreasure
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

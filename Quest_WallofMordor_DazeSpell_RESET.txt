@@ -1,0 +1,59 @@
+//WallofMordor_DazeSpell_RESET#CLASS 0#AL WallofMordor_DazeSpell_RESET {$QuestName="WallofMordor_DazeSpell"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WallofMordor_Daze
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#VAR WallofMordor_Daze_Mobs {} {} VAR
+#ADDI WallofMordor_Daze_Mobs "White snake"
+#ADDI WallofMordor_Daze_Mobs "Warty toad"
+#ADDI WallofMordor_Daze_Mobs "Black lizard"
+#ADDI WallofMordor_Daze_Mobs "Large bat"
+#ADDI WallofMordor_Daze_Mobs "Angry bat"
+
+#VAR WallofMordor_Daze_Actions {} {} VAR
+#ADDI WallofMordor_Daze_Actions "White snake|pull tongue out of corpse|tongue"
+#ADDI WallofMordor_Daze_Actions "Warty toad|scrape warts off corpse|warts"
+#ADDI WallofMordor_Daze_Actions "Black lizard|yank claw off corpse|claw"
+#ADDI WallofMordor_Daze_Actions "Large bat|rip wings off corpse|wings"
+#ADDI WallofMordor_Daze_Actions "Angry bat|skin corpse|pelt"
+
+#TR DazeActions {({@WallofMordor_Daze_Mobs}) has died.} {
+$mob = %1
+$action = ""
+$item = ""
+$EXE = ""
+#FORALL @WallofMordor_Daze_Actions {
+#IF (%ismember($mob,%item(%i,1))) {
+$action = %item(%i,2)
+$item = %item(%i,3)
+}
+}
+#IF ($action) {
+#ECHO Action: $action
+#ECHO Item: $item
+#EXE {$action}
+sss
+#IF (($item="pelt") && (@Gear_PeltString)) {#IF (%len($exe)) {$EXE = %concat($exe,",")};$EXE = %concat($exe,"attach pelt to pelt string")}
+#IF (@Gear_Pack) {#IF (%len($exe)) {$EXE = %concat($exe,",")};$EXE = %concat($exe,"get ",$item," into pack")}
+#IF (@Gear_Cloak) {#IF (%len($exe)) {$EXE = %concat($exe,",")};$EXE = %concat($exe,"get ",$item," into cloak")}
+#IF (%len($exe)) {$EXE = %concat($exe,",")};$EXE = %concat($exe,"get ",$item)
+#EXE {$exe}
+}
+} $Settings
+
+//#TR {^White snake has died.} {#IF (%zonenum=244) {ss;do  pull tongue out of corpse,put tongue in pack,get tongue}} WallofMordor_Daze
+//#TR {^Warty toad has died.} {#IF (%zonenum=244) {ss;do scrape warts off corpse,put rock in pack,get warts}} WallofMordor_Daze
+//#TR {^Black lizard has died.} {#IF (%zonenum=244) {ss;do yank claw off corpse,put claw in pack,get claw}} WallofMordor_Daze
+//#TR {^Large bat has died.} {#IF (%zonenum=244) {ss;do rip wings off corpse,put wings in pack,get wings}} WallofMordor_Daze
+//#TR {^Angry bat has died.} {#IF (%zonenum=244) {ss;do wield knife,skin corpse,put pelt in pack,get pelt}} WallofMordor_Daze
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

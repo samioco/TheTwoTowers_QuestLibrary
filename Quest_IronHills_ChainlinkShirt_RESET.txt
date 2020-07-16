@@ -1,0 +1,17 @@
+//IronHills_ChainlinkShirt_RESET#CLASS 0#AL IronHills_ChainlinkShirt_RESET {$QuestName="IronHills_ChainlinkShirt"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: IronHills_ChainlinkShirt
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Carchost_UlkhaladsVault_RESET#CLASS 0#AL Carchost_UlkhaladsVault_RESET {$QuestName="Carchost_UlkhaladsVault"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Carchost_UlkhaladsVault
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

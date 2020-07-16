@@ -1,0 +1,17 @@
+//Mordor_MithrilCoat_RESET#CLASS 0#AL Mordor_MithrilCoat_RESET {$QuestName="Mordor_MithrilCoat"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mordor_MithrilCoat
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

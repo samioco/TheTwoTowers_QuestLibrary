@@ -1,0 +1,18 @@
+//Tavorus_AlCroutanisPotion_RESET#CLASS 0#AL Tavorus_AlCroutanisPotion_RESET {$QuestName="Tavorus_AlCroutanisPotion"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Tavorus_AlCroutanisPotion
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//MT7_CaptainsSword_RESET#CLASS 0#AL MT7_CaptainsSword_RESET {$QuestName="MT7_CaptainsSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT7_CaptainsSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

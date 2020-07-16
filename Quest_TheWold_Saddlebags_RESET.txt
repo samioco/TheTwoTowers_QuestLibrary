@@ -1,0 +1,17 @@
+//TheWold_Saddlebags_RESET#CLASS 0#AL TheWold_Saddlebags_RESET {$QuestName="TheWold_Saddlebags"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: TheWold_Saddlebags
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

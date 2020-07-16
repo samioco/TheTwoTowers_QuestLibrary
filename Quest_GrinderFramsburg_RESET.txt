@@ -1,0 +1,226 @@
+//GrinderFramsburg_RESET#CLASS 0#AL GrinderFramsburg_RESET {$QuestName="GrinderFramsburg"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GrinderFramsburg
+//Description: Static Grinder
+//------------------------------------------------------------
+//Recommended level: 10+
+//------------------------------------------------------------
+//Settings:
+//WalkerStartRoom: <Grinder>StartRoom
+//WalkerPath: <Grinder>Path
+//WalkerMobs: <Grinder>Mobs: GrinderWalk mobs
+
+//StaticRoomShort: <Grinder>
+//StaticMobSettings ShortNames: <Grinder>MobSettings
+//StaticSettings: <Grinder>Settings: RoomsShorts + MobSettings
+//#VAR <Grinder>Settings {} {} VAR
+//#FORALL @<Grinder> {#ADDI <Grinder>Settings %concat(%i,"RoomShort")}
+//#FORALL @<Grinder>MobSettings {#ADDI <Grinder>Settings %i}
+//#FORALL @<Grinder>Settings {#T- $QuestName|%i}
+
+//<Grinder>_Loot: Loot room for non-mount/wagon rooms
+//------------------------------------------------------------
+
+#AL GrinderFramsburg {
+#VAR GrinderFramsburgStartRoom {"Framsburg"} {} VAR
+
+#VAR GrinderFramsburgPath {".ne3w2nse;.(wagon);.(out)2ewnjenj2w2sk3s"} {} VAR
+
+#VAR GrinderFramsburgMobs {} {} VAR
+#ADDI GrinderFramsburgMobs "An intimidating guard"
+#ADDI GrinderFramsburgMobs "An ugly half-orc"
+
+#VAR GrinderFramsburg {} {} VAR
+#ADDI GrinderFramsburg "FramH"
+#ADDI GrinderFramsburg "FramRes1"
+#ADDI GrinderFramsburg "FramRes2"
+#ADDI GrinderFramsburg "Stew"
+#ADDI GrinderFramsburg "FramOH"
+#ADDI GrinderFramsburg "FramOrcs1"
+#ADDI GrinderFramsburg "FramOrcs2"
+#ADDI GrinderFramsburg "FramOrcs3"
+#ADDI GrinderFramsburg "FramOrcs4"
+#ADDI GrinderFramsburg "FramOrcs5"
+#IF (@MyLevel>12) {#ADDI GrinderFramsburg "FramChieftain"}
+#IF (@MyLevel>12) {#ADDI GrinderFramsburg "FramLeader"}
+
+#VAR GrinderFramsburgMobSettings {} {} VAR
+#ADDI GrinderFramsburgMobSettings "Guard"
+#ADDI GrinderFramsburgMobSettings "GuardEnters"
+#ADDI GrinderFramsburgMobSettings "GruffSoldier"
+#ADDI GrinderFramsburgMobSettings "LargeSoldier"
+#ADDI GrinderFramsburgMobSettings "InjuredSoldier"
+#ADDI GrinderFramsburgMobSettings "InjuredOrc"
+#ADDI GrinderFramsburgMobSettings "HalfOrc"
+#ADDI GrinderFramsburgMobSettings "Chieftain"
+#ADDI GrinderFramsburgMobSettings "Leader"
+#ADDI GrinderFramsburgMobSettings "Father"
+#ADDI GrinderFramsburgMobSettings "Mother"
+
+#VAR GrinderFramsburgSettings {} {} VAR
+#FORALL @GrinderFramsburg {#ADDI GrinderFramsburgSettings %concat(%i,"RoomShort")}
+#FORALL @GrinderFramsburgMobSettings {#ADDI GrinderFramsburgSettings %concat($QuestName,%i)}
+#FORALL @GrinderFramsburgSettings {#T- $QuestName|%i}
+
+QuestInit $QuestName "Framsburg" "Grinder GrinderFramsburg"
+MoveMe_To_Arda
+} $QuestName
+
+#AL GrinderFramsburg_Check {QuesterCheck $QuestName 10 100} $QuestName
+
+#TR FramHRoomShort {A residential area} {
+GrinderResetRoom
+#T+ GrinderFramsburgGuard
+#T+ GrinderFramsburgGuardEnters
+#T+ GrinderFramsburgInjuredSoldier
+} $Settings
+
+#TR FramRes1RoomShort {A residential district} {
+GrinderResetRoom
+#T+ GrinderFramsburgGuard
+#T+ GrinderFramsburgGuardEnters
+#T+ GrinderFramsburgGruffSoldier
+#T+ GrinderFramsburgLargeSoldier
+} $Settings
+
+#TR FramRes2RoomShort {A residential area} {
+GrinderResetRoom
+#T+ GrinderFramsburgGuard
+#T+ GrinderFramsburgGuardEnters
+#T+ GrinderFramsburgGruffSoldier
+#T+ GrinderFramsburgLargeSoldier
+} $Settings
+
+#TR StewRoomShort {A ruined house that has a smell of stew all about it} {
+GrinderResetRoom
+#T+ GrinderFramsburgGuard
+#T+ GrinderFramsburgGuardEnters
+#T+ GrinderFramsburgFather
+#T+ GrinderFramsburgMother
+} $Settings
+
+
+#TR FramOHRoomShort {A dirty house} {
+GrinderResetRoom
+#T+ GrinderFramsburgInjuredOrc
+#T+ GrinderFramsburgHalfOrc
+} $Settings
+
+#TR FramChieftainRoomShort {A house in nice shape} {
+GrinderResetRoom
+#T+ GrinderFramsburgChieftain
+#T+ GrinderFramsburgHalfOrc
+} $Settings
+
+#TR FramLeaderRoomShort {Half of a ruined house} {
+GrinderResetRoom
+#T+ GrinderFramsburgLeader
+#T+ GrinderFramsburgGuard
+} $Settings
+
+#TR FramOrcs1RoomShort {A filthy cobblestone road} {
+GrinderResetRoom
+#T+ GrinderFramsburgHalfOrc
+} $Settings
+
+#TR FramOrcs2RoomShort {Dirty room} {
+GrinderResetRoom
+#T+ GrinderFramsburgHalfOrc
+} $Settings
+
+#TR FramOrcs3RoomShort {A filthy house} {
+GrinderResetRoom
+#T+ GrinderFramsburgHalfOrc
+} $Settings
+
+#TR FramOrcs4RoomShort {A filthy road} {
+GrinderResetRoom
+#T+ GrinderFramsburgHalfOrc
+} $Settings
+
+#TR FramOrcs5RoomShort {The end of the road} {
+GrinderResetRoom
+#T+ GrinderFramsburgHalfOrc
+} $Settings
+
+#TR GrinderFramsburgInjuredSoldier {An injured soldier(*)} {
+#T- GrinderFramsburgInjuredSoldier
+GrinderAddToMobList "soldier" %1
+} $Settings
+
+#TR GrinderFramsburgGuard {An intimidating guard(*)} {
+#T- GrinderFramsburgGuard
+GrinderAddToMobList "guard" %1
+} $Settings
+
+#TR GrinderFramsburgGuardEnters {Guard enters.} {
+GrinderAddToMobList "guard"
+} $Settings
+
+
+#TR GrinderFramsburgGruffSoldier {A gruff soldier} {
+#T- GrinderFramsburgGruffSoldier
+GrinderAddToMobList "soldier"
+} $Settings
+
+#TR GrinderFramsburgLargeSoldier {A large soldier} {
+#T- GrinderFramsburgLargeSoldier
+GrinderAddToMobList "soldier"
+} $Settings
+
+#TR GrinderFramsburgFather {The father} {
+#T- GrinderFramsburgFather
+GrinderAddToMobList "father"
+} $Settings
+
+#TR GrinderFramsburgMother {A tired mother} {
+#T- GrinderFramsburgMother
+GrinderAddToMobList "mother"
+} $Settings
+
+#TR GrinderFramsburgInjuredOrc {An injured orc(*)} {
+#T- GrinderFramsburgInjuredOrc
+GrinderAddToMobList "injured orc" %1
+} $Settings
+
+#TR GrinderFramsburgHalfOrc {An ugly half-orc(*)} {
+#T- GrinderFramsburgHalfOrc
+GrinderAddToMobList "half-orc" %1
+} $Settings
+
+#TR GrinderFramsburgChieftain {The orc chieftain} {
+#T- GrinderFramsburgChieftain
+GrinderAddToMobList "chieftain"
+} $Settings
+
+#TR GrinderFramsburgLeader {The men's leader} {
+#T- GrinderFramsburgLeader
+GrinderAddToMobList "leader"
+} $Settings
+
+
+#AL GrinderFramsburg_Loot {
+$numMobs=%numitems(@MobList)
+$CurRoom=%lower(@CurRoom)
+#SW (%pos(%lower("FramLeader"),$CurRoom)) {
+  SSS
+  do drop all from corpse,get body armour
+  GetAllNoHands
+  #WALK "FramEnt"
+  GearSwap "A good piece of body armour"
+  WS
+  PackToContainers
+} (%pos(%lower("FramChieftain"),$CurRoom)) {
+  SSS
+  do drop all from corpse,get sword,get hide
+  GetAllNoHands
+  #WALK FramOrcs
+  do drop sword,drop hide
+  GearSwap "A tough hide"
+  GearSwap "A nasty looking sword"
+  WS
+  PackToContainers
+} {GetAllNoHands $numMobs}
+} $QuestName
+} _QuestLibrary#CLASS 0

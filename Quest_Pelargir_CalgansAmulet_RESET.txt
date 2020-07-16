@@ -1,0 +1,17 @@
+//Pelargir_CalgansAmulet_RESET#CLASS 0#AL Pelargir_CalgansAmulet_RESET {$QuestName="Pelargir_CalgansAmulet"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_CalgansAmulet
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

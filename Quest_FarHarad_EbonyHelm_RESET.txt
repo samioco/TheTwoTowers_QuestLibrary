@@ -1,0 +1,18 @@
+//FarHarad_EbonyHelm_RESET#CLASS 0#AL FarHarad_EbonyHelm_RESET {$QuestName="FarHarad_EbonyHelm"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: FarHarad_EbonyHelm
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

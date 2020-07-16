@@ -1,0 +1,17 @@
+//Erebor_SilverArrow_RESET#CLASS 0#AL Erebor_SilverArrow_RESET {$QuestName="Erebor_SilverArrow"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Erebor_SilverArrow
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

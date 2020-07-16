@@ -1,0 +1,17 @@
+//Pelargir_TheBlackPearl_RESET#CLASS 0#AL Pelargir_TheBlackPearl_RESET {$QuestName="Pelargir_TheBlackPearl"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_TheBlackPearl
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

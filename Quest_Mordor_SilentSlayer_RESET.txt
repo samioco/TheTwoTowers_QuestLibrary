@@ -1,0 +1,17 @@
+//Mordor_SilentSlayer_RESET#CLASS 0#AL Mordor_SilentSlayer_RESET {$QuestName="Mordor_SilentSlayer"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mordor_SilentSlayer
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

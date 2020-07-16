@@ -1,0 +1,104 @@
+//GreyMtns_DwarvenDeathmask_RESET#CLASS 0#AL GreyMtns_DwarvenDeathmask_RESET {$QuestName="GreyMtns_DwarvenDeathmask"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GreyMtns_DwarvenDeathmask
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL GreyMtns_DwarvenDeathmask {
+QuestOn GreyMtns_DwarvenDeathmask
+#VAR GreyMtns_DwarvenDeathmask_Serpents_Dead {0} {} VAR
+#SW (%ismember(%lower(%roomid()),%lower("DDMSpirit|DDMPack|DDMArmoury"))) {
+  #WALK DDMArmoury
+  do put pick in pack,drop pick
+  GreyMtns_DwarvenDeathmask_Start
+} (%lower(%roomid())=%lower("DDMThroneRoom")) {
+  #SW (@MyProf="archer") {sal} (%ismember(@MyProf,@casters)) {store staff}
+  sss
+  ringon
+  do 2get fangs from corpse,2get fangs
+  #WALK DDMSpirit
+  2give fangs to spirit
+  2extinguish crystal
+}
+} $QuestName
+
+#VAR GreyMtns_DwarvenDeathmask_Serpents_Dead {0} {} VAR
+
+#AL GreyMtns_DwarvenDeathmask_EXE {
+} $QuestName
+
+#AL GreyMtns_DwarvenDeathmask_Start {
+ss
+ringon
+$trig=""
+$prof_skill=""
+$action=""
+CrystalOn
+light crystal
+#IF (%ismember(@MyProf,@casters)) {do draw staff,hold staff}
+#T- DDM_Inside;#T+ DDM_Wimpy
+ws
+#WALK DDMThroneRoom
+//If secondary skill, set special
+#SW (%ismember("Tactics",@{%concat(@MyName,"_OtherSkills")})) {$prof_skill="headbutt"} (%ismember("Nature's grace",@{%concat(@MyName,"_OtherSkills")})) {$prof_skill="feint"} (%ismember("Butchery",@{%concat(@MyName,"_OtherSkills")})) {$prof_skill="shiv"}
+//if primary skill, override special with primary
+#SW (@MyProf="wizard") {$prof_skill="cast lightning"
+} (@MyProf="necromancer") {$prof_skill="conjure hurricane"
+} (@MyProf="warrior") {$prof_skill="headbutt"
+} (@MyProf="ranger") {$prof_skill="feint"
+} (@MyProf="sniffer") {$prof_skill="shiv"
+} {$prof_skill="kill"}
+//set initial attack action
+#SW (@MyProf="wizard") {$action="focus dodge,cast lightning"
+} (@MyProf="necromancer") {$action="focus dodge,conjure hurricane"
+} ($prof_skill) {$action=%concat("focus aim,",$prof_skill," serpent,kill serpent")
+} {$action="focus aim,kill serpent"}
+#IF (%pos(",",$action)) {$action=%concat("do ",$action)}
+//set combat trigger
+#SW (%ismember(@MyProf,@casters)) {$trig=%concat("trigger serpent todo do ",$prof_skill," serpent,shape all")} {$trig=%concat("trigger serpent todo do ",$prof_skill," serpent,kill serpent 2,shape all")}
+#EXE {$trig}
+#EXE {$action}
+} $QuestName
+
+#TR DDM_Wimpy {Large serpent * you} {#IF (%mud.hp<80) {#T- DDM_Wimpy;#T+ DDM_SerpentBlock;#T+ DDM_Inside;s}} $Settings 
+
+#TR DDM_Inside {Deep inside the great hall} {#T- DDM_Inside;#T- DDM_SerpentBlock;#T- DDM_SerpentLoosen;ActionAdd "#T+ DDM_Wimpy;#WALK ddmin";HealHere} $Settings 
+#T- DDM_Inside
+
+#TR DDM_SerpentBlock {You can't leave with the serpent coiled around you!} {#TE DDMThroneRoom;#T+ DDM_SerpentLoosen} $Settings 
+#T- DDM_SerpentBlock
+
+#TR DDM_SerpentLoosen {The serpent loosens its grip around you.} {s} $Settings 
+#T- DDM_SerpentLoosen
+
+#TR {You are too exhausted to conjure that spell.} {trigger Y todo do kill serpent 2,shape all} $Settings 
+
+#TR {The crystal flickers and dies.} {light crystal} $Settings 
+#TR {bleeding to death} {kill} $Settings 
+#TR {Large serpent has died.} {
+trigger off
+#ADD GreyMtns_DwarvenDeathmask_Serpents_Dead 1
+#IF (@GreyMtns_DwarvenDeathmask_Serpents_Dead>=2) {
+  #SW (@MyProf="archer") {sal} (%ismember(@MyProf,@Casters)) {store staff}
+  ss;ringoff
+  do 2get fangs from corpse,2get fangs
+  #WALK DDMSpirit;2give fangs to spirit;2extinguish crystal
+}
+} $Settings 
+
+#TR {You feel something cold materialize in your hand.} {#WALK DDMArmoury;push through wall} $Settings
+
+#TR {You push through the loose wall section, revealing a large chest!} {
+do unlock chest with solid iron key,drop key,open chest,get deathmask from chest
+GearSwap "a dwarven deathmask"
+get pick into pack
+} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

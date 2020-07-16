@@ -1,0 +1,17 @@
+//WallofMordor_PinkieBone_RESET#CLASS 0#AL WallofMordor_PinkieBone_RESET {$QuestName="WallofMordor_PinkieBone"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WallofMordor_PinkieBone
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

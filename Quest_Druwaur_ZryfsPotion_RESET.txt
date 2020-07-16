@@ -1,0 +1,17 @@
+//Druwaur_ZryfsPotion_RESET#CLASS 0#AL Druwaur_ZryfsPotion_RESET {$QuestName="Druwaur_ZryfsPotion"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Druwaur_ZryfsPotion
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

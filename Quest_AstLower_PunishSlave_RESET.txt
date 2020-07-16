@@ -1,0 +1,38 @@
+//AstLower_PunishSlave_RESET#CLASS 0#AL AstLower_PunishSlave_RESET {$QuestName="AstLower_PunishSlave"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AstLower_PunishSlave
+//------------------------------------------------------------
+//Description:
+//Help the necromancer teacher punish the slave by whipping the slave on command
+//This quest takes a while.
+
+//Requirements:
+//Recommended level 1+ (Level 5 max)
+
+//Reward: 47g
+
+//------------------------------------------------------------
+//Settings
+//------------------------------------------------------------
+#AL AstLower_PunishSlave {
+QuestInit $QuestName "Astur_PunishSlave" "offer help"
+MoveMe_To_FH
+} $QuestName
+
+#AL AstLower_PunishSlave_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+//------------------------------------------------------------
+//Settings
+//------------------------------------------------------------
+#TR {Angry necromancer gives you a black whip.} {do wield whip,rest on} $Settings
+#TR {Angry necromancer says in Westron: You need to %1 the slave now!} {%1 disobedient slave} $Settings
+#TR {You do not have the energy to %1 the slave!} {rest on;#ALA +10 {%1 disobedient slave}} $Settings
+#TR {Angry necromancer says in Westron: I told you to %1 the slave already!} {%1 disobedient slave} $Settings
+#TR {your service is complete.} {give whip to necromancer} $Settings
+#TR {The necromancer angrily grabs his whip.} {QuestAbort} $Settings
+#TR {Apprentice warrior says*: You do not have access to this passage.} {QuestAbort} $Settings
+#TR {The whip is in no condition to be doing that kind of damage.} {give whip to necromancer;QuestAbort} $Settings
+//------------------------------------------------------------
+//Settings
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

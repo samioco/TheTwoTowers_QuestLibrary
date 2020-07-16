@@ -1,0 +1,17 @@
+//MT2_BoxforEthenStallwick_RESET#CLASS 0#AL MT2_BoxforEthenStallwick_RESET {$QuestName="MT2_BoxforEthenStallwick"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT2_BoxforEthenStallwick
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

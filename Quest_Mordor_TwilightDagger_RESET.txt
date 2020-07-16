@@ -1,0 +1,17 @@
+//Mordor_TwilightDagger_RESET#CLASS 0#AL Mordor_TwilightDagger_RESET {$QuestName="Mordor_TwilightDagger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mordor_TwilightDagger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

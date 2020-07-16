@@ -1,0 +1,81 @@
+//Rivendell_RabbitHunt_RESET#CLASS 0#AL Rivendell_RabbitHunt_RESET {$QuestName="Rivendell_RabbitHunt"
+$Settings=%concat($QuestName,|Settings)
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Rivendell_RabbitHunt
+//Description: Help the wounded elven woodsman hunt rabbits.
+//----------------------------------------------------------------------------------------------------
+//Requirements:
+//Recommended level 1+
+//Reward: A simple shield  
+//----------------------------------------------------------------------------------------------------
+//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A simple shield                         simple shield       1    14   12   100  150       14.0
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Rivendell_RabbitHunt {
+QuestInit $QuestName "RabbitHunt" "offer help"
+//ActionAdd "#WALK TrollshawsKnife;do search pile,get knife,sheath knife,untag all knife,tag knife;ActionNext"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Rivendell_RabbitHunt_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+#TR {{"You offer help and the woodsman says*: "Thank you, if you search"}} {
+#WALK RabbitHuntRabbits;ws;do push brush,part grass,shift rocks;kill rabbit
+} $Settings
+
+#TR {The woodsman says*: You have already offered help, now find the pelts!} {
+#WALK RabbitHuntRabbits;ws;do push brush,part grass,shift rocks;kill rabbit
+} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+#TR {Rabbit has died.} {
+sss
+do skin corpse,get pelt
+#WALK RabbitHunt
+present pelt to woodsman
+} $Settings
+
+#TR {Tirannun says*: Thank you, but I need more pelts!} {
+#WALK RabbitHuntRabbits
+do push brush,part grass,shift rocks
+ws
+kill rabbit
+} $Settings
+
+#TR {You run garden.} {
+#UNT Alarm_Rest
+#WAIT 2000
+rest on
+#ALA Alarm_Rest {+60} {forest} $Settings
+} $Settings
+
+#TR {You don't see that here.} {
+#IF (%roomid()="RabbitHuntRabbits") {
+  #WALK RivSshop
+  SellAll
+  QuestAbort
+}
+} $Settings
+
+#TR {You don't even have a pelt!} {
+#WALK RivShop
+SellAll
+QuestAbort
+} $Settings
+
+#TR {Tirannun hands you a shield.} {
+GearSwap "A simple shield"
+#WALK RivShop
+SellAll
+} $Settings
+
+#TR {The woodsman says: Someone has already offered help!} {QuestAbort} $Settings
+#TR {The woodsman says*: Sorry but I have all the pelts I need.  Perhaps later!} {QuestAbort} $Settings
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

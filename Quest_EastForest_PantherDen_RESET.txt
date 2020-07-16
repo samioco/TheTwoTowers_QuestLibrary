@@ -1,0 +1,18 @@
+//EastForest_PantherDen_RESET#CLASS 0#AL EastForest_PantherDen_RESET {$QuestName="EastForest_PantherDen"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: EastForest_PantherDen
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

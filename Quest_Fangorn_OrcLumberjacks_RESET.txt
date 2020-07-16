@@ -1,0 +1,17 @@
+//Fangorn_OrcLumberjacks_RESET#CLASS 0#AL Fangorn_OrcLumberjacks_RESET {$QuestName="Fangorn_OrcLumberjacks"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Fangorn_OrcLumberjacks
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

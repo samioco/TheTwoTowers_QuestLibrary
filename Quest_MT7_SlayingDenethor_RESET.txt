@@ -1,0 +1,129 @@
+//MT7_SlayingDenethor_RESET#CLASS 0#AL MT7_SlayingDenethor_RESET {$QuestName="MT7_SlayingDenethor"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT7_SlayingDenethor
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL MT7_SlayingDenethor {
+#VAR QuestName {"MT7_SlayingDenethor"} {} VAR
+#IF (%roomname()="Palantir room") {
+  QuestOn MT7_SlayingDenethor
+  MT7_SlayingDenethor_INIT
+} {#ECHO Move to Palantir Room first: CitTop}
+} $QuestName
+
+#AL MT7_SlayingDenethor_Check {QuesterCheck $QuestName 15 25} $QuestName
+
+#AL MT7_SlayingDenethor_INIT {#VAR MobList {} {} VAR;#VAR iMob {} {} VAR;#VAR iRoom {} {} VAR;#T+ cittop_short;ActionAdd "#IF (@MobList) {MT7_SlayingDenethor_EXE}";glance;ActionNext} $QuestName
+
+#AL MT7_SlayingDenethor_EXE {
+#T- DenethorRoomShort;#T- DenethorEntry
+#VAR iMob {1} {} VAR;#VAR iRoom {1} {} VAR
+#VAR MobList {"denethor"} {} VAR
+$exe="do ";$trig="";$prof_skill="";$wep=@MyWep_id
+
+//Professional skill
+#SW (%ismember("Tactics",@{%concat(@MyName,"_OtherSkills")})) {$prof_skill="headbutt"
+} (%ismember("Nature's grace",@{%concat(@MyName,"_OtherSkills")})) {$prof_skill="feint"
+} (%ismember("Butchery",@{%concat(@MyName,"_OtherSkills")})) {$prof_skill="shiv"}
+#SW (@MyProf="warrior") {$prof_skill="headbutt"
+} (@MyProf="wizard") {$prof_skill="cast fireball"
+} (@MyProf="necromancer") {$prof_skill="conjure spike"
+} (@MyProf="ranger") {$prof_skill="feint"
+} (@MyProf="sniffer") {$prof_skill="shiv"}
+#IF (!$prof_skill) {$prof_skill="kill"}
+
+//Initial Combat Action
+#IF (@MyFaction="FR") {$exe=%concat($exe,"drop all jerky from pack")} {$exe=%concat($exe,"drop all meat pie from pack")}
+#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"drop mixed potion")
+
+//Rings on
+#IF (@Gear_CobaltRing) {
+#IF ((%len($exe)) && (%rightback($exe,1)!=",") && (%rightback($exe,1)!=";")) {$exe=%concat($exe,";")}
+$exe=%concat($exe,"cobon;")
+}
+#SW (@Gear_ShimmeringRing) {
+#IF ((%len($exe)) && (%rightback($exe,1)!=",") && (%rightback($exe,1)!=";")) {$exe=%concat($exe,";")}
+$exe=%concat($exe,"aimon;")
+} (@Gear_ScoredRing) {
+#IF ((%len($exe)) && (%rightback($exe,1)!=",") && (%rightback($exe,1)!=";")) {$exe=%concat($exe,";")}
+$exe=%concat($exe,"goldon;")}
+
+#SW (%ismember(@MyProf,@casters)) {
+#IF ((%len($exe)) && (%rightback($exe,1)!=",") && (%rightback($exe,1)!=";")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"hold staff;ws;do drink mixed potion,focus dodge,",$prof_skill," at denethor")
+} (@MyProf="assassin") {
+#IF (%rightback($exe,1)=";") {$exe=%concat($exe,"do ")}
+$exe=%concat($exe,"remove ",$wep)
+#IF (@Gear_GreyGloves) {#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"wear grey gloves from pack")}
+#IF (@Gear_WarHorn) {#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"remove mighty war horn,get mighty war horn from pack,blow horn,put mighty war horn in pack,wear mighty war horn")}
+#IF (@Gear_PashaHorn) {#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"remove pasha's war horn,blow for strategy,wear pasha's war horn")}
+#IF (@Gear_Mixie) {#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"reveal mixed potion,drink mixed potion,conceal mixed potion,drop mixed potion")}
+#IF (%ismember(@MyWep_type,"whip|prod|globe")) {#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"wield @MyWep_type from cloak,wield @MyWep_type from pack,wield whip")}
+#IF ($wep) {#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"hold ",$wep,",remove ",$wep)}
+#IF (@dag) {
+#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"wield ",@dag," from cloak,wield ",@dag," from pack,wield dagger,wield ",@dag)
+} {#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"wield dagger")}
+#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"focus aim,backstab denethor")
+#IF (@dag) {#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"put ",@dag," in cloak")}
+#IF ($wep) {#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"wield ",$wep,",double wield")}
+#IF ((%len($exe)) && (%rightback($exe,1)!=",")) {$exe=%concat($exe,",")}
+$exe=%concat($exe,"backstab denethor,kill denethor,shape denethor")
+} {
+#IF ((%len($exe)) && (%rightback($exe,1)!=",") && (%rightback($exe,1)!=";")) {$exe=%concat($exe,";")}
+$exe=%concat($exe,"ws;do ")
+$exe=%concat($exe,"focus aim,",$prof_skill," denethor")
+#IF ($prof_skill!="kill") {$exe=%concat($exe,",kill denethor")}
+#IF ((%len($exe)) && (%rightback($exe,1)!=",") && (%rightback($exe,1)!=";")) {$exe=%concat($exe,";")}
+$exe=%concat($exe,"#WAIT 2000;drink mixed potion")
+}
+
+//Combat trigger
+$trig="trigger Denethor todo do "
+#IF (@MyProf="necromancer") {$trig=%concat($trig,"leech denethor,conjure spike at denethor,conjure arrow at denethor,shape denethor")
+} {$trig=%concat($trig,$prof_skill," denethor,shape denethor")}
+#ECHO Action: $EXE
+#ECHO trigger: $trig
+#EXE {$trig}
+#EXE {$exe}
+} $QuestName
+
+#TR CitTopRoomShort {^Palantir Room} {#T- CitTopRoomShort;#T+ DenethorRoomShort;#T+ DenethorEntry} $Settings
+#TR DenethorRoomShort {^ Denethor, Lord and Steward of Minas Tirith} {MT7_SlayingDenethor_EXE} $Settings
+#TR denethor_entry {The door opens, and in walks Denethor} {MT7_SlayingDenethor_EXE} $Settings
+
+#TR {You are too tired for such a stunt.} {#IF (@trigger) {trigger off}} $Settings
+#TR {You just don't have the energy right now.  Rest a bit} {#IF (@trigger) {trigger off}} $Settings
+#TR {Rest up, and shiv again later.} {#IF (@trigger) {trigger off}} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+#TR {Denethor has died.} {
+trigger off;ringoff;aimoff;goldoff;foff
+#SW (@MyProf="archer") {sal} {ss}
+#IF (%ismember(@MyProf,@casters)) {store staff}
+do get long sword from corpse into pack,tag sword in pack,get long sword from corpse,get long sword,tag long sword,get black mail from corpse,get black mail,get all pie into pack,get all jerky into pack
+} $Settings
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

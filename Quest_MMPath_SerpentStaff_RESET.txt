@@ -1,0 +1,17 @@
+//MMPath_SerpentStaff_RESET#CLASS 0#AL MMPath_SerpentStaff_RESET {$QuestName="MMPath_SerpentStaff"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MMPath_SerpentStaff
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

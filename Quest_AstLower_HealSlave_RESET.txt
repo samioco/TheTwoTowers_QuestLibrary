@@ -1,0 +1,18 @@
+//AstLower_HealSlave_RESET#CLASS 0#AL AstLower_HealSlave_RESET {$QuestName="AstLower_HealSlave"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AstLower_HealSlave
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

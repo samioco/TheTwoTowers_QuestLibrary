@@ -1,0 +1,17 @@
+//Mirkwood_DragonStaff_RESET#CLASS 0#AL Mirkwood_DragonStaff_RESET {$QuestName="Mirkwood_DragonStaff"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_DragonStaff
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

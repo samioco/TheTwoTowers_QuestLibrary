@@ -1,0 +1,32 @@
+//Rhov_CrazyMansSpoon_RESET#CLASS 0#AL Rhov_CrazyMansSpoon_RESET {$QuestName="Rhov_CrazyMansSpoon"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_CrazyMansSpoon
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+//reward 50g
+
+#AL Rhov_CrazyMansSpoon {
+QuestInit $QuestName "Spoon_Man" "ask man about spoon"
+MoveMe_To_NorthArda
+} $QuestName
+
+#AL Rhov_CrazyMansSpoon_Check {QuesterCheck $QuestName 5 25} $QuestName
+
+#TR {Crazy man says*: My spoon, my precious silver spoon...} {ss;#WALK spoon_key;do tip cup,get key;s;do get key,unlock west door with key,drop all key} $Settings
+#TR {{"You unlock the west door.|The west door is already unlocked."}} {#WALK spoon_key;do open box,get cheese from box;#WALK spoon_rat;offer cheese to rat} $Settings
+#TR {Offer what to what?  You can't see a thing!} {light crystal;offer cheese to rat} $Settings
+#TR {You don't see crystal to light.} {QuestAbort} $Settings
+#TR {In its hurry, the rat dropped a small spoon, and chose to eat the} {get spoon;#WALK spoon_man;give spoon to man} $Settings
+#TR {{"You do not have any keys.|There is no cheese in the box to get.|There is no spoon here to get.|You do not have a spoon."}} {do drop all cheese,drop all key,extinguish crystal;#WALK spoon_man;QuestAbort} $Settings
+#TR {^What?} {#IF (%roomid=spoon_rat) {do drop all key,drop all cheese,extinguish crystal;QuestAbort}} $Settings
+#TR {spoon! Please accept these coins as a reward.} {do drop all key,drop all cheese,extinguish crystal} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

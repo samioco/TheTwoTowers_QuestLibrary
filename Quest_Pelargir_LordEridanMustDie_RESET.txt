@@ -1,0 +1,149 @@
+//Pelargir_LordEridanMustDie_RESET#CLASS 0#AL Pelargir_LordEridanMustDie_RESET {$QuestName="Pelargir_LordEridanMustDie"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_LordEridanMustDie
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Pelargir_LordEridanMustDie {
+QuestOn Pelargir_LordEridanMustDie
+} $QuestName
+
+#AL EridanChores_SetAlarms {
+#UNT m3;#UNT 4m;#UNT 5m;#UNT 6m;#UNT 630m;#UNT m645
+#ALA m3 {+3:00} {beep2;SysMsg 3 minutes passed!}
+#ALA m4 {+4:00} {beep2;SysMsg 4 minutes passed!}
+#ALA m5 {+5:00} {beep2;SysMsg 5 minutes passed!}
+#ALA m6 {+6:00} {beep2;SysMsg 6 minutes passed!}
+#ALA m630 {+6:30} {beep2;SysMsg 6:30m passed! Report to EridanButler within 30s!}
+#ALA m645 {+6:45} {beep2;SysMsg 6:45m passed! Report to EridanButler within 15s!}
+} $QuestName
+
+#TR {here will look like.  Are you interested in keeping it?} {say yes} $Settings
+#TR {Porter leaves %1.} {#EXE {%1}} $Settings
+#TR {Butler says*: So, let's get to the point.} {EridanChores_SetAlarms} $Settings
+
+#TR {Butler says*: You are free for a while to have a rest.} {
+EridanChores_SetAlarms
+#WALK EridanKitchen;request stew
+} $Settings
+
+#TR {Butler says*: Excellent!  I must say that what was written} {
+EridanChores_SetAlarms
+#WALK EridanKitchen
+request stew
+} $Settings
+
+//Butler instructions
+
+} $Settings
+
+#TR {{"You will start with|Your next target is"} the ({"west|east"}) storage room.} {
+#SW (%1="west") {#WAIT 3000;#WALK EridanWestStorage;lift rack
+} (%1="east") {#WAIT 3000;#WALK EridanEastStorage;rearrange racks}
+} $Settings
+
+#TR {{"You will start with|Your next target is"} the basement.} {
+#WAIT 3000;#WALK EridanBasement
+#6 {do search crates,drop all}
+e;get ladder;w;drop ladder
+do get rag,clean blood
+} $Settings
+
+#TR {Butler says*: Your next target is the ({"northern|southern"}) guest room.} {
+#WAIT 3000
+#SW (%1="northern") {#WALK EridanNorthGuestRoom;insert drawers in dresser
+} (%1="southern") {#WALK EridanSouthGuestRoom;push bed}
+} $Settings
+
+#TR {Butler says*: Your next target is the garden.  It is in poor} {
+#WAIT 3000;#WALK EridanGarden;weed lawns
+} $Settings
+
+#TR {Butler says*: Your next target is the ({"western|eastern"}) corridor.} {
+#WAIT 3000
+#SW (%1="western") {#WALK EridanBasement;get rag;#WALK EridanWesternCorridor;clean walls
+} (%1="eastern") {#WALK EridanBasement;get broom;#WALK EridanEasternCorridor;sweep stone}
+} $Settings
+
+//EridanNorthGuestRoom chores
+#TR {You pick up the final drawer and insert it into the dresser.} {place candles in chandelier} $Settings
+#TR {the metal ring.  The chandelier is now completely repaired.} {attach door to wardrobe} $Settings
+#TR {You carefully attach the door to the hinges and close it.} {clean bedspread} $Settings
+#TR {the room's looks.} {clean bedspread} $Settings
+#TR {that it looks nice.} {push bed} $Settings
+#TR {You push the bed once more and it now stands where it should.} {
+#WALK EridanBasement;get ladder
+#WALK EridanNorthGuestRoom;hang chandelier
+} $Settings
+#TR {then pick up your ladder again} {#WALK EridanBasement;drop ladder
+#WALK EridanNorthGuestRoom
+rest;look
+} $Settings
+
+//EridanSouthGuestRoom chores
+#TR {that it falls on the ground with a VERY loud THUD!} {place bedspread on bed} $Settings
+#TR {dirt, and place it neatly on the bed.} {lift nightstand} $Settings
+#TR {position again.} {#WALK EridanBasement;get broom;#WALK EridanSouthGuestRoom;sweep glass} $Settings
+#TR {You sweep the remaining glass into the corner.} {#WALK EridanBasement;drop broom;drop broom;#WALK EridanSouthGuestRoom;hang curtain} $Settings
+#TR {You carefully attach the curtain to each of the wooden rings.} {SysMsg Tasks done!;rest;look} $Settings
+
+//EridanBasement chores
+#TR {worth it to work on it any more.} {drop rag} $Settings
+#TR {Finally, after what seems like an age, you manage to make the stain} {do drop rag,place clothes in cabinet}
+#TR {You toss the final piece on the now fairly large pile and smile} {do drop all,attach door to cabinet} $Settings
+#TR {Phew!  Finally, you finish the job of gathering the clothes.  The} {do drop all,attach door to cabinet} $Settings
+#TR {You carefully place the door on the hinges.  The cabinet can now} {close cabinet} $Settings
+#TR {You close the cabinet's door.} {stack crates} $Settings
+#TR {You lift the last small crate and put it on top of the stack} {pile pieces} $Settings
+#TR {basement looks much cleaner now.} {rest;look} $Settings
+
+//EridanWestStorage chores
+#TR {the wall, and with a loud thud it settles in its place.} {do e,get nails,get hammer,w,attach shelves to rack} $Settings
+#TR {is finally done!} {do e,drop all,w,place jars on shelves} $Settings
+#TR {up, glad that this part of work is done.} {do e,take broom,w,sweep glass} $Settings
+#TR {Finally!} {do e,drop all,w,affix legs to cabinet} $Settings
+#TR {cabinet.  It is now stable enough to store firewood!} {stack firewood in cabinet} $Settings
+#TR {finally done!} {SysMsg TASK DONE!;rest;look} $Settings
+
+//EridanEastStorage chores
+#TR {You lift the fourth and final rack and move it next to the wall.  Phew!} {place Tools on racks} $Settings
+#TR {hoes on the fourth rack, finally finishing the task.} {lift baskets} $Settings
+#TR {You lift the two baskets and push them next to the wall.} {gather apples} $Settings
+#TR {baskets, which are now full.  Phew, this was really tiresome.} {do w,get needle,get thread,e,stitch tear} $Settings
+#TR {and satisfied with your work you stand up.} {do w,drop needle,drop thread,get scoop,e,scoop grain} $Settings
+#TR {inside the sack and close it.} {SysMsg TASK DONE!;do w,drop all,e;rest;look} $Settings
+
+//EridanGarden chores
+#TR {seen in it.  Phew!  It was really tiresome!} {lift benches} $Settings
+#TR {You lift the final two benches, finishing your work with them.} {arrange stones} $Settings
+#TR {Phew!  Finally, the tiresome work of arranging the stones is done!} {attach figure to basin} $Settings
+#TR {properly.} {get shears} $Settings
+#TR {You pick up the shears.} {prune bushes} $Settings
+#TR {You wield a pair of pruning shears.} {prune bushes} $Settings
+#TR {last group of bushes.} {do drop shears,look behind tree} $Settings
+#TR {quickly realize that it is the corpse of a fallen Corsair!} {do search corpse,get dagger,unhand dagger,tag dagger} $Settings
+
+//EridanWesternCorridor chores
+#TR {until it is completely gone.  Phew!} {#WALK EridanBasement;drop all;do get thread,get needle;#WALK EridanWesternCorridor;patch rug} $Settings
+#TR {visible, the rug looks much better than before.} {#WALK EridanBasement;drop all;#WALK EridanWesternCorridor;hang candleholders on wall} $Settings
+#TR {You grab the final pair of candleholders and hang them on the wall.} {place candles in candleholders}
+#TR {your arms.} {SysMsg TASK DONE!;rest;look} $Settings
+
+//EridanHall chores
+#TR {of the room.} {arrange furniture} $Settings
+#TR {finishing the task.} {do d,get ladder,e,get ladder,w,u,hang banners} $Settings
+#TR {You take two last chairs and tuck them under the second table, finishing the task.} {SysMsg Tasks done!;rest;look} $Settings
+
+//EridanWineCellar murdering the guards
+#TR {his hand.  He seems to be totally oblivious of his surroundings while} {strangle guard} $Settings
+#TR {Guard sips from the bottle.} {look guard} $Settings
+#TR {not expect anyone to sneak behind and push him down...} {push guard} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

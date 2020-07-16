@@ -1,0 +1,17 @@
+//CU_HoodedChainmailShirt_RESET#CLASS 0#AL CU_HoodedChainmailShirt_RESET {$QuestName="CU_HoodedChainmailShirt"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_HoodedChainmailShirt
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

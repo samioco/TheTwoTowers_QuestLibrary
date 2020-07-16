@@ -1,0 +1,18 @@
+//Turseg_LatrineCleaning_RESET#CLASS 0#AL Turseg_LatrineCleaning_RESET {$QuestName="Turseg_LatrineCleaning"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Turseg_LatrineCleaning
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

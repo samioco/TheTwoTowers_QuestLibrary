@@ -1,0 +1,23 @@
+//Pelargir_CharitysPotion_RESET#CLASS 0#AL Pelargir_CharitysPotion_RESET {$QuestName="Pelargir_CharitysPotion"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_CharitysPotion
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL Pelargir_CharitysPotion {
+QuestInit $QuestName "Charity" "trigger A frazzled woman todo give amulet to frazzled woman;.sw2ewsw2ewsw2ewsw2ewswesw2ewsw2ews8n"
+MoveMe_To_Arda
+} $QuestName
+
+#TR {Claire gives you a small note.} {trigger A tattooed woman todo give note to tattooed woman woman;#WALK charity;.8s8n} $Settings
+#TR {Charity whispers some words to you, in a language you don't recognize} {trigger A wounded soldier todo ask soldier about charity;.5s7e7w5n} $Settings
+#TR {Clarence gives you a brass wedding ring.} {trigger A tattooed woman todo give brass ring to tattooed woman;#WALK charity;.8s} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

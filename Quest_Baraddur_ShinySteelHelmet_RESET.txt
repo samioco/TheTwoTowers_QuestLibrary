@@ -1,0 +1,17 @@
+//Baraddur_ShinySteelHelmet_RESET#CLASS 0#AL Baraddur_ShinySteelHelmet_RESET {$QuestName="Baraddur_ShinySteelHelmet"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Baraddur_ShinySteelHelmet
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

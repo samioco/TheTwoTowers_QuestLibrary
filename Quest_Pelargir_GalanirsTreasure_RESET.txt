@@ -1,0 +1,111 @@
+//Pelargir_GalanirsTreasure_RESET#CLASS 0#AL Pelargir_GalanirsTreasure_RESET {$QuestName="Pelargir_GalanirsTreasure"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_GalanirsTreasure
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#VAR mansionbook {} {} $QuestName
+#VAR mansiontiles {} {} $QuestName
+#VAR mansionbook {} {} $QuestName
+#VAR pelgarg {} {} $QuestName 
+#VAR tile {} {} $QuestName
+#VAR maintile {56387} {56387} $QuestName
+#VAR dest_tile {} {} $QuestName
+
+#AL resettiles {#ECHO Resetting Mansion tiles...;maintile=56387;tile=@maintile;#CALL %maplocked(0);#LOOP 1,5 {#LOOP 1,5 {#ADDI mansiontiles @tile;colortile red @tile;get_dir_tile e @tile;tile=@dest_tile};get_dir_tile n @maintile;maintile=@dest_tile;tile=@dest_tile};#CALL %maplocked(1);#ECHO Reset of Mansion tiles Complete!} $QuestName
+
+//THE MASTER TILE COLORING COMMAND!!! COLORTILE!!!
+// colortile <color>: Sets current room color to <color>. Color options: red|green|yellow
+// greentile <color> <vNUM>: Sets room <vNUM> to color <color>
+// greentile <color> <vNUM> <dir>: Sets room in <dir> direction from room <vNUM> to color <color>. Dir options: n|w|s|e
+#AL colortile {
+  #IF (%3) {dest_tile=%subchar(%roomportal(%2,%concat("step ",%3)),%concat("step ",%3,"|"),"");#IF ((@dest_tile!=85804) AND (@dest_tile!=56387) AND (@dest_tile!=85805)) {#CALL %roomcol(@dest_tile,%1);#IF (%1=red) {#CALL %roomkind(@dest_tile,128)} {#CALL %roomcost(@dest_tile,0)}}}
+  #IF (!(%3) AND (%2)) {#IF ((%2!=85804) AND (%2!=56387) AND (%2!=85805)) {#CALL %roomcol(%2,%1);#IF (%1=red) {#CALL %roomkind(%2,128)} {#CALL %roomcost(%2,0)}}}
+  #IF !(%2) {#IF ((%roomnum()!=85804) AND (%roomnum()!=56387) AND (%roomnum()!=85805)) {#CALL %roomcol(,%1);#IF (%1=red) {#CALL %roomkind(,128)} {#CALL %roomcost(,0)}}}    
+} $QuestName
+
+
+// get_dir_tile <dir> <vNUM>, assigns <vNUM> value to: dest_tile
+// <dir>: n|w|s|e
+// <vNUM>: origin tile
+#AL get_dir_tile {dest_tile=%subchar(%roomportal(%2,%concat("step ",%1)),%concat("step ",%1,"|"),"")} $QuestName
+
+//obtain directional room vNUM: %subchar(%roomportal(,"step n"),"step n|","")
+#AL redtile {#CALL %roomcol(%1,red);#CALL %roomkind(%1,128)} $QuestName
+#AL greentile {#CALL %roomcol(%1,green);#CALL %roomcost(%1,0)} $QuestName
+#AL yellowtile {#CALL %roomcol(%1,yellow);#CALL %roomcost(%1,0)} $QuestName
+#AL greytile {#CALL %roomcol(%1,grey);#CALL %roomcost(%1,0)} $QuestName
+#AL bluetile {#CALL %roomcol(%1,blue);#CALL %roomcost(%1,0)} $QuestName
+
+// i.e: ngr <vNUM>
+// Sets the roomcolor and cost of room from optional argument <vNUM>
+#AL ngr {tile=%subchar(%roomportal(%1,"step n"),"step n|","");%maplocked(0);#IF ((%roomnum()!=91859) AND (%roomnum()!=56387) AND (%roomnum()!=85805)) {#CALL %roomcol(@tile,green)};#CALL %roomcost(@tile,0);%maplocked(1)} $QuestName
+#AL wgr {tile=%subchar(%roomportal(%1,"step w"),"step w|","");%maplocked(0);#IF ((%roomnum()!=91859) AND (%roomnum()!=56387) AND (%roomnum()!=85805)) {#CALL %roomcol(@tile,green)};#CALL %roomcost(@tile,0);%maplocked(1)} $QuestName
+#AL sgr {tile=%subchar(%roomportal(%1,"step s"),"step s|","");%maplocked(0);#IF ((%roomnum()!=91859) AND (%roomnum()!=56387) AND (%roomnum()!=85805)) {#CALL %roomcol(@tile,green)};#CALL %roomcost(@tile,0);%maplocked(1)} $QuestName
+#AL egr {tile=%subchar(%roomportal(%1,"step e"),"step e|","");%maplocked(0);#IF ((%roomnum()!=91859) AND (%roomnum()!=56387) AND (%roomnum()!=85805)) {#CALL %roomcol(@tile,green)};#CALL %roomcost(@tile,0);%maplocked(1)} $QuestName
+#AL nred {tile=%subchar(%roomportal(%1,"step n"),"step n|","");%maplocked(0);#IF ((%roomnum()!=91859) AND (%roomnum()!=56387) AND (%roomnum()!=85805)) {#CALL %roomcol(@tile,red)};#CALL %roomkind(@tile,128);%maplocked(1)} $QuestName
+#AL wred {tile=%subchar(%roomportal(%1,"step w"),"step w|","");%maplocked(0);#IF ((%roomnum()!=91859) AND (%roomnum()!=56387) AND (%roomnum()!=85805)) {#CALL %roomcol(@tile,red)};#CALL %roomkind(@tile,128);%maplocked(1)} $QuestName
+#AL sred {tile=%subchar(%roomportal(%1,"step s"),"step s|","");%maplocked(0);#IF ((%roomnum()!=91859) AND (%roomnum()!=56387) AND (%roomnum()!=85805)) {#CALL %roomcol(@tile,red)};#CALL %roomkind(@tile,128);%maplocked(1)} $QuestName
+#AL ered {tile=%subchar(%roomportal(%1,"step e"),"step e|","");%maplocked(0);#IF ((%roomnum()!=91859) AND (%roomnum()!=56387) AND (%roomnum()!=85805)) {#CALL %roomcol(@tile,red)};#CALL %roomkind(@tile,128);%maplocked(1)} $QuestName
+
+#AL makedir_green {#IF (%i=north) {ngr};#IF (%i=south) {sgr};#IF (%i=east) {egr};#IF (%i=west) {wgr}} $QuestName
+#AL makedir_red {#CASE %ismember(%i,@dirs) {nred} {sred} {ered} {wred}} $QuestName
+#AL addt {#ADDI mansiontiles %roomnum();#ECHO @mansiontiles} $QuestName
+
+
+#TR {Top of a tiled roof} {#MO n} $Settings
+#TR {firmly attached, and prepare to climb.} {do climb rope,pull rope,unhand rope} $Settings
+#TR {You wrap a thick piece of cloth around your hand.} {do break window,put cloth into pack,put cloth in cloak,open window} $Settings
+#TR {passage entrance.  The %1 not raised.} {#FORALL @dirs {#IF (%pos(%i,%1)) {#ECHO %i direction is okay;makedir_green}}} $Settings
+#TR {%1 raised, while the %2} {#FORALL @dirs {#IF (%pos(%i,%1)) {#ECHO %i not okay;makedir_red}};#FORALL @dirs {#IF (%pos(%i,%2)) {#ECHO %i okay;makedir_green}}} $Settings
+#TR {raised, while the %2} {#FORALL @dirs {#IF (%pos(%i,%1)) {#ECHO %i not okay}};#FORALL @dirs {#IF (%pos(%i,%2)) {#ECHO %i okay}}} $Settings
+#TR {%1, to the %2 and to the %3 are not raised.} {#ECHO %1, %2, %3 okay;#FORALL %1 {makedir_green};#FORALL %2 {makedir_green};#FORALL %3 {makedir_green}} $Settings
+#TR {is raised, while the tiles to the %1, to the %2 and to the %3 are} {#ECHO %1, %2, %3 okay;#FORALL %1 {makedir_green};#FORALL %2 {makedir_green};#FORALL %3 {makedir_green}} $Settings
+#TR {You are currently at the west wall of the room.  The tile to the %1} {#FORALL @dirs {#IF (%pos(%i,%1)) {#ECHO %i not okay;makedir_red}}} $Settings
+#TR {You are currently in the middle of the room.  The %1} {#FORALL @dirs {#IF (%pos(%i,%1)) {#ECHO %i not okay;makedir_red}}} $Settings
+#TR {the %2 not raised.} {#FORALL @dirs {#IF (%pos(%i,%2)) {#ECHO %i okay;makedir_green}}} $Settings
+#TR {The %1 not raised.} {#FORALL @dirs {#IF (%pos(%i,%1)) {#ECHO %i not okay;makedir_red}}} $Settings
+#TR {The guard has spotted you hiding!} {quit} $Settings
+#TR {You are currently at the east wall of the room, right at the lever} {#TE 85805} $Settings
+#TR {You are currently in the southwest corner of the room, right at the passage entrance} {#TE 56387} $Settings
+#TR {the door you would pull the string and surely activate some deadly} {#TE 85804} $Settings
+#TR {Looks like someone is coming this way!} {hide} $Settings
+#TR {You run around the room but fail to find any place to hide.} {hide} $Settings
+#TR {You step over the string, approaching the bed.} {#MOVE west} $Settings
+#TR {You step over the string, away from the bed.} {#MOVE east} $Settings
+#TR {You steal a small golden key!} {do take mould from pack,impress key in clay,put mould into pack} $Settings
+#TR {You impress a print of your key in a clay mould.} {return key to galanir} $Settings
+#TR {Galanir lies down on the bed and falls asleep.} {#SHOW Press "run" to steal key, IF NO GUARDS ARE HERE!!;#beep;#WAIT 100;#beep} $Settings
+#TR {You very carefully insert your golden key into Galanir's pocket.} {step over string} $Settings
+#TR {enough to support your weight.  The only good one is the %1} {pelgarg=%1;beep2;#ECHO @pelgarg gargoyle} $Settings
+#TR {Reynar gives you a rope} {unhand rope} $Settings
+#TR {Reynar gives you a thick piece of cloth} {do put cloth in cloak,put cloth in pack} $Settings
+#TR {Reynar gives you a clay mould} {do put mould in cloak,put mould in pack} $Settings
+#TR {Reynar gives you a handwritten note} {do put note in pack,put note in cloak} $Settings
+#TR {Reynar gives you a small pewter key.} {put key in cloak} $Settings
+#TR {Thug whispers to you: Ok, ya never heard this from me.  %1.} {pelthief=%1;#ECHO PelargirThiefPW: @PelargirThiefPW} $Settings
+#TR {Reynar says*: Hey there, friend.  Interested in a job?} {do ask man about job,accept job} $Settings
+#TR {%1 is not.} {#ECHO %1 okay;makedir_green} $Settings
+#TR {%1 are not.} {#ECHO %1 okay;makedir_green} $Settings
+#TR {You impress a print of your key in a clay mould.} {#CW high,cyan;#WAIT 100;#beep} $Settings
+#TR {entitled ~"(%1)~" out of it.} {mansionbook=%1;#ECHO mansionbook: @mansionbook} $Settings
+#TR {You hear the sound of slow, heavy footsteps coming from %1.} {#ECHO Guard coming from %1!;#WAIT 100;#beep} $Settings
+#TR {You hear some footsteps coming from %1.  Looks like someone} {#ECHO Galanir coming from %1!;#WAIT 100;#beep} $Settings
+#TR {%1 in a very different place!} {#TE 56387} $Settings
+#TR {You hear some noise outside...  Looks like the cook is coming back!} {hide;#ECHO Cook coming back!} $Settings
+#TR {You hear someone coming in from downstairs.} {hide;#ECHO Cook coming back!} $Settings
+#TR {entitled ~"(%1)~"} {mansionbook=%1;#ECHO detected: %1;#ECHO mansionbook: @mansionbook} $Settings
+#TR {entitled ~"(&1)~"} {mansionbook=%1;#ECHO detected: %1;#ECHO mansionbook: @mansionbook} $Settings
+
+
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

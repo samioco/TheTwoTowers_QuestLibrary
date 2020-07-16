@@ -1,0 +1,17 @@
+//Mirkwood_CicatrixTrials_RESET#CLASS 0#AL Mirkwood_CicatrixTrials_RESET {$QuestName="Mirkwood_CicatrixTrials"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_CicatrixTrials
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

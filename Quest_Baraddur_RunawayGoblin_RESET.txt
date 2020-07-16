@@ -1,0 +1,17 @@
+//Baraddur_RunawayGoblin_RESET#CLASS 0#AL Baraddur_RunawayGoblin_RESET {$QuestName="Baraddur_RunawayGoblin"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Baraddur_RunawayGoblin
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

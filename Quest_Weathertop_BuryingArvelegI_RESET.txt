@@ -1,0 +1,17 @@
+//Weathertop_BuryingArvelegI_RESET#CLASS 0#AL Weathertop_BuryingArvelegI_RESET {$QuestName="Weathertop_BuryingArvelegI"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Weathertop_BuryingArvelegI
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

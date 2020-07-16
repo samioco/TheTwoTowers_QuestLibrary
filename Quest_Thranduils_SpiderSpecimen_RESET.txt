@@ -1,0 +1,17 @@
+//Thranduils_SpiderSpecimen_RESET#CLASS 0#AL Thranduils_SpiderSpecimen_RESET {$QuestName="Thranduils_SpiderSpecimen"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Thranduils_SpiderSpecimen
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

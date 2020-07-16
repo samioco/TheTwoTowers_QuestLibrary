@@ -1,0 +1,103 @@
+//Erebor_ThrainsTombLevel3_RESET#CLASS 0#AL Erebor_ThrainsTombLevel3_RESET {$QuestName="Erebor_ThrainsTombLevel3"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Erebor_ThrainsTombLevel3
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Erebor_ThrainsTombLevel3 {
+#T- ThrainAxeProceedEast
+#T- ThrainAxeProceedSouthwest
+QuestInit "Erebor_ThrainsTombLevel3" "ThrainAxeSW" "ThrainGetTorch"
+ActionShow
+} $QuestName
+
+#AL ThrainAxeGoEast {
+#T+ ThrainAxeProceedEast
+#T- ThrainAxeProceedSouthwest
+trigger disappears todo do e,trigger off
+#WALK ThrainAxe
+push veil
+} $QuestName
+
+#AL ThrainAxeGoSouthWest {
+#T- ThrainAxeProceedEast
+#T+ ThrainAxeProceedSouthwest
+trigger disappears todo do sw,trigger off
+#WALK ThrainAxe
+push veil
+} $QuestName
+
+#AL ThrainGetTorch {
+ActionAdd "#WALK ThrainTorch;get right torch"
+ThrainAxeGoEast
+} $QuestName
+
+#AL ThrainPortcullis {
+#WALK ThrainPortcullis
+do search opening,pull wire,lift portcullis,drop portcullis
+} $QuestName
+
+#TR ThrainAxeProceedEast {on the other side of the axe, ready to proceed east.} {
+ActionNext
+} $QuestName
+
+#TR ThrainAxeProceedSouthwest {on the other side of the axe, ready to proceed southwest.} {
+ActionNext
+} $QuestName
+
+#TR {You {"get|take"} the torch on the right side of the opening.} {
+ActionAdd "ThrainPortcullis"
+ThrainAxeGoSouthWest
+} $Settings
+
+#TR {There is no right torch here to get.} {
+ActionAdd "ThrainPortcullis"
+ThrainAxeGoSouthWest
+} $Settings
+
+#TR {seems to be holding the weight pretty well, enabling you to crawl under} {
+#WALK ThrainChamber
+do get circlet,put circlet in pack,wear circlet,get axe
+} $Settings
+
+#TR {The portcullis has already been lifted up.} {
+drop torch
+#WALK ThrainChamber
+} $Settings
+
+#TR {Nothing special happens.} {
+drop torch
+#WALK ThrainChamber
+} $Settings
+
+#TR {You crawl under the portcullis, into the chamber to the north.} {
+do get circlet,put circlet in pack,wear circlet
+get axe
+} $Settings
+
+#TR {You take the axe out of the hand of the third large statue.} {
+ActionAdd "#WALK ThrainCobra;insert axe into hole"
+ThrainAxeGoEast
+} $Settings
+
+#TR {slide over the tiled floor with a grinding sound.} {
+#WALK ThrainStairs
+} $Settings
+
+#TR {Someone has done that already!} {
+#IF (%lower(%roomid())=%lower("ThrainCobra")) {
+drop axe
+#WALK ThrainStairs
+}
+} $Settings
+
+#T- ThrainAxeProceedEast
+#T- ThrainAxeProceedSouthwest
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

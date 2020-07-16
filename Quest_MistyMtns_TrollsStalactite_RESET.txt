@@ -1,0 +1,17 @@
+//MistyMtns_TrollsStalactite_RESET#CLASS 0#AL MistyMtns_TrollsStalactite_RESET {$QuestName="MistyMtns_TrollsStalactite"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_TrollsStalactite
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

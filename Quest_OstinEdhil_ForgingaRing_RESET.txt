@@ -1,0 +1,17 @@
+//OstinEdhil_ForgingaRing_RESET#CLASS 0#AL OstinEdhil_ForgingaRing_RESET {$QuestName="OstinEdhil_ForgingaRing"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: OstinEdhil_ForgingaRing
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

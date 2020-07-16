@@ -1,0 +1,17 @@
+//Dunland_AncientTempleBook_RESET#CLASS 0#AL Dunland_AncientTempleBook_RESET {$QuestName="Dunland_AncientTempleBook"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Dunland_AncientTempleBook
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//AlzhakUrk_CatRescue_RESET#CLASS 0#AL AlzhakUrk_CatRescue_RESET {$QuestName="AlzhakUrk_CatRescue"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AlzhakUrk_CatRescue
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

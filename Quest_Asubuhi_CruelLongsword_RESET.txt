@@ -1,0 +1,18 @@
+//Asubuhi_CruelLongsword_RESET#CLASS 0#AL Asubuhi_CruelLongsword_RESET {$QuestName="Asubuhi_CruelLongsword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Asubuhi_CruelLongsword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

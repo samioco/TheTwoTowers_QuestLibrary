@@ -1,0 +1,17 @@
+//MT7_KillingMerethrondSpy_RESET#CLASS 0#AL MT7_KillingMerethrondSpy_RESET {$QuestName="MT7_KillingMerethrondSpy"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT7_KillingMerethrondSpy
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

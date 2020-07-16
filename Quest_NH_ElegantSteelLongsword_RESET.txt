@@ -1,0 +1,69 @@
+//NH_ElegantSteelLongsword_RESET#CLASS 0#AL NH_ElegantSteelLongsword_RESET {$QuestName="NH_ElegantSteelLongsword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: NH_ElegantSteelLongsword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL NH_ElegantSteelLongsword {
+#VAR GrinderESLS {"ESLSguards|ESLSOfficer|ESLScook|ESLScenter|ESLSboots|ESLScaptain"} {} VAR
+#VAR GrinderESLSSettings {"ESLScaptain_short|ESLScaptain|ESLSbodyguard|ESLSboots_short|ESLStall_guard|ESLScenter_short|ESLSsoldier|ESLSofficer_short|ESLSofficer|ESLScook_short|ESLScook|ESLSguards_short|ESLSguards"} {} VAR
+#VAR NH_ElegantSteelLongsword {"ESLSguards|ESLSOfficer|ESLScook|ESLScenter|ESLSboots|ESLScaptain"} {} VAR
+#VAR NH_ElegantSteelLongsword_Settings {"ESLScaptain_short|ESLScaptain|ESLSbodyguard|ESLSboots_short|ESLStall_guard|ESLScenter_short|ESLSsoldier|ESLSofficer_short|ESLSofficer|ESLScook_short|ESLScook|ESLSguards_short|ESLSguards"} {} VAR
+QuestInit $QuestName "ESLS" "Grinder NH_ElegantSteelLongsword"
+MoveMe_To_Arda
+} $QuestName
+
+#AL NH_ElegantSteelLongsword_Check {QuesterCheck $QuestName 15 100} $QuestName
+#AL GrinderESLS {NH_ElegantSteelLongsword} $QuestName
+#AL GrinderESLSCheck {NH_ElegantSteelLongsword_Check} $QuestName
+
+
+#AL NH_ElegantSteelLongSword_Loot {
+$CurRoom=%lower(@CurRoom)
+$numMobs=%numitems(@MobList)
+#LOOP $numMobs {drop all from corpse}
+#IF ($CurRoom=%lower("ESLSCaptain")) {
+  GearSwap "An elegant steel longsword"
+  sss
+  get key
+  #WALK ESLSBoots
+  do pull chest,unlock chest with key,drop key,open chest,tag boots in chest,drop all from chest
+  GearSwap "A pair of steel-plated boots"
+  do wear boots from chest,get boots from chest into pack,drop boots from chest
+}
+#LOOP $numMobs {
+  #WALK $CurRoom
+  GetAllNoHands $numMobs
+  #WALK ESLS
+  PackToContainers
+}
+} $QuestName
+
+#TR ESLSguardsRoomShort {An entrance to a camp} {GrinderResetRoom;#T+ ESLStall_guard} $Settings
+#TR ESLStall_guard {A tall guard(*)} {#T- ESLStall_guard;$num=0;#IF (%1) {$num=%copy(%1,%pos("[",%1)+1,1);#LOOP $num,2 {#ADDI MobList %concat("guard ",%i)}};#ADDI MobList "guard";#ECHO Room_mobs: @MobList} $Settings
+
+#TR ESLScaptainRoomShort {A lofty tent} {GrinderResetRoom;#T+ ESLScaptain;#T+ ESLSbodyguard} $Settings
+#TR ESLScaptain {A numenorean captain} {#T- ESLScaptain;#ADDI MobList "captain";#ECHO Room_mobs: @MobList} $Settings
+#TR ESLSbodyguard {A tough bodyguard} {#T- ESLSbodyguard;#IF (@MobList) {#VAR MobList {"bodyguard|captain"} {} VAR} {#ADDI MobList "bodyguard"};#ECHO Room_mobs: @MobList} $Settings
+
+#TR ESLSbootsRoomShort {A supply tent} {GrinderResetRoom;#T+ ESLStall_guard} $Settings
+
+#TR ESLScenterRoomShort {A row of tents} {GrinderResetRoom;#T+ ESLSsoldier} $Settings
+#TR ESLSsoldier {A well-trained soldier} {#T- ESLSsoldier;#ADDI MobList "soldier";#ECHO Room_mobs: @MobList} $Settings
+
+#TR ESLSofficerRoomShort {An officer's tent} {GrinderResetRoom;#T+ ESLSofficer} $Settings
+#TR ESLSofficer {A strong-looking officer} {#T- ESLSofficer;#ADDI MobList "officer";#ECHO Room_mobs: @MobList} $Settings
+
+#TR ESLScookRoomShort {A cook's tent} {GrinderResetRoom;#T+ ESLScook} $Settings
+#TR ESLScook {A short portly cook} {#T- ESLScook;#ADDI MobList "cook";#ECHO Room_mobs: @MobList} $Settings
+
+//#TR {Jerelican has died.} {#2 } $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

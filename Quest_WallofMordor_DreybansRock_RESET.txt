@@ -1,0 +1,131 @@
+//WallofMordor_DreybansRock_RESET#CLASS 0#AL WallofMordor_DreybansRock_RESET {$QuestName="WallofMordor_DreybansRock"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WallofMordor_DreybansRock
+//Description: 
+//This is a high level quest that has a risk of death (incurred when stranded atop the cliff with not enough energy to climb down). 
+
+//Reward: Choice of one of the following items (a dark mail shirt has the best stat itemization)
+//- A dark mail shirt (Deflect: 90, Absorb: 140, Weight: 385, Durability: 1700, Score: 183.8)
+//- A dreadful high helmet. (Deflect: 35, Absorb: 45, Weight: 150, Durability: 720, Score: 62.0)
+//- A pair of black scalemail pants. (Deflect: 40, Absorb: 35, Weight: 175, Durability: 800, Score: 54.0)
+
+//Requirements: 
+//True alignment of Demonic of Shadowspawn (Evil players), high or maxed stats, awareness skill of at least 90, and at least basic 'starter' gear for fighting the lizard. Without a high level set of gear, you will likely need to leave for healing at least once. 
+
+
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+//Quest Name: Wall of Mordor: Dreyban's Rock
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+#AL WallofMordor_DreybansRock {WallofMordor_DreybansRock_Init} $QuestName
+
+//WallofMordor_DreybansRock_Check: 
+//This script performs a profile check to confirm whether the player's profile passes the basic minimum requirements determined for succeeding at this quest.
+#AL WallofMordor_DreybansRock_Check {#IF ((@MyTrueLevel>=15) AND (%ismember(%lower(@MyTrueAlign),"demonic|shadowspawn of mordor")) AND (@MyAwareness>=90)) {#ADDKEY QuesterCheck 1 WallofMordor_DreybansRock}} $QuestName
+
+
+//WallofMordor_DreybansRock_Init: 
+//- initializes basic variables
+//- then Queues up action commands such as navigating itself to appropriate zone grid, self healing, depositing leftover gold at a bank
+//- navigates the player to Dreyban, the quest giver, then initiating the quest
+
+#AL WallofMordor_DreybansRock_INIT {
+#VAR QuestName {"WallofMordor_DreybansRock"} {} VAR
+QuestOn WallofMordor_DreybansRock
+#IF ((%ismember(%lower(@MyTrueAlign),"demonic|shadowspawn of mordor")) AND (!%ismember(%lower(@MyPublicAlign),"demonic|shadowspawn of mordor"))) {disguise align off}
+#IF (@GrinderQueue_i) {ActionAdd "gns;sall;ActionNext"}
+ActionAdd "#WALK Dreyban;ask dreyban about help"
+ActionAdd "gnb;deposit all;ActionNext"
+ActionAdd "HealMe"
+MoveMe_To_Arda
+} $QuestName
+
+#AL WallofMordor_DreybansRock_EXE {
+ActionAdd "peek inside"
+ActionAdd "QuestOn WallofMordor_DreybansRock;#T+ Dreyban_Lizard_Wimpy;ringon;ActionNext"
+sss;#WALK DreybanLizard;ws;ActionNext
+} $QuestName
+
+#AL Dreyban_Lizard_Wimpy_EXE {
+#T+ Dreyban_Lizard_Wimpy
+INFO HP: %mud.hp || EP: %mud.ep
+#IF ((%mud.hp<80) OR (%mud.ep<80)) {
+#T- Dreyban_Lizard_Wimpy;sss
+ActionAdd "#WALK DreybanLizard;ws;kill lizard"
+ActionAdd "#WALK DreyCamp;#T+ Dreyban_Lizard_Wimpy;sss;ringon;hold @wep;rw;ActionNext"
+ActionAdd "gnb;deposit all;ActionNext"
+ActionAdd "#WALK DreyCamp;HealMe"
+sss;Goldoff;Aimoff
+ActionNext
+}
+} $QuestName
+
+
+#TR {Dreyban says*: You want to help?  Well, I wouldn't know what} {WallofMordor_DreybansRock_EXE} $Settings
+#TR {Dreyban says*: iens elq red red? Well, norekron} {WallofMordor_DreybansRock_EXE} $Settings
+
+#TR {Dreyban is nowhere to be found.} {QuestAbort} $Settings
+#TR {Dreyban says*: I already got help.} {QuestAbort} $Settings
+#TR {Dreyban says*: norekron abeth myrkaic red.} {QuestAbort} $Settings
+#TR {be.  The creature crawls out of its lair and hisses!} {kill lizard} $Settings
+#TR {The lizard prevents you from peeking inside.} {kill lizard} $Settings
+
+#TR {You peek inside but can't see much from here.  Perhaps you could crawl} {ringoff;ss;QuestAbort} $Settings
+
+
+#TR Dreyban_Lizard_Wimpy {{"Your stomach turns and you feel sick from the altitude.|You get the feeling you need to get out of here.|You are overwhelmed by acrophobia and hurl violently."}} {Dreyban_Lizard_Wimpy_EXE} $Settings
+#TR {Huge lizard * you} {Dreyban_Lizard_Wimpy_EXE;#IF ((%mud.ep>150) AND (@MyProf!="rider")) {profatk}} $Settings
+
+#TR {You carefull start by taking a firm grip on the cliff.} {#T+ Dreyban_Lizard_Wimpy} $Settings
+#TR {You start climbing down the mountainside and eventually reach the bottom.} {#T- Dreyban_Lizard_Wimpy} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+#TR {The lizard is defeated and slumps down dead on the ground.} {ringoff;#IF (@MyProf="archer") {sal} {ss};do skin corpse,attach pelt to string,drop pelt,sheath knife;cron;light crystal;#IF (@GrinderQueue_i) {ActionAdd "gns;sall;ActionNext"}} $Settings
+#TR {You don't see crystal to light.} {#IF (%mud.ep>100) {sight on} {ActionAdd "SIGHT ON";HealMe}} $Settings
+#TR {{@Messages_Sight_On}} {#WALK dreyban_lizard;do get fangs from corpse,get fangs,wield fangs} $Settings
+
+#TR {You wield a pair of sturdy, sharp fangs.} {#WALK DreybanRock} $Settings
+
+#TR {You're too encumbered to try that.} {#WALK dreycamp;ptow;gnb;deposit all;rw;#WALK DreybanLizard;ws;peek inside} $Settings
+
+#TR {You are carrying too much.  You would not fit.} {do drop all,wear crystal,light crystal,get fangs,wield fangs;crawl inside} $Settings
+
+//Crawl inside to get rock (quest item)
+#TR {You bend down and force yourself into the slimy hole.} {do dig through slime,get rock} $Settings
+
+//Awareness skill too low: failed to get rock
+#TR {The fangs got stuck in the slime during the process.} {#WALK DreybanLizard;wag;get knife;packin;2extinguish crystal;#WALK dreycamp;QuestAbort} $Settings
+
+//Quest item obtained
+#TR {You fish out the rock from the slime.} {
+get rock;ES off
+#WALK DreybanLizard
+do wear all from ground,get black-bladed dagger,get knife,get pelt into pack;sss
+#WALK DreyCamp;ptow
+#WALK Dreyban;give rock to dreyban
+} $Settings
+
+//too much stuff to leave
+#TR {You're too heavily encumbered to try that!} {#WAIT 500;packout;drop @MyChest_ID;#walk Dreyban;give rock to dreyban} $Settings
+
+#TR {Dreyban examines the rock closely, taps it a few times, and then} {2extinguish crystal;ES off} $Settings
+
+#TR {Dreyban leaves %1.} {%1} $Settings
+#TR {Dreyban tells you that you can 'choose' one of the items as a reward.} {choose 1;do tag dark mail shirt,wear shirt} $Settings
+
+//receive reward
+#TR {Dreyban gives you %1.} {
+$item=%lower(%1)
+#IF (@Party) {#WALK DreybanBedroom}
+#WALK DreyCamp
+#IF (@GrinderQueue_i) {GearSwapUnload $item} {GearSwap $item}
+} $Settings
+
+#TR {Dreyban tells you*: I can't wait forever.} {sss;QuestAbort} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

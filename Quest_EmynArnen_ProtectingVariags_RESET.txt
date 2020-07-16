@@ -1,0 +1,26 @@
+//EmynArnen_ProtectingVariags_RESET#CLASS 0#AL EmynArnen_ProtectingVariags_RESET {$QuestName="EmynArnen_ProtectingVariags"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: EmynArnen_ProtectingVariags
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL EmynArnen_ProtectingVariags {
+QuestInit $QuestName "dcms" "do w,warn sergeant,e"
+MoveMe_To_Arda
+} $QuestName
+
+#TR {You start to hear a strange rustling in the brush} {#CW high,yellow;w;notify sergeant;e} $Settings
+#TR {You notice a small group of rangers sneak into the camp.} {kill ranger;w} $Settings
+#TR {Variag sergeant gives you a dark chainmail shirt.} {#CW yellow;ss;do get shirt,tag shirt,wear shirt} $Settings
+#TR {Variag sergeant says to you: Report back to me for a reward after we kill} {#CW yellow;ws;e} $Settings
+#TR {%1 sees that the battle is moot and flees.} {trigger Variag sergeant drops a dark chainmail shirt. todo do store @wep,sling bow,get shirt,wear shirt,tag shirt;report} $Settings
+#TR {Variag sergeant removes a dark chainmail shirt.} {QuestOff} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

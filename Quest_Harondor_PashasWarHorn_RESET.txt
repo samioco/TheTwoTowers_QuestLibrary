@@ -1,0 +1,17 @@
+//Harondor_PashasWarHorn_RESET#CLASS 0#AL Harondor_PashasWarHorn_RESET {$QuestName="Harondor_PashasWarHorn"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harondor_PashasWarHorn
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

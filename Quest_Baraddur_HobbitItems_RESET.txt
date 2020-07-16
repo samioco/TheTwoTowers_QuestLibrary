@@ -1,0 +1,17 @@
+//Baraddur_HobbitItems_RESET#CLASS 0#AL Baraddur_HobbitItems_RESET {$QuestName="Baraddur_HobbitItems"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Baraddur_HobbitItems
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Mirkwood_ElvenBattlePlans_RESET#CLASS 0#AL Mirkwood_ElvenBattlePlans_RESET {$QuestName="Mirkwood_ElvenBattlePlans"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_ElvenBattlePlans
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,73 @@
+//GrinderPelennorMumaks_RESET#CLASS 0#AL GrinderPelennorMumaks_RESET {$QuestName="GrinderPelennorMumaks"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GrinderPelennorMumaks
+//Description: GrinderWalk
+//------------------------------------------------------------
+//Recommended level:  
+//Reward: ~13000 experience
+//------------------------------------------------------------
+//Settings:
+//WalkerStartRoom: <Grinder>StartRoom
+//WalkerPath: <Grinder>Path
+//WalkerMobs: <Grinder>Mobs: GrinderWalk mobs
+
+//StaticRoomShort: <Grinder>
+//StaticMobSettings ShortNames: <Grinder>MobSettings
+//StaticSettings: <Grinder>Settings: RoomsShorts + MobSettings
+//#VAR <Grinder>Settings {} {} VAR
+//#FORALL @<Grinder> {#ADDI <Grinder>Settings %concat(%i,"RoomShort")}
+//#FORALL @<Grinder>MobSettings {#ADDI <Grinder>Settings %i}
+//#FORALL @<Grinder>Settings {#T- $QuestName|%i}
+
+//<Grinder>_Loot: Loot room for non-mount/wagon rooms
+//------------------------------------------------------------
+
+#AL GrinderPelennorMumaks {
+#VAR GrinderPelennorMumaksMobs {} {} VAR
+#ADDI GrinderPelennorMumaksMobs "A great war mumak of the Haradrim"
+
+#VAR GrinderPelennorMumaksPath_GothmogToHarlond {".wn4sks7nh9sk11nh13sw13nh15sw15nw15sk17nw17sw17nw18sw17nw17sk18nw18sw17nw13sw13nk7sw7nw7sw6nwke6sesenese3swnwswn2e2s4w2swsese4ne4se4ne4se4ne3se3ne3ses"} {} VAR
+#VAR GrinderPelennorMumaksPath_MTtoGothmog {""} {} VAR
+#VAR GrinderPelennorMumaksPath_HarlondtoGothmog {""} {} VAR
+$roomID=%lower(%roomid())
+
+#VAR GrinderPelennorMumaksStartRoom {"Gothmog"} {} VAR
+#VAR GrinderPelennorMumaksPath {@GrinderPelennorMumaksPath_GothmogToHarlond} {} VAR
+
+QuestInit $QuestName "@GrinderPelennorMumaksStartRoom" "GrinderWalker GrinderPelennorMumaks"
+ActionAdd "HealMe"
+MoveMe_To_Arda
+} $QuestName
+
+#AL GrinderPelennorMumaks_Check {
+QuesterCheck $QuestName 14 100
+} $QuestName
+
+#AL GrinderPelennorMumaks_Attack {
+$mob=%lower(%0)
+#SW (%pos("mumak",$mob)) {
+  #VAR CurMob {"mumak"} {} VAR
+  RingOn
+  kill mumak
+}
+} $QuestName
+
+#AL GrinderPelennorMumaksEnableMobs {
+ClassOn GrinderPelennorMumaks
+#T+ GrinderPelennorMumaksMobs
+} $QuestName
+
+#AL GrinderPelennorMumaksDisableMobs {
+#T- GrinderPelennorMumaksMobs
+} $QuestName
+
+#TR GrinderPelennorMumaksMobs {({@GrinderPelennorMumaksMobs})} {
+#IF (@PlayerDetected && @PlayerDetected!="Rider") {
+  WalkerContinue
+} {
+  WalkerAttack %1
+  }
+} $Settings
+
+} _QuestLibrary#CLASS 0

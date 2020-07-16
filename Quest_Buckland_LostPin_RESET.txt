@@ -1,0 +1,36 @@
+//Buckland_LostPin_RESET#CLASS 0#AL Buckland_LostPin_RESET {$QuestName="Buckland_LostPin"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Buckland_LostPin
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Find a flower in Buckland, return it to a girl inside Buckland's Hays end.
+//Girl rewards a sparkling pin, which can be turned in to the elderly woman.
+
+//Requirements:
+//Recommended level 1 - 5
+//Reward: 25 gold
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Buckland_LostPin {
+QuestInit $QuestName "Buckland_Flower" "do pick flower,get flower"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Buckland_LostPin_Check {QuesterCheck $QuestName 1 5} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {You pluck a single flower from the tree, shaking it violently} {get flower;enter;n;give flower to girl} $Settings
+#TR {Girl gives you a sparkling pin.} {get pin;.2h;give pin to woman} $Settings
+#TR {Elderly woman says*: I have found my pin already, but I can always} {do drop all pin,drop all flower;QuestAbort} $Settings
+//#TR {The elderly woman gives you some gold coins.} {} $Settings
+#TR {{"You decide not to cause further damage to the tree.|You do not have a pin.|You do not have a flower."}} {QuestAbort} $Settings
+#TR {Girl says*: Thank you, but I have no presents to exchange.} {QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

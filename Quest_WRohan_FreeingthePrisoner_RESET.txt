@@ -1,0 +1,36 @@
+//WRohan_FreeingthePrisoner_RESET#CLASS 0#AL WRohan_FreeingthePrisoner_RESET {$QuestName="WRohan_FreeingthePrisoner"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WRohan_FreeingthePrisoner
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended leve:  
+//Reward: 
+//----------------------------------------------------------------------------------------------------
+//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A cat-o'-nine-tails                whip           whip      1H   15   8    94   750       23.0
+//----------------------------------------------------------------------------------------------------
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL WRohan_FreeingThePrisoner {
+#VAR WRohan_FreeingThePrisoner {"sparkhal_hollow"} {} VAR
+#VAR WRohan_FreeingThePrisoner_Settings {"sparklinghalberd_interrogator|sparkhal_hollow_short"} {} VAR
+QuestInit $QuestName "SparklingHalberd" "Grinder WRohan_FreeingThePrisoner"
+MoveMe_To_Arda
+} WRohan_FreeingThePrisoner
+
+#AL WRohan_FreeingThePrisoner_Check {QuesterCheck WRohan_FreeingThePrisoner 10 100} WRohan_FreeingThePrisoner
+
+#VAR WRohan_FreeingThePrisoner {"sparkhal_hollow"} {} VAR
+#VAR WRohan_FreeingThePrisoner_Settings {"sparklinghalberd_interrogator|sparkhal_hollow_short"} {} VAR
+
+#TR sparklinghalberd_interrogator {An interrogator} {#T- sparklinghalberd_interrogator;#ADDI MobList "interrogator";#ECHO Room_mobs: @MobList} WRohan_FreeingThePrisoner|Settings
+#TR sparkhal_hollowRoomShort {A slight hollow} {GrinderResetRoom;#T+ sparklinghalberd_interrogator} WRohan_FreeingThePrisoner|Settings
+
+#TR {Interrogator has died.} {untie prisoner} WRohan_FreeingThePrisoner|Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Mirkwood_ThilronsGold_RESET#CLASS 0#AL Mirkwood_ThilronsGold_RESET {$QuestName="Mirkwood_ThilronsGold"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_ThilronsGold
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

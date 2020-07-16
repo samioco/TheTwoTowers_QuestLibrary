@@ -1,0 +1,17 @@
+//CU_FireintheCellar_RESET#CLASS 0#AL CU_FireintheCellar_RESET {$QuestName="CU_FireintheCellar"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_FireintheCellar
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

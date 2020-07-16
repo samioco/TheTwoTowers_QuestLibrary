@@ -1,0 +1,17 @@
+//MistyMtns_AncientAxe_RESET#CLASS 0#AL MistyMtns_AncientAxe_RESET {$QuestName="MistyMtns_AncientAxe"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_AncientAxe
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

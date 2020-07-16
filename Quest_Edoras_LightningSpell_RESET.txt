@@ -1,0 +1,17 @@
+//Edoras_LightningSpell_RESET#CLASS 0#AL Edoras_LightningSpell_RESET {$QuestName="Edoras_LightningSpell"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Edoras_LightningSpell
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

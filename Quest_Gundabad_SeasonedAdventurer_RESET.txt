@@ -1,0 +1,17 @@
+//Gundabad_SeasonedAdventurer_RESET#CLASS 0#AL Gundabad_SeasonedAdventurer_RESET {$QuestName="Gundabad_SeasonedAdventurer"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Gundabad_SeasonedAdventurer
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

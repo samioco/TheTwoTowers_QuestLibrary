@@ -1,0 +1,24 @@
+//EmynArnen_ArandilsAmbush_RESET#CLASS 0#AL EmynArnen_ArandilsAmbush_RESET {$QuestName="EmynArnen_ArandilsAmbush"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: EmynArnen_ArandilsAmbush
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL EmynArnen_ArandilsAmbush {
+QuestInit $QuestName "dcms" "trigger Arandil says to you: Hark, you there. todo do join arandil,draw @wep,wield @wep,w,kill sergeant,trigger off;join arandil"
+MoveMe_To_Arda
+} $QuestName
+
+#TR {Arandil says to you*: Fantastic!  Follow me} {ws;w;kill sergeant;trigger Variag sergeant has died. todo do store @wep,sling bow,drop all arrow,wear shirt from corpse,get shirt from corpse,trigger off} $Settings
+#TR {Arandil says to you*: Hark, you there.} {join arandil} $Settings
+#TR {Arandil the dunadan ranger steps in front of the corpse.} {ss;wear shirt from corpse;get shirt from corpse;gall} $Settings
+#TR {Variag sergeant has died.} {QuestOff EmynArnen_ArandilsAmbush} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

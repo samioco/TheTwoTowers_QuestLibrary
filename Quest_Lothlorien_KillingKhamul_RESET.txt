@@ -1,0 +1,17 @@
+//Lothlorien_KillingKhamul_RESET#CLASS 0#AL Lothlorien_KillingKhamul_RESET {$QuestName="Lothlorien_KillingKhamul"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Lothlorien_KillingKhamul
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,45 @@
+//AstUpper_CleaningDuty_RESET#CLASS 0#AL AstUpper_CleaningDuty_RESET {$QuestName="AstUpper_CleaningDuty"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AstUpper_CleaningDuty
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 23g
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL AstUpper_CleaningDuty {
+QuestInit $QuestName "AsturQuarter" "do ask quartermaster about cleaning,offer help"
+MoveMe_To_FH
+} $QuestName
+
+#AL AstUpper_CleaningDuty_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+#AL AstUpper_CleaningDuty_Clean {
+get equipment
+#WALK Vlomar;clean room
+#LOOP 2,4 {#WALK %concat("AsturClassroom",%i);clean room}
+#LOOP 1,2 {#WALK %concat("AsturLab",%i);clean room}
+#WALK AsturQuarter;report
+} $QuestName
+
+#TR {Tamalbaran drops some cleaning equipment.} {ss;AstUpper_CleaningDuty_Clean} $Settings
+#TR {The quartermaster thanks you for a job well done and throws you some} {get @wep from pack;ws;QuestComplete} $Settings
+
+#TR {Tamalbaran says*: {"You are already helping me!|I don't need anything cleaned right now."}} {QuestAbort} $Settings
+#TR {Your hands are full!} {#IF (%lower(%roomid())=%lower("AsturQuarter")) {
+drop @wep
+AstUpper_CleaningDuty_Clean
+get @wep}
+} $Settings
+
+#TR {Tamalbaran says*:*is already cleaning for me.} {QuestAbort} $Settings
+#TR {Tamalbaran says to you*: You haven't finished cleaning yet!  Remember to} {#WAIT 2000;drop equipment;QuestAbort} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

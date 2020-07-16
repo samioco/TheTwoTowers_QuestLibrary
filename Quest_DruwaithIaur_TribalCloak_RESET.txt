@@ -1,0 +1,17 @@
+//DruwaithIaur_TribalCloak_RESET#CLASS 0#AL DruwaithIaur_TribalCloak_RESET {$QuestName="DruwaithIaur_TribalCloak"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DruwaithIaur_TribalCloak
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//CU_CapturingShagrat_RESET#CLASS 0#AL CU_CapturingShagrat_RESET {$QuestName="CU_CapturingShagrat"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_CapturingShagrat
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

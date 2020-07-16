@@ -1,0 +1,17 @@
+//Azrazayan_ShipyardJob_RESET#CLASS 0#AL Azrazayan_ShipyardJob_RESET {$QuestName="Azrazayan_ShipyardJob"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Azrazayan_ShipyardJob
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

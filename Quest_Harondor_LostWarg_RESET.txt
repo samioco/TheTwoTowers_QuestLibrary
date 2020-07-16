@@ -1,0 +1,86 @@
+//Harondor_LostWarg_RESET#CLASS 0#AL Harondor_LostWarg_RESET {$QuestName="Harondor_LostWarg"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harondor_LostWarg
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Harondor_LostWarg {
+#VAR Harondor_LostWarg_Path {h28nse8se9n20se20ne27s3w2s;.(StopWalk;ActionNext)} {} VAR
+$wargname=""
+#SW (@MyName="Bramoukh") {$wargname="Ho"
+} (@MyName="Zzigg") {$wargname="Zi"
+} (@MyName="Mammoth") {$wargname="Mami"
+} (@MyName="Borkul") {$wargname="Borgi"
+} (@MyName="Laikum") {$wargname="Pikachu"}
+#VAR Harondor_LostWargName {$wargname} {} VAR
+#VAR Harondor_LostWargNum {0} {} VAR
+QuestInit $QuestName "LostWarg" "do ask orc about warg,part grass"
+MoveMe_To_Arda
+} $QuestName
+
+#AL Harondor_LostWarg_Check {
+#IF (@{%concat(@MyName,"_Taming")}>=90) {QuesterCheck $QuestName 13 100}
+} $QuestName
+
+#AL Harondor_LostWarg_Search {
+SysMsg Searching for lost warg...
+ActionAdd "QuestAbort"
+ActionAdd ".e5n;ActionNext"
+ActionAdd ".l9s;ActionNext"
+ActionAdd ".e10n;ActionNext"
+ActionAdd ".e12s;ActionNext"
+ActionAdd ".e12n;ActionNext"
+ActionAdd ".e15s;ActionNext"
+ActionAdd ".e15n;ActionNext"
+ActionAdd ".en15s;ActionNext"
+ActionAdd ".4es8n;ActionNext"
+ActionAdd ".2sw8s2nw5nsw3s;ActionNext"
+ActionAdd ".5sw14n;ActionNext"
+ActionAdd ".19n;ActionNext"
+ActionAdd "trigger lost warg todo do seize warg,trigger You may demand your reward todo demand reward;ActionNext"
+ActionAdd "#WALK NKAD;ActionNext"
+ActionNext
+} $QuestName
+
+#AL Harondor_LostWarg_NameWarg {
+$num=@Harondor_LostWargNum
+#IF (@Harondor_LostWargNum<=0) {$num=""}
+$name=%concat(%lower(@Harondor_LostWargName),$num)
+mount name warg $name
+} $QuestName
+
+#TR {You part the grass and find a strong leather harness, which you quickly pick up.} {
+$wait = %random(2,4)
+#ECHO Searching for warg in $wait seconds...
+#ALA "LostWarg" +$wait {Harondor_LostWarg_Search} $Settings
+} $Settings
+
+
+#TR {its head.  You grab the lead and start leading the warg, which} {
+trigger You may demand your reward todo do demand reward,trigger off
+ActionClear
+ActionAdd "#WALK LostWarg"
+ActionNext
+} $Settings
+
+#TR {take him now.  You may demand your reward.} {demand reward} $Settings
+#TR {you have the guts, you can try to tame it!} {tame warg} $Settings
+
+#TR {You guide him around, and eventually he trusts you to ride him!} {Harondor_LostWarg_NameWarg} $Settings
+
+#TR {There is already a mount by that name.} {
+#ADD Harondor_LostWargNum 1
+Harondor_LostWarg_NameWarg
+} $Settings
+
+#TR {From here on out, you will call your mount %1.} {look %1} $Settings
+#TR {@{%concat(@MyName,"_Possessive")} warg is called '%1' by {"his|her"} owner.} {ride %1} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

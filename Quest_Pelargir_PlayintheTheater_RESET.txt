@@ -1,0 +1,90 @@
+//Pelargir_PlayintheTheater_RESET#CLASS 0#AL Pelargir_PlayintheTheater_RESET {$QuestName="Pelargir_PlayintheTheater"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_PlayintheTheater
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL Pelargir_PlayInTheTheater {
+$role=%0;#VAR PelargirTheater_Role {$role} {} VAR
+QuestOn Pelargir_PlayInTheTheater
+#ECHO Starting part: @PelargirTheater_Role
+#IF (@PelargirTheater_Role="Arguzir") {
+#ALA +2 {emote approaches Lady Ancalima.}
+#ALA +5 {say This city and its inhabitants shall submit to the iron fists of the Corsairs!  Those who dare oppose my rule, will die by my cutlass!}
+#ALA +10 {say And you Madam shall be the first to taste the point of my spear.  An example if you will to the rest of your people who would question my ultimate authority here!}
+}
+} Pelargir_PlayInTheTheater
+
+
+#TR {Arguzir says*: And you Madam} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +5 {emote smirks softly.}
+#ALA +40 {say Methinks your claim to Pelargir shall soon be challenged. There have been whispers of a great leader sailing fast upon the wind.}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Lady Ancalima says*: Methinks your claim to Pelargir} {#IF (@PelargirTheater_Role="Arguzir") {
+#ALA +5 {emote laughs.}
+#ALA +10 {say I have heard of this leader.  Naught but a myth conjured from the minds of feeble-minded Pelargians.  Propaganda against my master shall be severely dealt with, mark my words!}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Arguzir says*: I have heard of this leader.} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +5 {say Filthy servant of Sauron!  We would prefer dying down to the last child rather than submit our will to one such as your Dark Lord!  You mark my words!  Pelargir will never submit!}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Aragorn enters.} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +5 {emote curtseys to Aragorn, her head bowed in respect.}
+#ALA +10 {say My Lord Aragorn!  T'is with great relief that I and the citizens of Pelargir welcome you to our city.  And not a moment too soon I dare say!}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Lady Ancalima says*: My Lord Aragorn!} {#IF (@PelargirTheater_Role="Arguzir") {
+#ALA +5 {emote raises his sword.}
+#ALA +7 {emote spits on the floor.}
+#ALA +10 {say What means this interruption?!  Who are you?!  Guards! Guards!  To me!} 
+#ALA +15 {say I demand an explanation this instant or I shall have your body removed from this chamber and your head impaled on a stake outside the city wall!}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Aragorn says*: You have no power over the King of Gondor.} {#IF (@PelargirTheater_Role="Arguzir") {
+#ALA +5 {emote laughs.}
+#ALA +7 {emote points at Aragorn.}
+#ALA +10 {say Your guard?  I see but one soldier here.  Do you mean to stop us with this one weak man?  My army of corsairs will crush you!}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {King of the Dead says*: I shall do as you command} {#IF (@PelargirTheater_Role="Arguzir") {
+#ALA +5 {emote laughs pointing at King of the Dead.}
+#ALA +7 {emote turns to Aragorn.}
+#ALA +10 {say This be your army?  This sickly looking being?  He looks hardly hail for a jaunt down the avenue!}
+#ALA +13 {emote bellows with laughter.}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {King of the Dead turns towards Arguzir and fixes his dead gaze upon him.} {#IF (@PelargirTheater_Role="Arguzir") {
+#ALA +5 {emote screams in terror and runs away.}
+#ALA +7 {e;peltheaterstop}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {King of the Dead and Aide de Camp leave the stage.} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +3 {emote sits down.}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Aragorn sits down.} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +5 {say Be still my heart!  What manner of army is that, My
+Lord?  T'is most frightful to be sure!}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Aragorn says*: One that is cursed.} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +5 {say Should they be victorious, they shall deserve their
+release from this oath you speak of, My Lord.}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Aragorn stands up.} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +2 {emote stands up.}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Aragorn says*: My thanks good soldier for this most excellent news!} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +5 {say My Lord, this city will forever be in your debt, you have saved us from a most frightful future.  We are grateful!}
+#ALA +7 {emote cheers enthusiastically.}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Aragorn says*: I must leave for Minas Tirith immediately,} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +5 {emote bows to Aragorn.}
+#ALA +7 {say I shall be most honoured to be your voice in Pelargir My Lord.  May Eru be with you and all who fight for the freedom of Middle-Earth!}}} Pelargir_PlayInTheTheater|Settings
+
+#TR {Aragorn and Aide de Camp leave the stage.} {#IF (@PelargirTheater_Role="Ancalima") {
+#ALA +10 {e;QuestOff}}} Pelargir_PlayInTheTheater|Settings
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

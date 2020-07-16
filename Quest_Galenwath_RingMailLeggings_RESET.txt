@@ -1,0 +1,18 @@
+//Galenwath_RingMailLeggings_RESET#CLASS 0#AL Galenwath_RingMailLeggings_RESET {$QuestName="Galenwath_RingMailLeggings"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Galenwath_RingMailLeggings
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

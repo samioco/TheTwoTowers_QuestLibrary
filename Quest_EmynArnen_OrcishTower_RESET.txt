@@ -1,0 +1,17 @@
+//EmynArnen_OrcishTower_RESET#CLASS 0#AL EmynArnen_OrcishTower_RESET {$QuestName="EmynArnen_OrcishTower"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: EmynArnen_OrcishTower
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

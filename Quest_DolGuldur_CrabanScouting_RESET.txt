@@ -1,0 +1,17 @@
+//DolGuldur_CrabanScouting_RESET#CLASS 0#AL DolGuldur_CrabanScouting_RESET {$QuestName="DolGuldur_CrabanScouting"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DolGuldur_CrabanScouting
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

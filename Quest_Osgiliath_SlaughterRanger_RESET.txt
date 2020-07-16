@@ -1,0 +1,17 @@
+//Osgiliath_SlaughterRanger_RESET#CLASS 0#AL Osgiliath_SlaughterRanger_RESET {$QuestName="Osgiliath_SlaughterRanger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Osgiliath_SlaughterRanger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

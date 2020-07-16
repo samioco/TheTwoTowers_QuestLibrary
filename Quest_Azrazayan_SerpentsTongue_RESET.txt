@@ -1,0 +1,17 @@
+//Azrazayan_SerpentsTongue_RESET#CLASS 0#AL Azrazayan_SerpentsTongue_RESET {$QuestName="Azrazayan_SerpentsTongue"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Azrazayan_SerpentsTongue
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Mirkwood_ElvenJewel_RESET#CLASS 0#AL Mirkwood_ElvenJewel_RESET {$QuestName="Mirkwood_ElvenJewel"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_ElvenJewel
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

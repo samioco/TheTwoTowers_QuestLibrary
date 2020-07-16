@@ -1,0 +1,17 @@
+//MT6_RepairingBasin_RESET#CLASS 0#AL MT6_RepairingBasin_RESET {$QuestName="MT6_RepairingBasin"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT6_RepairingBasin
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

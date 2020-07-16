@@ -1,0 +1,36 @@
+//Shire_DarkCloak_RESET#CLASS 0#AL Shire_DarkCloak_RESET {$QuestName="Shire_DarkCloak"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Shire_DarkCloak
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended leve:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Shire_DarkCloak {
+QuestInit $QuestName "DarkCloak" "climb tree"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Shire_DarkCloak_Check {QuesterCheck $QuestName 10 100} $QuestName
+
+#TR {In a treehouse} {#IF (@MyProf=thief) {sneak ne} {ws;kill bear}} $Settings
+#TR {The bear, growling, blocks your path.} {#IF (@MyProf=thief) {sneak ne} {ws;kill bear}} $Settings
+#TR {Bear is bleeding} {kill} $Settings
+#TR {Bear has died.} {ne} $Settings
+#TR {A mostly-empty room} {#MO ne;squeeze through gap;u;ask man about book} $Settings
+
+#TR {to me is a tome of magical lore} {sw;get arcane book} $Settings
+#TR {to me is about stalking and coursing wild game} {sw;get hunting book;hole} $Settings
+#TR {to me is about moving in secrecy... but that's mine, do you} {sw;get book of stealth} $Settings
+#TR {to me is about the culinary arts... but that's mine, do you} {sw;get book of cooking} $Settings
+
+#TR {{"open to reveal a secret room!  Jackpot!|room!  Jackpot!|a nearby bookcase suddenly swings open to reveal a secret room!  Jackpot!"}} {hole;do get cloak,wear cloak,tag cloak,kill spider} $Settings
+#TR {Spider has died.} {do get cloak,wear cloak,tag cloak} $Settings
+#TR {You pull the cloak from its peg.} {do wear cloak,tag cloak} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

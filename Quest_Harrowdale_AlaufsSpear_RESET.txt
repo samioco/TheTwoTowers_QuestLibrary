@@ -1,0 +1,17 @@
+//Harrowdale_AlaufsSpear_RESET#CLASS 0#AL Harrowdale_AlaufsSpear_RESET {$QuestName="Harrowdale_AlaufsSpear"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harrowdale_AlaufsSpear
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

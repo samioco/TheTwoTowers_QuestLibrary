@@ -1,0 +1,38 @@
+//Rhun_EasterlingCampDefense_RESET#CLASS 0#AL Rhun_EasterlingCampDefense_RESET {$QuestName="Rhun_EasterlingCampDefense"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhun_EasterlingCampDefense
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL Rhun_EasterlingCampDefense {
+QuestInit $QuestName "SGaunts_Commander" "ask commander about help"
+MoveMe_To_NorthArda
+} $QuestName
+
+#AL Rhun_EasterlingCampDefense_Check {QuesterCheck $QuestName 19 100} $QuestName
+
+#TR {Commander is nowhere to be found.} {QuestAbort} $Settings
+#TR {Commander says*: {"I'm going to need all the help I can get|antharg' ashunth orntgrunt arqgha"}} {ss;#WALK sgaunts_lookout;ask lookout about help} $Settings
+
+#TR {Lookout says*: {"Great, we could use some help in the camp|Great, khazunth alnzhak torgart|I already told you what to do!  Hurry up|narangst orgari' arqgha unth|orntgrunt orntgrunt eart arnolk"}} {#WALK sgaunts_messhall;sss;do push soldier off bench,clear table} $Settings
+
+#TR {stand down when you explain to them it's for the barricade.} {pry board} $Settings
+#TR {free the other end of the board.} {s;barricade entrance with board} $Settings
+#TR {entire gap.  This makes a good foundation for the barricade.} {n;drag table south} $Settings
+#TR {building and all the way over to the barricade.} {n;#WALK sgh;request healing;#WALK sgaunts_post;barricade entrance with table;ws} $Settings
+#TR {The dwarves finally break through the barricade and charge in!} {#IF (@MyProf=rider) {#IF (!@Mounted) {mm}} {#IF (@Mounted) {dismount}};#IF ((@Party) AND (@MyProf=rider)) {warcry}} $Settings
+#TR {bleeding to death} {kill} $Settings
+#TR {Captain has died.} {tag iron deathmask in corpse of captain} $Settings
+
+#TR {~[ You have completed a quest: Rhun: Easterling Camp Defense ~]} {#4 {drop all from corpse};al} $Settings
+#TR {Commander says*: The Dwarves ashunth antharg} {QuestAbort} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

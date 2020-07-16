@@ -1,0 +1,17 @@
+//HaradDesert_GondorianRaid_RESET#CLASS 0#AL HaradDesert_GondorianRaid_RESET {$QuestName="HaradDesert_GondorianRaid"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: HaradDesert_GondorianRaid
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

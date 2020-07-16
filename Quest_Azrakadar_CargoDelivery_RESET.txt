@@ -1,0 +1,18 @@
+//Azrakadar_CargoDelivery_RESET#CLASS 0#AL Azrakadar_CargoDelivery_RESET {$QuestName="Azrakadar_CargoDelivery"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Azrakadar_CargoDelivery
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

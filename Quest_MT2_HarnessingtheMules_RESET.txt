@@ -1,0 +1,17 @@
+//MT2_HarnessingtheMules_RESET#CLASS 0#AL MT2_HarnessingtheMules_RESET {$QuestName="MT2_HarnessingtheMules"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT2_HarnessingtheMules
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,72 @@
+//FarHarad_CaptainsHorse_RESET#CLASS 0#AL FarHarad_CaptainsHorse_RESET {$QuestName="FarHarad_CaptainsHorse"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: FarHarad_CaptainsHorse
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  5
+//Reward: a branded horse
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL FarHarad_CaptainsHorse {
+QuestInit $QuestName "CaptainsHorseCaptain" "ask captain about apple"
+MoveMe_To_FH
+} $QuestName
+
+#AL FarHarad_CaptainsHorse_Check {
+QuesterCheck $QuestName 5 100
+} $QuestName
+
+#TR {Captain gives you a beautiful red apple.} {
+#WALK CaptainsHorseStable
+give apple to horse
+} $Settings
+
+#TR {apples. I hope you fed it the apple I gave you.}  {
+#WALK CaptainsHorseStable
+give apple to horse
+} $Settings
+
+#TR {to be its master. Perhaps you could tame it.} {
+tame horse
+} $Settings
+
+#TR {distracted somehow, or maybe even be tricked into falling asleep!} {
+WS
+kill guard
+} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+
+#TR {Guard has died.} {
+SSS
+GetAllNoHands
+tame horse
+} $Settings
+
+#TR {After a few minutes, the horse seems to accept you as its new master.} {
+do unhitch branded horse,lead branded horse
+} $Settings
+
+#TR {You grab the reins and lead @MyNamePossessive branded horse.} {
+WS
+#WALK CaptainsHorseScout
+kill scout
+} $Settings
+
+#TR {You don't see that here.} {
+#IF (%lower(%roomid())=%lower("CaptainsHorseScout")) {#WALK CaptainsHorseEntrance}
+} $Settings
+
+#TR {Haradrim scout has died.} {
+SSS
+GetAll
+#WALK CaptainsHorseEntrance
+} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

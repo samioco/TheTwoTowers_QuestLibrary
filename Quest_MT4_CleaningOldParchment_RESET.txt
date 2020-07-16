@@ -1,0 +1,17 @@
+//MT4_CleaningOldParchment_RESET#CLASS 0#AL MT4_CleaningOldParchment_RESET {$QuestName="MT4_CleaningOldParchment"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT4_CleaningOldParchment
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

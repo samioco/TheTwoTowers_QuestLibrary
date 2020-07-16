@@ -1,0 +1,17 @@
+//Moria_UrukPrisonersRevenge_RESET#CLASS 0#AL Moria_UrukPrisonersRevenge_RESET {$QuestName="Moria_UrukPrisonersRevenge"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Moria_UrukPrisonersRevenge
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

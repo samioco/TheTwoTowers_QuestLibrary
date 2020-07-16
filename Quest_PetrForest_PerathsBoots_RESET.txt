@@ -1,0 +1,53 @@
+//PetrForest_PerathsBoots_RESET#CLASS 0#AL PetrForest_PerathsBoots_RESET {$QuestName="PetrForest_PerathsBoots"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: PetrForest_PerathsBoots
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL PetrForest_PerathsBoots {
+#VAR PetrForest_PerathsBoots_Guards_Dead {0} {} VAR
+QuestInit $QuestName "Perath" "cron;#T+ Perath_Vision_Check;light crystal"
+ActionAdd "HealMe"
+MoveMe_To_Arda
+} $QuestName
+
+#AL PetrForest_PerathsBoots_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+#AL PetrForest_PerathsBoots_EXE {
+#VAR PetrForest_PerathsBoots_Guards_Dead {0} {} VAR
+#T+ Perath_NotThere
+ws
+#WALK perath_guards
+trigger Y todo do kill dwarf,shape all
+kill dwarf 2
+} $QuestName
+
+#TR {{"You can't light the crystal.|You don't see crystal to light."}} {SIGHT ON} $Settings
+#TR Perath_Vision_Check {{@Messages_Sight_On}} {#T- Perath_Vision_Check;uproot log} $Settings
+#TR {with a thud, and before you know it, rubble closes the hole you just} {do twist root,look mold,look clod,scrape clod,turn knob} $Settings
+
+#TR {passage that stretches ominously into darkness.} {PetrForest_PerathsBoots_EXE} $Settings
+#TR {This knob has been turned as far as it will go.} {PetrForest_PerathsBoots_EXE} $Settings
+
+
+#TR Perath_NotThere {You don't see that here.}  {#SW (%roomid=perath_guards) {#T- Perath_NotThere;trigger off;w;do pull bottom drawer,flip through book} (%roomid=perath_lab) {#WALK perath;2extinguish crystal;QuestAbort}} $Settings
+#TR {You attack} {#T- Perath_NotThere} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+#TR {Dwarf has died.} {trigger off;#ADD PetrForest_PerathsBoots_Guards_Dead 1;#IF (@PetrForest_PerathsBoots_Guards_Dead>=2) {#IF (@MyProf=archer) {sal} {ss};do 2get gold from corpse,get gold;w;do pull bottom drawer,flip through book} {kill dwarf}} $Settings
+
+#TR {clue you have to go on is that all three key parts are somewhere in this} {do search bed,search plate,search clothes,assemble key,unlock south door with intricate key,drop intricate key;#T+ Perath_NotThere} $Settings
+
+#TR {manage to unlock the door, but break the key in the process.} {ws;s;kill perath} $Settings
+#TR {Something seems missing.} {#T+ Perath_NotThere;ws;s;kill perath} $Settings
+
+#TR {The blue aura surrounding Perath seems to retract into the boots.} {#IF (@MyProf=archer) {sal} {ss};do tag boots in corpse of perath,get boots from corpse into pack,get boots from corpse;#WALK perath;2extinguish crystal} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

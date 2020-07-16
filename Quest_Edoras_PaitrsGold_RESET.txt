@@ -1,0 +1,17 @@
+//Edoras_PaitrsGold_RESET#CLASS 0#AL Edoras_PaitrsGold_RESET {$QuestName="Edoras_PaitrsGold"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Edoras_PaitrsGold
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

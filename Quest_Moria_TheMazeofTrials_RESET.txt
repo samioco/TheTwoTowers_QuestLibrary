@@ -1,0 +1,17 @@
+//Moria_TheMazeofTrials_RESET#CLASS 0#AL Moria_TheMazeofTrials_RESET {$QuestName="Moria_TheMazeofTrials"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Moria_TheMazeofTrials
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

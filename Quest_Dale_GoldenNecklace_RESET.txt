@@ -1,0 +1,17 @@
+//Dale_GoldenNecklace_RESET#CLASS 0#AL Dale_GoldenNecklace_RESET {$QuestName="Dale_GoldenNecklace"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Dale_GoldenNecklace
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

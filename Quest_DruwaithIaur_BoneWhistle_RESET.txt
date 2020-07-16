@@ -1,0 +1,17 @@
+//DruwaithIaur_BoneWhistle_RESET#CLASS 0#AL DruwaithIaur_BoneWhistle_RESET {$QuestName="DruwaithIaur_BoneWhistle"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DruwaithIaur_BoneWhistle
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

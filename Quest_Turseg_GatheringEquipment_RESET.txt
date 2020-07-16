@@ -1,0 +1,18 @@
+//Turseg_GatheringEquipment_RESET#CLASS 0#AL Turseg_GatheringEquipment_RESET {$QuestName="Turseg_GatheringEquipment"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Turseg_GatheringEquipment
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

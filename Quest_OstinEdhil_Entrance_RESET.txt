@@ -1,0 +1,17 @@
+//OstinEdhil_Entrance_RESET#CLASS 0#AL OstinEdhil_Entrance_RESET {$QuestName="OstinEdhil_Entrance"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: OstinEdhil_Entrance
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Harondor_AdunakhansReward_RESET#CLASS 0#AL Harondor_AdunakhansReward_RESET {$QuestName="Harondor_AdunakhansReward"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harondor_AdunakhansReward
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

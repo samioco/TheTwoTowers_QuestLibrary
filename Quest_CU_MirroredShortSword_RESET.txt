@@ -1,0 +1,17 @@
+//CU_MirroredShortSword_RESET#CLASS 0#AL CU_MirroredShortSword_RESET {$QuestName="CU_MirroredShortSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_MirroredShortSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

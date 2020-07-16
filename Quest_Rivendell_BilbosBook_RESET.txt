@@ -1,0 +1,45 @@
+//Rivendell_BilbosBook_RESET#CLASS 0#AL Rivendell_BilbosBook_RESET {$QuestName="Rivendell_BilbosBook"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rivendell_BilbosBook
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended leve:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Rivendell_BilbosBook
+//----------------------------------------------------------------------------------------------------
+//Description: Locate a lost book for Bilbo
+
+//Requirements:
+//Recommended level 1 to 7
+//Reward: 40g
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Rivendell_BilbosBook {
+QuestInit $QuestName "Riv_Shears" "do open case,get shears from case,wield shears"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Rivendell_BilbosBook_Check {QuesterCheck $QuestName 1 7} $QuestName
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+#TR {You wield a pair of pruning shears.} {#WALK bilbos_book;do prune bushes,search bushes,reach for book,get book} $Settings
+#TR {There is no shears in the case to get.} {QuestAbort} $Settings
+#TR {You reach into the bushes and find nothing.} {#WALK rivshop;sell all;QuestAbort} $Settings
+#TR {You cannot hold the book right now.} {#WALK rivshop;sall;#WALK bilbos_book;do prune bushes,search bushes,reach for book,get book} $Settings
+#TR {to pull out the book without scratching it or your hands.} {#WALK bilbo;give book to bilbo} $Settings
+#TR {Bilbo collects %d gold pieces from his pockets and gives them to you} {#WALK rivshop;sell all} $Settings
+#TR {Bilbo gives you a thick red book.} {#WALK rivshop;sell all;put book in trash;QuestAbort} $Settings
+#TR {Bilbo says*: So you have found it!  Hennaid evyr!  I'd reward you for it,} {#WALK rivshop;sell all;put book in trash;QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

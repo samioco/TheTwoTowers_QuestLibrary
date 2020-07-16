@@ -1,0 +1,17 @@
+//Rhov_LeatherScoutRuck_RESET#CLASS 0#AL Rhov_LeatherScoutRuck_RESET {$QuestName="Rhov_LeatherScoutRuck"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_LeatherScoutRuck
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

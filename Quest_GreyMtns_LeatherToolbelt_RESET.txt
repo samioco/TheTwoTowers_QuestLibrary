@@ -1,0 +1,18 @@
+//GreyMtns_LeatherToolbelt_RESET#CLASS 0#AL GreyMtns_LeatherToolbelt_RESET {$QuestName="GreyMtns_LeatherToolbelt"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GreyMtns_LeatherToolbelt
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

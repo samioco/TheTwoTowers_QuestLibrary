@@ -1,0 +1,17 @@
+//Mirkwood_SwordofBerserking_RESET#CLASS 0#AL Mirkwood_SwordofBerserking_RESET {$QuestName="Mirkwood_SwordofBerserking"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_SwordofBerserking
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

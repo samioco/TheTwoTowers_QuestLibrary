@@ -1,0 +1,42 @@
+//Eriador_LightSpell_RESET#CLASS 0#AL Eriador_LightSpell_RESET {$QuestName="Eriador_LightSpell"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Eriador_LightSpell
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Eriador_LightSpell {
+QuestInit $QuestName "LevitateKey" "push panel"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Eriador_LightSpell_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+#TR {You push the panel and find nothing.} {QuestAbort} $Settings
+#TR {The panel falls over and you see a key behind it.} {
+get key
+#WALK LevitateLadder
+get ladder
+get scythe
+#WALK LevitateCat
+do drop ladder,climb ladder
+} $Settings
+
+#TR {You need to get the ladder first!} {QuestAbort} $Settings
+
+#TR {the top.  You look around the branches of the tree and, seeing nothing} {QuestAbort} $Settings
+
+#TR {climb up to the cat.  You then rescue her and climb back down.} {
+get cat
+#WALK LevitateWidow
+give cat to widow
+drop scroll
+} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

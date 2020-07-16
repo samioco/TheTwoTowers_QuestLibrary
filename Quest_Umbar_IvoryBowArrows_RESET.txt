@@ -1,0 +1,18 @@
+//Umbar_IvoryBowArrows_RESET#CLASS 0#AL Umbar_IvoryBowArrows_RESET {$QuestName="Umbar_IvoryBowArrows"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Umbar_IvoryBowArrows
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

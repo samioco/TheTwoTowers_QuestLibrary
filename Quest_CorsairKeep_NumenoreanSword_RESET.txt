@@ -1,0 +1,17 @@
+//CorsairKeep_NumenoreanSword_RESET#CLASS 0#AL CorsairKeep_NumenoreanSword_RESET {$QuestName="CorsairKeep_NumenoreanSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CorsairKeep_NumenoreanSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

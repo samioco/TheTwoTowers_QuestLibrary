@@ -1,0 +1,87 @@
+//MistyMtns_SilverQuartzRing_RESET#CLASS 0#AL MistyMtns_SilverQuartzRing_RESET {$QuestName="MistyMtns_SilverQuartzRing"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: MistyMtns_SilverQuartzRing
+//----------------------------------------------------------------------------------------------------
+//Description: Kill the goblin leader and find an elven ring.
+
+//Requirements:
+//Recommended level 12+
+//Reward: A shimmering silver-quartz ring (+5 aim, +5 dodge w/ EP drain)
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL MistyMtns_SilverQuartzRing {
+ActionAdd "#WALK RivSP;ActionNext"
+QuestInit $QuestName "ShimRing" "MountCheck;ws;#WALK ShimRing_Goblins;kill smirking goblin"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL MistyMtns_SilverQuartzRing_Check {QuesterCheck $QuestName 12 25} $QuestName
+
+#AL MistyMtns_SilverQuartzRing_PREP {
+  ActionAdd "QuestOff MistyMtns_SilverQuartzRing;ActionNext"
+  ActionAdd %concat("#IF (",@MyFaction,"=FR) {#2 {RivSell}};#WALK RivSP;ActionNext")
+  ActionAdd "#WALK ShimRing_Goblins;#3 {drop all from corpse};do wear all from ground,get all into pack,get all,drop all corpse;ActionNext"
+  ActionAdd "QuestOff MistyMtns_SilverQuartzRing;MistyMtns_GoblinGoldCache"
+  #IF (@MyLevel>=14) {ActionAdd "#WALK ShimRingBigGoblin;ws;kill goblin"}
+} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+#TR {^ A smirking, young goblin} {kill smirking goblin} $Settings
+#TR {Wait a minute, you're still busy!} {#SW (%roomname()="A clearing outside of a cave") {kill smirking goblin} (%roomname()="A hidden room") {kill big goblin} {kill goblin}} $Settings
+//Movement black
+
+
+#TR {bleeding to death} {kill} $Settings
+#TR {{"Ugly goblin|Timid goblin"} has died.} {kill smirking goblin} $Settings
+//#TR {^You * {"Ugly goblin|Timid goblin"}} {kill smirking goblin} $Settings
+
+#TR {Smirking goblin has died.} {
+#UNT "Alarm_Rest"
+MistyMtns_SilverQuartzRing_PREP
+ActionNext
+} $Settings
+
+#TR {You don't see that here.} {
+#UNT "Alarm_Rest"
+MistyMtns_SilverQuartzRing_PREP
+#SW (%roomname()="A clearing outside of a cave") {ActionNext
+} (%roomname()="A hidden room") {QuestAbort}
+} $Settings
+
+#TR {Big goblin has died.} {
+#IF (@MyProf="archer") {sal} {sss}
+#UNT Alarm_Rest;do drop all from corpse,drop arm from pack,yank ring,tag ring
+#IF (@Gear_Tornbag) {put shimmering ring in bag}
+#IF (@Gear_Cloak) {put shimmering ring in cloak}
+#IF (@Gear_Pack) {put shimmering ring in pack}
+do get all into pack,drop all arm from pack,wear ring,get gold
+ActionNext
+} $Settings
+
+#TR {You are too busy to do that now!} {
+#SW (%lower(%roomid())=%lower("ShimRingPack")) {#WAIT 2000;do search rags,wear pack,put pack in pack 2
+} (%lower(%roomid())=%lower("ShimRingHelmet")) {#WAIT 2000;do search shelves,wear helmet
+} (%lower(%roomid())=%lower("ShimRingCrevice")) {#WAIT 2000;search small crevice}
+} $Settings
+
+#TR {prevents you from going in that direction!} {
+$action="";#UNT "Alarm_Rest"
+w;$action=east;#WAIT 2000
+SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000;rest on
+#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
+} $Settings
+
+#TR {You run %1.} {
+$action="";#UNT "Alarm_Rest"
+#SW (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}
+} (%roomname()="A hidden room") {$action="deeper"}
+SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000
+rest on
+#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
+} $Settings
+
+//----------------------------------------------------------------------------------------------------} _QuestLibrary#CLASS 0

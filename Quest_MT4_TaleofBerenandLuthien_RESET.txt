@@ -1,0 +1,17 @@
+//MT4_TaleofBerenandLuthien_RESET#CLASS 0#AL MT4_TaleofBerenandLuthien_RESET {$QuestName="MT4_TaleofBerenandLuthien"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT4_TaleofBerenandLuthien
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

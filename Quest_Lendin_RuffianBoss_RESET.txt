@@ -1,0 +1,17 @@
+//Lendin_RuffianBoss_RESET#CLASS 0#AL Lendin_RuffianBoss_RESET {$QuestName="Lendin_RuffianBoss"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Lendin_RuffianBoss
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

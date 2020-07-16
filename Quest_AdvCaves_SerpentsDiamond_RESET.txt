@@ -1,0 +1,17 @@
+//AdvCaves_SerpentsDiamond_RESET#CLASS 0#AL AdvCaves_SerpentsDiamond_RESET {$QuestName="AdvCaves_SerpentsDiamond"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AdvCaves_SerpentsDiamond
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

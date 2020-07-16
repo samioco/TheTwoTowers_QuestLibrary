@@ -1,0 +1,17 @@
+//Lothlorien_HorseshoeCharm_RESET#CLASS 0#AL Lothlorien_HorseshoeCharm_RESET {$QuestName="Lothlorien_HorseshoeCharm"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Lothlorien_HorseshoeCharm
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

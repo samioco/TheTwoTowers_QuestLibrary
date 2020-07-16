@@ -1,0 +1,17 @@
+//Carchost_FangofSauron_RESET#CLASS 0#AL Carchost_FangofSauron_RESET {$QuestName="Carchost_FangofSauron"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Carchost_FangofSauron
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

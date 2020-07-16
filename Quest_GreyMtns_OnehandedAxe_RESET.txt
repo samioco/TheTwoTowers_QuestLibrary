@@ -1,0 +1,17 @@
+//GreyMtns_OnehandedAxe_RESET#CLASS 0#AL GreyMtns_OnehandedAxe_RESET {$QuestName="GreyMtns_OnehandedAxe"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GreyMtns_OnehandedAxe
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

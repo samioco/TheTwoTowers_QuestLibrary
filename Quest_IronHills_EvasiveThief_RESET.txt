@@ -1,0 +1,17 @@
+//IronHills_EvasiveThief_RESET#CLASS 0#AL IronHills_EvasiveThief_RESET {$QuestName="IronHills_EvasiveThief"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: IronHills_EvasiveThief
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

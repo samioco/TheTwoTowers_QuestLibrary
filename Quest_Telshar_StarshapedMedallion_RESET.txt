@@ -1,0 +1,48 @@
+//Telshar_StarshapedMedallion_RESET#CLASS 0#AL Telshar_StarshapedMedallion_RESET {$QuestName="Telshar_StarShapedMedallion"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Telshar_StarshapedMedallion
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Telshar_StarShapedMedallion {
+Telshar_StarShapedMedallion_INIT
+} $QuestName
+
+#AL Telshar_StarShapedMedallion_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+#AL Telshar_StarShapedMedallion_INIT {
+#VAR QuestName {"Telshar_StarShapedMedallion"} {} VAR
+QuestOn Telshar_StarShapedMedallion
+#WALK TelSP
+hh;sss;cron;light crystal
+#T+ PaleWraith_Check
+#WALK telcrypt
+hold @wep
+#IF (@MyProf=archer) {wield bow;select handcrafted arrow}
+lift lid;ws
+} $QuestName
+
+#TR {You need at least one free hand to do that.} {sss;lift lid;ws} $Settings
+#TR {You are too tired to attempt that now.} {ActionAdd "#WALK telcrypt;#T+ PaleWraith_Check;lift lid";HealMe} $Settings
+
+
+#TR {As you open the lid of the sarcophagus, a terrifying wraith suddenly} {#T- PaleWraith_Check;ws;kill wraith} $Settings
+
+#TR {You open the lid of the sarcophagus and make a startling discovery!} {#T- PaleWraith_Check;ActionNext} $Settings
+
+
+#TR PaleWraith_Check {You don't see that here.} {#T- PaleWraith_Check;ActionDelete "Telshar_VialofRejuvenation_EXE";QuestAbort} $Settings
+#TR {You attack Pale wraith.} {#T- PaleWraith_Check} $Settings
+
+#TR {Pale wraith drops a golden ring} {#IF (@MyProf=archer) {sv};ss;get ring;#WALK TelsharCaptain;do get golden ring from pack,give golden ring to captain,get medallion into pack,get medallion,wear medallion} $Settings
+
+#TR {Captain gives you a large star-shaped} {do put medallion in pack,wear medallion} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

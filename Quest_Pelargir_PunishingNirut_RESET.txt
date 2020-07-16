@@ -1,0 +1,17 @@
+//Pelargir_PunishingNirut_RESET#CLASS 0#AL Pelargir_PunishingNirut_RESET {$QuestName="Pelargir_PunishingNirut"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_PunishingNirut
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

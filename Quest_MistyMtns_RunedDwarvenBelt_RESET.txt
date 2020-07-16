@@ -1,0 +1,17 @@
+//MistyMtns_RunedDwarvenBelt_RESET#CLASS 0#AL MistyMtns_RunedDwarvenBelt_RESET {$QuestName="MistyMtns_RunedDwarvenBelt"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_RunedDwarvenBelt
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

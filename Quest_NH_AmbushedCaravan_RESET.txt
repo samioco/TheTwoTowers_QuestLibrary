@@ -1,0 +1,17 @@
+//NH_AmbushedCaravan_RESET#CLASS 0#AL NH_AmbushedCaravan_RESET {$QuestName="NH_AmbushedCaravan"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: NH_AmbushedCaravan
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

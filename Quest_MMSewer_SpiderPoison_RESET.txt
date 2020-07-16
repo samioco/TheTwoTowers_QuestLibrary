@@ -1,0 +1,17 @@
+//MMSewer_SpiderPoison_RESET#CLASS 0#AL MMSewer_SpiderPoison_RESET {$QuestName="MMSewer_SpiderPoison"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MMSewer_SpiderPoison
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//HaradDesert_NumenHelmet_RESET#CLASS 0#AL HaradDesert_NumenHelmet_RESET {$QuestName="HaradDesert_NumenHelmet"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: HaradDesert_NumenHelmet
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

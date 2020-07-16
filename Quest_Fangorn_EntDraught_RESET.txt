@@ -1,0 +1,17 @@
+//Fangorn_EntDraught_RESET#CLASS 0#AL Fangorn_EntDraught_RESET {$QuestName="Fangorn_EntDraught"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Fangorn_EntDraught
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//CU_ViciouslookingWhip_RESET#CLASS 0#AL CU_ViciouslookingWhip_RESET {$QuestName="CU_ViciouslookingWhip"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_ViciouslookingWhip
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

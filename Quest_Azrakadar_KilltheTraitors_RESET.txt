@@ -1,0 +1,18 @@
+//Azrakadar_KilltheTraitors_RESET#CLASS 0#AL Azrakadar_KilltheTraitors_RESET {$QuestName="Azrakadar_KilltheTraitors"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Azrakadar_KilltheTraitors
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} _QuestLibrary#CLASS 0

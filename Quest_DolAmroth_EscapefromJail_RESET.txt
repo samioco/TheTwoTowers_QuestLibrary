@@ -1,0 +1,17 @@
+//DolAmroth_EscapefromJail_RESET#CLASS 0#AL DolAmroth_EscapefromJail_RESET {$QuestName="DolAmroth_EscapefromJail"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DolAmroth_EscapefromJail
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

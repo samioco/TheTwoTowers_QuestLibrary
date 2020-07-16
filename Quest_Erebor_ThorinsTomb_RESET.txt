@@ -1,0 +1,58 @@
+//Erebor_ThorinsTomb_RESET#CLASS 0#AL Erebor_ThorinsTomb_RESET {$QuestName="Erebor_ThorinsTomb"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Erebor_ThorinsTomb
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Erebor_ThorinsTomb {
+QuestOn Erebor_ThorinsTomb
+} $QuestName
+
+
+#AL Erebor_ThorinsTomb_EXE {
+#SW (%roomid="thorin_tomb") {do look statues,examine statues
+} {}
+} $QuestName
+
+#TR {golden %1 seems slightly less shiny than the other three.  Perhaps} {pull %1} $Settings
+#TR {the northern wall, revealing a staircase leading downwards.} {down;do clear rubble,look rubble,look hand,clear rubble,get cloak from skeleton,shake cloak,put elven elven cloak in pack,drop elven cloak;look shapes} $Settings
+
+#TR {stone prisms, able to be pressed inwards into the wide base} {} $Settings
+
+//#AL 0 {press square}
+//#AL 9 {press circle}
+//#AL 8 {press triangle}
+//#AL 7 {press diamond}
+
+#TR {You press firmly down upon the} {} $Settings
+#TR {Your fingers get tangled up in such a flurry!} {} $Settings
+#TR {shoulder you see that the lid of the coffin has slid open.} {#CW high,red;beep2;inventory coffin} $Settings
+
+//press square
+//You press firmly down upon the square, sliding it inwards smoothly.
+//press square
+//The square has already been pressed inwards.
+
+//    Before your very eyes, the four crests rise silently outwards
+//from the stone pedestal on which the sculptures stand, assuming
+//their original positions.
+
+
+#TR {Darkness enshrouds the mausoleum.} {do put stone in cloak,put stone in pack,put orcrist in cloak,put orcrist in pack;u;dig through rubble;rest} $Settings
+
+#TR {The tunnel should be steady enough to continue digging now.} {do dig through rubble,rest} $Settings
+#TR {you finally managed to open a tunnel toward freedom.} {#CW high,cyan,blink;beep2;#ECHO TUNNEL IS OPEN NOW!!!;crawl through tunnel} $Settings
+
+//#AL 1 {do clear rubble,look rubble, look hand, clear rubble, get cloak from skeleton, shake cloak}
+//#AL 2 {l shapes}
+//#AL 3 {do get arkenstone from coffin into pack,get arkenstone from coffin into cloak,get arkenstone from coffin}
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

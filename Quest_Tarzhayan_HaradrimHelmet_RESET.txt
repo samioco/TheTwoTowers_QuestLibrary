@@ -1,0 +1,30 @@
+//Tarzhayan_HaradrimHelmet_RESET#CLASS 0#AL Tarzhayan_HaradrimHelmet_RESET {$QuestName="Tarzhayan_HaradrimHelmet"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Tarzhayan_HaradrimHelmet
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#VAR Tarzhayan_HaradrimHelmet {"rabban_snakes|rabban_lizard"} {} VAR
+#VAR Tarzhayan_HaradrimHelmet_Settings {"rabban_snakes_short|rabban_snakes|rabban_lizard_short|rabban_lizard"} {} VAR
+
+
+#AL Tarzhayan_HaradrimHelmet_Loot {
+#SW (%pos(%lower("TarWellSnakes"),$CurRoom)) {
+  PeltAll 2
+} (%pos(%lower("TarWellLizard"),$CurRoom)) {
+  PeltAll 1
+}
+} $QuestName
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+
+
+} _QuestLibrary#CLASS 0

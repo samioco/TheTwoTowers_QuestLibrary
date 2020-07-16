@@ -1,0 +1,17 @@
+//AlzhakUrk_IvoryDice_RESET#CLASS 0#AL AlzhakUrk_IvoryDice_RESET {$QuestName="AlzhakUrk_IvoryDice"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AlzhakUrk_IvoryDice
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

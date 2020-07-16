@@ -1,0 +1,17 @@
+//MT3_RosesNecklace_RESET#CLASS 0#AL MT3_RosesNecklace_RESET {$QuestName="MT3_RosesNecklace"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT3_RosesNecklace
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

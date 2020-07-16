@@ -1,0 +1,17 @@
+//Umbar_MagnificentCutlass_RESET#CLASS 0#AL Umbar_MagnificentCutlass_RESET {$QuestName="Umbar_MagnificentCutlass"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Umbar_MagnificentCutlass
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

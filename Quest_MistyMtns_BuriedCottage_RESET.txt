@@ -1,0 +1,17 @@
+//MistyMtns_BuriedCottage_RESET#CLASS 0#AL MistyMtns_BuriedCottage_RESET {$QuestName="MistyMtns_BuriedCottage"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_BuriedCottage
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

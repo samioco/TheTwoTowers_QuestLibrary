@@ -1,0 +1,129 @@
+//Erebor_ThrainsTombLevel2_RESET#CLASS 0#AL Erebor_ThrainsTombLevel2_RESET {$QuestName="Erebor_ThrainsTombLevel2"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Erebor_ThrainsTombLevel2
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Erebor_ThrainsTombLevel2 {
+#VAR QuestName {"Erebor_ThrainsTombLevel2"} {} VAR
+#VAR ROOMS_Thrain_Chapel {} {} VAR
+#LOOP 1,7 {#ADDI ROOMS_Thrain_Chapel %concat("ThrainChapel",%i)}
+#VAR ThrainChapelActions {} {} VAR
+#ADDI ThrainChapelActions "touch bookstand"
+#ADDI ThrainChapelActions "touch cabinet"
+#ADDI ThrainChapelActions "touch shrine"
+#ADDI ThrainChapelActions "touch prie-dieu"
+#ADDI ThrainChapelActions "touch chest"
+#ADDI ThrainChapelActions "touch bench"
+#ADDI ThrainChapelActions "search pile"
+#VAR Messages_ThrainChapelSearchFail {} {} VAR
+#ADDI Messages_ThrainChapelSearchFail "What?"
+#ADDI Messages_ThrainChapelSearchFail "You search but fail to find anything of interest."
+#ADDI Messages_ThrainChapelSearchFail "The moment you try to touch the"
+#ADDI Messages_ThrainChapelSearchFail "You search the debris, and a nasty splinter stings your finger!"
+#ADDI Messages_ThrainChapelSearchFail "You search the debris and disturb a spider that was hiding there."
+#ADDI Messages_ThrainChapelSearchFail "You notice nothing special."
+#ADDI Messages_ThrainChapelSearchFail "You're far too busy to toy around now!"
+
+#VAR ThrainChapelRoomNum {1} {} VAR
+#VAR ThrainChapelActionNum {1} {} VAR
+#VAR ThrainChapelGem {} {} VAR
+#T- ThrainChapelSearch
+#T- ThrainChapelSearchBusy
+QuestOn Erebor_ThrainsTombLevel2
+#SW (%lower(%roomid())=%lower("ThrainChapel")) {ThrainChapelSearchForGem
+} {#ECHO Positioning not detected in Thrain's Chapel!}
+} $QuestName
+
+#AL ThrainChapel_Stat {
+#ECHO ThrainChapelRoomNum: @ThrainChapelRoomNum, Action: @ThrainChapelActionNum
+} $QuestName
+
+#AL ThrainChapelSearchForGem {
+#IF (%pos("ThrainChapel",%roomid())) {
+  #VAR ThrainChapelRoomNum {1} {} VAR
+  #VAR ThrainChapelActionNum {1} {} VAR
+  #WALK %concat("ThrainChapel",@ThrainChapelRoomNum)
+  #T+ ThrainChapelSearch
+  #T+ ThrainChapelSearchBusy
+  #EXE {%item(@ThrainChapelActions,@ThrainChapelActionNum)}
+}
+} $QuestName
+
+#AL ThrainChapelLightCandles {
+#SW (@ThrainChapelGem="yellow") {do light red candle,light green candle
+} (@ThrainChapelGem="white") {do light red candle,light blue candle,light green candle
+} (@ThrainChapelGem="blue") {light blue candle
+} (@ThrainChapelGem="green") {light green candle
+} (@ThrainChapelGem="magenta") {do light red candle,extinguish green candle,light blue candle
+} (@ThrainChapelGem="red") {light red candle
+} (@ThrainChapelGem="cyan") {do light blue candle,light green candle,extinguish red candle}
+insert gem into eye
+} $QuestName
+
+#TR ThrainChapelSearch {{@Messages_ThrainChapelSearchFail}} {
+#ADD ThrainChapelActionNum 1
+#IF (%item(@ThrainChapelActions,@ThrainChapelActionNum)) {#EXE {%item(@ThrainChapelActions,@ThrainChapelActionNum)}
+} {get gem
+  #ADD ThrainChapelRoomNum 1
+  #VAR ThrainChapelActionNum {1} {} VAR
+  #IF (@ThrainChapelRoomNum<=7) {
+    #WALK %concat("ThrainChapel",@ThrainChapelRoomNum)
+    #EXE {%item(@ThrainChapelActions,@ThrainChapelActionNum)}
+  } {
+    #VAR ThrainChapelActionNum {1} {} VAR
+    #VAR ThrainChapelRoomNum {1} {} VAR
+    #WALK thrain_chapel
+    #T- ThrainChapelSearch
+    #T- ThrainChapelSearchBusy
+  }
+}
+} $Settings
+
+#AL ThrainChapelPlaceGem {
+#WALK %concat("ThrainChapel",@ThrainChapelRoomNum)
+ThrainChapelLightCandles
+} $QuestName
+
+#TR ThrainChapelSearchBusy {You are too busy to do that now!} {
+#WAIT 1000
+#EXE {%item(@ThrainChapelActions,@ThrainChapelActionNum)}
+} $Settings
+
+#TR {You search the debris, && find a gem.} {
+#T- ThrainChapelSearch
+#VAR ThrainChapelActionNum {1} {} VAR
+#VAR ThrainChapelRoomNum {1} {} VAR
+do get gem,look gem
+#WALK Thrain_Chapel
+SysMsg Found Thrains Tomb Gem
+} $Settings
+
+#TR {This is a small %1 gem.} {
+#VAR ThrainChapelRoomNum {1} {} VAR
+#VAR ThrainChapelGem {%lower(%trim(%1))} {} VAR
+ThrainChapelPlaceGem
+} $Settings
+
+#TR {When nothing happens, you decide to pocket the treasure again.} {#ADD ThrainChapelRoomNum 1
+#IF (@ThrainChapelRoomNum<=7) {
+  #WALK %item(@ROOMS_Thrain_Chapel,@ThrainChapelRoomNum)
+  ThrainChapelPlaceGem
+}
+} $Settings
+
+#TR {sound of stone grinding over stone coming from the chapel!} {
+BEEP2
+#CW high,cyan
+#VAR ThrainChapelRoomNum {1} {} VAR
+#WALK ThrainChapel
+} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,17 @@
+//Harondor_SlayingtheBeast_RESET#CLASS 0#AL Harondor_SlayingtheBeast_RESET {$QuestName="Harondor_SlayingtheBeast"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harondor_SlayingtheBeast
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

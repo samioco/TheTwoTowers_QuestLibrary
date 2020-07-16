@@ -1,0 +1,69 @@
+//Pelargir_TheVault_RESET#CLASS 0#AL Pelargir_TheVault_RESET {$QuestName="Pelargir_TheVault"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_TheVault
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//Auto-loading tag: A golden glint sparks in your eye.
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+#AL Pelargir_TheVault {
+#VAR PelVaultPW {} {} VAR
+ActionAdd "QuestOn Pelargir_TheVault;l message in courier"
+ActionAdd "#WALK PelargirCourier;rest;ActionNext"
+ActionAdd "#WALK PelBar;#3 {packwine};ActionNext"
+ActionAdd "#SW ((@MyProf!=thief) && (@MyGold<300)) {gnb;deposit all;withdraw 300} ((@MyProf=thief) && (@MyGold<100)) {gnb;withdraw 100} {gnb;deposit all but 300};gold;ActionNext"
+gold
+ActionNext
+} $QuestName
+
+#AL Pelargir_TheVault_Check {QuesterCheck $QuestName 5 1000} $QuestName
+
+
+
+#TR {A tired courier enters the room and sits heavily on the couch.} {l message in courier} $Settings
+#TR {Aledric, captain in the City Guard} {BEEP3;#IF (@MyProf="thief") {steal message from courier} {do ask courier about quitting,give 200 gold to courier}} $Settings
+#TR {Courier gives you a message.} {#WALK Aledric;give message to aledric} $Settings
+
+#TR {Aledric throws a message at you!  Ouch, that hurt!} {get message;QuestAbort} $Settings
+
+#TR {armour to Elgard right away.  I still need a nap.} {#WALK PelargirVault;do get wine from pack,give wine to guard} $Settings
+#TR {Vault guard says*: And it was good, too!  You don't happen to} {#WALK PelargirVault;do get wine from pack,give wine to guard} $Settings
+#TR {Vault guard says*: That wash.... real' good!} {#T+ PelargirTheVault_DoorCheck;do wield knife,bash west door,pick west door} $Settings
+
+#TR {{"You smack the hell out of it, but only succeed in embarrassing yourself.|WHOAA! Slow down a little!"}} {rest;#ALA "Alarm_Bash" +30 {ws;bash east door} $Settings} $Settings
+#TR {{"You attempt to pick the lock, but are unsuccessful.|Your fingers get tangled up because you are in too much of a hurry."}} {rest;#ALA "Alarm_Pick" +30 {pick east door} $Settings} $Settings
+
+
+#TR PelargirTheVault_DoorCheck {{"You pound the door and it bursts open under the strain.|The door has already been bashed open.|There's no point in trying to open a bashed door.|You hear a faint "Click!" as you unlock the door.|The east door is already unlocked.|bashes down the east door!|picks the east door."}} {
+#SUS Alarm_Bash;#UNT Alarm_Bash;#UNT Alarm_Pick
+w;do get armour,wear armour,get shield,wear shield,get sword,wield sword
+} $Settings
+
+#TR {You wield a standard guard's sword.} {#WALK Elgard;report to elgard} $Settings
+
+#TR {Elgard whispers to you: The password is '%1'.} {
+#VAR PelVaultPW {%1} {} VAR
+#ECHO PelVault PW: @pelvaultpw
+#WAIT 2000
+#WALK PelSmith
+do give papers to jarain,say @PelVaultPW
+} $Settings
+
+#TR {as if worrying that the contents might break.} {tag package;sell all;unwrap package} $Settings
+#TR {large, oddly-shaped iron key.  You throw the cloth away.} {#WALK PelB;deposit all;#WALK PelVault} $Settings
+
+#TR {The guards rudely drop you on the ground} {extinguish crystal;QuestAbort} $Settings
+
+#TR {~*~*~* Congratulations!  You have completed the Pelargir Vault quest ~*~*~*} {QuestComplete Pelargir_TheVault} $Settings
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

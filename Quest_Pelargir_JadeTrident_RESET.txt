@@ -1,0 +1,38 @@
+//Pelargir_JadeTrident_RESET#CLASS 0#AL Pelargir_JadeTrident_RESET {$QuestName="Pelargir_JadeTrident"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_JadeTrident
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#TR {You regain consciousness.} {rest} $Settings
+#TR {Coyote has died.} {do drop branch,get rope;.2e;do fasten rope to tree,wrap rope around waist,rest on} $Settings
+
+#TR {With the rope wrapped around your waist, you swim into the river.} {dive;do look,look glow,grab nugget,examine sand,dig through sand} $Settings
+//#TR {You take a deep breath and dive in the waters of the Great River.} {#MO S} $Settings
+//#TR {You quickly swim back up to the water surface.} {#MOVE N} $Settings
+
+#TR {Your hands slip and you crash down into the water!} {climb ladder} $Settings
+#TR {through the air.  As you reach it, your hands suddenly slip, and} {climb ladder} $Settings
+#TR {cracks with a loud noise!  It starts bending and then comes crashing} {climb ladder} $Settings
+#TR {You climb up the ladder to the point where it is broken.} {rest} $Settings
+
+#TR {but you continue digging nonetheless.} {dive stop;swim west;#ALA "Alarm_Trident" {+30} {SysMsg Ready to dive again!} $Settings;BEEP2} $Settings
+
+#TR {shiver runs down your spine.} {dive stop;swim west;#ALA "Alarm_Trident" {+30} {SysMsg Ready to dive again!;BEEP2} $Settings} $Settings
+
+#TR {Finally, the passage seems to be wide enough for you to swim} {
+trigger you begin to swim todo climb ladder
+#IF (%mud.ep>150) {swim tunnel;3swim west;climb ladder
+} {dive stop;swim west}
+} $Settings
+
+#TR {{@ROOMS_Signposts}} {QuestOff Pelargir_JadeTrident} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

@@ -1,0 +1,34 @@
+//Rhun_EasterlingCampAmbush_RESET#CLASS 0#AL Rhun_EasterlingCampAmbush_RESET {$QuestName="Rhun_EasterlingCampAmbush"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhun_EasterlingCampAmbush
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Rhun_EasterlingCampAmbush {
+QuestInit $QuestName "SGaunts_Lookout" "subdue lookout"
+MoveMe_To_NorthArda
+} $QuestName
+
+#AL Rhun_EasterlingCampAmbush_Check {QuesterCheck $QuestName 19 100} $QuestName
+
+#TR {@ProfileGods takes a deep breath and squeezes through the gap!} {RingOn} $QuestName
+
+#TR {{"few hits to the face he decides to stop struggling.|The lookout has already been subdued!"}} {threaten lookout} $Settings
+#TR {collar, demanding that he hand it over.} {get uniform;do put cloak in wagon,put cloak in pack;wear uniform} $Settings
+#TR {The lookout has nothing left to be threatened for!} {#WALK sgaunts_post;do wear cloak from wagon,wear cloak from pack;QuestAbort} $Settings
+
+#TR {You wear a cloth lookout uniform.} {#WALK sgaunts_armoury;do get torch,get oil;#WALK sgaunts_post;drop torch;do put uniform in wagon,drop uniform,wear cloak from wagon,wear cloak from pack;get torch;squeeze behind building} $Settings
+#TR {between the fence and the building.} {pour oil on building} $Settings
+#TR {away.  The oil can now be kindled with a flame.} {do light torch,kindle oil with torch,drop torch;ringon;ws;back} $Settings
+#TR {bleeding to death} {kill} $Settings
+#TR {Commander has died.} {tag gauntlets in corpse of commander} $Settings
+#TR {Captain says*: Good work!  It looks like you were the one that set} {ringoff;#5 {drop all from corpse};tag pair of steel gauntlets on ground;al} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0

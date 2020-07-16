@@ -1,0 +1,17 @@
+//MM2_GoldToothScavenger_RESET#CLASS 0#AL MM2_GoldToothScavenger_RESET {$QuestName="MM2_GoldToothScavenger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MM2_GoldToothScavenger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} _QuestLibrary#CLASS 0
