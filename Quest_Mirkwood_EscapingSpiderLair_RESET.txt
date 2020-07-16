@@ -1,0 +1,17 @@
+//Mirkwood_EscapingSpiderLair_RESET#CLASS 0#AL Mirkwood_EscapingSpiderLair_RESET {$QuestName="Mirkwood_EscapingSpiderLair"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_EscapingSpiderLair
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

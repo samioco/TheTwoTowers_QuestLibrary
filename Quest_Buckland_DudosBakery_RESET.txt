@@ -1,0 +1,32 @@
+//Buckland_DudosBakery_RESET#CLASS 0#AL Buckland_DudosBakery_RESET {$QuestName="Buckland_DudosBakery"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Buckland_DudosBakery
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Bake stuff for Dudo, according to the instructions he provides
+
+//Requirements:
+//Recommended level 1 - 5
+//Reward: 25 gold
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Buckland_DudosBakery {
+QuestInit $QuestName "Dudo" "ask dudo about helping"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Buckland_DudosBakery_Check {QuesterCheck $QuestName 1 5} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {Dudo says*: Thanks for joining the team,} {ss;workroom;do pour flour into bowl,pour sugar into bowl,pour butter into bowl,mix bowl,mold dough,spread rolls,bake shortbread} $Settings
+#TR {Finally, you put the bread on the tray and put it in the oven.} {get tray;out;give tray to dudo} $Settings
+//#TR {Dudo says*: Great job! I didn't think you could do it! Here is your payment.} {questend} $Settings
+#TR {{"Dudo says*: Sorry, we already have too many employees.|There are not enough ingredients remaining to make more bread."}} {QuestAbort} $Settings
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

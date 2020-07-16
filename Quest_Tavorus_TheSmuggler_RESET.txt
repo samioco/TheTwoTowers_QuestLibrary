@@ -1,0 +1,18 @@
+//Tavorus_TheSmuggler_RESET#CLASS 0#AL Tavorus_TheSmuggler_RESET {$QuestName="Tavorus_TheSmuggler"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Tavorus_TheSmuggler
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

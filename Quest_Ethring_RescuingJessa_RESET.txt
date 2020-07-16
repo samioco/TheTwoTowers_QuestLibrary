@@ -1,0 +1,17 @@
+//Ethring_RescuingJessa_RESET#CLASS 0#AL Ethring_RescuingJessa_RESET {$QuestName="Ethring_RescuingJessa"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Ethring_RescuingJessa
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,39 @@
+//Tookland_ThainsBow_RESET#CLASS 0#AL Tookland_ThainsBow_RESET {$QuestName="Tookland_ThainsBow"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Tookland_ThainsBow
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Tookland_ThainsBow {
+QuestInit "Tookland_ThainsBow" "took_bow" "ws;get bow"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Tookland_ThainsBow_Check {QuesterCheck $QuestName 4 4} $QuestName
+//------------------------------------------------------------
+#TR {Thain is bleeding} {kill} $Settings
+#TR {^Thain has died.} {
+ss;do get bow from corpse,sling bow,get all from corpse
+ActionAdd "#WALK bel_pick;get pick;#WALK took_hidden;wield pick,pry chunk,get nugget;#WALK took_hugo;sell all;#WALK hobshop;sell all;QuestComplete"
+ActionAdd "#WALK took_hidden_out;move rug;do unlock hidden door;hidden;do unlock chest,drop key,open chest,get check from chest;#WALK took_hugo;give check to hugo;sell all"
+ActionAdd "#WALK took_candle;do get candlestick into pack,get candlestick;#WALK hobshop;do sell all from pack,sell all"
+ActionAdd "#WALK took_painting;move painting;#WALK took_bathroom;pull knob;#WALK took_hidden_out;move rug;hidden;do get key from pack,unlock chest,open chest,open chest,drop all key"
+ActionNext
+} $Settings
+
+#TR {You run %1.} {
+$action="";#UNT "Alarm_Rest"
+#SW (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}}
+SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000;rest on
+#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
+} $Settings
+
+#TR {The Guardian says, I'm very sorry, but I have been instructed to keep} {QuestAbort} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

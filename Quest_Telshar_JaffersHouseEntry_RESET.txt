@@ -1,0 +1,18 @@
+//Telshar_JaffersHouseEntry_RESET#CLASS 0#AL Telshar_JaffersHouseEntry_RESET {$QuestName="Telshar_JaffersHouseEntry"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Telshar_JaffersHouseEntry
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

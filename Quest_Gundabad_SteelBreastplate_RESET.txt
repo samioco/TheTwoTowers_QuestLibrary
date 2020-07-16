@@ -1,0 +1,47 @@
+//Gundabad_SteelBreastplate_RESET#CLASS 0#AL Gundabad_SteelBreastplate_RESET {$QuestName="Gundabad_SteelBreastplate"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Gundabad_SteelBreastplate
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Gundabad_SteelBreastplate {Gundabad_SteelBreastplate_Init} $QuestName
+
+#AL Gundabad_SteelBreastplate_Check {QuesterCheck $QuestName 5 100} $QuestName
+
+#AL Gundabad_SteelBreastplate_INIT {
+  #VAR QuestName {"Gundabad_SteelBreastplate"} {} VAR
+  GrinderQueue_Sell
+  ActionAdd "#IF (%mud.ep>100) {QuestOn Gundabad_SteelBreastplate;#WALK gundaplate;ss;do dislodge rock} {QuestAbort Gundabad_SteelBreastplate}"
+  #IF (@GrinderQueue_i) {ActionAdd "gnb;deposit all;ActionNext"}
+  #IF (@GrinderQueue_i) {ActionAdd "HealMe"}
+  MoveMe_To_NorthArda
+} $QuestName
+
+#TR {Having had your fun, you turn around and notice some rags that must} {get strips;w;do bind orc,lead orc} $Settings
+#TR {You feel much too tired.} {#WAIT 1000;QuestAbort} $Settings
+
+#TR {Feeling slightly daring, you then blindfold the orc with the last and} {e;se;push orc} $Settings
+#TR {Having had enough of his horrid appearance, you shove him off the} {s;clear boulders;climb down} $Settings
+
+#TR {where you began.  There is no getting down from here with this} {#WAIT 1000;rest;#ALA "Alarm_rest" {+100} {clear boulders;climb down} $Settings} $Settings
+
+
+//need clear boulders success trigger
+#TR {You clamber back down the mountain.} {do wear all from corpse,get all from corpse;GearSwap "A steel breastplate"} $Settings
+
+//#TR {You wear a steel breastplate.} {tag breastplate} $Settings
+
+//#TR {You are already wearing something on your chest.} {#WALK framshop;do sell all from pack,sell all} $Settings
+
+#TR {That's a great idea, but what are you going to use to bind him?} {QuestAbort} $Settings
+#TR {You look for a rock to dislodge but fail to find any loose ones.} {QuestAbort} $Settings
+#TR {Lead what?} {QuestAbort} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

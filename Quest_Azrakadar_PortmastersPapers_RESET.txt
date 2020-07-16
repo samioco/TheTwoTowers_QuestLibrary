@@ -1,0 +1,18 @@
+//Azrakadar_PortmastersPapers_RESET#CLASS 0#AL Azrakadar_PortmastersPapers_RESET {$QuestName="Azrakadar_PortmastersPapers"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Azrakadar_PortmastersPapers
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

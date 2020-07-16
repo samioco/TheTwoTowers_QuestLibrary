@@ -1,0 +1,18 @@
+//Asubuhi_LetterDelivery_RESET#CLASS 0#AL Asubuhi_LetterDelivery_RESET {$QuestName="Asubuhi_LetterDelivery"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Asubuhi_LetterDelivery
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

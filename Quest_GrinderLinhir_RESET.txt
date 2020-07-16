@@ -1,0 +1,200 @@
+//GrinderLinhir_RESET#CLASS 0#AL GrinderLinhir_RESET {$QuestName="GrinderLinhir"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GrinderLinhir
+//Description: Static Grinder
+//------------------------------------------------------------
+//Requirements: Maxed combat skills
+//------------------------------------------------------------
+//Settings:
+//WalkerStartRoom: <Grinder>StartRoom
+//WalkerPath: <Grinder>Path
+//WalkerMobs: <Grinder>Mobs: GrinderWalk mobs
+
+//StaticRoomShort: <Grinder>
+//StaticMobSettings ShortNames: <Grinder>MobSettings
+//StaticSettings: <Grinder>Settings: RoomsShorts + MobSettings
+//#VAR <Grinder>Settings {} {} VAR
+//#FORALL @<Grinder> {#ADDI <Grinder>Settings %concat(%i,"RoomShort")}
+//#FORALL @<Grinder>MobSettings {#ADDI <Grinder>Settings %i}
+//#FORALL @<Grinder>Settings {#T- $QuestName|%i}
+
+//<Grinder>_Loot: Loot room for non-mount/wagon rooms
+//------------------------------------------------------------
+#AL GrinderLinhir {
+#VAR GrinderLinhirStartRoom {"LinSP"} {} VAR
+
+#VAR GrinderLinhirGround {} {} VAR
+#ADDI GrinderLinhirGround "LintOut"
+#ADDI GrinderLinhirGround "LinPort"
+#ADDI GrinderLinhirGround "LinhirFountain"
+#ADDI GrinderLinhirGround "LinIn"
+#ADDI GrinderLinhirGround "LinRG"
+#ADDI GrinderLinhirGround "LinNG"
+#ADDI GrinderLinhirGround "LinSG"
+
+#VAR GrinderLinhirWall {} {} VAR
+#ADDI GrinderLinhirWall "LinhirFountain"
+#ADDI GrinderLinhirWall "LinSG"
+#LOOP 1,26 {
+  #ADDI GrinderLinhirWall %concat("LinBat",%i)
+}
+#VAR GrinderLinhir {} {} VAR
+#FORALL @GrinderLinhirGround {#ADDI GrinderLinhir %i}
+//#FORALL @GrinderLinhirWall {#ADDI GrinderLinhir %i}
+
+#VAR GrinderLinhirWallMobs {} {} VAR
+#ADDI GrinderLinhirWallMobs "A guard of Linhir walks the battlements"
+#ADDI GrinderLinhirWallMobs "A guard of Linhir patrols atop the wall"
+
+#VAR GrinderLinhirWallLootItems {} {} VAR
+#ADDI GrinderLinhirWallLootItems "shining sword of linhir"
+#ADDI GrinderLinhirWallLootItems "helm of linhir"
+#ADDI GrinderLinhirWallLootItems "light shirt of chainmail"
+#ADDI GrinderLinhirWallLootItems "blue and silver surcoat"
+#ADDI GrinderLinhirWallLootItems "serrated knife"
+
+#VAR LinWallNum {0} {} VAR
+
+#VAR GrinderLinhirWallPath {"7n8j7e;.(#WALK LinSG;#WALK LinRG;.su2jdw;.(StopWalk;ActionNext))"} {} VAR
+
+#VAR GrinderLinhirSettings {} {} VAR
+#FORALL "LinOut|LinIn|LinRG|LinPort|LinNG|LinSG|LinhirFountain" {
+  #ADDI GrinderLinhirSettings %concat(%i,"RoomShort")
+}
+#FORALL "LinhirGroundGuard|LinhirPatrolGuard|LinhirWallGuard" {
+  #ADDI GrinderLinhirSettings %i
+}
+
+QuestInit $QuestName "LinSP" "Grinder GrinderLinhir"
+MoveMe_To_Arda
+} $QuestName
+
+#AL GrinderLinhir_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+
+#AL GrinderLinhirWallLoot {
+$CurRoom=%lower(@CurRoom)
+$numMobs = %numitems(@MobList)
+#SW (%pos(%lower("LinBat"),$CurRoom)) {
+  SSS
+  GetAll
+  GrinderResetAllRoomSettings
+  $room=%number(%right(%roomid,6))
+  #IF ($room<=23) {
+    #VAR iRoom {7} {} VAR
+    #WALK LinSG
+  } {
+    #VAR iRoom {32} {} VAR
+    #WALK LinRG
+  }
+  GrinderLinhirWallUnloadLoot
+  ws
+} {
+  #LOOP $numMobs {GetAllNoHands}
+}
+} $QuestName
+
+#AL GrinderLinhirWallUnloadLoot {
+MyProfileVars
+PackToContainers
+#VAR EXE {} {} VAR
+#FORALL @Gear_PartyWagons {
+  #FORALL @GrinderLinhirWallLootItems {
+    AddToEXE %concat("put ",%j," in ",%i)
+  }
+}
+#FORALL @GrinderLinhirWallLootItems {
+  AddToEXE %concat("put ",%i," in @Mywagon")
+}
+AddDoToEXE
+ExecuteEXE
+} $QuestName
+
+
+#TR LinOutRoomShort {Before the Linhir city gates} {
+GrinderResetRoom
+#T+ LinhirGroundGuard
+} $Settings
+
+#TR LinPortRoomShort {Outside the river gate at the port of Linhir} {
+GrinderResetRoom
+#T+ LinhirGroundGuard
+} $Settings
+
+#TR LinInRoomShort {At the town square inside the main gate of the city} {
+GrinderResetRoom
+#T+ LinhirGroundGuard
+} $Settings
+
+#TR LinSGRoomShort {Inside the south gate of the city} {
+GrinderResetRoom
+#T+ LinhirGroundGuard
+} $Settings
+
+#TR LinRGRoomShort {Inside the river gate of the city} {
+GrinderResetRoom
+#T+ LinhirGroundGuard
+} $Settings
+
+#TR LinNGRoomShort {Inside the north gate of the city} {
+GrinderResetRoom
+#T+ LinhirGroundGuard
+} $Settings
+
+#TR LinhirFountainRoomShort {A fountain at the center of the town square} {
+GrinderResetRoom
+#T+ LinhirPatrolGuard
+} $Settings
+
+#TR LinhirWallRoomShort {{"Inside a turret atop the Linhir city wall|On the battlements atop the Linhir city wall"}} {
+GrinderResetRoom
+#T- LinhirWallRoomShort
+#T+ LinhirWallGuard
+#T+ NotThere
+#ALA LinhirWallWalk {+.1} {GrinderNextRoom} $Settings
+} $Settings
+
+#TR LinhirGroundGuard {A guard of Linhir(*)} {
+#T- LinhirGroundGuard
+#CW high,cyan
+#ADDI MobList "guard"
+$numMobs=%trim(%replace(%1,"["))
+$numMobs=%replace($numMobs,"]")
+$numMobs=%replace($numMobs," ")
+$numMobs=%number($numMobs)
+#IF ((%isnumber($numMobs)) && ($numMobs>1)) {#ADD $numMobs -1}
+#LOOP $numMobs,1 {#VAR MobList {%additem(%concat("guard ",%i),@MobList)} {} VAR}
+#ECHO RoomMobs: @MobList
+} $Settings
+
+#TR LinhirPatrolGuard {A guard of Linhir is watching you(*)} {
+#T- LinhirPatrolGuard
+#CW high,cyan
+#VAR MobList {%additem("guard",@MobList)} {} VAR
+$numMobs=%trim(%replace(%1,"["))
+$numMobs=%replace($numMobs,"]")
+$numMobs=%replace($numMobs," ")
+$numMobs=%number($numMobs)
+#IF ((%isnumber($numMobs)) && ($numMobs>1)) {#ADD $numMobs -1}
+#LOOP $numMobs {#VAR MobList {%additem("guard",@MobList)} {} VAR}
+#ECHO RoomMobs: @MobList
+} $Settings
+
+#TR LinhirWallGuard {({"A guard of Linhir patrols atop the wall|A guard of Linhir walks the battlements|A guard of Linhir keeps watch over the battlements"})} {
+#UNT "LinhirWalk"
+#VAR MobList {"guard"} {} VAR
+#T- LinhirWallGuard
+#CW high,cyan
+#VAR CurRoom {%roomid} {} VAR
+GrinderNextMob
+} $Settings
+
+#TR YouAttack {You attack} {
+#T- LinhirGroundGuard
+#T- LinhirPatrolGuard
+#T- LinhirWallGuard
+} $Settings
+
+
+} Tools_QuestList#CLASS 0

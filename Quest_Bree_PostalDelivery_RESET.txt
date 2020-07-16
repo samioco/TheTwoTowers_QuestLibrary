@@ -1,0 +1,34 @@
+//Bree_PostalDelivery_RESET#CLASS 0#AL Bree_PostalDelivery_RESET {$QuestName="Bree_PostalDelivery"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Bree_PostalDelivery
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Help deliver some mail
+
+//Requirements:
+//Recommended level 1 to 5
+//Reward: 25g
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Bree_PostalDelivery {
+QuestInit $QuestName "BreeMail" "offer help"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Bree_PostalDelivery_Check {QuesterCheck $QuestName 1 5} $QuestName
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {{"Aravir nods in greeting.  He glances down at the letter.  After reading|    Corwyn turns to look at you and then takes the letter you have just|Laryn stops what he is doing for a moment to take the letter from you.|    Leah smiles at you, bobs a quick curtsey and stuffs the letter into an|Arguindel takes a quick look at the letter and then puts it into his"}} {#WAIT 1000;#WALK Breemail;e} $Settings
+#TR {Wendel says*: This letter goes to %1.} {#WALK %lower(%1);give letter to %lower(%1)} $Settings
+#TR {This undelivered letter is addressed to %1, located in the hall} {#WALK %lower(%1);give letter to %lower(%1)} $Settings
+#TR {Wendel gives you %d gold coins.} {} $Settings
+#TR {What?} {#IF (%roomid=Breemail) {QuestAbort}} $Settings
+#TR {Wendel says*: I'm sorry the position has been filled.} {QuestAbort} $Settings
+#TR {to be too encumbered right now to handle letters.} {QuestAbort} $Settings
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

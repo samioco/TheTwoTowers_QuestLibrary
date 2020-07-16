@@ -1,0 +1,17 @@
+//GreyMtns_RunedDagger_RESET#CLASS 0#AL GreyMtns_RunedDagger_RESET {$QuestName="GreyMtns_RunedDagger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GreyMtns_RunedDagger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

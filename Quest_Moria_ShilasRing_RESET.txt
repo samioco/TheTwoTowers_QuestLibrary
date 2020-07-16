@@ -1,0 +1,17 @@
+//Moria_ShilasRing_RESET#CLASS 0#AL Moria_ShilasRing_RESET {$QuestName="Moria_ShilasRing"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Moria_ShilasRing
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

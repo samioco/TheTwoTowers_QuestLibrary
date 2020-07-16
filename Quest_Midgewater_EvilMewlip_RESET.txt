@@ -1,0 +1,15 @@
+//Midgewater_EvilMewlip_RESET#CLASS 0#AL Midgewater_EvilMewlip_RESET {$QuestName="Midgewater_EvilMewlip"
+$Settings=%concat($QuestName,"|Settings")
+
+#AL Midgewater_EvilMewlip {
+QuestInit $QuestName "Midgewater_Mewlip" "ws;kill mewlip"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Midgewater_EvilMewlip_Check {QuesterCheck $QuestName 10 25} $QuestName
+
+#TR {bleeding to death} {kill} $Settings
+
+#TR {You don't see that here.} {#IF (%roomid()="Midgewater_Mewlip") {QuestAbort}} $Settings
+
+#TR {You run %1.} {$action="";#SW (%1=SOUTh) {$action=north} (%1=north) {$action=SOUTh} (%1=east) {$action=west} (%1=west) {$action=east} (%1=up) {$action=down} (%1=down) {$action=up} (%1=northwest) {$action=SOUTheast} (%1=northeast) {$action=SOUThwest} (%1=SOUThwest) {$action=northeast} (%1=SOUTheast) {$action=northwest};SysMsg Waiting 100s, then try again, moving: $action;#WAIT 2000;rest on;#UNT Alarm_rest;#ALA Alarm_rest {+100} {#EXE {$action}} $Settings} $Settings} Tools_QuestList#CLASS 0

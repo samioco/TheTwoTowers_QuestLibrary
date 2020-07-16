@@ -1,0 +1,41 @@
+//Mirkwood_StrangeRunedStaff_RESET#CLASS 0#AL Mirkwood_StrangeRunedStaff_RESET {$QuestName="Mirkwood_StrangeRunedStaff"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_StrangeRunedStaff
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+//neutral
+#AL Mirkwood_StrangeRunedStaff {
+QuestOn Mirkwood_StrangeRunedStaff
+#WALK SRSin;do poke mass,read note
+} $QuestName
+
+#TR {Speaking the phrase ~'&SRSPhrase~'} {#ECHO SRSPhrase: @SRSPhrase} $Settings
+
+#TR {The pressure is making you dizzy...you can feel the spirit poking} {} $Settings
+
+//winning
+#TR {Being careful not to lose your concentration, you search your memory} {} $Settings
+#TR {Now that you have a foothold, you decide to poke around a bit....} {} $Settings
+#TR {You decide to try something...locking your eyes with the spirit, you} {} $Settings
+#TR {Now knowing what to expect, you plunge deeper into the spirit's soul.} {} $Settings
+#TR {You can clearly sense fear from the spirit now.  You decide to see if} {} $Settings
+
+
+//losing
+#TR {nauseous.  You think to yourself how STUPID this was.  What do you know} {drink wine} $Settings
+#TR {Your arm starts to itch, then tingle...you look down at it and find} {drink wine} $Settings
+//#TR {You are too drunk to drink another drop.} {eat pie} $Settings
+
+//won
+#TR {With the help of Handel, you give a final push.  The demon curses you} {} $Settings
+#TR {The ghost slowly fades away.} {winein;piein} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

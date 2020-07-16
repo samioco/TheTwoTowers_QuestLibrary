@@ -1,0 +1,17 @@
+//EastCamp_PreparingBoards_RESET#CLASS 0#AL EastCamp_PreparingBoards_RESET {$QuestName="EastCamp_PreparingBoards"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: EastCamp_PreparingBoards
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

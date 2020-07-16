@@ -1,0 +1,104 @@
+//GrinderBunaboValley_RESET#CLASS 0#AL GrinderBunaboValley_RESET {$QuestName="GrinderBunaboValley"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GrinderBunaboValley
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended Level
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//WalkerStartRoom: <Grinder>StartRoom
+//WalkerPath: <Grinder>Path
+//WalkerMobs: <Grinder>Mobs: GrinderWalk mobs
+
+//StaticRoomShort: <Grinder>
+//StaticMobSettings ShortNames: <Grinder>MobSettings
+//StaticSettings: <Grinder>Settings: RoomsShorts + MobSettings
+//#VAR <Grinder>Settings {} {} VAR
+//#FORALL @<Grinder> {#ADDI <Grinder>Settings %concat(%i,"RoomShort")}
+//#FORALL @<Grinder>MobSettings {#ADDI <Grinder>Settings %i}
+//#FORALL @<Grinder>Settings {#T- $QuestName|%i}
+
+//<Grinder>_Loot: Loot room for non-mount/wagon rooms
+//------------------------------------------------------------
+#AL GrinderBunaboValley {
+#VAR GrinderBunaboValleyStartRoom {"AsuSP"} {} VAR
+
+#VAR GrinderBunaboValleyMobs {} {} VAR
+#ADDI GrinderBunaboValleyMobs "A small herd of gazelle"
+#ADDI GrinderBunaboValleyMobs "A gazelle roams the plains"
+#ADDI GrinderBunaboValleyMobs "A long, thin snake"
+#ADDI GrinderBunaboValleyMobs "A long-eared rabbit hops around in the grass"
+#ADDI GrinderBunaboValleyMobs "A wandering Uruk"
+#ADDI GrinderBunaboValleyMobs "A very small, lost orc"
+#ADDI GrinderBunaboValleyMobs "A sharp-tusked boar"
+#ADDI GrinderBunaboValleyMobs "A lizard"
+#ADDI GrinderBunaboValleyMobs "A coyote searches for prey"
+
+#VAR GrinderBunaboValleyPath_AsubuhiToTelshar {".ne5sw3nw3sw3nw3sw2nw3sw3nw6sw5nw5sw5nw7sw2s6wn2wswswnw2sws2ws7ws6es8ws9e2swnwswn7ws7es6ws5es4wse2se2ne5se5ne10se10ne12se13nen10se10ne5se9ne3se5ne4se5ne4se3n4enwn2ese3ne3se3n3ene3ne4se4ne4se5ne4se5ne3se5ne4s4e12s9w3n"} {} VAR
+
+#VAR GrinderBunaboValleyPath_TelsharToAsubuhi {".3s9e12n4w4nw5sw3nw5sw4nw5sw4nw4sw4nw3sws3w3sw3nw3swn2wses4w3sw4nw5sw4nw5sw3nw9sw5nw10sw10nsw13sw12nw10sw10nw5sw5nw2sw2nwn4en5wn6en7wn7esenese2n9wn8en6wn7en2ene2nesenen2es6e2ne7ne5se5ne5se6ne3se3ne2se3ne3se3ne3se5nws"} {} VAR
+#SW (%ismember(%lower(%roomid()),%lower("TelSP"))) {
+  #VAR GrinderBunaboValleyPath {@GrinderBunaboValleyPath_TelsharToAsubuhi} {} VAR
+  #VAR GrinderBunaboValleyStartRoom {"TelSP"} {} VAR
+} {
+  #VAR GrinderBunaboValleyPath {@GrinderBunaboValleyPath_AsubuhiToTelshar} {} VAR
+  #VAR GrinderBunaboValleyStartRoom {"AsuSP"} {} VAR
+}
+QuestInit $QuestName @GrinderQataStartRoom "GrinderWalker GrinderBunaboValley"
+ActionAdd "HealMe"
+MoveMe_To_FH
+} $QuestName
+
+#AL GrinderBunaboValley_Check {
+QuesterCheck $QuestName 8 100
+} $QuestName
+
+#AL GrinderBunaboValley_Attack {
+$mob=%lower(%0)
+#SW (%pos("snake",$mob)) {kill snake
+} (%pos("gazelle",$mob)) {kill gazelle
+} (%pos("rabbit",$mob)) {kill rabbit
+} (%pos("boar",$mob)) {kill boar
+} (%pos("lizard",$mob)) {kill lizard
+} (%pos("coyote",$mob)) {kill coyote
+} (%pos("zebra",$mob)) {kill zebra
+} (%pos("sow",$mob)) {kill sow
+} (%pos("rhino",$mob)) {kill rhino
+} (%pos("olog",$mob)) {kill olog
+} (%pos("uruk",$mob)) {kill uruk
+} (%pos("orc",$mob)) {kill orc
+} (%pos("variag",$mob)) {kill variag
+} (%pos("haradrim",$mob)) {kill haradrim
+} (%pos("numenorean",$mob)) {kill numenorean
+} {kill $mob
+}
+#VAR CurMob {$mob} {} VAR
+
+} $QuestName
+
+
+#AL GrinderBunaboValleyEnableMobs {
+ClassOn GrinderBunaboValley
+#T+ GrinderBunaboValleyMobs
+#IF (@MyLevel>=10) {#T+ GrinderBunaboValleyMobs2}
+} $QuestName
+
+#AL GrinderBunaboValleyDisableMobs {
+#T- GrinderBunaboValleyMobs
+#T- GrinderBunaboValleyMobs2
+} $QuestName
+
+#TR GrinderBunaboValleyMobs {({@GrinderBunaboValleyMobs})} {
+#IF (!@PlayerDetected) {WalkerAttack %1} {WalkerContinue}
+} $Settings
+
+#TR GrinderBunaboValleyMobs2 {{@AAnThe}*{@HumanoidRaces} ({@FarHaradHumanoidTypes})} {
+#IF (!@PlayerDetected) {WalkerAttack %1} {WalkerContinue}
+} $Settings
+
+
+
+} Tools_QuestList#CLASS 0

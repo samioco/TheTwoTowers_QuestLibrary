@@ -1,0 +1,17 @@
+//Harondor_WoundedVariagHorse_RESET#CLASS 0#AL Harondor_WoundedVariagHorse_RESET {$QuestName="Harondor_WoundedVariagHorse"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harondor_WoundedVariagHorse
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

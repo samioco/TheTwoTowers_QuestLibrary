@@ -1,0 +1,17 @@
+//Mirkwood_ImpsTalisman_RESET#CLASS 0#AL Mirkwood_ImpsTalisman_RESET {$QuestName="Mirkwood_ImpsTalisman"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_ImpsTalisman
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//PetrForest_BlackStaffSling_RESET#CLASS 0#AL PetrForest_BlackStaffSling_RESET {$QuestName="PetrForest_BlackStaffSling"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: PetrForest_BlackStaffSling
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

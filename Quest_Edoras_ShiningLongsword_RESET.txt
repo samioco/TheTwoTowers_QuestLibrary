@@ -1,0 +1,51 @@
+//Edoras_ShiningLongsword_RESET#CLASS 0#AL Edoras_ShiningLongsword_RESET {$QuestName="Edoras_ShiningLongsword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Edoras_ShiningLongsword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Edoras_ShiningLongsword {
+#T+ Edoras_ShiningLongsword_Door_Check
+QuestInit $QuestName "EdoLockOut" "ws;Edoras_ShiningLongsword_OpenDoor"
+MoveMe_To_Arda
+} $QuestName
+
+#AL Edoras_ShiningLongsword_Check {QuesterCheck $QuestName 19 100} $QuestName
+
+
+#AL Edoras_ShiningLongsword_OpenDoor {
+#SW (@MyProf="thief") {pick door} {do bash door,pick door}
+} $QuestName
+
+#TR {{"You smack the hell out of it, but only succeed in embarrassing yourself.|WHOAA! Slow down a little!"}} {rest;#ALA "bash_alarm" +30 {ws;bash east door} $Settings} $Settings
+
+#TR {{"You attempt to pick the lock, but are unsuccessful.|Your fingers get tangled up because you are in too much of a hurry."}} {rest;#ALA "pick_alarm" +30 {pick east door} $Settings} $Settings
+
+#TR Edoras_ShiningLongsword_Door_Check {{"You pound the door and it bursts open under the strain.|The door has already been bashed open.|There's no point in trying to open a bashed door.|You hear a faint "Click!" as you unlock the door.|The east door is already unlocked.|bashes down the east door!|picks the east door."}} {#T- Edoras_ShiningLongsword_Door_Check;#SUS bash_alarm;#UNT bash_alarm;#UNT pick_alarm;ss;e;ws;kill lady} $Settings
+
+#TR {You don't see that here.} {#SW (%ismember(%roomid,"edolock|edosmith")) {QuestAbort}} $Settings
+
+#TR {{"Lady|Weaponsmith"} * you} {#IF ((%mud.ep>%mud.hp) AND (%mud.ep>80)) {profatk}} $Settings
+#TR {You run} {rest on} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+#TR {The Lady whispers*: 'I come for you, my love!', and dies.} {do get key from corpse into bag,get key from corpse into cloak,get key from corpse into pack;ss;get all from corpse;w;ActionAdd "#WALK Edoras_SmithStreet;e;do get bracers from pack,give bracers to smith";HealMe} $Settings
+#TR {You give Weaponsmith a pair of shining steel bracers.} {ringon;ws} $Settings
+#TR {Weaponsmith locks the west door.} {kill smith} $Settings
+
+#TR {You do not have a bracers.} {w;QuestAbort} $Settings
+
+#TR {The Weaponsmith collapses, and foams at the mouth for a minute before lying still.} {ringoff;sss;do get key from corpse into bag,get key from corpse into cloak,get key from corpse into pack;drop all from corpse
+GearSwap "A pair of weaponsmith gloves"
+GearSwap "A shining steel longsword"
+packin;get gold;w;ptow
+} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

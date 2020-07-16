@@ -1,0 +1,17 @@
+//Gondor_SetofBolas_RESET#CLASS 0#AL Gondor_SetofBolas_RESET {$QuestName="Gondor_SetofBolas"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Gondor_SetofBolas
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

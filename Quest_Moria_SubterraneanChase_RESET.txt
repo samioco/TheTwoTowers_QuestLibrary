@@ -1,0 +1,17 @@
+//Moria_SubterraneanChase_RESET#CLASS 0#AL Moria_SubterraneanChase_RESET {$QuestName="Moria_SubterraneanChase"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Moria_SubterraneanChase
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//Ithilien_HaradrimRoyalAnkus_RESET#CLASS 0#AL Ithilien_HaradrimRoyalAnkus_RESET {$QuestName="Ithilien_HaradrimRoyalAnkus"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Ithilien_HaradrimRoyalAnkus
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

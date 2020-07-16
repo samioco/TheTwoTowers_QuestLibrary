@@ -1,0 +1,17 @@
+//Pelargir_HelpingNurse_RESET#CLASS 0#AL Pelargir_HelpingNurse_RESET {$QuestName="Pelargir_HelpingNurse"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_HelpingNurse
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//Erebor_HiddenGoldNugget_RESET#CLASS 0#AL Erebor_HiddenGoldNugget_RESET {$QuestName="Erebor_HiddenGoldNugget"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Erebor_HiddenGoldNugget
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

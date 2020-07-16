@@ -1,0 +1,17 @@
+//Lothlorien_SnagasEquipment_RESET#CLASS 0#AL Lothlorien_SnagasEquipment_RESET {$QuestName="Lothlorien_SnagasEquipment"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Lothlorien_SnagasEquipment
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

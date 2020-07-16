@@ -1,0 +1,38 @@
+//Belegost_SerpentsFang_RESET#CLASS 0#AL Belegost_SerpentsFang_RESET {$QuestName="Belegost_SerpentsFang"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Belegost_SerpentsFang
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Kill a serpent for it's fang
+
+//Requirements:
+//Recommended level 4+
+//Reward: A serpent's fang 18g
+//----------------------------------------------------------------------------------------------------
+//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A serpent's fang                   fang           fang      1H   15   15   3    100       30.0
+//----------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Belegost_SerpentsFang {
+QuestInit $QuestName "blessedclay" "ws;search pool"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Belegost_SerpentsFang_Check {QuesterCheck $QuestName 4 25} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {bleeding to death} {kill} $Settings
+#TR {Serpent has died.} {ss;get all from corpse;GearSwap "A serpent's fang"} $Settings
+#TR {You run %1.} {$action="";#SW (%1=SOUTh) {$action=north} (%1=north) {$action=SOUTh} (%1=east) {$action=west} (%1=west) {$action=east} (%1=up) {$action=down} (%1=down) {$action=up} (%1=northwest) {$action=SOUTheast} (%1=northeast) {$action=SOUThwest} (%1=SOUThwest) {$action=northeast} (%1=SOUTheast) {$action=northwest} (%1=out) {$action=enter};SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000;rest on;#UNT Alarm_rest;#ALA Alarm_rest {+300} {#EXE {$action}} $Settings} $Settings
+#TR {must have slain something.} {QuestAbort} $Settings
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

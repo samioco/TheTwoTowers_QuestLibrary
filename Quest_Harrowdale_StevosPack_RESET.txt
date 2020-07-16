@@ -1,0 +1,80 @@
+//Harrowdale_StevosPack_RESET#CLASS 0#AL Harrowdale_StevosPack_RESET {$QuestName="Harrowdale_StevosPack"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harrowdale_StevosPack
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Harrowdale_StevosPack {
+#VAR QuestName {"Harrowdale_StevosPack"} {} VAR
+#T- Stevo_CamoOn
+QuestOn Harrowdale_StevosPack
+#SW ((!%ismember("Stevo",%zonename())) || (%ismember(%lower(%roomid()),%lower("StevoOut|Stevo")))) {
+  QuestInit $QuestName "Stevo" "climb up"
+  MoveMe_To_Arda
+} (%lower(%roomid())=%lower("StevoCliff")) {
+  QuestOn "Harrowdale_StevosPack"
+  request question
+}
+} $QuestName
+
+#AL Harrowdale_StevosPack_Check {#IF (%ismember(%lower(@MyTrueAlign),%lower(@Alignments_Immoral))) {QuesterCheck $QuestName 15 100}} $QuestName
+
+#TR {When you are ready just request the question, but don't take too } {#WAIT 1000;request question} $Settings
+
+#TR {I guess you are worthy, so let me help you up!} {} $Settings
+
+#TR {What is the meaning of the word 'Gorthaur'?} {answer terrible dread;request question} $Settings
+#TR {What was the name of the first stronghold that Lord Melkor made?} {answer utumno;request question} $Settings
+#TR {In what year of the second age did Ar-Pharazon invade Valinor?} {answer 3319;request question} $Settings
+#TR {Who helped Lord Melkor darken the bliss of Valinor?} {answer ungoliant;request question} $Settings
+#TR {What was Lord Sauron called by the elves during the first age?} {answer gorthaur;request question} $Settings
+#TR {In what year of the first age was the lord of Balrogs slain?} {answer 510;request question} $Settings
+#TR {Who is the guardian of Cirith Ungol?} {answer shelob;request question} $Settings
+#TR {Who was the father of all uruloki?} {answer glaurung;request question} $Settings
+#TR {Who was the mightiest werewolf of Angband?} {answer carcharoth;request question} $Settings
+#TR {In what year of the first age was Ancalagon the Black brutally slain?} {answer 583;request question} $Settings
+#TR {In what year of the second age did Lord Sauron forge his ring?} {answer 1600;request question} $Settings
+#TR {Who helped Lord Melkor destroy Gondolin?} {answer maeglin;request question} $Settings
+#TR {What was Lord Sauron called in Eregion and Numenor?} {answer annatar;request question} $Settings
+#TR {What was Lord Melkor called by the Numenoreans?} {answer bringer of life;request question} $Settings
+#TR {What was Lord Melkor called by the Númenoreans?} {answer bringer of life;request question} $Settings
+#TR {Who was the mightiest cold drake in Arda?} {answer scatha;request question} $Settings
+#TR {Who was the lord of Balrogs?} {answer gothmog;request question} $Settings
+
+#TR {Stevo drops a pack, waves, and starts climbing down the cliff.} {
+TE StevoPath
+
+sss
+do tag hide pack,wear hide pack,get hide pack into pack,get pack
+#WALK StevoPassage
+#SW (@MyProf="assassin") {
+ActionAdd "#WALK StevoRider;bs rider"
+camouflage
+} {
+ringon
+ws
+#WALK StevoRider
+unseat rider
+}
+} $Settings
+
+#TR Stevo_CamoOn {You take note of your surroundings, and begin the arduous process of} {
+#T- Stevo_CamoOn
+ActionNext
+} $Settings
+
+#TR {You hurt yourself on the thorny bushes.} {#WAIT 2000;unseat rider} $Settings
+
+#TR {You swing at Rider but fail to knock him from his mount.} {#ALA "Alarm_Unseat" {+4} {unseat rider}} $Settings
+#TR {He isn't mounted!} {#UNT "Alarm_Unseat"} $Settings
+#TR {You * Rider} {ProfAtk;#IF (%mud.hp<100) {#WALK StevoPassage;HealHere;rest on}} $Settings
+#TR {bleeding to death} {kill} $Settings
+#TR {You killed Rider.} {#IF (@MyProf=archer) {sal} {sss};ringoff;gall} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

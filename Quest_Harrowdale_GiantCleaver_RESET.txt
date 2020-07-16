@@ -1,0 +1,17 @@
+//Harrowdale_GiantCleaver_RESET#CLASS 0#AL Harrowdale_GiantCleaver_RESET {$QuestName="Harrowdale_GiantCleaver"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harrowdale_GiantCleaver
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

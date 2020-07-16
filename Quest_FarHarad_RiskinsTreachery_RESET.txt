@@ -1,0 +1,54 @@
+//FarHarad_RiskinsTreachery_RESET#CLASS 0#AL FarHarad_RiskinsTreachery_RESET {$QuestName="FarHarad_RiskinsTreachery"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: FarHarad_RiskinsTreachery
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+//Reward: 50 gold
+
+#AL FarHarad_RiskinsTreachery {
+#VAR FarHarad_RiskinsTreachery {"Riskin"} {} VAR
+#VAR FarHarad_RiskinsTreachery_Settings {"RiskinRoomShort|Riskin_ShortName"} {} VAR
+QuestInit $QuestName "Eaves" "Grinder FarHarad_RiskinsTreachery"
+MoveMe_To_FH
+} $QuestName
+
+#AL FarHarad_RiskinsTreachery_Check {QuesterCheck $QuestName 12 100} $QuestName
+
+#TR RiskinRoomShort {Inside a large bush} {
+GrinderResetRoom
+#T+ Riskin_ShortName
+} $Settings
+
+#TR Riskin_ShortName {A shifty numenorean stands here} {
+#T- Riskin_ShortName
+#ADDI MobList "riskin"
+#ECHO MobList: @MobList
+} $Settings
+
+#TR {Riskin has died.} {
+#IF (@MyProf="archer") {sal} {sss}
+do get parchment from corpse
+GetAll
+#WALK EavesForest
+give parchment to leader
+} $Settings
+
+#TR {{"I do not see leader here.|You do not have a parchment."}} {
+drop parchment
+QuestAbort
+} $Settings
+
+#TR {You run out} {
+#ALA "Rest" {+300} {#WALK Riskin;kill riskin} $Settings
+} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

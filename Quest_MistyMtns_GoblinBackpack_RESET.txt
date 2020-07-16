@@ -1,0 +1,17 @@
+//MistyMtns_GoblinBackpack_RESET#CLASS 0#AL MistyMtns_GoblinBackpack_RESET {$QuestName="MistyMtns_GoblinBackpack"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_GoblinBackpack
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//Mordor_GithbromielsClaw_RESET#CLASS 0#AL Mordor_GithbromielsClaw_RESET {$QuestName="Mordor_GithbromielsClaw"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mordor_GithbromielsClaw
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

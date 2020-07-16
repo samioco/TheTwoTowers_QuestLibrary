@@ -1,0 +1,17 @@
+//CU_CrimsonLongsword_RESET#CLASS 0#AL CU_CrimsonLongsword_RESET {$QuestName="CU_CrimsonLongsword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_CrimsonLongsword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

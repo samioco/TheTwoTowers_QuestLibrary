@@ -1,0 +1,17 @@
+//Arda_CatchingOrcCourier_RESET#CLASS 0#AL Arda_CatchingOrcCourier_RESET {$QuestName="Arda_CatchingOrcCourier"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Arda_CatchingOrcCourier
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

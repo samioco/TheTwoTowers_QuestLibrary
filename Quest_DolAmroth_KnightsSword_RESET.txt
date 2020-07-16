@@ -1,0 +1,52 @@
+//DolAmroth_KnightsSword_RESET#CLASS 0#AL DolAmroth_KnightsSword_RESET {$QuestName="DolAmroth_KnightsSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DolAmroth_KnightsSword
+//Description: 
+//------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Quest Name: DolAmroth_KnightsSword
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Prove your worth by answering the scribe's trivia questions.
+
+//Requirements:
+//Must be able to enter KODA castle: Moral race, Moral Alignment
+//Access to the First Knight's office
+//Reward: A Dol Amroth Pack or the Dol Amroth Knight's Sword
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL DolAmroth_KnightsSword {
+QuestOn DolAmroth_KnightsSword
+#WALK DAKS
+request question
+} $QuestName 
+
+#TR {The scribe informs you that the Knight is out at the moment and that} {#nomap;#nodir} $Settings
+#TR {The scribe stops you from entering the Lord's private quarters.} {#Nomap;#Nodir} $Settings
+#TR {In what year did Amroth and Nimrodel leave Lorien} {do answer 1981,request question} $Settings
+#TR {In what year was Dol Amroth founded} {do answer 2004,request question} $Settings
+#TR {In what famous battle did Amroth's father die} {do answer Dagorlad,request question} $Settings
+#TR {In what year did Galador die} {do answer 2129, request question} $Settings
+#TR {What is the name of the "Elf Haven" in South Gondor} {do answer Edhellond,request question} $Settings
+#TR {What river forms the northern boundary of Belfalas} {do answer Ringlo,request question} $Settings
+#TR {What Elven lady brought Silvan blood to} {do answer Mithrellas,request question} $Settings
+#TR {What was the name of Lord Imrahil's father} {do answer Adrahil,request question} $Settings
+#TR {What does "Dol Amroth" mean} {do answer Hill of Amroth,request question} $Settings
+#TR {What was the name of Amroth's father} {do answer Amdir,request question} $Settings
+#TR {What river forms the eastern boundary of Belfalas} {do answer Gilrain,request question} $Settings
+#TR {Ringlo and the Morthond?} {do answer Ciril,request question} $Settings
+#TR {Who was the first Lord of Dol Amroth} {do answer Galador,request question} $Settings
+#TR {Who was the twentieth Prince of Belfalas and Lord} {do answer Angelimar,request question} $Settings
+#TR {Who was the "Lady of the White Grotto"} {do answer Nimrodel,request question} $Settings
+#TR {How did Amroth die} {do answer Drowned,request question} $Settings
+#TR {matters...but perhaps you can help me with one item.  Will you be going} {say yes} $Settings
+#TR {to Minas Tirith soon, to aid in the fighting there?} {say yes} $Settings
+
+#TR {The scribe bows to you.  'You may see the First Knight now.'} {up;glance knight;rest} $Settings
+#TR {matters...but perhaps you can help me with one item.  Will you be going} {say yes} $Settings
+#TR {to Minas Tirith soon, to aid in the fighting there?} {say yes} $Settings
+#TR {{@ROOMS_Signposts}} {QuestOff $QuestName} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

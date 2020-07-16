@@ -1,0 +1,17 @@
+//DellsFarm_WolfTrap_RESET#CLASS 0#AL DellsFarm_WolfTrap_RESET {$QuestName="DellsFarm_WolfTrap"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DellsFarm_WolfTrap
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

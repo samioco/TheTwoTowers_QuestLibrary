@@ -1,0 +1,172 @@
+//BunaboValley_PeltString_RESET#CLASS 0#AL BunaboValley_PeltString_RESET {$QuestName="BunaboValley_PeltString"
+$Settings=%concat($QuestName,|Settings)
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: BunaboValley_PeltString
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Help Faethok gain revenge on the wargs!
+//Lure the wargs into the camp by cooking/hanging up meat from animal corpses gathered in the wild
+
+//Requirements:
+//Recommended level 8+
+
+//Reward: A pelt string
+//----------------------------------------------------------------------------------------------------
+//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A pelt string                           pelt string         -2   0    0    40   0         -4.8
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL BunaboValley_PeltString {
+#UNT Alarm_MorePelts
+#T- BunaboValley_PeltStringMobs
+#VAR BunaboValley_PeltString_Path {%concat(".10ews8ws2w8ews8wsw10es10wsw10e3ws6ws5es4ws11es10ws9es7ws6es5ws4e;.(StopWalk;#WALK PeltCamp;QuestAbort")} {} VAR
+#VAR BunaboValley_PeltString_Mobs {} {} VAR
+#ADDI BunaboValley_PeltString_Mobs "A small herd of gazelle"
+#ADDI BunaboValley_PeltString_Mobs "A sharp-tusked boar"
+#ADDI BunaboValley_PeltString_Mobs "A long, thin snake"
+#PATH WalkPath @BunaboValley_PeltString_Path
+QuestInit $QuestName "Faethok" "ask faethok about wargs" 
+MoveMe_To_FH
+} $QuestName
+
+#AL BunaboValley_PeltString_Check {QuesterCheck $QuestName 8 100} $QuestName
+
+#AL BunaboValley_PeltString_Search {
+QuestOn BunaboValley_PeltString
+#UNT Alarm_MorePelts;#T- BunaboValley_PeltStringMobs
+#PATH WalkPath @BunaboValley_PeltString_Path
+ActionAdd "#WALK PeltCampCampsite;5attach pelt to string;do get all pelt into pack,get all pelt;#WALK PeltShop;sall;ActionNext"
+ActionAdd "#T+ BunaboValley_PeltStringMobs;StartWalk"
+#WALK PeltCamp
+#IF (@MyProf="rider") {mm}
+ws
+ActionNext
+} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {Faethok says*: Those wargs... they stole all the meat I just} {offer help} $Settings
+#TR {Faethok says*: Thankfully, I have already been promised help} {QuestAbort} $Settings
+#TR {Faethok says*: The savage beasts have been proven slain, my} {QuestAbort} $Settings
+
+#TR {Faethok says*: You can help!?  Yes!  There is a pack of wargs} {
+#WALK PeltCamp
+ws
+#IF ((%lower(@MyProf)=%lower("rider")) && (!@Mounted)) {mm} {#IF (@Mounted) {dismount}}
+BunaboValley_PeltString_Search
+} $Settings
+
+#TR BunaboValley_PeltStringMobs {({@BunaboValley_PeltString_Mobs})} {
+#T- BunaboValley_PeltStringMobs
+StopWalk;r1;ws
+#SW (%pos("gazelle",%1)) {kill gazelle
+} (%pos("boar",%1)) {kill boar
+} (%pos("snake",%1)) {kill snake}
+} $Settings
+#T- BunaboValley_PeltStringMobs
+
+#TR {%1 is bleeding to death} {
+$mob=%lower(%1)
+#IF (%pos("gazelle",$mob)) {kill gazelle} {kill}
+} $Settings
+
+#TR {%1 has died.} {
+$mob=%lower(%1)
+#SW ((%pos("gazelle",$mob)) || (%pos("boar",$mob)) || (%pos("snake",$mob))) {
+  sss
+  get corpse
+  #T- BunaboValley_PeltStringMobs
+  #WALK PeltCampCampsite
+  do drop corpse,skin corpse,drop pelt,light fire,cook corpse
+} (%pos("huge warg",$mob)) {
+  sss
+  do skin corpse,get huge warg pelt
+  #WALK Faethok
+  give huge warg pelt to faethok
+} (%pos("warg",$mob)) {
+  do skin corpse,drop all pelt
+  kill medium warg
+}
+} $Settings
+
+#TR {{"You cannot do that while mounted!|You cannot do that while mounted!"}} {
+#IF (%roomname()="A small clearing") {
+  do dismount,light fire,cook corpse
+}
+} $Settings
+
+#TR {the corpse is cooked, you clean up your Tools.} {do get meat,dry meat} $Settings
+
+#TR {You hang the meat and leave it to dry.} {
+#ALA Alarm_MorePelts {+2} {
+  ActionAdd "#T+ BunaboValley_PeltStringMobs;glance;kill"
+  ws;gor1
+  ActionNext
+} $Settings
+} $Settings
+
+#TR {You're no tanner?!  Why would you waste your time with that?} {
+do drop all meat
+BunaboValley_PeltString
+} $Settings
+
+#TR {There is no corpse here.} {
+BunaboValley_PeltString
+} $Settings
+
+#TR {Kill what?} {
+#IF (%roomnum()=%roomnum(@R1)) {
+  StopWalk
+  #WALK PeltCamp;BunaboValley_PeltString_Search
+  }
+} $Settings
+
+#TR {Slowly, three wargs appear from the shadows on the eastern side of} {
+#UNT Alarm_MorePelts
+ActionDelete "#T+ BunaboValley_PeltStringMobs;glance;kill"
+ws;kill medium warg
+} $Settings
+
+#TR {You don't see that here.} {
+#SW (!%pos("Hunting Encampment",%zonename())) {BunaboValley_PeltString_Search
+} (%roomname()="A small clearing") {kill huge warg}
+} $Settings
+
+#TR {You can't go that way!} {
+StopWalk
+#WALK PeltCamp
+BunaboValley_PeltString_Search
+} $Settings
+
+#TR {You run %1.} {
+$action="";#UNT "Alarm_Rest"
+#SW (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}}
+SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000
+rest on
+#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
+} $Settings
+
+#TR {Faethok gives you a pelt string.} {
+ActionAdd "#WALK PeltCampCampsite;5attach pelt to string;do get all pelt into pack,get all pelt;#WALK PeltShop;sall;ActionNext"
+wear string
+} $Settings
+#TR {You wear a pelt string.} {tag string;do untag string 2,untag string 3} $Settings
+#TR {You are already wearing} {do put string in pack,get all string into pack} $Settings
+
+#TR {There are no lines left for hanging the meat.} {
+drop all meat
+5attach pelt to string
+do get all pelt into pack,get all pelt
+#WALK PeltShop;sall
+QuestAbort
+} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

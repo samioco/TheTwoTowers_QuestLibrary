@@ -1,0 +1,17 @@
+//Rhov_EmeraldShield_RESET#CLASS 0#AL Rhov_EmeraldShield_RESET {$QuestName="Rhov_EmeraldShield"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_EmeraldShield
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

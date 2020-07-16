@@ -1,0 +1,17 @@
+//MT3_OllosWarlance_RESET#CLASS 0#AL MT3_OllosWarlance_RESET {$QuestName="MT3_OllosWarlance"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT3_OllosWarlance
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

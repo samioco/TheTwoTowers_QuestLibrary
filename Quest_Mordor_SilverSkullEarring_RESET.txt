@@ -1,0 +1,17 @@
+//Mordor_SilverSkullEarring_RESET#CLASS 0#AL Mordor_SilverSkullEarring_RESET {$QuestName="Mordor_SilverSkullEarring"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mordor_SilverSkullEarring
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

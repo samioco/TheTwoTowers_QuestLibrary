@@ -1,0 +1,76 @@
+//Rivendell_ChainmailShirt_RESET#CLASS 0#AL Rivendell_ChainmailShirt_RESET {$QuestName="Rivendell_ChainmailShirt"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//------------------------------------------------------------
+//Quest Name: Rivendell_ChainmailShirt
+//Description: 
+//Locate the parts of an ancient sword, repair it, and return it to Elrond.
+//------------------------------------------------------------
+//Requirements:
+//Recommended level 1 to 7
+//Reward: A light chain mail shirt
+//Reward: Hammer: 44g, 100g reward, chainmail shirt: 24g, medallion: 7g, Total: 175g
+//----------------------------------------------------------------------------------------------------
+//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A light chain mail shirt                mail shirt          2    16   20   80   100       26.4
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Rivendell_ChainmailShirt {
+ActionAdd "#WALK riv_smith;do get @MyWep_id,wield @MyWep_id;ActionNext"
+QuestInit $QuestName "riv_smith" "search dust"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Rivendell_ChainmailShirt_Check {QuesterCheck $QuestName 2 8} $QuestName
+
+
+#AL Rivendell_ChainmailShirt_Anthill_Search {
+#WALK riv_stables
+#VAR Rivendell_Anthill_Path {".j2eje2jel3ws4el10ws12es15wl15es14wl3elej7ek13w4hw5l11ek7wh2w;.(StopWalk;#WALK rivshop;do sell all from pack,sell all,put ornament in trash,put leaf-shaped sword in trash;QuestAbort)"} {} VAR
+#VAR Rivendell_Anthill_room {} {} VAR
+ActionAdd "#PATH WalkPath @Rivendell_Anthill_Path;StartWalk"
+ActionAdd "#T+ Rivendell_Anthill_trigger;ActionNext"
+ActionNext
+} $QuestName
+
+#AL Rivendell_ChainmailShirt_GoTo_Anthill {#WALK @Rivendell_Anthill_room} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+#TR {You sift through the dust and find a small coin.} {get coin;#WALK riv_hermit;give coin to hermit} $Settings
+#TR {The hermit smirks at you. 'I've already gotten a coin of me own!'} {QuestAbort} $Settings
+#TR {You find nothing.} {#WALK rivshop;do sell all,drop all ornament,drop leaf-shaped sword;QuestAbort} $Settings
+#TR {He gets an old hammer from the back wall, places it on the floor, and sits} {do get hammer,wield hammer;#WAIT 1000;#WALK riv_stables;break wall} $Settings
+#TR {debris that falls to the floor you notice something shiny.} {#WAIT 1000;#WALK rivshop;sell hammer;#WALK riv_stables;get ornament;ActionAdd "Rivendell_ChainmailShirt_Anthill_Search";ActionNext} $Settings
+
+#TR Rivendell_Anthill_trigger {^ A large anthill} {#VAR Rivendell_Anthill_room {%roomnum} {} VAR;SysMsg Anthill found at room: @Rivendell_Anthill_room;StopWalk;#UNPATH Walker;#T- Rivendell_Anthill_trigger;#WAIT 2000;ws;reach into anthill} $Settings
+
+#TR {You receive a painful sting for your efforts.  The ants must be dealt} {kill regiment} $Settings
+#TR {Ant regiment is bleeding} {kill} $Settings
+
+#TR {You run %1.} {$action="";#SW (%1=SOUTh) {$action=north} (%1=north) {$action=SOUTh} (%1=east) {$action=west} (%1=west) {$action=east} (%1=up) {$action=down} (%1=down) {$action=up} (%1=northwest) {$action=SOUTheast} (%1=northeast) {$action=SOUThwest} (%1=SOUThwest) {$action=northeast} (%1=SOUTheast) {$action=northwest};SysMsg Waiting 100s, then try again, moving: $action;#WAIT 2000;rest on;#UNT Alarm_rest;#ALA Alarm_rest {+100} {#EXE {go $action;#MO $action;kill regiment}} $Settings} $Settings
+
+#TR {Ant regiment has been thoroughly squished.} {sss;reach into anthill} $Settings
+#TR {As you clumsily remove the brass object, the anthill collapses into} {do drop broken sword,drop @MyWep_id,get ornament,assemble ornament,wear medallion,get @MyWep_id} $Settings
+#TR {two pieces join.  You are now holding a beautiful bronze medallion.} {do wear medallion,get sword;#WALK erestor;insert medallion into painting} $Settings
+
+#TR {You push the medallion into the painting.  It slides in easily, a} {#WALK rivshop;sell medallion;#WALK riv_treasure_room;pry panel} $Settings
+
+#TR {sword.  You quickly replace the paneling.} {get sword blade;#WALK riv_smith;drop sword blade;glance;#WALK bilbo;search under bed} $Settings
+#TR {Searching under the bed, you find a wooden box!} {get sword from box;#WALK riv_smith;do drop @MyWep_id,get leaf-shaped sword,get radiant sword blade,glance,mend sword,get @MyWep_id,wield @MyWep_id,glance} $Settings
+
+#TR {You search but fail to find anything of interest.} {#WALK rivshop;do sell all,drop all ornament,drop leaf-shaped sword;QuestAbort} $Settings
+
+#TR {The elf tells you he needs more to work with than that - a hilt is} {#WALK rivshop;sall;do drop all ornament,drop leaf-shaped sword;#WALK riv_smith;get @MyWep_id,wield @MyWep_id;QuestAbort} $Settings
+
+#TR {read, I see that the sword is the rightful property of Elrond.  It should} {#WAIT 2000;#WALK elrond;give makilotyar to elrond} $Settings
+#TR {chain shirt for you.  He bows and quickly hurries off.} {GearSwap "A light chain mail shirt";#WALK rivshop;do sell all,drop all ornament,drop leaf-shaped sword} $Settings
+#TR {You wear a light chain mail shirt.} {tag shirt} $Settings
+//#TR {mail shirt%s: Failed!} {do untag shirt 2,sell shirt 2,wear shirt}  Rivendell_ChainmailShirt|Settings
+#TR {The elven blacksmith frowns.  "Sorry, I've already fixed that once."} {#WALK rivshop;do sell all from pack,sell all;do put radiant sword blade in trash,put leaf-shaped sword in trash;QuestAbort} $Settings
+#TR {Your bulk makes it impossible to reach very far under the bed.} {QuestAbort} $Settings
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,73 @@
+//GrinderEasternForest_RESET#CLASS 0#AL GrinderEasternForest_RESET {$QuestName="GrinderEasternForest"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GrinderEasternForest
+//Description: 
+//------------------------------------------------------------
+//Recommended level: 12+
+//------------------------------------------------------------
+//Settings:
+//WalkerStartRoom: <Grinder>StartRoom
+//WalkerPath: <Grinder>Path
+//WalkerMobs: <Grinder>Mobs: GrinderWalk mobs
+
+//StaticRoomShort: <Grinder>
+//StaticMobSettings ShortNames: <Grinder>MobSettings
+//StaticSettings: <Grinder>Settings: RoomsShorts + MobSettings
+//#VAR <Grinder>Settings {} {} VAR
+//#FORALL @<Grinder> {#ADDI <Grinder>Settings %concat(%i,"RoomShort")}
+//#FORALL @<Grinder>MobSettings {#ADDI <Grinder>Settings %i}
+//#FORALL @<Grinder>Settings {#T- $QuestName|%i}
+
+//<Grinder>_Loot: Loot room for non-mount/wagon rooms
+//------------------------------------------------------------
+#AL GrinderEasternForest {
+#VAR GrinderEasternForestStartRoom {"TelSP"} {} VAR
+
+#VAR GrinderEasternForestMobs {} {} VAR
+#ADDI GrinderEasternForestMobs "A spider-monkey swings on a tree"
+#ADDI GrinderEasternForestMobs "A small pack of panthers"
+#ADDI GrinderEasternForestMobs "A black panther crouches before you"
+#ADDI GrinderEasternForestMobs "A family of gorillas"
+#ADDI GrinderEasternForestMobs "A silverback gorilla"
+#ADDI GrinderEasternForestMobs "A large, black snake"
+#ADDI GrinderEasternForestMobs "A zebra grazes on the plains"
+#ADDI GrinderEasternForestMobs "A sharp-tusked boar"
+#ADDI GrinderEasternForestMobs "A rhinoceros grazing in the grasses"
+#ADDI GrinderEasternForestMobs "A wandering Uruk"
+#ADDI GrinderEasternForestMobs "A nomadic Variag"
+
+#VAR GrinderEasternForestPath_EastHalf {"45se35ne35se38ne38se37ne37se36ne35se37ne37se38ne38se41n13w3n"} {} VAR
+#VAR GrinderEasternForestPath_WestHalf {"w42sw35nw30sw30nw30sw27nw23sw20nw20sw20nw20sw20nw15sw20nw18sw21n10e3ne2n5e"} {} VAR
+
+#VAR GrinderEasternForestPath {%concat(".",@GrinderEasternForestPath_EastHalf,@GrinderEasternForestPath_WestHalf)} {} VAR
+
+QuestInit $QuestName "@GrinderEasternForestStartRoom" "GrinderWalker GrinderEasternForest"
+ActionAdd "HealMe"
+MoveMe_To_FH
+} $QuestName
+
+#AL GrinderEasternForest_Check {
+QuesterCheck $QuestName 12 100
+} $QuestName 
+
+#AL GrinderEasternForestEnableMobs {
+ClassOn GrinderEasternForest
+#T+ GrinderEasternForestMobs
+#T+ GrinderEasternForestMobs2
+} $QuestName
+
+#AL GrinderEasternForestDisableMobs {
+#T- GrinderEasternForestMobs
+#T- GrinderEasternForestMobs2
+} $QuestName
+
+#TR GrinderEasternForestMobs {({@GrinderEasternForestMobs})} {
+#IF (!@PlayerDetected) {WalkerAttack %1} {WalkerContinue}
+} $Settings
+
+#TR GrinderEasternForestMobs2 {{@AAnThe}*{@HumanoidRaces} ({@FarHaradHumanoidTypes})} {
+#IF (!@PlayerDetected) {WalkerAttack %1} {WalkerContinue}
+} $Settings
+
+} Tools_QuestList#CLASS 0

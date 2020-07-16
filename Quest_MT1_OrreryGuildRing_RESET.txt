@@ -1,0 +1,17 @@
+//MT1_OrreryGuildRing_RESET#CLASS 0#AL MT1_OrreryGuildRing_RESET {$QuestName="MT1_OrreryGuildRing"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT1_OrreryGuildRing
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

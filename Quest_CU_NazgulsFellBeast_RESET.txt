@@ -1,0 +1,17 @@
+//CU_NazgulsFellBeast_RESET#CLASS 0#AL CU_NazgulsFellBeast_RESET {$QuestName="CU_NazgulsFellBeast"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_NazgulsFellBeast
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

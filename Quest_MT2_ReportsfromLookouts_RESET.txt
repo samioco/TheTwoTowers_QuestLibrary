@@ -1,0 +1,17 @@
+//MT2_ReportsfromLookouts_RESET#CLASS 0#AL MT2_ReportsfromLookouts_RESET {$QuestName="MT2_ReportsfromLookouts"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT2_ReportsfromLookouts
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

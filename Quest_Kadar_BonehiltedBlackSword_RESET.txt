@@ -1,0 +1,17 @@
+//Kadar_BonehiltedBlackSword_RESET#CLASS 0#AL Kadar_BonehiltedBlackSword_RESET {$QuestName="Kadar_BonehiltedBlackSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Kadar_BonehiltedBlackSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

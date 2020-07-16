@@ -1,0 +1,39 @@
+//Harondor_VariagWarHelmet_RESET#CLASS 0#AL Harondor_VariagWarHelmet_RESET {$QuestName="Harondor_VariagWarHelmet"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harondor_VariagWarHelmet
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//--------------------------------------------------------------------------------------------------------------
+//Gear                               ID                       DR   Def  Abs  Wgt  Dura Capa Score   Notes
+//--------------------------------------------------------------------------------------------------------------
+//A black variag war helmet          variag helmet            3    24   30   125  800       39.0    head
+//--------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Harondor_VariagWarHelmet {
+QuestInit $QuestName "BVH_Chest" "ws;pull chest"
+MoveMe_To_Arda
+} $QuestName
+
+#AL Harondor_VariagWarHelmet_Check {QuesterCheck $QuestName 14 100} $QuestName
+
+#TR {A furious lion leaps from the bed and attacks you!} {#IF (@GrinderQueue_i) {ActionAdd "gns;sall;ActionNext"};kill lion} $Settings
+#TR {bleeding to death} {kill} $Settings
+#TR {{"Lion has died.|You don't see that here.|There is nothing to pull under the bed."}} {#IF (%roomid()=bvh_chest) {#IF (@MyProf=archer) {sal} {ss};do skin corpse,attach pelt to string,put pelt in pack,drop pelt;do examine pillow,unlock chest with key,drop key,open chest,get all from chest,get pelt;#WALK bvh;ptow;put pelt in @MyWagon}} $Settings
+
+#TR {a black variag war helmet%s:} {$item="a black variag war helmet";GearSwap $item;do get all into pack,get helmet,get pelt} $Settings
+#TR {You wear a black variag war helmet.} {#IF (!@GrinderQueue_i) {tag variag helmet}} $Settings
+#TR {You are already wearing something on your head.} {#IF (!@GrinderQueue_i) {do put black variag war helmet in pack}} $Settings
+
+#TR {You run SOUTh.} {ActionAdd "#WALK bvh;ws;#WALK bvh_chest;pull chest";#WAIT 2000;HealMe} $Settings
+
+#TR {There is nothing to pull under the bed} {QuestAbort} $Settings
+#TR {There is nothing in the chest to get.} {QuestAbort} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

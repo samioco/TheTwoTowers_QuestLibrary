@@ -1,0 +1,36 @@
+//WhiteMtns_HurtShaman_RESET#CLASS 0#AL WhiteMtns_HurtShaman_RESET {$QuestName="WhiteMtns_HurtShaman"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WhiteMtns_HurtShaman
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL WhiteMtns_HurtShaman {
+QuestInit $QuestName "HurtShaman_Troll" "#WALK HurtShaman_Flower"
+#IF ((%mud.hp<150) OR (%mud.ep<100)) {ActionAdd "HealMe"}
+MoveMe_To_Arda
+} $QuestName
+
+#AL WhiteMtns_HurtShaman_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+#TR {You are too tired to climb} {ActionAdd "#WALK HurtShaman_Flower";HealMe} $Settings
+#TR {You'll need at least one free hand to climb.} {sss;#WALK HurtShaman_troll;look troll} $Settings
+
+#TR {This troll is small compared to the mountain trolls of the region} {ws;kill troll} $Settings
+#TR {There is no way you can get there with a troll in the way!} {ws;kill troll} $Settings
+#TR {bleeding to death} {kill} $Settings
+#TR {Troll has died.} {#IF (@MyProf="archer") {sal} {sss};se} $Settings
+#TR {A dead-end} {search ground} $Settings
+#TR {when you happen upon a small white flower, growing between two rocks.} {get flower;#WALK HurtShaman_cave;give flower to shaman} $Settings
+#TR {You search the ground and give up after finding nothing.} {QuestAbort} $Settings
+#TR {I do not see shaman here.} {do drop all flower;QuestAbort} $Settings
+#TR {You do not have a flower.} {QuestAbort} $Settings
+#TR {Durhim removes a crimson cloak.} {do tag cloak,put crimson cloak in pack} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

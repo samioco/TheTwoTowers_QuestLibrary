@@ -1,0 +1,34 @@
+//Weathertop_FRLevel5Quest_RESET#CLASS 0#AL Weathertop_FRLevel5Quest_RESET {$QuestName="Weathertop_FRLevel5Quest"
+$Settings=%concat($QuestName,|Settings)
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Weathertop_FRLevel5Quest
+//----------------------------------------------------------------------------------------------------
+//Description: Climb to the top of the lookout, search, kill ruffians, find a stone, bring it to your trainer.
+//Requirements:
+//Recommended level 4
+//Reward: Ability to train to level 5
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+
+#AL Weathertop_FRLevel5Quest {
+QuestInit $QuestName "Weathertop_Dell" "ws;top"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Weathertop_FRLevel5QuesterCheck {#IF ((@MyLevel=4) AND (@MyStrength=45) AND (@MyAgility=45) AND (@MyConstitution=45) AND (@MyCoordination=45)) {QuesterCheck $QuestName 4 4}} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+#TR {better find some way to hide!} {crawl into hole} $Settings
+#TR {As you start climbing up you hear voices.  Two ruffians are coming down} {crawl into hole} $Settings
+#TR {very dangerous. You stop to consider whether or not you are well-equipped} {top} $Settings
+#TR {again, grow faint until you cannot hear them anymore.} {crawl out;top} $Settings
+#TR {It takes you some time, but you carefully make your way up the hill.} {ws;get gold} $Settings
+#TR {Lone ruffian is bleeding} {kill} $Settings
+#TR {Lone ruffian has died.} {ss;get all from corpse} $Settings
+#TR {a small white stone : Ok.} {ActionAdd "TRAINME";QuestAbort} $Settings
+#TR {You crawl into the hole and are now well hidden.} {rest on} $Settings
+#TR {*says: Not enough experience.} {unhand stone;QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

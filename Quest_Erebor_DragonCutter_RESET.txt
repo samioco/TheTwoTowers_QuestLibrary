@@ -1,0 +1,17 @@
+//Erebor_DragonCutter_RESET#CLASS 0#AL Erebor_DragonCutter_RESET {$QuestName="Erebor_DragonCutter"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Erebor_DragonCutter
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

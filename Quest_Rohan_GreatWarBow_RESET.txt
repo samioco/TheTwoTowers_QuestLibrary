@@ -1,0 +1,17 @@
+//Rohan_GreatWarBow_RESET#CLASS 0#AL Rohan_GreatWarBow_RESET {$QuestName="Rohan_GreatWarBow"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rohan_GreatWarBow
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

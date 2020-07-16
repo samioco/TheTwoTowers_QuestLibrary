@@ -1,0 +1,17 @@
+//Erebor_SwordbeltforMathew_RESET#CLASS 0#AL Erebor_SwordbeltforMathew_RESET {$QuestName="Erebor_SwordbeltforMathew"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Erebor_SwordbeltforMathew
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

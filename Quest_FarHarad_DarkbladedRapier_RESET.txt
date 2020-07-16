@@ -1,0 +1,18 @@
+//FarHarad_DarkbladedRapier_RESET#CLASS 0#AL FarHarad_DarkbladedRapier_RESET {$QuestName="FarHarad_DarkbladedRapier"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: FarHarad_DarkbladedRapier
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

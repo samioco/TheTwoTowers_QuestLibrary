@@ -1,0 +1,39 @@
+//Combe_EnchantedSword_RESET#CLASS 0#AL Combe_EnchantedSword_RESET {$QuestName="Combe_EnchantedSword"
+$Settings=%concat($QuestName,"|Settings")
+//------------------------------------------------------------
+//Quest Name: 
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended leve:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Combe_EnchantedSword {
+QuestInit $QuestName "Combe_Merchant" "ws;kill merchant"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Combe_EnchantedSword_Check {QuesterCheck $QuestName 5 100} $QuestName
+
+#TR {bleeding to death} {kill} $Settings
+#TR {Merchant has died.} {ss;do get bag from corpse,get key from bag,put bag in pack,drop bag,get gold from corpse;n;unlock northeast door;ne;do put key in pack;ws;kill man} $Settings
+#TR {Man has died.} {ss;do drop all copper key,l hay,move hay,get key,put key in pack} $Settings
+#TR {find a little wooden key there!} {put wooden key in pack;#WALK combe_julie;do get wooden key from pack,unlock north door;n;do pull rug} $Settings
+#TR {{"    You reach and grab the old rug, moving it, and under it is a|    The rug has already been moved."}} {do get wooden key from pack,unlock down door with wooden key,put wooden key in pack;d;pull torch} $Settings
+#TR {{"slides open in the floor, revealing a secret door!|    The torch has already been pulled down."}} {ws;do bash secret door,pick secret door} $Settings
+
+#TR {{"You smack the hell out of it, but only succeed in embarrassing yourself.|WHOAA! Slow down a little!"}} {rest on;#ALA "bash_alarm" +30 {ws;bash secret door} $Settings} $Settings
+#TR {{"You attempt to pick the lock, but are unsuccessful.|Your fingers get tangled up because you are in too much of a hurry."}} {rest on;#ALA "pick_alarm" +30 {pick secret door} $Settings} $Settings
+#TR {{"You pound the door and it bursts open under the strain.|The door has already been bashed open.|There's no point in trying to open a bashed door.|You hear a faint "Click!" as you unlock the door.|The east door is already unlocked."}} {ss;#UNT bash_alarm;#UNT pick_alarm;light crystal;drop wooden key;secret;glance chest} $Settings
+#TR {Darkness surrounds you.} {light crystal;glance chest} $Settings
+
+#TR {A very large and heavy metal chest.  It looks very simple, no decorations.} {do get crude key from cloak,get crude key from pack,unlock chest with crude key,put crude key in cloak,put crude key in pack,open chest,get all from chest into pack,get all from chest} $Settings
+#TR {You don't see crystal to light.} {QuestAbort} $Settings
+#TR {You move the hay but see that there is nothing under it and move it back.} {QuestAbort} $Settings
+#TR {an enchanted sword : Ok.} {#WALK Breeshop;extinguish crystal;do sell all from pack,sell all} $Settings
+
+#TR {You run %1.} {$action="";#SW (%1=SOUTh) {$action=north} (%1=north) {$action=SOUTh} (%1=east) {$action=west} (%1=west) {$action=east} (%1=up) {$action=down} (%1=down) {$action=up} (%1=northwest) {$action=SOUTheast} (%1=northeast) {$action=SOUThwest} (%1=SOUThwest) {$action=northeast} (%1=SOUTheast) {$action=northwest};SysMsg Waiting 100s, then try again, moving: $action;#WAIT 2000;rest on;#UNT Alarm_rest;#ALA Alarm_rest {+100} {#EXE {$action}} $Settings} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

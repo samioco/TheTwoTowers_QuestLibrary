@@ -1,0 +1,17 @@
+//PetrForest_BoneArmour_RESET#CLASS 0#AL PetrForest_BoneArmour_RESET {$QuestName="PetrForest_BoneArmour"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: PetrForest_BoneArmour
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

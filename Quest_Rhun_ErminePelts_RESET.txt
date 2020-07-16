@@ -1,0 +1,17 @@
+//Rhun_ErminePelts_RESET#CLASS 0#AL Rhun_ErminePelts_RESET {$QuestName="Rhun_ErminePelts"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhun_ErminePelts
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

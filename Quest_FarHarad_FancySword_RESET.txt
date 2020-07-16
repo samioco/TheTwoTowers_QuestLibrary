@@ -1,0 +1,18 @@
+//FarHarad_FancySword_RESET#CLASS 0#AL FarHarad_FancySword_RESET {$QuestName="FarHarad_FancySword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: FarHarad_FancySword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

@@ -1,0 +1,36 @@
+//Pelargir_GrimsladesGreaves_RESET#CLASS 0#AL Pelargir_GrimsladesGreaves_RESET {$QuestName="Pelargir_GrimsladesGreaves"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_GrimsladesGreaves
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Pelargir_GrimsladesGreaves {
+QuestInit $QuestName "Grimslade" "notify grimslade about thief"
+MoveMe_To_Arda
+} $QuestName
+
+#TR {You notice a slight movement near the artisan smith's stall in the} {notify grimslade about thief} $Settings
+#TR {Grimslade gives you a piece of strong rope.} {catch thief} $Settings
+#TR {Grimslade tried to give you a piece of strong rope, but your hands are full.} {ss;get rope;ws} $Settings
+#TR {Chubby little man leaves southeast.} {se;catch thief} $Settings
+#TR {Chubby little man leaves north.} {n;catch thief} $Settings
+#TR {Chubby little man leaves northwest.} {nw;catch thief} $Settings
+#TR {Using your rope, you tie his hands and hold him tight, without giving } {ws;#WALK WillowGroveStatelyElmCrossroads} $Settings
+#TR {Chubby little man says in Westron: OK, OK!!!  I surrender, please let me} {#IF (@MyProf="archer") {sal};ss;piein;#WALK PelJailGuard} $Settings
+#TR {Grimslade gives you a handwritten note.} {#WALK Maell;give note to maell} $Settings
+#TR {Falgafir gives you a small note.} {#CW yellow;#WALK grimslade;give note to grimslade} $Settings
+#TR {Falgafir tried to give you a small note, but your hands are full.} {#CW yellow;ss;get note;#WALK Grimslade;give note to grimslade} $Settings
+#TR {Falgafir says in Westron: So, why are you here then?  Did this man steal} {#CW yellow;say yes} $Settings
+#TR {Falgafir says in Westron: That's interesting...  Is that true?} {#CW yellow;say no} $Settings
+#TR {Grimslade gives you a handwritten note.} {#CW yellow;#WALK maell;give note to maell} $Settings
+#TR {Maell gives you a magnificent set of steel greaves.} {#CW yellow;tag greaves;wear greaves;msgstop} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

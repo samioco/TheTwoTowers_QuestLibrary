@@ -1,0 +1,17 @@
+//Calembel_SandforGlassblower_RESET#CLASS 0#AL Calembel_SandforGlassblower_RESET {$QuestName="Calembel_SandforGlassblower"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Calembel_SandforGlassblower
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

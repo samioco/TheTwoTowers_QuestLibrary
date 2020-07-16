@@ -1,0 +1,17 @@
+//Outpost_SlenderDagger_RESET#CLASS 0#AL Outpost_SlenderDagger_RESET {$QuestName="Outpost_SlenderDagger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Outpost_SlenderDagger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

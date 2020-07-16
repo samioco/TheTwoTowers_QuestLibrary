@@ -1,0 +1,17 @@
+//MM2_ScavengerPack_RESET#CLASS 0#AL MM2_ScavengerPack_RESET {$QuestName="MM2_ScavengerPack"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MM2_ScavengerPack
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

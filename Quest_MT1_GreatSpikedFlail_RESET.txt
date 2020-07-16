@@ -1,0 +1,17 @@
+//MT1_GreatSpikedFlail_RESET#CLASS 0#AL MT1_GreatSpikedFlail_RESET {$QuestName="MT1_GreatSpikedFlail"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT1_GreatSpikedFlail
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//BlueMtns_RubyShield_RESET#CLASS 0#AL BlueMtns_RubyShield_RESET {$QuestName="BlueMtns_RubyShield"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: BlueMtns_RubyShield
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

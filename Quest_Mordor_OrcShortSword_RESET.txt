@@ -1,0 +1,17 @@
+//Mordor_OrcShortSword_RESET#CLASS 0#AL Mordor_OrcShortSword_RESET {$QuestName="Mordor_OrcShortSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mordor_OrcShortSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

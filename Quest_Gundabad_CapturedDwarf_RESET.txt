@@ -1,0 +1,17 @@
+//Gundabad_CapturedDwarf_RESET#CLASS 0#AL Gundabad_CapturedDwarf_RESET {$QuestName="Gundabad_CapturedDwarf"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Gundabad_CapturedDwarf
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

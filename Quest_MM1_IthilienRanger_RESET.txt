@@ -1,0 +1,17 @@
+//MM1_IthilienRanger_RESET#CLASS 0#AL MM1_IthilienRanger_RESET {$QuestName="MM1_IthilienRanger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MM1_IthilienRanger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

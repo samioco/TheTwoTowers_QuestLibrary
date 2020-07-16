@@ -1,0 +1,17 @@
+//MT7_BeltforDarran_RESET#CLASS 0#AL MT7_BeltforDarran_RESET {$QuestName="MT7_BeltforDarran"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT7_BeltforDarran
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

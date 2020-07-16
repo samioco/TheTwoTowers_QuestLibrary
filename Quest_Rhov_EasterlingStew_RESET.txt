@@ -1,0 +1,17 @@
+//Rhov_EasterlingStew_RESET#CLASS 0#AL Rhov_EasterlingStew_RESET {$QuestName="Rhov_EasterlingStew"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_EasterlingStew
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

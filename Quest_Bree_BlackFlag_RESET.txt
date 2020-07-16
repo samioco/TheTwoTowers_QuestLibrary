@@ -1,0 +1,13 @@
+//Bree_BlackFlag_RESET#CLASS 0#AL Bree_BlackFlag_RESET {$QuestName="Bree_BlackFlag"
+$Settings=%concat($QuestName,"|Settings")
+
+#AL Bree_BlackFlag {
+QuestInit $QuestName "BelgaerShipwreck_Mast" "get flag"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Bree_BlackFlag_Check {QuesterCheck $QuestName 1 1000} $QuestName
+
+#TR {Ok.} {#IF (%roomnum()="BelegaerShipwreck_Mast") {#WALK Breebar;give flag to sailor}} $Settings
+
+#TR {{"Drunken sailor gives you a small metal flask.|There is no flag here to take.|You do not have a flag."}} {QuestAbort} $Settings} Tools_QuestList#CLASS 0

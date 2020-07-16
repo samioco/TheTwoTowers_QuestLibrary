@@ -1,0 +1,17 @@
+//DryLake_SpeckledStallion_RESET#CLASS 0#AL DryLake_SpeckledStallion_RESET {$QuestName="DryLake_SpeckledStallion"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DryLake_SpeckledStallion
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

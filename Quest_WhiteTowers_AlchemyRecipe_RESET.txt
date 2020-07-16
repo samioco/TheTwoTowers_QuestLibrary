@@ -1,0 +1,25 @@
+//WhiteTowers_AlchemyRecipe_RESET#CLASS 0#AL WhiteTowers_AlchemyRecipe_RESET {$QuestName="WhiteTowers_AlchemyRecipe"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WhiteTowers_AlchemyRecipe
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL WhiteTowers_AlchemyRecipe {
+QuestInit "WhiteTowers_AlchemyRecipe" "greyhavens_fountain" "examine plants"
+MoveMe_To_WestArda
+} $QuestName
+
+#TR {You examine the plants but find nothing of interest.} {QuestAbort} $Settings
+#TR {You examine the plants and find a small yellow mushroom!} {get yellow mushroom;#WALK alchor;give small yellow mushroom to alchor} $Settings
+#TR {Alchor says*: I'm too busy with this experiment.  Ask} {drop mushroom;QuestAbort} $Settings
+#TR {yellow.  The cap is so yellow, in fact, that it almost seems to glow.} {give mushroom to alchor} $Settings
+#TR {Alchor gives you a piece of parchment.} {drop parchment} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

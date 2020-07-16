@@ -1,0 +1,36 @@
+//Buckland_JewelersPendant_RESET#CLASS 0#AL Buckland_JewelersPendant_RESET {$QuestName="Buckland_JewelersPendant"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Buckland_JewelersPendant
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Find a Jeweler's lost jewels.
+
+//Requirements:
+//Recommended level 1 - 5
+//Reward: A small gold pendant engraved with the name '<Your Name>' (Autoloading, value: 16g)
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Buckland_JewelersPendant {
+QuestInit $QuestName "rushes" "dig ground"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Buckland_JewelersPendant_Check {QuesterCheck $QuestName 1 5} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {is hard work!  You find nothing, but you're SURE there's something} {dig ground} $Settings
+#TR {You don't have the energy to dig} {rest;#UNT Alarm_rest_30s;#ALA Alarm_rest_30s {+30} {dig ground}} $Settings
+#TR {minutes of digging, you find a dirt-covered sack!  You pick the sack} {ss;do get sack,open sack,get jewels from sack,put sack in pack;#WALK nizak;give jewels to nizak} $Settings
+#TR {Nizak gives you a small gold pendant engraved with the name} {#WALK hobshop;do sell sack from pack,sell sack;#WALK hobbooth;do untag all gold pendant,tag gold pendant,put gold pendant 2 in trash} $Settings
+#TR {Nizak says*: Hey!  Where did you get these?  I had them} {#WALK hobshop;sall;QuestAbort} $Settings
+#TR {You dig, but don't find anything.} {QuestAbort} $Settings
+#TR {You do not have a jewels.} {#WALK hobshop;sall;QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

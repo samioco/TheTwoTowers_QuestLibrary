@@ -1,0 +1,17 @@
+//Lendin_LostLetter_RESET#CLASS 0#AL Lendin_LostLetter_RESET {$QuestName="Lendin_LostLetter"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Lendin_LostLetter
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,18 @@
+//FarHarad_AbusedScript_RESET#CLASS 0#AL FarHarad_AbusedScript_RESET {$QuestName="FarHarad_AbusedScript"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: FarHarad_AbusedScript
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

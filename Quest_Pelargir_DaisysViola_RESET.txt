@@ -1,0 +1,26 @@
+//Pelargir_DaisysViola_RESET#CLASS 0#AL Pelargir_DaisysViola_RESET {$QuestName="Pelargir_DaisysViola"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_DaisysViola
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Pelargir_DaisysViola {
+QuestInit $QuestName "Daisy" "do look mirror,look images,stare at images"
+MoveMe_To_Arda
+} $QuestName
+
+#TR {Daisy says*: Who are you?} {do ask daisy about song,ask daisy about songbook} $Settings
+#TR {Daisy says*: All my favourite songs were in it.  But they} {.2dn;do look book,get cover} $Settings
+#TR {This book cover has somehow escaped the fire; perhaps it was thrown} {} $Settings
+#TR {Daisy says*: My beautiful viola!  I used to play it here in} {do ask daisy about viola,ask daisy about man} $Settings
+#TR {Daisy says*: This basket should contain some replacement} {search basket} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//Rhun_AmbushedDwarves_RESET#CLASS 0#AL Rhun_AmbushedDwarves_RESET {$QuestName="Rhun_AmbushedDwarves"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhun_AmbushedDwarves
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

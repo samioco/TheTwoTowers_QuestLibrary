@@ -1,0 +1,17 @@
+//WallofMordor_BlueShield_RESET#CLASS 0#AL WallofMordor_BlueShield_RESET {$QuestName="WallofMordor_BlueShield"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WallofMordor_BlueShield
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

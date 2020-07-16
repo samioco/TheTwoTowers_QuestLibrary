@@ -1,0 +1,25 @@
+//Mirkwood_FreeingElfPrisoner_RESET#CLASS 0#AL Mirkwood_FreeingElfPrisoner_RESET {$QuestName="Mirkwood_FreeingElfPrisoner"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_FreeingElfPrisoner
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Mirkwood_FreeingElfPrisoner {
+QuestInit $QuestName "AncientRuin_Elf" "search underbrush"
+MoveMe_To_Arda
+} $QuestName
+
+#AL Mirkwood_FreeingElfPrisoner_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+#TR {The elf says*:  I could use your help.  Will you assist me?} {assist elf} $Settings
+#TR {You nod slowly and agree to help the poor fellow save his friend.} {#WALK ancientruin_prisoner;ws;free prisoner} $Settings
+#TR {up the stairs to freedom.} {#IF (@MyProf=archer) {sv};#3 {#WALK ancientruin_prisoner;do get all from corpse into pack,get gold from corpse;#WALK ancientruin_elf;ptow}} $Settings
+#TR {You thoroughly search the brush but find nothing.} {QuestAbort} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

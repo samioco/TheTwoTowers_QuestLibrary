@@ -1,0 +1,94 @@
+//GrinderStopGap4_RESET#CLASS 0#AL GrinderStopGap4_RESET {$QuestName="GrinderStopgap4"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GrinderStopgap4
+//Description: Static Grinder
+//------------------------------------------------------------
+//Requirements: 100 combat skills
+//------------------------------------------------------------
+//Settings:
+//WalkerStartRoom: <Grinder>StartRoom
+//WalkerPath: <Grinder>Path
+//WalkerMobs: <Grinder>Mobs: GrinderWalk mobs
+
+//StaticRoomShort: <Grinder>
+//StaticMobSettings ShortNames: <Grinder>MobSettings
+//StaticSettings: <Grinder>Settings: RoomsShorts + MobSettings
+//#VAR <Grinder>Settings {} {} VAR
+//#FORALL @<Grinder> {#ADDI <Grinder>Settings %concat(%i,"RoomShort")}
+//#FORALL @<Grinder>MobSettings {#ADDI <Grinder>Settings %i}
+//#FORALL @<Grinder>Settings {#T- $QuestName|%i}
+
+//<Grinder>_Loot: Loot room for non-mount/wagon rooms
+//------------------------------------------------------------
+
+#AL GrinderStopgap4 {
+#VAR GrinderStopgap4StartRoom {"Stopgap4"} {} VAR
+#VAR GrinderStopgap4 {} {} VAR
+#ADDI GrinderStopgap4 "Stopgap4a"
+#ADDI GrinderStopgap4 "Stopgap4b"
+#ADDI GrinderStopgap4 "Stopgap4c"
+#ADDI GrinderStopgap4 "Stopgap4Master"
+
+#VAR GrinderStopgap4MobSettings {} {} VAR
+#ADDI GrinderStopgap4MobSettings "Stopgap4Scout"
+#ADDI GrinderStopgap4MobSettings "Stopgap4MasterRider"
+
+#VAR GrinderStopgap4Settings {} {} VAR
+#FORALL @GrinderStopgap4 {#ADDI GrinderStopgap4Settings %concat(%i,"RoomShort")}
+#FORALL @GrinderStopgap4MobSettings {#ADDI GrinderStopgap4Settings %i}
+#FORALL @GrinderStopgap4Settings {#T- $QuestName|%i}
+
+QuestInit $QuestName "StopGap4" "Grinder GrinderStopgap4"
+MoveMe_To_Arda
+} $QuestName
+
+#AL GrinderStopgap4_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+#TR Stopgap4aRoomShort {A small area in the plains} {
+GrinderResetRoom
+#T+ Stopgap4Scout
+} $Settings
+
+#TR Stopgap4bRoomShort {A hidden gully} {
+GrinderResetRoom
+#T+ Stopgap4Scout
+} $Settings
+
+#TR Stopgap4cRoomShort {A shallow gully} {
+GrinderResetRoom
+#T+ Stopgap4Scout
+} $Settings
+
+#TR Stopgap4MasterRoomShort {A small area of trodden grass} {
+GrinderResetRoom
+#T+ Stopgap4MasterRider
+} $Settings
+
+#TR Stopgap4Scout {{"A rough-looking variag scout|A rugged variag scout"}(*)} {
+#ALA "DisableMob" +1 {#T- Stopgap4Scout} $Settings
+$numMobs=1
+#IF (%1) {
+  $numMobs=%trim(%replace(%1,"["))
+  $numMobs=%replace($numMobs,"]")
+  $numMobs=%replace($numMobs," ")
+  $numMobs=%number($numMobs)
+}
+#IF ((%isnumber($numMobs)) && ($numMobs>1)) {
+  #LOOP $numMobs,2 {
+    #VAR MobList {%additem("scout",@MobList)} {} VAR
+  }
+}
+#VAR MobList {%additem("scout",@MobList)} {} VAR
+#ECHO RoomMobs: @MobList
+} $Settings
+
+
+#TR Stopgap4MasterRider {A variag master rider} {
+#T- Stopgap4MasterRider
+#VAR MobList {"master"} {} VAR
+#ECHO MobList: @MobList
+} $Settings
+
+
+} Tools_QuestList#CLASS 0

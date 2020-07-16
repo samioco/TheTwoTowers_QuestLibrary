@@ -1,0 +1,71 @@
+//GrinderCrimsonRiver_RESET#CLASS 0#AL GrinderCrimsonRiver_RESET {$QuestName="GrinderCrimsonRiver"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GrinderCrimsonRiver
+//Description: 
+//------------------------------------------------------------
+//Requirements: 95+ combat stats
+//Recommended level: 14+
+//------------------------------------------------------------
+//Settings:
+//WalkerStartRoom: <Grinder>StartRoom
+//WalkerPath: <Grinder>Path
+//WalkerMobs: <Grinder>Mobs: GrinderWalk mobs
+
+//StaticRoomShort: <Grinder>
+//StaticMobSettings ShortNames: <Grinder>MobSettings
+//StaticSettings: <Grinder>Settings: RoomsShorts + MobSettings
+//#VAR <Grinder>Settings {} {} VAR
+//#FORALL @<Grinder> {#ADDI <Grinder>Settings %concat(%i,"RoomShort")}
+//#FORALL @<Grinder>MobSettings {#ADDI <Grinder>Settings %i}
+//#FORALL @<Grinder>Settings {#T- $QuestName|%i}
+
+//<Grinder>_Loot: Loot room for non-mount/wagon rooms
+//------------------------------------------------------------
+#AL GrinderCrimsonRiver {
+#VAR GrinderCrimsonRiverMobs {} {} VAR
+#ADDI GrinderCrimsonRiverMobs "A long, rough log"
+#ADDI GrinderCrimsonRiverMobs "A huge, angry crocodile"
+#ADDI GrinderCrimsonRiverMobs "A huge, submerged crocodile"
+
+#VAR GrinderCrimsonRiverPath_EastToWest {".2wsws2ws2ws2ws4wn5w2nw3nwn3whwnwnw2nw2ne2ne4nwnwnwnw3ne6nwnwnwnwnwhwnh2nwn6wn9w"} {} VAR
+#VAR GrinderCrimsonRiverPath_WestToEast {".9es6ese2slselesesesese6sw3sesesese4sw2sw2se2sesesel3ese3se2s5es4en2en2en2enen2e"} {} VAR
+$roomID=%lower(%roomid())
+#SW (%ismember($roomID,%lower("TavSP|CrimsonRiverEast"))) {
+  #VAR GrinderCrimsonRiverStartRoom {"CrimsonRiverEast"} {} VAR
+  #VAR GrinderCrimsonRiverPath {@GrinderCrimsonRiverPath_EastToWest} {} VAR
+} {
+  #VAR GrinderCrimsonRiverStartRoom {"CrimsonRiverWaterfall"} {} VAR
+  #VAR GrinderCrimsonRiverPath {@GrinderCrimsonRiverPath_WestToEast} {} VAR
+}
+QuestInit $QuestName "@GrinderCrimsonRiverStartRoom" "GrinderWalker GrinderCrimsonRiver"
+ActionAdd "HealMe"
+MoveMe_To_FH
+} $QuestName
+
+#AL GrinderCrimsonRiver_Check {
+QuesterCheck $QuestName 14 100
+} $QuestName
+
+#AL GrinderCrimsonRiver_Attack {
+$mob=%lower(%0)
+#SW (%pos("log",$mob)) {kill log
+} (%pos("crocodile",$mob)) {kill crocodile
+}
+} $QuestName
+
+
+#AL GrinderCrimsonRiverEnableMobs {
+ClassOn GrinderCrimsonRiver
+#T+ GrinderCrimsonRiverMobs
+} $QuestName
+
+#AL GrinderCrimsonRiverDisableMobs {
+#T- GrinderCrimsonRiverMobs
+} $QuestName
+
+#TR GrinderCrimsonRiverMobs {({@GrinderCrimsonRiverMobs})} {
+#IF (!@PlayerDetected) {WalkerAttack %1} {WalkerContinue}
+} $Settings
+
+} Tools_QuestList#CLASS 0

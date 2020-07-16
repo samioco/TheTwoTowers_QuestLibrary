@@ -1,0 +1,17 @@
+//Galenwath_KillingNid_RESET#CLASS 0#AL Galenwath_KillingNid_RESET {$QuestName="Galenwath_KillingNid"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Galenwath_KillingNid
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

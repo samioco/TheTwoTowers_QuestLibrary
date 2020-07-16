@@ -1,0 +1,17 @@
+//IronHills_GramlinsTask_RESET#CLASS 0#AL IronHills_GramlinsTask_RESET {$QuestName="IronHills_GramlinsTask"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: IronHills_GramlinsTask
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

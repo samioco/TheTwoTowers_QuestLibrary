@@ -1,0 +1,17 @@
+//Umbar_OakLongbow_RESET#CLASS 0#AL Umbar_OakLongbow_RESET {$QuestName="Umbar_OakLongbow"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Umbar_OakLongbow
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

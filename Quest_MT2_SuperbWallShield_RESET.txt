@@ -1,0 +1,46 @@
+//MT2_SuperbWallShield_RESET#CLASS 0#AL MT2_SuperbWallShield_RESET {$QuestName="MT2_SuperbWallShield"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT2_SuperbWallShield
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL MT2_SuperbWallShield {
+#VAR MT2_SuperbWallShield_Abort_Messages {} {} VAR
+#ADDI MT2_SuperbWallShield_Abort_Messages "might. Ale starts spurting out all over the floor. Slipping and"
+#ADDI MT2_SuperbWallShield_Abort_Messages "You cannot seem to find a good piece of wood."
+#ADDI MT2_SuperbWallShield_Abort_Messages "will require the use of a tool."
+QuestInit $QuestName "MTShield" "get barrel"
+MoveMe_To_Arda
+} $QuestName
+
+#AL MT2_SuperbWallShield_Check {#IF (%ismember(@MyPublicAlign,"Angelic|Hand of Eru")) {#ADDKEY QuesterCheck 1 MT2_SuperbWallShield}} $QuestName
+
+
+#TR {You turn the barrel the right way up and take it.} {
+#WALK Aranthil;drop barrel
+ActionAdd "#WALK Aranthil;do get barrel from pack,get barrel,get wrench from pack,get wrench,turn tap,put all wrench in pack,drop all wrench"
+ActionAdd "#WALK MTWrench;do get wrench into pack,get wrench;#WALK Aranthil;ActionNext"
+ActionNext
+} $Settings
+
+#TR {tap open!  You discard the now bent and useless wrench, and hurry to} {drop barrel;se;w;do make lid} $Settings
+#TR {but you think you did a decent sort of a job.} {get lid;#WALK aranthil;do cover barrel,drop lid} $Settings
+#TR {You put the lid on the barrel.} {roll barrel} $Settings
+#TR {take this. If you hand it to the weaver she will give you a small} {#WALK dornelle;give voucher to dornelle} $Settings
+#TR {Dornelle drops the handkerchief and it floats gracefully down to the counter.} {get handkerchief;#WALK wiltas;give handkerchief to wiltas} $Settings
+#TR {Wiltas gives you a wonderful shield.} {GearSwap "A superb wall shield"} $Settings
+//#TR {You wear a superb wall shield.} {tag shield} $Settings
+//#TR {You are already wearing} {put superb wall shield in pack} $Settings
+//#TR {There is no barrel here to get.} {QuestAbort} $Settings
+
+#TR {{@MT2_SuperbWallShield_Abort_Messages}} {QuestAbort} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

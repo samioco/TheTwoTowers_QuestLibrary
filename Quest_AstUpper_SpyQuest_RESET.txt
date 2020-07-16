@@ -1,0 +1,42 @@
+//AstUpper_SpyQuest_RESET#CLASS 0#AL AstUpper_SpyQuest_RESET {$QuestName="AstUpper_SpyQuest"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AstUpper_SpyQuest
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  Level 3 Uruk not ok
+//Reward: 95g
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL AstUpper_SpyQuest {
+#VAR AstUpper_SpyQuestPath {%concat("3wesw;.(out)e;.(out)sw;.(out)e;.(out)2n4esw;.(out)e;.(out)s3n4wn4esen2snen2snen2sn;.(StopWalk;QuestAbort) ")} {} VAR
+#PATH AstUpper_SpyQuestPath {@AstUpper_SpyQuestPath} VAR
+#VAR AstUpper_SpyQuestStatus {"ask captain about spy"} {} VAR
+QuestInit $QuestName "AsturIn" "AstUpper_SpyQuestSearch"
+MoveMe_To_FH
+} $QuestName
+
+#AL AstUpper_SpyQuesterCheck {QuesterCheck $QuestName 4 100} $QuestName
+
+#AL AstUpper_SpyQuestSearch {#WALK AsturIn;#T+ Walker;#SLOW AstUpper_SpyQuestPath;#PAUSE} $Settings
+
+
+#TR {^ The Captain of the Guard} {StopWalk;@SpyQuestStatus} $Settings
+#TR {Nimbular says*: There is a spy wreaking havoc in our beloved} {#WALK 73785;ws;inspect ruins} $Settings
+
+#TR {^What?} {#SW (%roomnum=73785) {nw;inspect ruins} (%roomnum=73784) {sw;inspect ruins} (%roomnum=73780) {nw;inspect ruins} (%roomnum=73781) {w;inspect ruins} (%roomnum=73782) {sw;inspect ruins} (%roomnum=73783) {QuestAbort}} $Settings
+
+#TR {You think you saw some movement in the ruins.} {inspect ruins} $Settings
+#TR {bleeding to death} {kill} $Settings
+#TR {Spy has died.} {
+ss;do get all from corpse into pack,get all from corpse,get head;out;#WALK AsturIn
+#VAR AstUpper_SpyQuestStatus {"give head to captain"} {} VAR
+AstUpper_SpyQuestSearch
+} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------
+
+} Tools_QuestList#CLASS 0

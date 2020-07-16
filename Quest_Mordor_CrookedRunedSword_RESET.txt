@@ -1,0 +1,17 @@
+//Mordor_CrookedRunedSword_RESET#CLASS 0#AL Mordor_CrookedRunedSword_RESET {$QuestName="Mordor_CrookedRunedSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mordor_CrookedRunedSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

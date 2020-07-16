@@ -1,0 +1,17 @@
+//IronHills_KyahsLostSon_RESET#CLASS 0#AL IronHills_KyahsLostSon_RESET {$QuestName="IronHills_KyahsLostSon"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: IronHills_KyahsLostSon
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

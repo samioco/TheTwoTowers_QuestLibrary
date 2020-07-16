@@ -1,0 +1,22 @@
+//WhiteMtns_WellMadeDagger_RESET#CLASS 0#AL WhiteMtns_WellMadeDagger_RESET {$QuestName="WhiteMtns_WellMadeDagger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WhiteMtns_WellMadeDagger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL WhiteMtns_WellMadeDagger {
+QuestInit "WhiteMtns_WellMadeDagger" "wellmadedagger" "do get dagger,sheath dagger;down;down;up"
+MoveMe_To_Arda
+} $QuestName
+
+#AL WhiteMtns_WellMadeDagger_Check {QuesterCheck $QuestName 5 100} $QuestName
+
+#TR {Take what?} {QuestAbort} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

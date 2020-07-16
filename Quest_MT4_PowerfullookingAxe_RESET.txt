@@ -1,0 +1,17 @@
+//MT4_PowerfullookingAxe_RESET#CLASS 0#AL MT4_PowerfullookingAxe_RESET {$QuestName="MT4_PowerfullookingAxe"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT4_PowerfullookingAxe
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,69 @@
+//Pelargir_OldHouseArson_RESET#CLASS 0#AL Pelargir_OldHouseArson_RESET {$QuestName="Pelargir_OldHouseArson"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_OldHouseArson
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Pelargir_OldHouseArson {
+QuestInit $QuestName "ArsonCloset" "RingOn;WS;rummage through junk"
+MoveMe_To_Arda
+} $QuestName
+
+#AL ArsonOut {QuestOn Pelargir_OldHouseArson;#STOP;#SLOW %pathfrom(,arson)} $QuestName
+#AL ArsonStop {#STOP} $QuestName
+
+#TR {bleeding to death} {kill} $Settings
+#TR {Snake has died.} {ss;ringoff;rummage through junk} $Settings
+
+#TR {You sift through the vast amount of junk and discover a large pack.} {do wield knife,slice field pack} $Settings
+
+#TR {drop them to the ground.  What a pity, that was such a nice pack.} {
+do get strips into pack,get strips
+do get all pie into pack,get all jerky into pack
+#WALK ArsonGrass;#5 {do pull grass,put grass in pack}
+} $Settings
+
+#TR {There is no more decent grass to pull.} {#WALK ArsonShed;rummage through jars} $Settings
+
+#TR {You rummage through the shelf and find one that may be useful.} {do get strips from pack,dip strips in jar} $Settings
+
+#TR {strips, but in the process you drop the jar, shattering it upon impact.} {
+#WALK ArsonCellar
+#ECHO %ansi(high,red,blink)Pelargir_OldHouseArson: Ready to Prep fire!} $Settings
+
+#TR {Pelargir_OldHouseArson: Ready to Prep fire!} {
+#5 {do get grass from pack,stuff grass into wood}
+do get strips from pack,place strips under wood
+#WAIT 1000;%walkmode(1)
+} $Settings
+
+#TR {You regain consciousness.} {
+do drop all jerky from pack,drop all pie from pack
+8eat jerky;5eat pie
+do get all jerky into pack,get all pie into pack
+#STOP;#SLOW %pathfrom(,arson)
+} $Settings
+
+#TR {A flame bursts up in front of you, searing skin painfully!} {
+#STOP;#WAIT 500
+#SLOW %pathfrom(,arson)
+} $Settings
+
+#TR {You rummage through the remains and discover a large metal box!} {
+do bash strongbox,open strongbox,get all from box
+} $Settings
+
+#TR {~[ You have completed a quest: * ~]} {
+%walkmode(0)
+ActionAdd "trigger completely crushing whatever was inside. todo do rummage through pile,bash strongbox,open strongbox,get axe from box,get cloak from box"
+} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//Rhov_ShinyBronzeFlask_RESET#CLASS 0#AL Rhov_ShinyBronzeFlask_RESET {$QuestName="Rhov_ShinyBronzeFlask"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_ShinyBronzeFlask
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

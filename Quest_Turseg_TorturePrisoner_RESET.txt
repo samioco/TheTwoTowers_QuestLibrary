@@ -1,0 +1,56 @@
+//Turseg_TorturePrisoner_RESET#CLASS 0#AL Turseg_TorturePrisoner_RESET {$QuestName="Turseg_TorturePrisoner"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Turseg_TorturePrisoner
+//Description: 
+//This is a low level quest that can be done at level 1 without any gear or stats. The quest involves taking randomly generated orders from the torture master, to torture the prisoner.
+//------------------------------------------------------------
+//Requirements:
+//- Vision required in order to obtain the key that unlocks the dungeon door. A torch can be obtained for free at the Turseg shop (Variag and Haradrim races have low sight vision)
+//- Do not execute the torture command immediately. There is a random chance that the commander will alter the action request. Executing an incorrect action results in quest failure. This script executes a delay of 2 seconds, before execution.
+
+//Recommended level:  
+//Reward: //Reward: A crystal (13g)
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Turseg_TorturePrisoner {
+#T- Turseg_TorturePrisoner_NoTorch
+#VAR Turseg_TorturePrisoner_Action {} {} VAR
+#VAR Turseg_TorturePrisoner_Blind_Attempts {0} {} VAR
+QuestInit $QuestName "Gurg" "lift dark stone"
+MoveMe_To_FH
+} $QuestName
+
+#AL Turseg_TorturePrisoner_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+//Settings
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+#TR {How could you lift the right thing if you can't see?} {#ADD Turseg_TorturePrisoner_Blind_Attempts 1;#T+ Turseg_TorturePrisoner_NoTorch;#IF (@Turseg_TorturePrisoner_Blind_Attempts>2) {QuestAbort} {#WALK turshop;light crystal;do get torch,buy torch 1,drop torch 2,light torch;#WALK gurg;drop torch;lift dark stone}} $Settings
+
+//#TR {^You don't see crystal to light.} {#ADD blind_attempts 1;#IF (@blind_attempts>2) {QuestAbort} {#WALK turshop;do get torch,buy torch 1,drop torch 2,light torch;#WALK gurg;lift dark stone}} $Settings
+
+#TR Turseg_TorturePrisoner_NoTorch {{"You can't light the torch.|You don't see torch to light."}} {#T- Turseg_TorturePrisoner_NoTorch;#IF (%roomid!=TursegDungeon) {#WALK turshop;do extinguish torch,2extinguish crystal,drop all torch;QuestAbort Turseg_TorturePrisoner}} $Settings
+#TR {You take the key carefully and replace the stone so that} {#T- Turseg_TorturePrisoner_NoTorch;unlock dungeon door with shiny metal key;dungeon;drop all key;glance prisoner} $Settings
+#TR {You don't see that here.} {#IF (%roomid="TursegDungeon") {drop all key;#WALK turshop;2extinguish crystal;do extinguish torch,drop all torch;QuestAbort}} $Settings
+#TR {A lean haradrim prisoner} {PlayerDetectOn} $Settings
+#TR {mistaking you for the torturer chosen to beat this haradrim prisoner.} {PlayerDetectOff;do drop all key,drop all torch,extinguish crystal,extinguish torch} $Settings
+#TR {The uruk-hai shout for you to bring out the scourges and whip the} {#CW high,bold,red;#VAR Turseg_TorturePrisoner_Action {"whip"} {} VAR;#ALA "Alarm_torture" {+2} {@Turseg_TorturePrisoner_Action prisoner} $Settings} $Settings
+#TR {be scalded next.  The voice might well have been that of the chief, and} {#CW high,bold,red;#VAR Turseg_TorturePrisoner_Action {"scald"} {} VAR;#ALA "Alarm_torture" {+2} {@Turseg_TorturePrisoner_Action prisoner} $Settings} $Settings
+#TR {pain.  Nothing else will do but to burn the prisoner with these hot coals.} {#CW high,bold,red;#VAR Turseg_TorturePrisoner_Action {"burn"} {} VAR;#ALA "Alarm_torture" {+2} {@Turseg_TorturePrisoner_Action prisoner} $Settings} $Settings
+#TR {together in one voice for you to dismember your charge!  Visions of} {#CW high,bold,red;#VAR Turseg_TorturePrisoner_Action {"dismember"} {} VAR;#ALA "Alarm_torture" {+2} {@Turseg_TorturePrisoner_Action prisoner} $Settings} $Settings
+#TR {tortures.  Among the cries you hear an escalating clamour for you to rack} {#CW high,bold,red;#VAR Turseg_TorturePrisoner_Action {"rack"} {} VAR;#ALA "Alarm_torture" {+2} {@Turseg_TorturePrisoner_Action prisoner} $Settings} $Settings
+#TR {Suddenly, a loud voice can be heard shouting: ~"%1 him!~"} {#CW high,bold,red;#UNT Alarm_torture;#VAR Turseg_TorturePrisoner_Action {%lower(%1)} {} VAR;#EXE {@Turseg_TorturePrisoner_Action prisoner}} $Settings
+#TR {You are much too tired for that.} {rest on;#UNT Alarm_torture;#ALA "Alarm_torture" {+30} {@Turseg_TorturePrisoner_Action prisoner} $Settings} $Settings
+#TR {The uruk gives you a crystal.} {wear crystal;ActionAdd "#UNT Alarm_torture;do drop all key,extinguish crystal 1,2extinguish crystal,wear crystal;get torch;#WALK turshop;do extinguish torch,drop all torch;#WALK TurSP;ActionNext"} $Settings
+#TR {You wear a crystal.} {tag crystal} $Settings
+#TR {You are wearing too much jewelry already.} {#WALK turshop;do untag crystal 3;sall;wear all} $Settings
+#TR {You lift the stone, but there is nothing here.} {#ECHO Quest Message: No new key found, try to enter dungeon anyways!;do get shiny metal key,unlock dungeon door with shiny metal key;dungeon;glance prisoner} $Settings
+#TR {The door is locked.} {drop all key;#WALK turshop;do extinguish torch,extinguish crystal,drop all torch;#WALK TurSP;QuestAbort} $Settings
+#TR {dragging the body out behind him.  You've really messed up, and ruined} {#WALK turshop;do extinguish torch,drop all torch,drop all key;2extinguish crystal;QuestAbort Turseg_TorturePrisoner} $Settings
+#TR {Shouting uruk-hai encourage} {#WALK turshop;do extinguish torch,drop all torch,drop all key;2extinguish crystal;QuestAbort Turseg_TorturePrisoner} $Settings
+#TR {The enormous uruk-hai drags the carcass of the prisoner away - presumably} {#WALK turshop;do extinguish torch,drop all torch,drop all key;2extinguish crystal;QuestAbort Turseg_TorturePrisoner} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

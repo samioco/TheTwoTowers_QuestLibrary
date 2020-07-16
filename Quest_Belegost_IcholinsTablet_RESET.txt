@@ -1,0 +1,17 @@
+//Belegost_IcholinsTablet_RESET#CLASS 0#AL Belegost_IcholinsTablet_RESET {$QuestName="Belegost_IcholinsTablet"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Belegost_IcholinsTablet
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

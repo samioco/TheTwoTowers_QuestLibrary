@@ -1,0 +1,17 @@
+//Belfalas_PlateofFish_RESET#CLASS 0#AL Belfalas_PlateofFish_RESET {$QuestName="Belfalas_PlateofFish"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Belfalas_PlateofFish
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

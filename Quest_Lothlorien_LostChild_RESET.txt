@@ -1,0 +1,17 @@
+//Lothlorien_LostChild_RESET#CLASS 0#AL Lothlorien_LostChild_RESET {$QuestName="Lothlorien_LostChild"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Lothlorien_LostChild
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

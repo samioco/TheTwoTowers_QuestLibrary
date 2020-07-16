@@ -1,0 +1,17 @@
+//MT3_ShadyCharacter_RESET#CLASS 0#AL MT3_ShadyCharacter_RESET {$QuestName="MT3_ShadyCharacter"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT3_ShadyCharacter
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

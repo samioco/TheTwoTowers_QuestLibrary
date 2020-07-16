@@ -1,0 +1,18 @@
+//Azrazayan_FreeingAdrialle_RESET#CLASS 0#AL Azrazayan_FreeingAdrialle_RESET {$QuestName="Azrazayan_FreeingAdrialle"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Azrazayan_FreeingAdrialle
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

@@ -1,0 +1,63 @@
+//GreyMtns_IntricateSword_RESET#CLASS 0#AL GreyMtns_IntricateSword_RESET {$QuestName="GreyMtns_IntricateSword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GreyMtns_IntricateSword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+//An intricate sword
+//An intricately crafted shield: 15 12 100 150
+
+//Reward
+
+#AL GreyMtns_IntricateSword {
+QuestInit $QuestName "IntricateSword" "#WALK IntricateSword1;#T+ GreyMtns_IntricateSwordCheck;look pile"
+MoveMe_To_FH
+} $QuestName
+
+#AL GreyMtns_IntricateSwordCheck {QuesterCheck $QuestName 10 100} $QuestName
+
+#TR {This large pile of rubble lies in one corner of the room, almost as if} {rummage through pile}  GreyMtns_IntricateSword|Settings
+
+#TR {You can't rummage through anything when it's guarded!} {ws;kill orc} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+
+#TR GreyMtns_IntricateSwordCheck {You don't see that here.} {
+#SW (%lower(%roomid())=%lower("IntricateSword1")) {
+  #WALK IntricateSword2
+  look pile
+} {
+  #T- GreyMtns_IntricateSwordCheck
+  QuestAbort
+}
+} $Settings
+
+#TR {You attack} {#T- GreyMtns_IntricateSwordCheck} $Settings
+#TR {You * Uruk-hai} {#T- GreyMtns_IntricateSwordCheck} $Settings
+
+#TR {Uruk-hai has died.} {sss;rummage through rubble} $Settings
+
+#TR {treasure here.  Well done!} {
+GearSwap "An intricate short sword"
+GearSwap "An intricately crafted shield"
+do wear shield from ground,get all into pack,get all,drop all corpse
+} $Settings
+
+#TR {You run %1.} {
+$action="";#UNT "Alarm_Rest"
+#SW (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}}
+SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000
+rest on
+#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
+} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

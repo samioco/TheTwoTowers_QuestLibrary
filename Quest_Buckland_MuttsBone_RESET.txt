@@ -1,0 +1,34 @@
+//Buckland_MuttsBone_RESET#CLASS 0#AL Buckland_MuttsBone_RESET {$QuestName="Buckland_MuttsBone"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Buckland_MuttsBone
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Find a shovel and use it to dig up a bone for the dog
+
+//Requirements:
+//Recommended level 1 - 5
+//Reward: 5 gold + shovel (16g at Bywater shop)
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Buckland_MuttsBone {
+QuestInit $QuestName "Buckland_Storage_Shed" "do pull handle,get shovel"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Buckland_MuttsBone_Check {QuesterCheck $QuestName 1 5} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {You free a heavy shovel from the pile, which shifts slightly.} {#WALK buckland_bone;do l hole,dig hole} $Settings
+#TR {The hole is already dug and lies open at your feet.} {QuestAbort} $Settings
+#TR {Dirt flies through the air as you unearth an old gnawed bone} {do put shovel in pack,get bone,get bone into pack;get bone;#WALK buckland_mutt;do get bone from pack,give bone to mutt} $Settings
+//#TR {coins before the dog notices.} {} $Settings
+#TR {{"You don't see any handles here.|You do not have a bone.|I do not see mutt here.|bone wasn't good enough!"}} {QuestAbort} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//Linhir_StoppingtheFire_RESET#CLASS 0#AL Linhir_StoppingtheFire_RESET {$QuestName="Linhir_StoppingtheFire"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Linhir_StoppingtheFire
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

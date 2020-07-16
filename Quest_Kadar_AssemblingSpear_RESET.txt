@@ -1,0 +1,29 @@
+//Kadar_AssemblingSpear_RESET#CLASS 0#AL Kadar_AssemblingSpear_RESET {$QuestName="Kadar_AssemblingSpear"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Kadar_AssemblingSpear
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Kadar_AssemblingSpear {
+QuestInit $QuestName "Kadar_Axe" "get axe"
+MoveMe_To_Arda
+} $QuestName
+
+#TR {You pull the axe out of the wood.} {#WALK kadcem;do wield axe,chop tree;ws;kill bird} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+#TR {{"You don't see that here.|Bird has died."}} {ss;#IF (%roomid=kadcem) {do wield axe,chop tree;#WAIT 1000;#IF (@MyFaction="FR") {#WALK pelsmith} {#WALK kadshop};sell axe;#WALK kadcem;get log;#WALK kadar_woodshop;give log to woodsmith}} $Settings
+#TR {Woodsmith gives you a staff.} {put staff in pack;wield staff;ws;#WALK kadar_junk;kill rats} $Settings
+#TR {Rat has died.} {kill rat} $Settings
+#TR {You don't see that here.} {#IF (%roomid()="kadar_junk") {ss;search junk}} $Settings
+#TR {You search the pile and find a spearhead!} {do get finely crafted staff from pack,attach spearhead to staff} $Settings
+#TR {You join the spearhead to a wooden staff, making a spear.} {#IF (@faction=FR) {#WALK pelsmith} {#WALK kadshop};sell spear;questend} $Settings
+#TR {There is no log here to get.} {QuestAbort}  Kadar_AssemblingSpear|Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

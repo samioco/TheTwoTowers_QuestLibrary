@@ -1,0 +1,17 @@
+//Midgewater_StolenCompass_RESET#CLASS 0#AL Midgewater_StolenCompass_RESET {$QuestName="Midgewater_StolenCompass"
+$Settings=%concat($QuestName,"|Settings")
+
+//reward backpack
+
+#AL Midgewater_StolenCompass {
+QuestInit $QuestName "Midgewater_Top" "ws;kill crow"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Midgewater_StolenCompass_Check {QuesterCheck $QuestName 10 100} $QuestName
+
+#TR {Crow is bleeding} {kill} $Settings
+#TR {Crow has died.} {ss;do l nest,get all from corpse into pack,get all from corpse,get object} $Settings
+#TR {This particular compass is quite new and looks rather expensive.} {#WALK midgewater_boy;give compass to boy} $Settings
+#TR {Boy drops a backpack.} {do get backpack,wear backpack} $Settings
+#TR {You wear a backpack.} {tag backpack} $Settings} Tools_QuestList#CLASS 0

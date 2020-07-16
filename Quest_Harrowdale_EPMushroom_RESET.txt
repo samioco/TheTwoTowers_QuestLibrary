@@ -1,0 +1,21 @@
+//Harrowdale_EPMushroom_RESET#CLASS 0#AL Harrowdale_EPMushroom_RESET {$QuestName="Harrowdale_EPmushroom"
+$Settings=%concat($QuestName,|Settings)
+
+#AL Harrowdale_EPmushroom {Harrowdale_EPmushroom_EXE} $QuestName
+
+#AL Harrowdale_EPmushroom_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+#AL Harrowdale_EPmushroom_EXE {
+#VAR QuestName {"Harrowdale_EPmushroom"} {} VAR
+QuestOn Harrowdale_EPmushroom
+#WALK mush;sss
+ActionAdd "QuestComplete Harrowdale_EPmushroom"
+ActionAdd "do dismount,wear all from ground,get black-bladed dagger,get @dag,get @wep,get knife;sss;mm;glance;ActionNext"
+ActionAdd "do look stone,push head,get head;ne;drop head;sw;do get mushroom,look mushroom;ActionNext"
+ActionAdd "do dismount,drop all;ActionNext"
+ActionNext
+} $QuestName
+
+#TR {This strange, violet-gray mushroom} {do tag mushroom,put mushroom in bag,put mushroom in cloak,put mushroom in pack} $Settings
+#TR {it's what you would think of if someone asked you to name a poisonous} {#CW high,red;drop mushroom} $Settings
+} Tools_QuestList#CLASS 0

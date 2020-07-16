@@ -1,0 +1,17 @@
+//CrimsonCanyon_Carforgoth_RESET#CLASS 0#AL CrimsonCanyon_Carforgoth_RESET {$QuestName="CrimsonCanyon_Carforgoth"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CrimsonCanyon_Carforgoth
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

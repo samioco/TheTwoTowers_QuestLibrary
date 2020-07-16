@@ -1,0 +1,17 @@
+//MM2_CorpseStoneScavenger_RESET#CLASS 0#AL MM2_CorpseStoneScavenger_RESET {$QuestName="MM2_CorpseStoneScavenger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MM2_CorpseStoneScavenger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

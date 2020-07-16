@@ -1,0 +1,17 @@
+//Linhir_FreeingtheCorsair_RESET#CLASS 0#AL Linhir_FreeingtheCorsair_RESET {$QuestName="Linhir_FreeingtheCorsair"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Linhir_FreeingtheCorsair
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

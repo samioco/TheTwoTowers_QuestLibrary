@@ -1,0 +1,63 @@
+//Ithilien_BlackBaldric_RESET#CLASS 0#AL Ithilien_BlackBaldric_RESET {$QuestName="Ithilien_BlackBaldric"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Ithilien_BlackBaldric
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Ithilien_BlackBaldric {
+QuestInit $QuestName "BlackBaldric" "#WALK BlackBaldricTree"
+ActionAdd "HealMe"
+MoveMe_To_Arda
+} $QuestName
+
+#AL Ithilien_BlackBaldric_Check {
+#IF (%ismember(%lower(@MyPublicAlign),%lower(@Alignments_Immoral))) {QuesterCheck $QuestName 1 100}
+} $QuestName
+
+//#TR {You grab the lowest branch and swing yourself up into the tree.} {do look branch,search branch} $Settings
+
+#TR {You are too tired to climb.} {QuestAbort} $Settings
+
+#TR {You grab the lowest branch and swing yourself up into the tree.} {
+do look branch,search branch
+} $Settings
+
+#TR {You don't see anything but bark and leaves.} {QuestAbort} $Settings
+
+#TR {On a second look, you notice a grey shred of an elven cloak.} {
+get shred
+#IF (%mud.ep>50) {#WALK BlackBaldricCaptain
+} {
+  ActionAdd "#IF (%mud.ep>50) {#WALK BlackBaldricCaptain} {rest}"
+  HealMe  
+}
+} $Settings
+
+#TR {You're too encumbered to swim there properly!} {drop shred;QuestAbort} $Settings
+
+#TR {You're too tired to swim right now.} {
+#ALA "Alarm_rest" {+100} {#WALK BlackBaldricCaptain} $Settings
+} $Settings
+
+#TR {A faint path} {give shred to captain} $Settings
+
+#TR {Uruk-hai captain gives you a black studded leather baldric.} {
+GearSwap "A black studded leather baldric"} $Settings
+
+#TR {You wear a black studded leather baldric.} {
+tag baldric
+get sword from sheath 2 into sheath
+untag sheath 2
+} $Settings
+
+#TR {I already have what it is I am looking for.} {QuestAbort} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

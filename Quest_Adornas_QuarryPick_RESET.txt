@@ -1,0 +1,32 @@
+//Adornas_QuarryPick_RESET#CLASS 0#AL Adornas_QuarryPick_RESET {$QuestName="Adornas_QuarryPick"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Adornas_QuarryPick
+//----------------------------------------------------------------------------------------------------
+//Description: Find a pick in the quarry and return it to a miner.
+//Returning to one-eyed miner (wandering mob) gets quest point and 65g
+//Returning to quarry guard gets 60g and no quest point, but guard's position is static and easier.
+
+//Requirements:
+//Recommended level 1 - 5 (Maximum)
+//Reward: 60-65g
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+
+#AL Adornas_QuarryPick {
+QuestInit $QuestName "adornas_pick" "search water"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Adornas_QuarryPick_Check {QuesterCheck $QuestName 1 4} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+#TR {You find a pick underwater on the floor of the quarry!} {#WALK adornas_quarry_guard;give pick to guard} $Settings
+#TR {You search, but find nothing of interest in the water.} {QuestAbort} $Settings
+#TR {You do not have a pick.} {QuestAbort} $Settings
+#TR {Old miner hands you a fistful of coins, then stows the pick away.} {QuestComplete $QuestName} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,53 @@
+//Pelargir_TheAncientRuins_RESET#CLASS 0#AL Pelargir_TheAncientRuins_RESET {$QuestName="Pelargir_TheAncientRuins"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelargir_TheAncientRuins
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Pelargir_TheAncientRuins {
+#T- pelruins_check_scribblings
+QuestOn Pelargir_TheAncientRuins
+#IF (%roomid()=emisland) {clear rubble}
+#IF (%roomid()=emisland_in) {#WALK emisland_storage1;#T+ pelruins_check_scribblings;look scribblings}
+} $QuestName
+
+#AL pelruins {QuestOn Pelargir_TheAncientRuins;clear staircase} $QuestName
+#AL pelruins2 {.es;l scribblings;.2n;l scribblings;.ses;l scribblings;.2n;l scribblings;.s2w} $QuestName
+#AL pelruins3 {pelruins_cleanvars;do press @PelargirRuins_Item1,press @PelargirRuins_Item2,press @PelargirRuins_Item3,press @PelargirRuins_Item4} $QuestName
+#AL pelruins4 {do search left vase,search right vase} $QuestName
+
+#AL pelruins_cleanvars {pelruins1=%trim(@PelargirRuins_Item1);pelruins2=%trim(@PelargirRuins_Item2);pelruins3=%trim(@PelargirRuins_Item3);pelruins4=%trim(@PelargirRuins_Item4)} $QuestName
+
+#VAR pelruins1 {} {} $QuestName
+#VAR pelruins2 {} {}  Pelargir_TheAncientRuins
+#VAR pelruins3 {} {}  Pelargir_TheAncientRuins
+#VAR pelruins4 {} {}  Pelargir_TheAncientRuins
+
+#TR {The entrance to basement is finally open.} {light crystal;d;pelruins2;pelruins3} $Settings
+
+#TR pelruns_check_scribblings {You don't see that here.} {
+#T- pelruins_check_scribblings
+#SW (%roomid()=emisland_storage1) {#WALK emisland_storage2;#T+ pelruins_check_scribblings;look scribblings
+} (%roomid()=emisland_storage3) {#WALK emisland_storage3;look scribblings
+} (%roomid()=emisland_storage3) {#WALK emisland_storage4;look scribblings
+} (%roomid=emisland_storage4) {#T- pelruins_check_scribblings;#WALK emisland_in}
+} $Settings
+
+
+//#TR {From left to right, they represent: {@aanthe |}%1, {@aanthe |}%2, {@aanthe |}%3 and} {pelruins1=%1;pelruins2=%2;pelruins3=%3;#ECHO Symbols: @PelargirRuins_Item1, @PelargirRuins_Item2, @PelargirRuins_Item3} $Settings
+#TR {From left to right, they represent: @aanthe &pelruins1, @aanthe &pelruins2, @aanthe &pelruins3 and} {#ECHO Symbols: 1: @PelargirRuins_Item1, 2: @PelargirRuins_Item2, 3: @PelargirRuins_Item3, 4: @PelargirRuins_Item4} $Settings
+
+
+#TR {{@aanthe |}%1.$} {#IF (%numwords(%1)=1) {pelruins4=%1;#ECHO Symbol4: @PelargirRuins_Item4}} $Settings
+#TR {while later, a revolving door opens in the south wall!} {s;pelruins4} $Settings
+#TR {see that it is in fact a long stone key!  What an odd finding indeed.} {.2n;do examine north wall,unlock door} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//MT1_LampwrightsTorch_RESET#CLASS 0#AL MT1_LampwrightsTorch_RESET {$QuestName="MT1_LampwrightsTorch"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT1_LampwrightsTorch
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

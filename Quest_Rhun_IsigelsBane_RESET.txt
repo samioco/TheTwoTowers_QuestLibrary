@@ -1,0 +1,17 @@
+//Rhun_IsigelsBane_RESET#CLASS 0#AL Rhun_IsigelsBane_RESET {$QuestName="Rhun_IsigelsBane"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhun_IsigelsBane
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

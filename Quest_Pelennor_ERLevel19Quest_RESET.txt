@@ -1,0 +1,38 @@
+//Pelennor_ERLevel19Quest_RESET#CLASS 0#AL Pelennor_ERLevel19Quest_RESET {$QuestName="Pelennor_ERLevel19Quest"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelennor_ERLevel19Quest
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Pelennor_ERLevel19Quest {
+QuestInit $QuestName "GothmogTent" "request a guide"
+MoveMe_To_Arda
+} $QuestName
+
+#TR {The haradrim points you in the %1 direction.} {$dir=""
+#SW (%1=west) {$dir=west
+} (%1=north) {$dir=north
+} (%1=east) {$dir=east
+} (%1=south) {$dir=south
+} (%1=northwest) {$dir=northwest
+} (%1=northeast) {$dir=northeast
+} (%1=southwest) {$dir=southwest
+} (%1=southeast) {$dir=southeast}
+#ALA "ER19" +2 {$dir} $Settings
+} $Settings
+
+#TR {Na'man is now following you.} {out} $Settings
+#TR {Without further delay, Na'man disappears inside of it, leaving you} {#TE ER19in} $Settings
+#TR {As you enter the area, a dark shape suddenly leaps out of the shadows} {r1} $Settings
+#TR {you quickly snatch away!  Finally, you have your proof!} {ringoff;ss;r1} $Settings
+#TR {and conclude he must be making his way*} {#CW high,red,blink} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

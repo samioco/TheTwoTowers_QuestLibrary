@@ -1,0 +1,17 @@
+//Gundabad_VialofVigour_RESET#CLASS 0#AL Gundabad_VialofVigour_RESET {$QuestName="Gundabad_VialofVigour"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Gundabad_VialofVigour
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

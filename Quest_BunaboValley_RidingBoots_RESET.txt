@@ -1,0 +1,92 @@
+//BunaboValley_RidingBoots_RESET#CLASS 0#AL BunaboValley_RidingBoots_RESET {$QuestName="BunaboValley_RidingBoots"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: BunaboValley_RidingBoots
+//Description: 
+//This quest involves aiding a dying variag captain by killing a haradrim 
+//soldier to obtain a medal for return.  The riding boots reward when worn, 
+//adds +5 to riding and +5 to mounted combat skill
+
+//Reward: A pair of riding boots
+//----------------------------------------------------------------------------------------------------
+//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A pair of riding boots                  riding boots        0    3    5    15   150       6.2
+//----------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  10
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+#AL BunaboValley_RidingBoots {
+ActionAdd "GoSP;MM;ActionNext"
+QuestInit $QuestName "BunaboCaptain" "offer help"
+MoveMe_To_FH
+} $QuestName
+
+#AL BunaboValley_RidingBoots_Check {
+QuesterCheck $QuestName 10 100
+} $QuestName
+
+#TR {There is no medal here to get.} {QuestAbort} $Settings
+#TR Captain_Check {You don't see that here.} {
+#T- Captain_Check
+#T- Captain_Short
+QuestAbort
+} $Settings
+
+
+#TR {The wounded captain turns to you and says*: "There is nothing that} {QuestAbort} $Settings
+
+#TR {But hurry! I fear that I do not have much longer to live!} {
+sss
+#WALK BunaboSoldier
+do move arm,get medal,hands
+} $Settings
+
+#TR {As you bend over to take the medal, a heavy boot crushes your hand.} {
+ws
+kill soldier
+} $Settings
+
+#TR {Wait a minute, you're still busy!} {
+#WAIT 2000
+kill soldier
+} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+
+#TR {Haradrim soldier has died.} {
+sss
+do move arm,get medal,hands
+} $Settings
+
+#TR {You are holding a black medal ~(in hands~)} {
+GetAllNoHands
+#WALK BunaboCaptain
+give medal to captain
+} $Settings
+
+#TR {Variag captain drops a note.} {
+get note
+#WALK BunaboLeader
+give note to leader
+} $Settings
+
+#TR {Variag leader gives you a tiny brown key.} {
+#WALK BunaboCaptain
+do unlock chest with tiny brown key,drop tiny brown key,open chest,get all from chest,wear boots,tag boots
+} $Settings
+
+#TR {You are already wearing something on your feet.} {
+put boots in pack
+} $Settings 
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

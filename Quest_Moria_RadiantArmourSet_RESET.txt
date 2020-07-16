@@ -1,0 +1,101 @@
+//Moria_RadiantArmourSet_RESET#CLASS 0#AL Moria_RadiantArmourSet_RESET {$QuestName="Moria_RadiantArmourSet"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Moria_RadiantArmourSet
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+#AL Moria_RadiantArmourSet {
+Moria_RadiantArmourSet_ResetVars
+QuestInit $QuestName "Radiant" "Moria_RadiantArmourSet_Place_All"
+MoveMe_To_Moria
+} $QuestName
+
+#AL Moria_RadiantArmourSet_ResetVars {
+#VAR RadiantStatue {} {} VAR
+#VAR Moria_RadiantArmourSet_Mobs {"A disfigured orc|A disgusting orc|A deformed orc"} {} VAR
+#VAR Moria_RadiantArmourSet_Pieces {"A pair of radiant steel gauntlets|A pair of radiant steel pants|A radiant steel helm"} {} VAR
+#VAR Moria_RadiantArmourSet_Hall4_Path {".(glance);.4el6wk8el10wl8ek6wl4e;.(StopWalk;QuestOff Moria_RadiantArmourSet)"} {} VAR
+#VAR Moria_RadiantArmourSet_Hall5_Path {".(glance);.11wj9en9wn9en9wh11e;.(StopWalk;QuestOff Moria_RadiantArmourSet)"} {} VAR
+#VAR Moria_RadiantArmourSet_Hall7_Path {".(glance);.4se4ne4se4ne4se4ne4se4n;.(StopWalk;QuestOff Moria_RadiantArmourSet)"} {} VAR
+#VAR Moria_RadiantArmourSet_Statues {"azaghal|finrod|galadriel|celebrimbor|telchar|narvi|durin|gil-galad"} {} VAR
+#VAR Moria_RadiantArmourSet_Current_Statue {} {} VAR
+} $QuestName
+
+
+#AL Moria_RadiantArmourSet_Hall4_Search {
+StopWalk;Moria_RadiantArmourSet_ResetVars
+#WALK Moria4
+#PATH WalkPath @Moria_RadiantArmourSet_Hall4_Path
+ActionAdd "light crystal;ws;QuestOn Moria_RadiantArmourSet;#T+ Moria_RadiantArmourSet_Moria4Orc;;#T+ Moria_RadiantArmourSet_Helm;StartWalk"
+ActionNext
+} $QuestName
+
+#AL Moria_RadiantArmourSet_Hall5_Search {
+StopWalk;Moria_RadiantArmourSet_ResetVars
+#WALK Moria5
+#PATH WalkPath @Moria_RadiantArmourSet_Hall5_Path
+ActionAdd "light crystal;ws;QuestOn Moria_RadiantArmourSet;#T+ Moria_RadiantArmourSet_Moria5Orc;#T+ Moria_RadiantArmourSet_Gauntlets;StartWalk"
+ActionNext
+} $QuestName
+
+#AL Moria_RadiantArmourSet_Hall7_Search {
+StopWalk;Moria_RadiantArmourSet_ResetVars
+#WALK moria7
+#PATH WalkPath @Moria_RadiantArmourSet_Hall7_Path
+ActionAdd "light crystal;ws;QuestOn Moria_RadiantArmourSet;#T+ Moria_RadiantArmourSet_Moria7Orc;#T+ Moria_RadiantArmourSet_Pants;StartWalk"
+ActionNext
+} $QuestName
+
+//Radiant Orc triggers
+#TR Moria_RadiantArmourSet_Moria4Orc {^ A deformed orc} {#T- Moria_RadiantArmourSet_Moria4Orc;PauseWalk;look orc;#WAIT 500;ResumeWalk} $Settings
+#TR Moria_RadiantArmourSet_Moria5Orc {^ A disfigured orc} {#T- Moria_RadiantArmourSet_Moria5Orc;PauseWalk;look orc;#WAIT 500;ResumeWalk} $Settings
+ #TR Moria_RadiantArmourSet_Moria7Orc {^ A disgusting orc} {#T- Moria_RadiantArmourSet_Moria7Orc;PauseWalk;look orc;#WAIT 500;ResumeWalk} $Settings
+//#TR Moria_RadiantArmourSet_Mobs {^ ({@Moria_RadiantArmourSet_Mobs})} {#T- Moria_RadiantArmourSet_Mobs;PauseWalk;look orc;#WAIT 500;ResumeWalk} $Settings
+
+//Radiant Pieces (when seen on orc) triggers
+//#TR {({@Moria_RadiantArmourSet_Pieces})} {StopWalk;ws;kill orc} $Settings
+#TR Moria_RadiantArmourSet_Helm {A radiant steel helm} {#T- Moria_RadiantArmourSet_Helm;StopWalk;ws;kill orc} $Settings
+#TR Moria_RadiantArmourSet_Gauntlets {A pair of radiant steel gauntlets} {#T- Moria_RadiantArmourSet_Gauntlets;StopWalk;ws;kill orc} $Settings
+#TR  {A pair of radiant steel pants} {#T- Moria_RadiantArmourSet_Pants;StopWalk;ws;kill orc} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+#TR {has died.} {sss;do wear all from corpse,do get all from corpse,tag all} $Settings
+
+
+#AL Moria_RadiantArmourSet_PlaceAll {sss;do get gauntlets,place gauntlets on statue arms,get pants,place pants on statue legs,get helm,place helm on statue head} $QuestName
+
+#AL Moria_RadiantArmourSet_WearAll {sss;do get gauntlets from statue,wear all,get pants from statue,wear all,take helm from statue,wear all,tag all} $QuestName
+
+#AL Moria_RadiantArmourSet_GetAll {sss;do take gauntlets from statue,drop gauntlets,take pants from statue,drop pants,take helm from statue,drop helm,get gauntlets into pack,get helm into pack,get pants into pack,get pants,get gauntlets,get helm} $QuestName
+
+#TR {As the last piece of armour is put on the statue} {Moria_RadiantArmourSet_WearAll} $Settings
+
+
+//Aule's Statue Room
+#AL Moria_RadiantArmourSet_Look_Statues {
+#VAR Moria_RadiantArmourSet_Statues {"azaghal|finrod|galadriel|celebrimbor|telchar|narvi|durin|gil-galad"} {} VAR;sss
+QuestOn Moria_RadiantArmourSet
+trigger As the final piece of the armour set is placed on a statue todo do get shirt from statue,wear shirt,get gauntlets from statue,wear gauntlets,take pants from statue,wear gauntlets,take helm from statue,wear helm,wear all,tag all
+#FORALL @Moria_RadiantArmourSet_Statues {#VAR Moria_RadiantArmourSet_Current_Statue {%i} {} VAR
+look %i;#WAIT 1000}
+} $QuestName
+
+#AL Moria_RadiantArmourSet_Wear_From_Aule {do get shirt from statue,wear shirt,get gauntlets from statue,wear gauntlets,take pants from statue,wear gauntlets,take helm from statue,wear helm,wear all,tag all} $QuestName
+#AL Moria_RadiantArmourSet_Get_From_Aule {ss;do get shirt from statue,put shirt in pack,drop shirt,get gauntlets from statue,put gauntlets in pack,drop gauntlets,get pants from statue,put pants in pack,drop pants,get helm from statue,put helm in pack,drop helm,wear all,tag all} $QuestName
+
+
+#TR {The head is, ever so slightly, tilted upward.} {#CW high,cyan;ss;do get helm from pack,get helm,place helm on @Moria_RadiantArmourSet_Current_Statue's head} $Settings
+#TR {There are some small hooks at the statue's waist level.} {#CW high,cyan;ss;do get pants from pack,get pants,place pants on @Moria_RadiantArmourSet_Current_Statue's legs} $Settings
+#TR {The arms of the statue are outstretched.} {#CW high,cyan;ss;do get gauntlets from pack,get gauntlets,place gauntlets on @Moria_RadiantArmourSet_Current_Statue's arms} $Settings
+#TR {As the final piece of the armour set is placed on a statue,} {Moria_RadiantArmourSet_Wear_From_Aule} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

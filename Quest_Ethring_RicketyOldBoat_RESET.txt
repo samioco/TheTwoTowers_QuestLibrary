@@ -1,0 +1,30 @@
+//Ethring_RicketyOldBoat_RESET#CLASS 0#AL Ethring_RicketyOldBoat_RESET {$QuestName="Ethring_RicketyOldBoat"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Ethring_RicketyOldBoat
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Ethring_RicketyOldBoat {#VAR QuestName {"Ethring_RicketyOldBoat"} {} VAR;QuestOn Ethring_RicketyOldBoat} $QuestName
+
+#TR {^The rickety old boat rocks violently, then capsizes into the} {#TE RagingRapids} $Settings
+#TR {^The raging rapids of the River Ringlo} {look} $Settings
+#TR {^There is a rock looming to the west!} {nw} $Settings
+#TR {^There is a rock looming to the southwest!} {w} $Settings
+#TR {^There is a rock looming to the northwest!} {w} $Settings
+#TR {^There is a rock looming to the west and southwest!} {nw} $Settings
+#TR {^There is a rock looming to the west and northwest!} {sw} $Settings
+#TR {^Two rocks block your way to the northwest and southwest!} {w} $Settings
+#TR {^Two rocks block your way to the southwest and northwest!} {w} $Settings
+#TR {^Two rocks block your way to the west and southwest!} {nw} $Settings
+#TR {^Two rocks block your way to the west and northwest} {sw} $Settings
+#TR {^You manage to safely pull your boat onto the rocky shores} {#TE 23371;do disembark,brief,get boat,map;QuestOff Ethring_RicketyOldBoat;glance} $Settings
+#TR {^You pull the rickety old boat onto shore.} {#TE 23371;glance} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

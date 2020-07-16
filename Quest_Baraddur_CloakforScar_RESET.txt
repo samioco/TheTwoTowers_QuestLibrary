@@ -1,0 +1,71 @@
+//Baraddur_CloakforScar_RESET#CLASS 0#AL Baraddur_CloakforScar_RESET {$QuestName="Baraddur_CloakforScar"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Baraddur_CloakforScar
+//Description: 
+//Find the iridescent cloak for Scar
+//------------------------------------------------------------
+//Requirements: Must be Demonic or Shadowspawn of Mordor alignment
+//Recommended level: 5
+//Reward: 
+//Awesome starter gear for Evil Players
+//Reward1: A powerful bastard sword
+//Reward2: A tough leather shirt
+//----------------------------------------------------------------------------------------------------
+//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A powerful bastard sword           bastard sword  sword     2H   40   60   300  2000      100.0
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A tough leather shirt                   tough shirt         1    20   60   150  340       62.0
+//----------------------------------------------------------------------------------------------------
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Baraddur_CloakforScar
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Find the iridescent cloak for Scar
+
+//Requirements: Must be Demonic or Shadowspawn of Mordor alignment
+//Awesome starter gear for Evil Players
+//Reward1: A powerful bastard sword
+//Reward2: A tough leather shirt
+//----------------------------------------------------------------------------------------------------
+//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A powerful bastard sword           bastard sword  sword     2H   40   60   300  2000      100.0
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A tough leather shirt                   tough shirt         1    20   60   150  340       62.0
+//----------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Baraddur_CloakforScar {Baraddur_CloakforScar_Init} $QuestName
+#AL Baraddur_CloakforScar_Check {#IF (%ismember(@MyTrueAlign,"Villainous|Demonic|Shadowspawn of Mordor")) {#ADDKEY QuesterCheck 1 Baraddur_CloakforScar}} $QuestName
+
+#AL Baraddur_CloakforScar_INIT {
+  #VAR QuestName {"Baraddur_CloakforScar"} {} VAR
+  #IF (@GrinderQueue_i) {ActionAdd "gns;sall;ActionNext";ActionAdd "MoveMe_To_Arda"}
+  ActionAdd "QuestOn Baraddur_CloakforScar;#WALK Scar;do get gold from iridescent cloak,give iridescent cloak to scar"
+  ActionAdd "Baraddur_GimlibarsTea"
+  ActionAdd "MoveMe_To_Mordor"
+  #IF (@GrinderQueue_i) {gnb;deposit all}
+  ActionNext
+} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {Scar drops a powerful bastard sword.} {GearSwap "A powerful bastard sword";ActionAdd "packin;get all;ActionNext"} $Settings
+#TR {Scar drops a tough leather shirt.} {GearSwap "A tough leather shirt";ActionAdd "packin;get all;ActionNext"} $Settings
+#TR {You do not have an iridescent cloak.} {QuestAbort} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

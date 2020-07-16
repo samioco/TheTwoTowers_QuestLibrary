@@ -1,0 +1,18 @@
+//FarHarad_SlaveMastersPack_RESET#CLASS 0#AL FarHarad_SlaveMastersPack_RESET {$QuestName="FarHarad_SlaveMastersPack"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: FarHarad_SlaveMastersPack
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

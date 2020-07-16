@@ -1,0 +1,17 @@
+//CU_PoisonedArrow_RESET#CLASS 0#AL CU_PoisonedArrow_RESET {$QuestName="CU_PoisonedArrow"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_PoisonedArrow
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

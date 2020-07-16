@@ -1,0 +1,17 @@
+//Mordor_LargeTrainingProd_RESET#CLASS 0#AL Mordor_LargeTrainingProd_RESET {$QuestName="Mordor_LargeTrainingProd"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mordor_LargeTrainingProd
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

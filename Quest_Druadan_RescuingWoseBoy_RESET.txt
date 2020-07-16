@@ -1,0 +1,17 @@
+//Druadan_RescuingWoseBoy_RESET#CLASS 0#AL Druadan_RescuingWoseBoy_RESET {$QuestName="Druadan_RescuingWoseBoy"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Druadan_RescuingWoseBoy
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

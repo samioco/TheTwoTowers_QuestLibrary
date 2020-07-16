@@ -1,0 +1,90 @@
+//GrinderWesternForest_RESET#CLASS 0#AL GrinderWesternForest_RESET {$QuestName="GrinderWesternForest"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GrinderWesternForest
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level: 12+
+//------------------------------------------------------------
+//Settings:
+//WalkerStartRoom: <Grinder>StartRoom
+//WalkerPath: <Grinder>Path
+//WalkerMobs: <Grinder>Mobs: GrinderWalk mobs
+
+//StaticRoomShort: <Grinder>
+//StaticMobSettings ShortNames: <Grinder>MobSettings
+//StaticSettings: <Grinder>Settings: RoomsShorts + MobSettings
+//#VAR <Grinder>Settings {} {} VAR
+//#FORALL @<Grinder> {#ADDI <Grinder>Settings %concat(%i,"RoomShort")}
+//#FORALL @<Grinder>MobSettings {#ADDI <Grinder>Settings %i}
+//#FORALL @<Grinder>Settings {#T- $QuestName|%i}
+
+//<Grinder>_Loot: Loot room for non-mount/wagon rooms
+//------------------------------------------------------------
+#AL GrinderWesternForest {
+#VAR GrinderWesternForestStartRoom {"TurSP"} {} VAR
+
+#VAR GrinderWesternForestMobs {} {} VAR
+#ADDI GrinderWesternForestMobs "A long, thin snake"
+#ADDI GrinderWesternForestMobs "A very small, lost orc"
+#IF (@MyLevel>3) {#ADDI GrinderWesternForestMobs "A wandering Uruk"}
+#VAR GrinderWesternForestPath {".5e11ne15se16ne20se25ne29se30ne33se35ne39se40ne40se40ne40se40ne40se40ne40se40ne37se38ne38se38ne39se39ne39se40nj40se40ne40se40ne39se39ne39se32nenw6nj41se41ne41sne41ne40se39nse38sne34n7se27sne19n3se15se;.14n2se11se10n2se8se7n2se4sne2nse"} {} VAR
+
+GrinderWesternForestDisableMobs
+QuestInit $QuestName "@GrinderWesternForestStartRoom" "GrinderWalker GrinderWesternForest"
+ActionAdd "HealMe"
+MoveMe_To_FH
+} $QuestName
+
+#AL GrinderWesternForest_Check {
+QuesterCheck $QuestName 1 100
+} $QuestName 
+
+#AL GrinderWesternForest_Attack {
+$mob=%lower(%0)
+#SW (%pos("snake",$mob)) {kill snake
+} (%pos("gazelle",$mob)) {kill gazelle
+} (%pos("rabbit",$mob)) {kill rabbit
+} (%pos("boar",$mob)) {kill boar
+} (%pos("lizard",$mob)) {kill lizard
+} (%pos("coyote",$mob)) {kill coyote
+} (%pos("zebra",$mob)) {kill zebra
+} (%pos("sow",$mob)) {kill sow
+} (%pos("rhino",$mob)) {kill rhino
+} (%pos("olog",$mob)) {kill olog
+} (%pos("uruk",$mob)) {kill uruk
+} (%pos("orc",$mob)) {kill orc
+} (%pos("variag",$mob)) {kill variag
+} (%pos("haradrim",$mob)) {kill haradrim
+} (%pos("numenorean",$mob)) {kill numenorean
+} {kill $mob
+}
+#VAR CurMob {$mob} {} VAR
+} $QuestName
+
+
+#AL GrinderWesternForestEnableMobs {
+ClassOn GrinderWesternForest
+#T+ GrinderWesternForestMobs
+#IF (@MyLevel>=10) {#T+ GrinderWesternForestMobs2}
+} $QuestName
+
+#AL GrinderWesternForestDisableMobs {
+#T- GrinderWesternForestMobs
+#T- GrinderWesternForestMobs2
+} $QuestName
+
+#TR GrinderWesternForestMobs {({@GrinderWesternForestMobs})} {
+#IF (!@PlayerDetected) {WalkerAttack %1} {WalkerContinue}
+} $Settings
+
+#TR GrinderWesternForestMobs2 {{@AAnThe}*{@HumanoidRaces} ({@HumanoidTypes})} {
+#IF (!@PlayerDetected) {WalkerAttack %1} {WalkerContinue}
+} $Settings
+
+#T- GrinderWesternForestMobs
+#T- GrinderWesternForestMobs2
+
+
+} Tools_QuestList#CLASS 0

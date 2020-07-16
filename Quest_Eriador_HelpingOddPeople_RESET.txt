@@ -1,0 +1,61 @@
+//Eriador_HelpingOddPeople_RESET#CLASS 0#AL Eriador_HelpingOddPeople_RESET {$QuestName="Eriador_HelpingOddPeople"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Eriador_HelpingOddPeople
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Ask the elf, human, dwarf and hobbit what they want. Retrieve the items (drinks from various bars)
+//for them, in exchange for monetary compensation
+
+//Requirements:
+//Recommended level 1+
+//Reward: 152 gold
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Eriador_HelpingOddPeople {
+QuestInit $QuestName "MDPipe" "Eriador_HelpingOddPeople_triggersOn;do open chest,drop pouch from chest,open pouch,get pipe from pouch,get weed from pouch,pack pipe,drop all weed"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Eriador_HelpingOddPeople_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+
+#AL Eriador_HelpingOddPeople_triggersOn {
+#T+ Eriador_HelpingOddPeople_Hobbit
+#T+ Eriador_HelpingOddPeople_Butterbur
+#T+ Eriador_HelpingOddPeople_Human
+#T+ Eriador_HelpingOddPeople_Dimli
+#T+ Eriador_HelpingOddPeople_Pedoran
+#T+ Eriador_HelpingOddPeople_Elf
+#T+ Eriador_HelpingOddPeople_Dwarf
+#T+ Eriador_HelpingOddPeople_NoGold
+} $QuestName
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {You pack the pipe with the leaf... it is now smokeable.} {#WALK OddPeople_hobbit;give pipe to hobbit} $Settings
+#TR {There is no pouch here to open.} {#SW (%roomid()="MDPipe") {#WALK FilthyWagon;do drop weed,drop all pipe,wear pouch,get pipe,get weed,pack pipe,drop all weed} (%roomid=filthywagon) {do drop all pipe,drop all weed;QuestAbort}} $Settings
+
+
+#TR Eriador_HelpingOddPeople_Hobbit {{"There is no pipe in the pouch to get.|Hobbit says: No thanks. I've already got myself one fine pipe.|You don't have anything to pack the pipe with.  Find some pipe-weed.|Hobbit gives you %d gold coins.|I do not see hobbit here."}} {#T- Eriador_HelpingOddPeople_Hobbit;#WAIT 2000;drop pipe;#WALK Breebar;order ale} $Settings
+
+#TR Eriador_HelpingOddPeople_Butterbur {Butterbur says*: Here you go!} {#T- Eriador_HelpingOddPeople_Butterbur;#WAIT 2000;#WALK OddPeople_human;give ale to human} $Settings
+
+#TR Eriador_HelpingOddPeople_Human {{"Human gives you %d gold coins.|Human gives you a mug of ale.|I do not see human here."}} {#T- Eriador_HelpingOddPeople_Human;#WAIT 1000;drop ale;#WAIT 1000;#WALK greybar;order punch} $Settings
+
+#TR Eriador_HelpingOddPeople_Pedoran {Pedoran says*: Sit down at one of the tables and enjoy.} {#T- Eriador_HelpingOddPeople_Pedoran;#WAIT 1000;#WALK OddPeople;give punch to elf} $Settings
+#TR Eriador_HelpingOddPeople_Elf {{"Elf gives you %d gold coins.|Elf's hands are full.|You do not have a punch.|I do not see elf here."}} {#T- Eriador_HelpingOddPeople_Elf;#WAIT 1000;drop punch;#WALK belbar;order dwarven ale} $Settings
+
+#TR Eriador_HelpingOddPeople_Dimli {Dimli says*: Here ya go!  Dimli hands you your order.} {#T- Eriador_HelpingOddPeople_Dimli;#WALK OddPeople_dwarf;give dwarven ale to dwarf} $Settings
+
+#TR Eriador_HelpingOddPeople_Dwarf {{"Dwarf gives you 30 gold coins.|Dwarf says*: No thanks. I've had my ration of ale for now.|I do not see dwarf here."}} {#T- Eriador_HelpingOddPeople_Dwarf;#WAIT 1000;drop ale;QuestAbort} $Settings
+
+#TR Eriador_HelpingOddPeople_NoGold {*says*: That costs %d gold, which you don't have!} {#T- Eriador_HelpingOddPeople_NoGold;do drop all ale,drop all punch,drop all pipe;QuestAbort} $Settings
+
+#TR {You are blocked from going west by Guard.} {SysMsg "Blacked from entering Grey Havens!";#WAIT 5000;ActionAdd "QuestAbort";ActionNext} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

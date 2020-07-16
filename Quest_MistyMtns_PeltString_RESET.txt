@@ -1,0 +1,67 @@
+//MistyMtns_PeltString_RESET#CLASS 0#AL MistyMtns_PeltString_RESET {$QuestName="MistyMtns_PeltString"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_PeltString
+//------------------------------------------------------------
+//Description:
+//Rescue a ranger from some trolls. Kill all of the trolls, and then free the ranger.
+
+//Requirements:
+//Recommended level 7 - 10
+//Reward: A pelt string
+//----------------------------------------------------------------------------------------------------
+//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A pelt string                           pelt string         -2   0    0    40   0         -4.8
+//----------------------------------------------------------------------------------------------------
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL MistyMtns_PeltString {
+QuestInit $QuestName "FR_PeltString" "ws;#WALK FR_PeltString_Trolls;kill troll"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL MistyMtns_PeltString_Check {QuesterCheck $QuestName 8 10} $QuestName
+
+#AL MistyMtns_PeltString_End {ActionAdd "#WALK rivshop;do sell all from pack,sell all;ActionNext"
+  ActionAdd "#WALK FR_PeltString_Trolls;do get all from corpse into pack,get all from corpse,get all club;ActionNext"
+  ActionAdd "#WALK FR_PeltString_largetroll;do get all from corpse into pack,get all from corpse,get all club;ActionNext"
+  ActionAdd "ss;#WALK FR_PeltString_ranger;do get all from corpse into pack,get all from corpse,get all club;ActionNext"} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {bleeding to death} {kill$Settings
+#TR {troll has died.} {get gold from corpse;#WAIT 2000
+#SW (%roomid=fr_peltstring_trolls) {kill troll
+} (%roomid=fr_peltstring_largetroll) {ne;untie ranger
+} (%roomid=fr_peltstring_ranger) {untie ranger
+}
+} $Settings
+
+#TR {You don't see that here.} {#WAIT 2000;#SW (%roomid=fr_peltstring_trolls) {n;kill troll} (%roomid=fr_peltstring_largetroll) {ne;#WAIT 2000;kill troll} (%roomid=fr_peltstring_ranger) {ss;untie ranger}} $Settings
+#TR {Wait a minute, you're still busy!} {#IF (%ismember(%roomid,"fr_peltstring_trolls|fr_peltstring_largetroll|fr_peltstring_ranger")) {kill troll}} $Settings
+#TR {You are too busy fighting to untie anyone!} {kill troll$Settings
+#TR {Ranger gives you a pelt string.} {MistyMtns_PeltString_End;wear string} $Settings
+#TR {You settle the pelt string comfortably over your shoulder.} {tag string} $Settings
+#TR {Untie whom?} {MistyMtns_PeltString_End;QuestAbort} $Settings
+
+#TR {The troll growls and blocks your path.} {#UNT Alarm_rest;#WAIT 1000;w;SysMsg Waiting 200s, then try again, moving: squeeze through crack;$action="squeeze through crack";#WAIT 1000;rest;#ALA Alarm_rest {+200} {#EXE {$action}} $Settings} $Settings
+#TR {You can't rest whilst being in combat!} {#WAIT 2000;rest on} $Settings
+
+#TR {Old ranger leaves to continue his hunt.} {#IF (%roomid()="fr_peltstring_ranger") {QuestComplete MistyMtns_PeltString}} $Settings
+
+#TR {You run %1.} {
+$action="";#UNT "Alarm_Rest"
+#SW (%ismember(%1,@Directions_Long)) {$action=@{%concat("Dir_",%1,"_Back")}
+} (%ismember(%roomnum,"53810|53811")) {
+$action=deeper
+}
+SysMsg Waiting 300s, then try again, moving: $action;#WAIT 2000
+rest on
+#ALA "Alarm_Rest" {+300} {#EXE {$action}} $Settings
+} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

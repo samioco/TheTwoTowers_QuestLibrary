@@ -1,0 +1,21 @@
+//Baraddur_SnifferEquipment_RESET#CLASS 0#AL Baraddur_SnifferEquipment_RESET {$QuestName="Baraddur_SnifferEquipment"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Baraddur_SnifferEquipment
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Baraddur_SnifferEquipment {
+QuestOn Baraddur_SnifferEquipment;search fur} $QuestName
+
+#TR {You thoroughly search another fur, but come up with nothing.} {search fur} $Settings
+#TR {You thoroughly search a fur, and find a chest!} {do 2unlock chest with scratched brass key,drop key,open chest,get all from chest into pack,get all from chest} $Settings
+#TR {A robust chest unlocks with a click.} {} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

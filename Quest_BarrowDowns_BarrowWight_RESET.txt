@@ -1,0 +1,61 @@
+//BarrowDowns_BarrowWight_RESET#CLASS 0#AL BarrowDowns_BarrowWight_RESET {$QuestName="BarrowDowns_BarrowWight"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: BarrowDowns_BarrowWight
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Explore a dangerous barrow in the Barrow Downs.
+//Search for the secret that frees you from the Barrow Wight's trap.
+//Find the secret treasure room and escape with your riches!
+
+//Requirements:
+//Recommended level 1 - 8 (Maximum)
+//Reward: A chainmail vest, 10g, A bright red ruby brooch
+//----------------------------------------------------------------------------------------------------
+//Gear                                    ID                  DR   Def  Abs  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A chainmail vest                        chain vest          4    18   18   54   580       29.5
+//----------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+
+#AL BarrowDowns_BarrowWight {
+QuestInit $QuestName "BarrowHall" "read writing"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL BarrowDowns_BarrowWight_Check {QuesterCheck $QuestName 1 8} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#VAR BarrowDowns_Song {} {} VAR
+
+#TR {You make out the words: %1} {
+#VAR BarrowDowns_Song {%1} {} VAR
+#ECHO Barrow Hall words: @BarrowDowns_Song
+ActionAdd "#WALK barrowhall_spirit;sing @BarrowDowns_Song"
+ActionAdd "#WALK barrowhall_hallway;do push wall,wear brooch from ground,get brooch"
+ActionAdd "#WALK barrowhall_treasure;GearSwap ""A chainmail vest"";do look corner,open chest"
+#WALK barrowhall_bedroom;push rock
+ActionNext
+} $Settings
+
+//#TR {The wight is whisked away by the singing of ancient words of power!} {ActionNext} $Settings
+
+#TR {The entrance of the barrow is too tight for you.} {QuestAbort} $Settings
+
+//#TR {  ...When the wall is done moving a secret room stands before you!} {} $Settings
+//#TR {The passage is already open.} {QuestAbort} $Settings
+
+#TR {attention.  You greedily grab the money and stick it in} {ActionNext} $Settings
+#TR {You look inside the chest, only to find dust.} {ActionNext} $Settings
+#TR {Seems someone already pushed the wall.} {ActionNext} $Settings
+#TR {You put your hands to the wall and push with all your might...} {do wear brooch from ground,get brooch;ActionNext} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

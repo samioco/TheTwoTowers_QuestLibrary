@@ -1,0 +1,17 @@
+//CU_KillingShelob_RESET#CLASS 0#AL CU_KillingShelob_RESET {$QuestName="CU_KillingShelob"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_KillingShelob
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

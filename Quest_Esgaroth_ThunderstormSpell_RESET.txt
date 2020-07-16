@@ -1,0 +1,17 @@
+//Esgaroth_ThunderstormSpell_RESET#CLASS 0#AL Esgaroth_ThunderstormSpell_RESET {$QuestName="Esgaroth_ThunderstormSpell"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Esgaroth_ThunderstormSpell
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

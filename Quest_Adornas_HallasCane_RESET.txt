@@ -1,0 +1,17 @@
+//Adornas_HallasCane_RESET#CLASS 0#AL Adornas_HallasCane_RESET {$QuestName="Adornas_HallasCane"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Adornas_HallasCane
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

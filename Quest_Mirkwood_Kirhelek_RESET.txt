@@ -1,0 +1,17 @@
+//Mirkwood_Kirhelek_RESET#CLASS 0#AL Mirkwood_Kirhelek_RESET {$QuestName="Mirkwood_Kirhelek"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_Kirhelek
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

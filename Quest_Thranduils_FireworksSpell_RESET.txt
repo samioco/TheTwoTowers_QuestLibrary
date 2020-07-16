@@ -1,0 +1,17 @@
+//Thranduils_FireworksSpell_RESET#CLASS 0#AL Thranduils_FireworksSpell_RESET {$QuestName="Thranduils_FireworksSpell"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Thranduils_FireworksSpell
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

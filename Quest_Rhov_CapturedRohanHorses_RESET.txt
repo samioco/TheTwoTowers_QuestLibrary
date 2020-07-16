@@ -1,0 +1,17 @@
+//Rhov_CapturedRohanHorses_RESET#CLASS 0#AL Rhov_CapturedRohanHorses_RESET {$QuestName="Rhov_CapturedRohanHorses"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_CapturedRohanHorses
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

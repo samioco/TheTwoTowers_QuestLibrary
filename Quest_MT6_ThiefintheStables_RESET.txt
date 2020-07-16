@@ -1,0 +1,17 @@
+//MT6_ThiefintheStables_RESET#CLASS 0#AL MT6_ThiefintheStables_RESET {$QuestName="MT6_ThiefintheStables"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT6_ThiefintheStables
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

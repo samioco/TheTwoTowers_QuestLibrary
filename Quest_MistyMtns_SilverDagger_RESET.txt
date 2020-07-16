@@ -1,0 +1,17 @@
+//MistyMtns_SilverDagger_RESET#CLASS 0#AL MistyMtns_SilverDagger_RESET {$QuestName="MistyMtns_SilverDagger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_SilverDagger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,35 @@
+//Harondor_Crystal_RESET#CLASS 0#AL Harondor_Crystal_RESET {$QuestName="Harondor_Crystal"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harondor_Crystal
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Harondor_Crystal {
+QuestInit $QuestName "EvilCrystal_Edge" "peek over edge"
+MoveMe_To_Arda
+} $QuestName
+
+#AL Harondor_Crystal_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+
+#TR Harondor_Crystal_Vision {{@Messages_Sight_On}} {#T- Harondor_Crystal_Vision;ActionNext} $Settings
+#TR {You can't see anything!} {ActionAdd "#WALK EvilCrystal_Edge;peek over edge";#WALK EvilCrystal;#T+ Harondor_Crystal_Vision;cron;light crystal} $Settings
+#TR {You don't see crystal to light.} {SIGHT ON} $Settings
+#TR {nobody in the pit.} {2extinguish crystal;QuestAbort} $Settings
+#TR {could peek over the edge to get a better look?} {peek over edge} $Settings
+#TR {Vroshnak says*: You there!  Wait!  Please help me out of here!} {sss;do offer help,get rope,pull rope} $Settings
+#TR {Vroshnak shuffles around at the bottom of the pit.} {#T- Harondor_Crystal_Vision;offer help} $Settings
+#TR {He has already tossed up a rope!  Pull him up!} {#T- Harondor_Crystal_Vision;pull rope} $Settings
+#TR {A tall shady figure storms into the room seemingly out of nowhere!} {#T- Harondor_Crystal_Vision;ws;kill gagdush} $Settings
+#TR {Gagdush * Vroshnak} {#T- Harondor_Crystal_Vision;kill gagdush} $Settings
+#TR {corpse before disappearing into the shadows.} {2extinguish crystal;QuestAbort} $Settings
+#TR {Vroshnak removes a crystal in the shape of the Eye.} {ss;do get crystal,tag crystal,wear crystal;gall;3extinguish crystal;croff;#WALK EvilCrystal;ptow;QuestComplete} $Settings
+#TR {You are wearing too much jewelry already.} {do put crystal in cloak,put crystal in pack} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//MistyMtns_StolenLocket_RESET#CLASS 0#AL MistyMtns_StolenLocket_RESET {$QuestName="MistyMtns_StolenLocket"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MistyMtns_StolenLocket
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//Archet_RoguesHideout_RESET#CLASS 0#AL Archet_RoguesHideout_RESET {$QuestName="Archet_RoguesHideout"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Archet_RoguesHideout
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

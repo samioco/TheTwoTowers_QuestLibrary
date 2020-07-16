@@ -1,0 +1,17 @@
+//MT4_DazzlingLongsword_RESET#CLASS 0#AL MT4_DazzlingLongsword_RESET {$QuestName="MT4_DazzlingLongsword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: MT4_DazzlingLongsword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

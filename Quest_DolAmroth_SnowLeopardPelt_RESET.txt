@@ -1,0 +1,17 @@
+//DolAmroth_SnowLeopardPelt_RESET#CLASS 0#AL DolAmroth_SnowLeopardPelt_RESET {$QuestName="DolAmroth_SnowLeopardPelt"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DolAmroth_SnowLeopardPelt
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

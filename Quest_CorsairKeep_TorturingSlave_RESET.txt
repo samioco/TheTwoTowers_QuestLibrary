@@ -1,0 +1,17 @@
+//CorsairKeep_TorturingSlave_RESET#CLASS 0#AL CorsairKeep_TorturingSlave_RESET {$QuestName="CorsairKeep_TorturingSlave"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CorsairKeep_TorturingSlave
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

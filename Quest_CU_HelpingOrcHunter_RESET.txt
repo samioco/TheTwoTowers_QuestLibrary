@@ -1,0 +1,17 @@
+//CU_HelpingOrcHunter_RESET#CLASS 0#AL CU_HelpingOrcHunter_RESET {$QuestName="CU_HelpingOrcHunter"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: CU_HelpingOrcHunter
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

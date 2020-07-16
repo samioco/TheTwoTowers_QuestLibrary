@@ -1,0 +1,69 @@
+//HaradDesert_MonstrousWarg_RESET#CLASS 0#AL HaradDesert_MonstrousWarg_RESET {$QuestName="HaradDesert_MonstrousWarg"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: HaradDesert_MonstrousWarg
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL HaradDesert_MonstrousWarg {
+$wargname=""
+#SW (@MyName="Zzigg") {$wargname="Xi"
+} (@MyName="Bramoukh") {$wargname="Mo"
+} (@MyName="Mammoth") {$wargname="Mini"
+} (@MyName="Borkul") {$wargname="Wargi"
+} (@MyName="Laikum") {$wargname="Luka"}
+#VAR MonstrousWargName {$wargname} {} VAR
+#VAR MonstrousWargNum {0} {} VAR
+QuestInit $QuestName "Ulerkaya" "ask ulerkaya about help"
+ActionAdd "HealMe"
+MoveMe_To_Arda
+} $QuestName
+
+#AL HaradDesert_MonstrousWarg_Check {
+#IF ((@MyProf="rider") AND (@MyTrueRace="uruk-hai") AND (%concat(@MyName,"_Taming")>=90)) {QuesterCheck $QuestName 15 100}
+} $QuestName
+
+
+#AL HaradDesert_MonstrousWarg_NameWarg {
+#IF (@MonstrousWargNum<=0) {mount name monstrous warg @MonstrousWargName
+} {mount name monstrous warg %concat(@MonstrousWargName,@MonstrousWargNum)}
+} $QuestName
+
+#TR {Ulerkaya says*: I need someone to blend in with the rider} {QuestAbort} $Settings
+
+#TR {Ulerkaya says in Westron: Hmm, you could do actually.} {out;.le2nw;ask koray about ulerkaya}  HaradDesert_MonstrousWarg|Settings
+#TR {chores are done!} {ss;dismount;e;ne;do grab key,put key in keyring;sw;w;do unlock south doory with pewter key,put key in cloak,put key in pack;s;ss;mm;clean pit}  HaradDesert_MonstrousWarg|Settings
+#TR {a crowd of wargs.} {unlock north door with pewter key;ws;n;report to koray;rest} $Settings
+#TR {Koray hits you with his feet knocking you into the pit!} {#TE wargpit} $Settings
+#TR {warg gets a sickened look on his face and begins to yelp from its hurt} {#WAIT 2000;aid warg} $Settings
+#TR {You need both hands to clean the pit!} {ss;do sheath knife,sheath black dagger,clean pit} $Settings
+#TR {You regain consciousness.} {mm} $Settings
+
+#TR {Ulerkaya is nowhere to be found.} {ActionDelete "GrinderUnload_MonstrousWarg";QuestAbort} $Settings
+
+#TR {Quite a lunger too!  Take good care of him} {HaradDesert_MonstrousWarg_NameWarg} $Settings
+
+#TR {There is already a mount by that name.} {
+#ADD MonstrousWargNum 1
+HaradDesert_MonstrousWarg_NameWarg
+} $Settings
+
+#TR {From here on out, you will call your mount %1.} {
+#VAR MonstrousWarg {%1} {} VAR
+mm
+lead %lower(@MonstrousWarg)
+#IF (@GrinderQueue_i) {
+  ActionAdd "GrinderUnload_MonstrousWarg"
+  ActionAdd "#WALK WargPit;SSS;GetAll;#WALK OutShop;SellAll;#WALK KadB;deposit all but 60;WS;ActionNext"
+}
+QuestComplete
+} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

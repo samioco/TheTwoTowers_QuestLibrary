@@ -1,0 +1,17 @@
+//AlzhakUrk_TheDirectAssault_RESET#CLASS 0#AL AlzhakUrk_TheDirectAssault_RESET {$QuestName="AlzhakUrk_TheDirectAssault"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AlzhakUrk_TheDirectAssault
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

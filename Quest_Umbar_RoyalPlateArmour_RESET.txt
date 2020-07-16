@@ -1,0 +1,17 @@
+//Umbar_RoyalPlateArmour_RESET#CLASS 0#AL Umbar_RoyalPlateArmour_RESET {$QuestName="Umbar_RoyalPlateArmour"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Umbar_RoyalPlateArmour
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

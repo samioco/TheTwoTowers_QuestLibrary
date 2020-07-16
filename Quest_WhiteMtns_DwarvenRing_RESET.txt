@@ -1,0 +1,17 @@
+//WhiteMtns_DwarvenRing_RESET#CLASS 0#AL WhiteMtns_DwarvenRing_RESET {$QuestName="WhiteMtns_DwarvenRing"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WhiteMtns_DwarvenRing
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

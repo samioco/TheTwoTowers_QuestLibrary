@@ -1,0 +1,70 @@
+//Rhov_GreatIronAxe_RESET#CLASS 0#AL Rhov_GreatIronAxe_RESET {$QuestName="Rhov_GreatIronAxe"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_GreatIronAxe
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Rhov_GreatIronAxe {
+#T+ caktash_orcs_Attack;#VAR Rhov_GreatIronAxe_hasdied_i {0} {} VAR
+#VAR Caktash_StartRoom {"caktash"} {} VAR
+#VAR GrinderCaktash_Evil {"caktash_dwarf|caktash_orcs"} {} VAR
+#VAR GrinderCaktash_Moral {"caktash_orcs|caktash_dwarf"} {} VAR
+#SW (%ismember(@MyTrueAlign,@alignments_moral)) {
+  QuestInit $QuestName "Caktash_Dwarf" "assist dwarf"
+} {QuestInit $QuestName "Caktash_Orcs" "ask leader about dwarf"}
+} $QuestName
+
+#AL Rhov_GreatIronAxe_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+#AL Rhov_GreatIronAxe_Loot {
+$CurRoom=%lower(@CurRoom)
+$numMobs=%numitems(@MobList)
+#SW (%pos(%lower("CaktashDwarf"),$CurRoom)) {
+  ss
+  get axe from corpse
+  GetAll $numMobs
+  #WAIT 500
+  #WALK CaktashOrcs
+  do give axe to leader,put axe in @MyWagon
+  ws
+} {
+  GetAllNoHands $numMobs
+}
+} $QuestName
+
+#TR caktash_orcsRoomShort {^Entrance to a vale} {GrinderResetRoom;#T+ caktash_leader_short;#T+ caktash_ognjen_short;#T+ caktash_orcs_Attack} $Settings
+#TR caktash_leaderRoomShort {^ A tall orc leader} {#T- caktash_leader_short;#ADDI MobList "leader";#ECHO Room_mobs: @MobList} $Settings
+#TR caktash_ognjenRoomShort {^ A very muscular but short orc} {#T- caktash_ognjen_short;#ADDI MobList "ognjen";#ECHO Room_mobs: @MobList} $Settings
+#TR caktash_dwarfRoomShort {^Eastern part of a vale} {GrinderResetRoom;#T+ caktash_caktash_short} $Settings
+#TR caktash_caktashRoomShort {^ A young dwarf is hiding here} {#T- caktash_caktash_short;#ADDI MobList "caktash";#ECHO Room_mobs: @MobList} $Settings
+
+//Caktash accepts help: Grinder GrinderCaktash_Moral
+
+//Caktash EVIL way
+#TR {Caktash glares icily at you!} {#WALK caktash_orcs;ask leader about dwarf} $Settings
+#TR {Ugljesha says*: trolk urqthsnort erqahsh gaheart!} {Grinder GrinderCaktash_Evil} $Settings
+#TR {Ugljesha says*: We urqthsnort erqahsh gaheart!} {Grinder GrinderCaktash_Evil} $Settings
+#TR {Ugljesha says*: We almost caught him! He is somewhere in the vale! Kill} {Grinder GrinderCaktash_Evil} $Settings
+//#TR {bleeding to death} {kill} $Settings
+#TR {Caktash has died.} {#IF (@MyProf=archer) {sal} {ss}
+drop all from corpse
+//GearSwap "A great iron axe"
+GearSwap "A small dwarven shield"
+gall;#WAIT 200;#WALK caktash_orcs;give axe to leader} $Settings
+
+#TR {Ugljesha drops something on the ground.} {get mace into @MyWagon} $Settings
+
+#TR {Leader is nowhere to be found.} {QuestAbort} $Settings
+#TR {^What?} {#IF (%roomid="caktash_dwarf") {QuestAbort}} $Settings
+#TR caktash_orcs_Attack {You attack {"Ognjen|Ugljesha"}} {#T- caktash_orcs_Attack;#IF (@MyProf=archer) {#WAIT 1000;kill leader} {trigger Y todo kill leader}} $QuestName
+//#TR {({"Ognjen|Ugljesha"}) has died.} {#IF (@trigger) {trigger off};#IF ((%1="Ognjen") AND (@iMob<(%numitems(@MobList)))) {ActionDelete GrinderNextMob}} $QuestName
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,136 @@
+//GrinderRuneCamp_RESET#CLASS 0#AL GrinderRuneCamp_RESET {$QuestName="GrinderRuneCamp"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: GrinderRuneCamp
+//Description: Static Grinder
+//------------------------------------------------------------
+//Requirements: 100 combat skills
+//Robust sentry: 20g + boots 8g, helmet 27g, knife 100g, 155g each, Total: 310g
+//Strong Guards: 200g + boots (8g), helmet (27g), knife (100g): 335g each, Total: 670g
+//Warrior preparing for battle: 88g + boots (8g): 96g each, Total: 384g
+//Seer:
+//Cook: 50g + apron 15g, spoon 27g: 92g
+//Total value: 1456g
+//------------------------------------------------------------
+//Settings:
+//WalkerStartRoom: <Grinder>StartRoom
+//WalkerPath: <Grinder>Path
+//WalkerMobs: <Grinder>Mobs: GrinderWalk mobs
+
+//StaticRoomShort: <Grinder>
+//StaticMobSettings ShortNames: <Grinder>MobSettings
+//StaticSettings: <Grinder>Settings: RoomsShorts + MobSettings
+//#VAR <Grinder>Settings {} {} VAR
+//#FORALL @<Grinder> {#ADDI <Grinder>Settings %concat(%i,"RoomShort")}
+//#FORALL @<Grinder>MobSettings {#ADDI <Grinder>Settings %i}
+//#FORALL @<Grinder>Settings {#T- $QuestName|%i}
+
+//<Grinder>_Loot: Loot room for non-mount/wagon rooms
+//------------------------------------------------------------
+
+#AL GrinderRuneCamp {
+#VAR GrinderRuneCampStartRoom {"RuneCamp"} {} VAR
+#VAR GrinderRuneCamp {} {} VAR
+#ADDI GrinderRuneCamp "RuneCamp"
+#ADDI GrinderRuneCamp "RuneCampGuards"
+#ADDI GrinderRuneCamp "RuneCampWarrior1"
+#ADDI GrinderRuneCamp "RuneCampWarrior2"
+#ADDI GrinderRuneCamp "RuneCampWarrior3"
+#ADDI GrinderRuneCamp "RuneCampWarrior4"
+#ADDI GrinderRuneCamp "RuneCampCenter"
+
+#VAR GrinderRuneCampNoMountRooms {} {} VAR
+#ADDI GrinderRuneCampNoMountRooms "RuneCampGuards"
+#ADDI GrinderRuneCampNoMountRooms "RuneCampWarrior1"
+#ADDI GrinderRuneCampNoMountRooms "RuneCampWarrior2"
+#ADDI GrinderRuneCampNoMountRooms "RuneCampWarrior3"
+#ADDI GrinderRuneCampNoMountRooms "RuneCampWarrior4"
+
+#VAR GrinderRuneCampMobSettings {} {} VAR
+#ADDI GrinderRuneCampMobSettings "Sentry"
+#ADDI GrinderRuneCampMobSettings "Guards"
+#ADDI GrinderRuneCampMobSettings "Warrior"
+#ADDI GrinderRuneCampMobSettings "Cook"
+
+#VAR GrinderRuneCampSettings {} {} VAR
+#FORALL @GrinderRuneCamp {#ADDI GrinderRuneCampSettings %concat(%i,"RoomShort")}
+#FORALL @GrinderRuneCampMobSettings {#ADDI GrinderRuneCampSettings %concat($QuestName,%i)}
+#FORALL @GrinderRuneCampSettings {#T- $QuestName|%i}
+
+QuestInit $QuestName "RuneCamp" "Grinder GrinderRuneCamp"
+MoveMe_To_Arda
+} $QuestName
+
+#AL GrinderRuneCamp_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+#AL GrinderRuneCamp_Loot {
+$CurRoom=%lower(@CurRoom)
+$numMobs=%numitems(@MobList)
+$dropoffRoom="RuneCamp"
+#IF ($CurRoom!=%lower("RuneCamp")) {$dropoffRoom="RuneCampCenter"}
+#LOOP $numMobs {
+  #WALK $CurRoom
+  GetAllNoHands $numMobs
+  #WALK $dropoffRoom
+  PacktoContainers
+}
+} $QuestName
+
+
+#TR RuneCampRoomShort {Entrance to a war camp} {
+GrinderResetRoom
+#T+ RuneCampSentry
+} $Settings
+
+#TR RuneCampCenterRoomShort {The center of the camp} {
+GrinderResetRoom
+#T+ RuneCampCook
+} $Settings
+
+#TR RuneCampGuardsRoomShort {A large tent} {
+GrinderResetRoom
+#T+ RuneCampGuards
+} $Settings
+
+#TR RuneCampWarrior1RoomShort {A large tent} {
+GrinderResetRoom
+#T+ RuneCampWarrior
+} $Settings
+
+#TR RuneCampWarrior2RoomShort {A large tent} {
+GrinderResetRoom
+#T+ RuneCampWarrior
+} $Settings
+
+#TR RuneCampWarrior3RoomShort {A large tent} {
+GrinderResetRoom
+#T+ RuneCampWarrior
+} $Settings
+
+#TR RuneCampWarrior4RoomShort {A large tent} {
+GrinderResetRoom
+#T+ RuneCampWarrior
+} $Settings
+
+#TR RuneCampSentry {A robust sentry(*)} {
+#T- RuneCampSentry
+GrinderAddToMobList "sentry" %1
+} $Settings
+
+#TR RuneCampGuards {A strong guard(*)} {
+#T- RuneCampGuards
+GrinderAddToMobList "guard" %1
+} $Settings
+
+#TR RuneCampWarrior {A warrior preparing for battle} {
+#T- RuneCampWarrior
+GrinderAddToMobList "warrior"
+} $Settings
+
+#TR RuneCampCook {The camp cook} {
+#T- RuneCampCook
+GrinderAddToMobList "cook"
+} $Settings
+
+
+} Tools_QuestList#CLASS 0

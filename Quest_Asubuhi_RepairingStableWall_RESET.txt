@@ -1,0 +1,18 @@
+//Asubuhi_RepairingStableWall_RESET#CLASS 0#AL Asubuhi_RepairingStableWall_RESET {$QuestName="Asubuhi_RepairingStableWall"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Asubuhi_RepairingStableWall
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

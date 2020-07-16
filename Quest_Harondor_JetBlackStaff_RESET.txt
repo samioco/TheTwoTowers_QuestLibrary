@@ -1,0 +1,116 @@
+//Harondor_JetBlackStaff_RESET#CLASS 0#AL Harondor_JetBlackStaff_RESET {$QuestName="Harondor_JetBlackStaff"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Harondor_JetBlackStaff
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Harondor_JetBlackStaff {
+QuestInit $QuestName "JBSLedge" "#WALK JBSEntrance;look crack"
+ActionAdd "#WALK JBS;PackToContainers;3get pie from @MyWagon into pack;ActionNext"
+ActionAdd "GNB;deposit all;ActionNext"
+ActionAdd "HealMe"
+MoveMe_To_Arda
+} $QuestName
+
+#AL Harondor_JetBlackStaff_Check {QuesterCheck $QuestName 19 100} $QuestName
+
+
+#AL Harondor_JetBlackStaff_Attack {
+$trig="";$profSkill="";$action=""
+#IF (%ismember(@MyProf,@casters)) {do draw staff,hold staff}
+RingOn
+WS
+#WALK JBSOffice
+PieOut
+
+//Set special attack if secondary skill exists
+$otherSkills=%lower({%concat(@MyName,"_OtherSkills")})
+#SW (%ismember(%lower("Tactics"),$otherSkills)) {$profSkill="headbutt"
+} (%ismember("Nature's grace",$otherSkills)) {$profSkill="feint"
+} (%ismember("Butchery"$otherSkills)) {$profSkill="shiv"}
+
+//If primary special skill exists, override
+#SW (@MyProf="wizard") {$profSkill="cast lightning"
+} (@MyProf="necromancer") {$profSkill="conjure hurricane"
+} (@MyProf="warrior") {$profSkill="headbutt"
+} (@MyProf="ranger") {$profSkill="feint"
+} (@MyProf="sniffer") {$profSkill="shiv"
+} {$profSkill="kill"}
+
+//set initial attack attack
+#SW (@MyProf="wizard") {$action="do focus dodge,cast lightning"
+} (@MyProf="necromancer") {$action="do focus dodge,conjure hurricane"
+} {$action=%concat("do focus aim,",$profSkill," scout,kill scout 2")}
+
+#SW (%ismember(@MyProf,@casters)) {$trig=%concat("trigger Scout todo do ",$profSkill," scout,shape all")
+} {$trig=%concat("trigger Scout todo do ",$profSkill," scout,kill scout 2,shape all")}
+#EXE {$trig}
+#EXE {$action}
+} $QuestName
+
+
+//#TR {courage and the will to step through it and take a look.} {do step through crack,look crack} $Settings
+
+#TR {You are carrying too much to fit in the crack.} {
+sss
+DropArmour
+#WALK JBSEntrance
+drop all
+#WALK JBSLedge
+wear all from ground
+get all
+SSS
+#WALK JBSEntrance
+do wear all from ground,get all
+SSS
+look crack
+} $Settings
+
+#TR {There is a crack in the wall to the northwest which leads out of the cave.} {
+#WALK JBSdoor
+listen
+} $Settings
+
+#TR {You listen.} {QuestAbort} $Settings
+
+#TR {an old man who is deeply concerned with something.  You could knock on} {
+do look door,knock on door
+rest
+} $Settings
+
+#TR {grateful. The commander had the key when I was locked in, and I} {
+Harondor_JetBlackStaff_Attack
+} $Settings
+
+#TR {has died.} {#IF (@trigger) {trigger off}} $Settings
+
+#TR {Commander has died.} {
+SSS
+SF
+RingOff
+do search corpse of commander,get key
+} $Settings
+
+#TR {you find a rusty iron key in his pocket!} {
+get key
+#WALK JBSDoor
+do unlock door,drop key
+#WALK JBSNecro
+} $Settings
+
+#TR {Necromancer smiles and says*: And now, if you don't mind, I'll} {
+ActionAdd "#WALK JBSArmoury;do get staff,tag staff,store staff,put staff in pack;ActionNext"
+do smell sacks,get sling,wear sling
+ActionNext
+} $Settings
+
+#TR {You knock on the east door.} {QuestAbort} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

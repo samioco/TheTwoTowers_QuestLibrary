@@ -1,0 +1,17 @@
+//WallofMordor_WickerBasket_RESET#CLASS 0#AL WallofMordor_WickerBasket_RESET {$QuestName="WallofMordor_WickerBasket"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WallofMordor_WickerBasket
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,112 @@
+//Baraddur_WickedFlail_RESET#CLASS 0#AL Baraddur_WickedFlail_RESET {$QuestName="Baraddur_WickedFlail"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Baraddur_WickedFlail
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Baraddur_WickedFlail
+//----------------------------------------------------------------------------------------------------
+//Description:
+//A wicked looking flail is pretty much a freebie item with awesome stats,
+//located on the southern wing of Barad-dur's stairs between level 1 and 2.
+//It has an item limit of 2 spawns in game. Awesome rider weapon!
+
+//Requirements: Must be able to sneak, camo, prowl past guard, or kill him
+//Reward: A wicked looking flail
+//----------------------------------------------------------------------------------------------------
+//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A wicked looking flail             wicked flail   flail     1H   95   95   200  6500      190.0
+//----------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Baraddur_WickedFlail {
+#VAR QuestName {"Baraddur_WickedFlail"} {} VAR;#UNT Alarm_flail
+trigger Uruk sergeant attacks you. todo do drop flail,10flee
+#VAR Baraddur_WickedFlail_Action {"do search behind racks,enter behind racks,trigger off,wield flail,tag flail"} {} VAR
+QuestInit $QuestName "BDFlailArmoury" "do examine racks,get flail"
+ActionNext
+} $QuestName
+
+
+#AL Baraddur_WickedFlail_Check {QuesterCheck $QuestName 15 100} $QuestName
+
+#AL Baraddur_WickedFlail_EXE {
+SysMsg Action: @Baraddur_WickedFlail_Action
+#ALA Alarm_BDFlail +1 {#EXE {@Baraddur_WickedFlail_Action}} $Settings
+} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#VAR Baraddur_WickedFlail_Action {} {} VAR
+
+#TR {You regain consciousness.} {search behind racks} $Settings
+
+#TR {Plenty of weapons, and racks... but you fail to notice anything else.} {search behind racks} $Settings
+
+#TR {You search but fail to find any hideout better than behind the racks.} {enter behind racks} $Settings
+
+#TR {Uruk sergeant attacks you.} {drop flail;10flee} $Settings
+#TR {Uh oh, the sergeant noticed you!} {drop flail;10flee} $Settings
+#TR {need to FLEE from this place} {drop flail;10flee} $Settings
+
+#TR {Plenty of weapons, and racks... but you fail to notice anything else.} {do search behind racks,enter behind racks} $Settings
+#TR {An empty space behind the racks} {trigger attacks you. todo do drop flail,10flee,trigger off} $Settings
+
+#TR {He seems to be looking off to the left.} {#CW high,red
+#VAR Baraddur_WickedFlail_Action {"slide right"} {} VAR
+Baraddur_WickedFlail_EXE
+} $Settings
+
+#TR {moving over on the right.} {#CW high,red
+#VAR Baraddur_WickedFlail_Action {"slide left"} {} VAR
+Baraddur_WickedFlail_EXE
+} $Settings
+
+#TR {is very close to you now...} {#CW high,red
+#VAR Baraddur_WickedFlail_Action {"move back"} {} VAR
+Baraddur_WickedFlail_EXE
+} $Settings
+
+#TR {of his direct line of sight.} {#CW high,red
+#VAR Baraddur_WickedFlail_Action {"lie down"} {} VAR
+Baraddur_WickedFlail_EXE
+} $Settings
+
+#TR {that you're safe for now -- that is, unless you move.} {
+#CW high,blink,red;#ECHO DONT MOVE!
+#SUSPEND Alarm_BDFlail;#UNT Alarm_BDFlail
+#VAR Baraddur_WickedFlail_Action {} {} VAR
+#ECHO Queued action suspended: @Baraddur_WickedFlail_Action
+} $Settings
+
+#TR {to move.  However, you are damn sure you have to do it anyway.  Try} {#CW high,red
+#ECHO ACTION FAILED! REPEAT LAST MOVE!
+Baraddur_WickedFlail_EXE
+} $Settings
+
+#TR {You hear an orcish voice from outside: urk' urqthsnort. kaz grunt you} {
+#ECHO Wait 30s before going out!
+#ALA +30 {#ECHO 30s has passed!;trigger off} $Settings
+} $Settings
+
+#TR {You hear an orcish voice from outside: Don't worry.  I believe you... but I bet the torturer won't!} {
+#ECHO Wait 30s before going out!
+#ALA Alarm_flail +30 {BEEP3;#ECHO 30s has passed!;trigger off;QuestOff $QuestName} $Settings
+} $Settings
+
+#TR {Before the gate of the Tower of Barad-dur} {QuestOff $QuestName} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

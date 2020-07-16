@@ -1,0 +1,68 @@
+//MistyMtns_Crystal_RESET#CLASS 0#AL MistyMtns_Crystal_RESET {$QuestName="MistyMtns_Crystal"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: MistyMtns_Crystal
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Help a wizard make a crystal by finding materials in the nearby cave
+//Wizard room, can 'meditate' to gain 15ep
+
+//Requirements:
+//Recommended level 1+
+//Reward: A crystal
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL MistyMtns_Crystal {
+ActionAdd "#WALK RivSP;ActionNext"
+QuestInit $QuestName "Rivendell_Crystal" "dig in dirt"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL MistyMtns_Crystal_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#TR {You dig up a nice, plump worm.} {get worm;.3e;give worm to bird} $Settings
+#TR {You're far too tired to go digging in the dirt.} {#WAIT 2000;rest on;#UNT Alarm_rest;#ALA Alarm_rest {+30} {dig in dirt} $Settings} $Settings
+#TR {You dig in the dirt, but fail to find a worm.} {dig in dirt} $Settings
+#TR {You toss the worm as far as you can; the bird flies after it hungrily.} {do drop worm,search nest} $Settings
+
+#TR {The bird is too injured to fly after the worm.} {drop worm;QuestAbort} $Settings
+#TR {Bird has died.} {drop worm;QuestAbort} $Settings
+
+#TR {You're too tired to search now.} {#WAIT 2000;rest on;#UNT Alarm_rest;#ALA Alarm_rest {+30} {do drop worm,search nest} $Settings} $Settings
+
+#TR {I do not see bird here.} {do drop worm,search nest} $Settings
+#TR {and find a piece of cloth.} {cave;drop cloth;yard;get egg;cave;give egg to snake} $Settings
+#TR {You can't seem to find anything hidden in the nest.} {do drop worm,drop cloth;QuestAbort} $Settings
+//#TR {You can't take the crystal.} {do drop worm,drop egg;QuestAbort} $Settings
+
+#TR {{"The snake swallows the egg whole, then slithers beneath some crystal and|I do not see snake here."}} {do drop egg,get cloth,break crystal,get crystal} $Settings
+
+#TR {You can't break any more off.} {do drop egg,drop cloth;#WALK 51238;meditate;QuestAbort} $Settings
+#TR {Why don't you rest up before you do that?} {#WAIT 2000;rest on;#UNT Alarm_rest;#ALA Alarm_rest {+30} {do drop egg,break crystal,get crystal} $Settings} $Settings
+#TR {gradually begins to widen until suddenly a chunk of crystal breaks free.} {#WALK rivendell_crystal_wizard;drop cloth;#WALK rivendell_crystal_snake;get large chunk of crystal;#WALK rivendell_crystal_wizard;request riddle} $Settings
+
+
+#TR {What's better than the best thing, and worse than the} {answer nothing} $Settings
+#TR {If you were to take two apples from three apples how} {answer two} $Settings
+#TR {barrel, the barrel would become lighter?} {answer hole} $Settings
+#TR {I know a word of letters three, add two and fewer there} {answer few} $Settings
+#TR {At night they come without being fetched.  And by day} {answer stars} $Settings
+#TR {What grows up while growing down?} {answer goose} $Settings
+#TR {How far can a dog run into the woods?} {answer halfway} $Settings
+
+#TR {Tianamor continues: I'll need} {do get large chunk of crystal,give large chunk of crystal to wizard,get cloth,give cloth to wizard,drop all chunk,drop all cloth} $Settings
+
+#TR {Tianamor gives you a crystal.} {do wear crystal,meditate} $Settings
+#TR {Someone seems to have dug the area up already.} {QuestAbort} $Settings
+#TR {You don't have a {"crystal|cloth"}} {QuestAbort} $Settings
+#TR {You wear a crystal.} {tag crystal} $Settings
+#TR {You are wearing too much jewelry already.} {#WALK rivshop;do untag crystal 3,tag crystal;sall;wear all} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

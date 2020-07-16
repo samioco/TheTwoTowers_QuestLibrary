@@ -1,0 +1,38 @@
+//Adornas_BlackHorse_RESET#CLASS 0#AL Adornas_BlackHorse_RESET {$QuestName="Adornas_BlackHorse"
+$Settings=%concat($QuestName,|Settings)
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Adornas_BlackHorse
+//----------------------------------------------------------------------------------------------------
+//Description: Help a strange man get past the stable guard.
+
+//Requirements:
+//Recommended level 1 - 5 (Maximum)
+//Reward: A black horse
+//a small rusty knife : You get 5 gold.
+//a steel saw : You get 10 gold.
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Adornas_BlackHorse {
+QuestInit "Adornas_BlackHorse" "adhh" "offer help"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Adornas_BlackHorse_Check {QuesterCheck $QuestName 1 5} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+#TR {the documents from the saddle and bring them to me. Then we will go} {#WALK adornas_saw;get saw} $Settings
+#TR {The man says to you: I told you already, get the documents for me!} {#WALK adornas_saw;get saw} $Settings
+#TR {There is no saw here to get.} {QuestAbort} $Settings
+#TR {You take the saw.} {search pile} $Settings
+#TR {You search but fail to find anything of interest.} {#IF (%roomid=adornas_saw) {QuestAbort}} $Settings
+#TR {You search through the pile and discover... a dead mouse! Ick!} {get mouse;#WALK adhh_loft;show mouse to cat} $Settings
+#TR {The cat suddenly jumps from the rafter and begins chewing on the mouse!} {kick cat} $Settings
+#TR {Down in the hall,} {do wield saw,saw barrier} $Settings
+#TR {for a while, then stumbles down to the ground unconscious.} {#WALK adhh_horse;get documents} $Settings
+#TR {You take the documents from the saddle.} {#WALK adhh;give documents to strange man} $Settings
+#TR {The man says*: Good job! Meet me at the stall.} {#WALK adhh_horse} $Settings
+#TR {The man whispers some words to the horse and you suddenly feel it is yours now.} {lead horse;#WALK adhh_boy;get knife;#WALK adshop;sall;#WALK AdSP} $Settings
+
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

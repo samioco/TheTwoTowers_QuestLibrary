@@ -1,0 +1,17 @@
+//DharanSar_WoundedMastiff_RESET#CLASS 0#AL DharanSar_WoundedMastiff_RESET {$QuestName="DharanSar_WoundedMastiff"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DharanSar_WoundedMastiff
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

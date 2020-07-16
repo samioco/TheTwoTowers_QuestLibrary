@@ -1,0 +1,17 @@
+//Baraddur_GameofSticks_RESET#CLASS 0#AL Baraddur_GameofSticks_RESET {$QuestName="Baraddur_GameofSticks"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Baraddur_GameofSticks
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

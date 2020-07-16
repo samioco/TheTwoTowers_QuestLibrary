@@ -1,0 +1,17 @@
+//Mirkwood_AvengingGwimbur_RESET#CLASS 0#AL Mirkwood_AvengingGwimbur_RESET {$QuestName="Mirkwood_AvengingGwimbur"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_AvengingGwimbur
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

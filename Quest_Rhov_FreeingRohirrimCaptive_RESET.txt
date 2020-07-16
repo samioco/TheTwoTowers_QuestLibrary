@@ -1,0 +1,17 @@
+//Rhov_FreeingRohirrimCaptive_RESET#CLASS 0#AL Rhov_FreeingRohirrimCaptive_RESET {$QuestName="Rhov_FreeingRohirrimCaptive"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_FreeingRohirrimCaptive
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

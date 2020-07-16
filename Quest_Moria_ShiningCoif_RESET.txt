@@ -1,0 +1,17 @@
+//Moria_ShiningCoif_RESET#CLASS 0#AL Moria_ShiningCoif_RESET {$QuestName="Moria_ShiningCoif"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Moria_ShiningCoif
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

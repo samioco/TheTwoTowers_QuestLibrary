@@ -1,0 +1,17 @@
+//Pelennor_AvengedESS_RESET#CLASS 0#AL Pelennor_AvengedESS_RESET {$QuestName="Pelennor_AvengedESS"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Pelennor_AvengedESS
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//EmynArnen_SetofRunes_RESET#CLASS 0#AL EmynArnen_SetofRunes_RESET {$QuestName="EmynArnen_SetofRunes"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: EmynArnen_SetofRunes
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

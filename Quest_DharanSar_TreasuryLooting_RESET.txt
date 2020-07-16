@@ -1,0 +1,70 @@
+//DharanSar_TreasuryLooting_RESET#CLASS 0#AL DharanSar_TreasuryLooting_RESET {$QuestName="DharanSar_TreasuryLooting"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: DharanSar_TreasuryLooting
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+//Quest Name: DharanSar_TreasuryLooting
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Kill the town leader and guards, obtain the keys to the armoury, and loot it.
+//The amount of gold in the chest gradually increases with time and will continue
+//to increase until looted, similar to the Minas Tirith CitADel vault.
+
+//Requirements:
+//Recommended level 16+
+//Reward: 800+ gold
+
+#AL DharanSar_TreasuryLooting {
+#VAR DharanSar_StartRoom {"dhtentout"} {} VAR
+#VAR GrinderDharanSar {"skarabash|dhguards"} {} VAR
+QuestInit $QuestName "DHTentOut" "Grinder GrinderDharanSar"
+MoveMe_To_Arda
+} $QuestName
+
+#AL DharanSar_TreasuryLooting_Check {QuesterCheck $QuestName 16 25} $QuestName
+
+#AL DharanSar_TreasuryLooting_Loot {
+$CurRoom=%lower(@CurRoom)
+$CurMob=%lower(@CurMob)
+#SW ((%pos("skarabash",$CurRoom)) && ($CurMob="skarabash")) {
+  ss
+  do get all from corpse into pack,move cushion,get gold from corpse
+  out
+  do get scimitar from pack into @MyWagon,put key in pack
+  ws
+  GetAllNoHands
+} (%pos(%lower("DHGuards"),$CurRoom)) {
+  GetAllNoHands
+  ss
+  #IF (@Mounted) {dismount}
+  do get gold key from pack,get silver key from pack,unlock sw door with gold key,drop gold key;sw;do unlock chest with silver key,drop silver key,open chest,get all from chest
+  ne
+  ws
+  #IF (($MyProf="rider") && (!@Mounted)) {mm}
+  } 
+} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+
+#TR skarabashRoomShort {^A sumptuous tent} {GrinderResetRoom;#T+ dharansar_skarabash_short;#T+ dharansar_nervous_guard_runs_in} $Settings
+#TR dharansar_skarabashRoomShort {^ Skarabash, a tall and imposing numenorean militant} {#T- dharansar_skarabash_short;#T+ dharansar_nervous_guard_runs_in;#VAR MobList {"skarabash"} {} VAR;#ECHO Room_mobs: @MobList} $Settings
+#TR dharansar_nervous_guard_runs_in {Nervous guard runs in.} {#T- dharansar_nervous_guard;#IF (@CurRoom="skarabash") {out;#VAR MobList {"nervous guard|skarabash"} {} VAR;#VAR CurMob {"nervous guard"} {} VAR;#ECHO Room_mobs: @MobList;#T+ you_Attack}} $Settings
+#TR dhguardsRoomShort {^A sandy path} {#T- dhguards_short;#T+ dharansar_agitated_guard;#T+ dharansar_nervous_guard} $Settings
+#TR dharansar_agitated_guard {^ An agitated guard} {#T- dharansar_agitated_guard;#ADDI MobList "agitated guard";#ECHO Room_mobs: @MobList} $Settings
+#TR dharansar_nervous_guard {^ A nervous guard} {#T- dharansar_nervous_guard;#ADDI MobList "nervous guard";#ECHO Room_mobs: @MobList} $Settings
+#TR {Nervous guard runs in.} {#SW (@MyProf=archer) {#WAIT 2000;kill guard}} $QuestName
+#TR {Nervous guard has died.} {#SW (@MyProf=archer) {sv};gall;#WALK dhtentout;ptow} $Settings
+#TR {Skarabash has died.} {#IF (@trigger) {trigger off}} $QuestName
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

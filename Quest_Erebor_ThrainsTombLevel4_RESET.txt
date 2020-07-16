@@ -1,0 +1,75 @@
+//Erebor_ThrainsTombLevel4_RESET#CLASS 0#AL Erebor_ThrainsTombLevel4_RESET {$QuestName="Erebor_ThrainsTombLevel4"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Erebor_ThrainsTombLevel4
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Erebor_ThrainsTombLevel4 {
+$room=%lower(%roomid())
+#SW ($room=%lower("ThrainStairs")) {ThrainSwim "ThrainBroadLedge"
+} {ThrainSwim "ThrainStairs"}
+} $QuestName
+
+#AL ThrainSwimStat {
+#ECHO Dir: @ThrainDir, ThrainPathNum: @ThrainPathNum, last: @ThrainLast, dest: @ThrainDest
+} $QuestName
+
+#AL ThrainSwim {
+#VAR ThrainPathNum {1} {} VAR
+#VAR ThrainLast {} {} VAR
+#VAR ThrainDest {} {} VAR
+#VAR ThrainDir {} {} VAR
+#VAR Messages_ThrainSwimBlock {} {} VAR
+#ADDI Messages_ThrainSwimBlock "You remain where you are."
+#ADDI Messages_ThrainSwimBlock "Electric eel flanks you"
+#ADDI Messages_ThrainSwimBlock "You're too busy to do that!"
+#ADDI Messages_ThrainSwimBlock "You're far too busy to toy around now!"
+#VAR ThrainDest {%0} {} VAR
+trigger off
+QuestOn Erebor_ThrainsTombLevel4
+#CALL %walkmode(1)
+#STOP
+#WAIT 500
+#SLOW %pathfrom(,@ThrainDest)
+} $QuestName
+
+#TR Thrain_SwimBlock {{@Messages_ThrainSwimBlock}} {
+#STOP
+#ECHO Walking Blocked.
+#WAIT 500
+#SLOW %pathfrom(,@ThrainDest)
+} $Settings
+
+#TR {You're far too busy to toy around now!} {
+#STOP
+#ECHO Walking Blocked.
+#WAIT 1000
+#SLOW %pathfrom(,@ThrainDest)
+do move jar,pry plaster
+} $Settings
+
+#TR {A corner of a flooded hall ~[(*)~]} {
+$exits=%replace(%1,"and","|")
+$exits=%replace($exits,",","|")
+$exits=%replace($exits," ")
+#IF ((%ismember("nw",$exits)) && (%lower(@ThrainDest)=%lower("ThrainBroadLedge"))) {
+  do move jar,pry plaster
+}
+} $Settings
+
+
+#TR {{"A broad ledge|The top of a stairs"}} {
+StopWalk
+#STOP
+QuestOff Erebor_ThrainsTombLevel4
+} $Settings
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

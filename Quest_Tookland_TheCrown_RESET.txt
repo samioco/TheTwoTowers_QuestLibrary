@@ -1,0 +1,27 @@
+//Tookland_TheCrown_RESET#CLASS 0#AL Tookland_TheCrown_RESET {$QuestName="Tookland_TheCrown"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Tookland_TheCrown
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Tookland_TheCrown {
+QuestInit "Tookland_TheCrown" "took_hidden_out" "move rug"
+MoveMe_To_WestArda
+
+} Tookland_ThainsBow
+
+#AL Tookland_TheCrown_Check {QuesterCheck $QuestName 4 4} $QuestName
+
+//do unlock hidden door;hidden;do unlock chest,drop key,open chest,get check from chest
+
+//#TR {} {#WALK took_hugo;give check to hugo;sell all;ActionAdd "#WALK bel_pick;get pick;#WALK took_hidden;wield pick,pry chunk,get nugget;#WALK took_hugo;sell all;#WALK hobshop;sell all;QuestComplete";ActionNext} $Settings
+#TR {There is no chest here.} {QuestAbort} $Settings
+#TR {The Guardian says, I'm very sorry, but I have been instructed to keep} {QuestAbort} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

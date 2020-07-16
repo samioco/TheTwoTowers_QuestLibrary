@@ -1,0 +1,17 @@
+//Durthang_DarkGreyGloves_RESET#CLASS 0#AL Durthang_DarkGreyGloves_RESET {$QuestName="Durthang_DarkGreyGloves"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Durthang_DarkGreyGloves
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

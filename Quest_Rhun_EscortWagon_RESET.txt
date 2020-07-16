@@ -1,0 +1,17 @@
+//Rhun_EscortWagon_RESET#CLASS 0#AL Rhun_EscortWagon_RESET {$QuestName="Rhun_EscortWagon"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhun_EscortWagon
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

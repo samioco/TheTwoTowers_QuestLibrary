@@ -1,0 +1,17 @@
+//WhiteMtns_TrappedBandit_RESET#CLASS 0#AL WhiteMtns_TrappedBandit_RESET {$QuestName="WhiteMtns_TrappedBandit"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WhiteMtns_TrappedBandit
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

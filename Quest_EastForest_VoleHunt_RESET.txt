@@ -1,0 +1,18 @@
+//EastForest_VoleHunt_RESET#CLASS 0#AL EastForest_VoleHunt_RESET {$QuestName="EastForest_VoleHunt"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: EastForest_VoleHunt
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

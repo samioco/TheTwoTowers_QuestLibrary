@@ -1,0 +1,17 @@
+//Osgiliath_IthilienLongsword_RESET#CLASS 0#AL Osgiliath_IthilienLongsword_RESET {$QuestName="Osgiliath_IthilienLongsword"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Osgiliath_IthilienLongsword
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

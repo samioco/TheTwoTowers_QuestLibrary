@@ -1,0 +1,43 @@
+//Rhov_SilverFlask_RESET#CLASS 0#AL Rhov_SilverFlask_RESET {$QuestName="Rhov_SilverFlask"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Rhov_SilverFlask
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+#AL Rhov_SilverFlask {
+QuestOn Rhov_SilverFlask
+#SW (%roomid()="SilverFlask_Bandits") {
+  sweep pile
+  #WALK SilverFlask_Cellar
+  sss
+  do 2rummage under table,get pouch,search alcove,get bowl,dump pouch into bowl
+} (%roomid()="SilverFlask_Cellar") {
+  do 2rummage under table,get pouch,search alcove,get bowl,dump pouch into bowl
+} (%roomid()="SilverFlask_Horse") {
+  do get bowl from pack,get simbelmyne flower from pack,put simbelmyne flower in bowl
+  do get wine from pack,get open,open wine,pour wine into bowl,drop bottlw
+  do mix bowl,get paste from bowl,clean wound,apply paste to horse
+} (%roomid()="SilverFlask_Rushes") {
+  do look saddle,look in saddle,get flask,get cloak,tag flask
+}
+} $QuestName
+
+#AL sflask1 {ss;do 2rummage under table,get pouch,search alcove,get bowl,dump pouch into bowl} $QuestName
+#AL sflask2 {do get simbelmyne flower from pack,put simbelmyne flower in bowl,get wine from pack,get wine,open bottle,pour wine into bowl,mix bowl,get paste from bowl,drop bowl,clean wound,apply paste to horse} $QuestName
+#AL sflask3 {out;w;s;out;follow hoofprints} $QuestName
+#AL sflask4 {do look saddle,look in saddle,get flask,get cloak,tag flask} $QuestName
+
+#TR {The wound on horse's leg begins to glow with a gentle pink light.} {drop bowl} $Settings
+#TR {Stallion lunges out of the stall and to its freedom!} {#WALK SilverFlask;follow hoofprints} $Settings
+#TR {The horse runs out between the huts, and with a mighty leap, clears the roughly made wall.} {#WALK sflask;follow hoofprints} $Settings
+#TR {A horse jumps over the wall and runs off into the plains.} {follow hoofprints} $Settings
+//#TR {You start tracking the hoofprints.} {} $Settings
+#TR {into something that looked like solid ground but wasn't it.} {do look saddle,look in saddle,place cloak on horse,get flask} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

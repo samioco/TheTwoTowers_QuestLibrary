@@ -1,0 +1,17 @@
+//WallofMordor_WitchsNugget_RESET#CLASS 0#AL WallofMordor_WitchsNugget_RESET {$QuestName="WallofMordor_WitchsNugget"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WallofMordor_WitchsNugget
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

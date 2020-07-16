@@ -1,0 +1,17 @@
+//Mirkwood_Edrendil_RESET#CLASS 0#AL Mirkwood_Edrendil_RESET {$QuestName="Mirkwood_Edrendil"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Mirkwood_Edrendil
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

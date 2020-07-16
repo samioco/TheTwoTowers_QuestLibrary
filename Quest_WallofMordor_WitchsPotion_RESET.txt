@@ -1,0 +1,17 @@
+//WallofMordor_WitchsPotion_RESET#CLASS 0#AL WallofMordor_WitchsPotion_RESET {$QuestName="WallofMordor_WitchsPotion"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WallofMordor_WitchsPotion
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

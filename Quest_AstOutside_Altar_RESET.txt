@@ -1,0 +1,44 @@
+//AstOutside_Altar_RESET#CLASS 0#AL AstOutside_Altar_RESET {$QuestName="AstOutside_Altar"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: AstOutside_Altar
+//Description: 
+//------------------------------------------------------------
+//Description:
+//Place a corpse on the altar and receive a dagger
+//There seems to be a limit of how many times this quest can be done within a certain time frame.
+
+//Requirements:
+//Recommended level 1+ (Level 4 max)
+
+//Reward: A black dagger (sheathable, value: 13g)
+//----------------------------------------------------------------------------------------------------
+//WEAPON                             ID             Type      #H   Hit  Dmg  Wgt  Dura      Score
+//----------------------------------------------------------------------------------------------------
+//A black dagger                     average-sized  dagger    10   10   6    200            16.0
+//----------------------------------------------------------------------------------------------------
+//------------------------------------------------------------
+
+//------------------------------------------------------------
+#AL AstOutside_Altar {
+#VAR AstOutside_Altar_Path {%concat(".(path);.newn3e2ne5nwn3w2ne2n2sw2s3wsw5se2s3e3n;.(StopWalk;QuestAbort)")} {} VAR
+#PATH WalkPath @AstOutside_Altar_Path
+QuestInit QuestOn AstOutside_Altar "Astur" "#T+ AstOutside_AltarMobs;StartWalk"
+MoveMe_To_FH
+} $QuestName
+
+#AL AstOutside_Altar_Check {QuesterCheck $QuestName 1 100} $QuestName
+
+#TR AstOutside_AltarMobs {({"A half-starved black rabbit|A bloated toad"})} {
+#T- Walker;#SUSPEND Walker;#UNT walker;ws
+#SW (%1="A half-starved black rabbit") {kill rabbit
+} (%1="A bloated toad") {kill toad}
+} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+#TR {{"Black rabbit|Bloated toad"} has died.} {#T- AstOutside_AltarMobs;ss;get corpse;#WALK AsturAltar;place corpse on altar} $Settings
+#TR {Figure gives you a black dagger.} {unhand knife;do tag all knife,untag knife} $Settings
+#TR {You regain consciousness.} {QuestAbort} $Settings
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0

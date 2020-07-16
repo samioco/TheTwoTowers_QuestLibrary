@@ -1,0 +1,17 @@
+//WhiteTowers_LevitateSpell_RESET#CLASS 0#AL WhiteTowers_LevitateSpell_RESET {$QuestName="WhiteTowers_LevitateSpell"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: WhiteTowers_LevitateSpell
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

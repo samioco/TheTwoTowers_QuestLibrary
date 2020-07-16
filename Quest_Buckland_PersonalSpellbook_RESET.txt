@@ -1,0 +1,32 @@
+//Buckland_PersonalSpellbook_RESET#CLASS 0#AL Buckland_PersonalSpellbook_RESET {$QuestName="Buckland_PersonalSpellbook"
+$Settings=%concat($QuestName,"|Settings")
+
+//----------------------------------------------------------------------------------------------------
+//Quest Name: Buckland_PersonalSpellbook
+//----------------------------------------------------------------------------------------------------
+//Description:
+//Find a pen for the scribe that has lost his. 
+//Any pen will do: white towers glyph room, Minas Tirith CitADel scribe rooms, BD1
+
+//Requirements:
+//Recommended level 1 - 5
+//Reward: 5 gold + <Your name>'s spellbook (Autoloading)
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+#AL Buckland_PersonalSpellbook {
+QuestInit $QuestName "WTGlyph" "get pen;#WALK BucklandScribe;do get pen,give pen to scribe,drop all pen"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Buckland_PersonalSpellbook_Check {QuesterCheck $QuestName 1 1000} $QuestName
+
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------
+//#TR {As a reward, the scribe gives you} {} $Settings
+#TR {{"You do not have a pen.|Thank you ever so much, but someone already provided me with a new one."}} {QuestAbort} $Settings
+#TR {a brief smile, and a small pouch full of gold.} {QuestComplete Buckland_PersonalSpellbook} $Settings
+//----------------------------------------------------------------------------------------------------
+//Settings
+//----------------------------------------------------------------------------------------------------} Tools_QuestList#CLASS 0

@@ -1,0 +1,23 @@
+//Midgewater_SavingBreezy_RESET#CLASS 0#AL Midgewater_SavingBreezy_RESET {$QuestName="Midgewater_SavingBreezy"
+$Settings=%concat($QuestName,"|Settings")
+
+//25 gold Freebie
+
+#AL Midgewater_SavingBreezy {
+QuestInit "Midgewater_SavingBreezy" "Breezy" "get stick"
+MoveMe_To_WestArda
+} $QuestName
+
+#AL Midgewater_SavingBreezy_Check {QuesterCheck $QuestName 1 1000} $QuestName
+
+#TR {There is no stick here to get.} {QuestAbort} $Settings
+#TR {You pick up the stick.} {scare osprey} $Settings
+#TR {You make a loud sound, causing the osprey to fly away!} {#WALK Breezy_bog;lower stick} $Settings
+
+//#TR {You climb up the branches into the trees.} {crawl n;crawl n;crawl e;crawl s;#TE Breezy;scare osprey} $Settings
+
+#TR {Now's your chance to pull her up!} {pull girl up} $Settings
+#TR {Breezy runs off to the SOUTh, probably to her boyfriend's arms.} {} $Settings
+
+#TR {It must have been your imagination, there's no stick there.} {QuestAbort} $Settings
+#TR {What?} {#IF (%roomid()=Breezy) {QuestAbort}} $Settings} Tools_QuestList#CLASS 0

@@ -1,0 +1,17 @@
+//Bree_KillBandits_RESET#CLASS 0#AL Bree_KillBandits_RESET {$QuestName="Bree_KillBandits"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Bree_KillBandits
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

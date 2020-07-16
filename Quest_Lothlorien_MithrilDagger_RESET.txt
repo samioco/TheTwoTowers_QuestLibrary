@@ -1,0 +1,17 @@
+//Lothlorien_MithrilDagger_RESET#CLASS 0#AL Lothlorien_MithrilDagger_RESET {$QuestName="Lothlorien_MithrilDagger"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: Lothlorien_MithrilDagger
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------} Tools_QuestList#CLASS 0

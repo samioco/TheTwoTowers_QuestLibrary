@@ -1,0 +1,61 @@
+//FarHarad_BlackUrukShield_RESET#CLASS 0#AL FarHarad_BlackUrukShield_RESET {$QuestName="FarHarad_BlackUrukShield"
+$Settings=%concat($QuestName,|Settings)
+//------------------------------------------------------------
+//Quest Name: FarHarad_BlackUrukShield
+//Description: 
+//------------------------------------------------------------
+//Requirements: 
+//Recommended level:  
+//Reward: 
+//------------------------------------------------------------
+//Settings:
+//------------------------------------------------------------
+//A black uruk shield: 38|25|150|800
+// Score: 45
+//45gold
+
+#AL FarHarad_BlackUrukShield {
+QuestInit $QuestName "Gorshnahk" "ask commander about snaga"
+MoveMe_To_FH
+} $QuestName
+
+#AL FarHarad_BlackUrukShield_Check {QuesterCheck $QuestName 11 100} $QuestName
+
+#TR {Gorshnahk looks at you blankly.} {QuestAbort} $Settings
+#TR {Gorshnahk says*: I want that little bastard's head!} {
+#WALK UrukShieldSnaga
+#IF (@Mounted) {dismount}
+search shrubs
+} $Settings
+
+#TR {You cannot do that while mounted!} {dismount;search shrubs} $Settings
+
+#TR {You search through the shrubs, but fail to find anything.} {QuestAbort} $Settings
+#TR {You search through the shrubs and find someone hiding!} {
+ws
+#SW ((@MyProf="rider") && (!@Mounted)) {mm
+} ((@MyProf!="rider") && (@Mounted)) {dismount}
+kill snaga
+} $Settings
+
+#TR {Snaga says*: Enough!  Hold on...I can help you.  I robbed} {
+kill snaga
+} $Settings
+
+#TR {bleeding to death} {kill} $Settings
+#TR {Snaga has died.} {sever head from corpse} $Settings
+#TR {You suddenly feel very evil and sever the head from the corpse!} {
+#IF (@MyProf="archer") {sal} {sss}
+get head
+#WALK Gorshnahk
+give head to commander
+} $Settings
+
+#TR {You do not have a head.} {QuestAbort} $Settings
+#TR {I do not see commander here.} {QuestAbort} $Settings
+
+#TR {Gorshnahk gives you a black uruk shield.} {GearSwap "A black uruk shield"} $Settings
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+} Tools_QuestList#CLASS 0
